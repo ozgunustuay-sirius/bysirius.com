@@ -81,8 +81,9 @@
         <!-- Premium Hero Block -->
         <section class="internal-hero">
             <div class="container">
-                <h1 class="hero-title">Sektörler</h1>
-                <p class="hero-subtitle">Teknolojimizi farklı sektörlerdeki işletmelerin ihtiyaçlarına göre
+                <h1 class="hero-title" data-i18n="industriesHeroTitle">Sektörler</h1>
+                <p class="hero-subtitle" data-i18n="industriesHeroSubtitle">Teknolojimizi farklı sektörlerdeki
+                    işletmelerin ihtiyaçlarına göre
                     özelleştiriyoruz.</p>
             </div>
         </section>
@@ -91,7 +92,7 @@
         <section class="section">
             <div class="container">
                 <div class="content-placeholder">
-                    İçerik yakında eklenecektir.
+                    <span data-i18n="comingSoon">İçerik yakında eklenecektir.</span>
                 </div>
             </div>
         </section>
@@ -101,8 +102,8 @@
             <div class="container">
                 <div class="upload-area" id="drop-area">
                     <span class="upload-icon">↑</span>
-                    <p class="upload-text">Görsel Yüklemek için Tıklayın veya Sürükleyin</p>
-                    <p class="upload-hint">PNG, JPG veya WEBP (Max 5MB)</p>
+                    <p class="upload-text" data-i18n="uploadText">Görsel Yüklemek için Tıklayın veya Sürükleyin</p>
+                    <p class="upload-hint" data-i18n="uploadHint">PNG, JPG veya WEBP (Max 5MB)</p>
                     <input type="file" id="file-input" class="hidden-input" accept="image/*">
 
                     <div class="preview-container" id="preview-container">
@@ -164,20 +165,19 @@
         </div>
     </footer>
 
-    <!-- Modal Overlay -->
     <div id="analysisModal" class="modal-overlay">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
-            <h2>Ücretsiz Analiz Talebi</h2>
+            <h2 data-i18n="modalTitle">Ücretsiz Analiz Talebi</h2>
 
             <form id="analysisForm">
-                <input type="text" placeholder="Ad Soyad" required>
-                <input type="text" placeholder="Telefon" required>
-                <input type="email" placeholder="E-posta" required>
-                <input type="text" placeholder="Firma Adı" required>
+                <input type="text" placeholder="Ad Soyad" data-i18n-placeholder="placeholderName" required>
+                <input type="text" placeholder="Telefon" data-i18n-placeholder="placeholderPhone" required>
+                <input type="email" placeholder="E-posta" data-i18n-placeholder="placeholderEmail" required>
+                <input type="text" placeholder="Firma Adı" data-i18n-placeholder="placeholderCompany" required>
 
                 <select id="sectorSelect" required>
-                    <option value="">Sektör Seçin</option>
+                    <option value="" data-i18n="placeholderSectorSelect">Sektör Seçin</option>
                     <option>Oteller & Konaklama</option>
                     <option>Diş Klinikleri</option>
                     <option>Gayrimenkul Ofisleri</option>
@@ -186,24 +186,45 @@
                     <option>Özel Klinik & Sağlık Merkezleri</option>
                     <option>Eğitim Kurumları</option>
                     <option>Finans & Muhasebe</option>
-                    <option value="other">Diğer</option>
+                    <option value="other" data-i18n="otherOption">Diğer</option>
                 </select>
 
-                <input type="text" id="otherSector" placeholder="Faaliyet Alanınızı Yazın" style="display:none;">
+                <input type="text" id="otherSector" placeholder="Faaliyet Alanınızı Yazın"
+                    data-i18n-placeholder="placeholderOtherSector" style="display:none;">
 
-                <select required>
-                    <option value="">Alınacak Hizmet</option>
-                    <option>AI Randevu Sistemi</option>
-                    <option>CRM Otomasyonu</option>
-                    <option>Finans Otomasyonu</option>
-                    <option>Chatbot</option>
-                    <option>Özel Yazılım</option>
-                    <option>Danışmanlık</option>
-                </select>
+                <div class="multi-select">
+                    <div class="multi-select-toggle">
+                        <div class="selected-chips">
+                            <span class="placeholder-text" data-i18n="placeholderServiceSelect">Alınacak Hizmetleri
+                                Seçin (En az biri)</span>
+                        </div>
+                        <button type="button" class="btn-select" data-i18n="modalSelectBtn">Seç</button>
+                    </div>
+                    <div class="multi-select-dropdown">
+                        <label>
+                            <input type="checkbox" name="services" value="AI Randevu Sistemi"> AI Randevu Sistemi
+                        </label>
+                        <label>
+                            <input type="checkbox" name="services" value="CRM Otomasyonu"> CRM Otomasyonu
+                        </label>
+                        <label>
+                            <input type="checkbox" name="services" value="Finans Otomasyonu"> Finans Otomasyonu
+                        </label>
+                        <label>
+                            <input type="checkbox" name="services" value="Chatbot"> Chatbot
+                        </label>
+                        <label>
+                            <input type="checkbox" name="services" value="Özel Yazılım"> Özel Yazılım
+                        </label>
+                        <label>
+                            <input type="checkbox" name="services" value="Danışmanlık"> Danışmanlık
+                        </label>
+                    </div>
+                </div>
 
-                <textarea placeholder="Notlar"></textarea>
+                <textarea placeholder="Notlar" data-i18n-placeholder="placeholderNotes"></textarea>
 
-                <button type="submit">Gönder</button>
+                <button type="submit" data-i18n="modalSubmit">Gönder</button>
             </form>
         </div>
     </div>

@@ -14,6 +14,12 @@
     --text-muted: #a0aabf;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;

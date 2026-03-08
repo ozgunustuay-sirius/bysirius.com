@@ -10,6 +10,18 @@ const translations = {
         ctaButton: "Projelerimizi İnceleyin",
         secondaryCta: "Bize Ulaşın",
 
+        // Internal Hero
+        aboutHeroTitle: "Hakkımızda",
+        aboutHeroSubtitle: "BY Sirius Group'un vizyonu, misyonu ve kurumsal değerleri.",
+        servicesHeroTitle: "Hizmetlerimiz",
+        servicesHeroSubtitle: "Yapay zeka, otomasyon ve dijital dönüşüm çözümlerimizle işletmenizi geleceğe hazırlıyoruz.",
+        industriesHeroTitle: "Sektörler",
+        industriesHeroSubtitle: "Teknolojimizi farklı sektörlerdeki işletmelerin ihtiyaçlarına göre özelleştiriyoruz.",
+        contactHeroTitle: "İletişim",
+        contactHeroSubtitle: "Sorularınız, projeleriniz, stratejik danışmanlık ve stratejik partnerlik talepleriniz için bizimle iletişime geçin.",
+        aiCeoHeroTitle: "SIRA N.OVA",
+        aiCeoHeroSubtitle: "AI CEO | Dijital Strateji & Yapay Zeka",
+
         // Trust Bar
         trustHeadline: "Güvenilir Teknoloji ve Stratejik Çözümler",
         trustItem1: "Kurumsal Ölçeklenebilir AI Altyapı Mimarisi",
@@ -25,7 +37,7 @@ const translations = {
         navBlog: "BLOG",
         fLinkAddress: "İletişim",
 
-        // Services Block
+        // Services Block (Homepage/Global)
         servicesTitle: "Hizmetlerimiz",
         servicesIntro: "İşletmeler için yalnızca yazılım değil, sürdürülebilir dijital büyüme sistemleri tasarlıyoruz.",
         service1Title: "STRATEJİK TEKNOLOJİ DANIŞMANLIĞI",
@@ -35,6 +47,24 @@ const translations = {
         service3Title: "ÖLÇEKLENEBİLİR DİJİTAL ÜRÜN & YAZILIM GELİŞTİRME",
         service3Desc: "KOBİ’lerden kurumsal firmalara kadar farklı ölçeklerde işletmeler için sürdürülebilir teknoloji altyapıları tasarlıyoruz.",
 
+        // Services Grid (Internal)
+        serviceGridTitle1: "Yapay Zeka Çözümleri",
+        serviceGridDesc1: "AI destekli karar sistemleri ve iş süreçlerini optimize eden akıllı yazılım çözümleri.",
+        serviceGridTitle2: "Otomasyon Sistemleri",
+        serviceGridDesc2: "Tekrarlayan operasyonları dijitalleştirerek zaman ve maliyet tasarrufu sağlayan sistemler.",
+        serviceGridTitle3: "Chatbot & AI Asistanlar",
+        serviceGridDesc3: "Müşteri deneyimini geliştiren ve 7/24 iletişim sağlayan akıllı dijital asistanlar.",
+        serviceGridTitle4: "Dijital Dönüşüm Danışmanlığı",
+        serviceGridDesc4: "İşletmenizin teknoloji altyapısını stratejik olarak yeniden yapılandırıyoruz.",
+        serviceGridTitle5: "Özel Yazılım Geliştirme",
+        serviceGridDesc5: "İhtiyaca özel, ölçeklenebilir ve güvenli yazılım projeleri geliştiriyoruz.",
+        serviceGridTitle6: "Sistem Entegrasyonu",
+        serviceGridDesc6: "Farklı platformları entegre ederek veri akışını merkezi ve verimli hale getiriyoruz.",
+        serviceGridTitle7: "Veri Analitiği & Raporlama",
+        serviceGridDesc7: "Karar süreçlerini güçlendiren veri odaklı analiz ve raporlama sistemleri.",
+        serviceGridTitle8: "İş Süreçleri Optimizasyonu",
+        serviceGridDesc8: "Operasyonel verimliliği artıran süreç tasarımı ve iyileştirme çözümleri.",
+
         // About Block
         aboutTitle: "Şirket Profili",
         aboutText: "Sirius Group, dijital dönüşümün öncüsü olarak, işletmenizin geleceğini modern teknoloji ve stratejik danışmanlık ile inşa eder.",
@@ -42,12 +72,37 @@ const translations = {
         aboutFeature2: "Stratejik Teknoloji Danışmanlığı",
         aboutFeature3: "Ölçeklenebilir Yazılım ve AI Çözümleri",
 
+        // Corporate Content (About Internal)
+        visionLabel: "Vizyonumuz",
+        visionText: "İş dünyasında dijital dönüşümün ve yapay zekanın gücünü kullanarak, işletmelerin küresel rekabet ortamında en verimli ve yenilikçi çözümlerle lider pozisyona gelmesini sağlamaktır.",
+        missionLabel: "Misyonumuz",
+        missionText: "Müşterilerimizin operasyonel süreçlerini akıllı otomasyon ve veriye dayalı stratejilerle dijitalleştirerek, sürdürülebilir büyüme ve maksimum verimlilik sunan teknolojik altyapılar inşa etmektir.",
+        valuesLabel: "Değerlerimiz",
+        value1: "Güvenilirlik",
+        value2: "Yenilikçilik",
+        value3: "Şeffaflık",
+        value4: "Sürdürülebilirlik",
+
         // Management Block
         managementTitle: "Yönetim",
         member1Name: "SIRA N.OVA",
         member1Title: "AI CEO – Dijital Strateji & Yapay Zeka Lideri",
         member2Name: "Özgün Üstüay",
         member2Title: "Kurucu & İş Geliştirme Direktörü",
+
+        // AI CEO (Internal)
+        aiCeoMainTitle: "Geleceği Yöneten Akıl",
+        aiCeoMainText: "SIRA N.OVA, BY Sirius Group'un yapay zeka tabanlı stratejik yönetim birimidir. İş süreçlerini optimize eder ve veri odaklı kararlar alarak şirketin büyümesini hızlandırır.",
+        aiCeoCta: "Stratejik Analiz Başlat",
+
+        // Contact Info
+        companyNameLabel: "Unvan:",
+        companyVknLabel: "VKN:",
+        companyAddressLabel: "Adres 1:",
+        companyAddress2Label: "Adres 2:",
+        companyPhoneLabel: "Telefon:",
+        companyAddressText: "Sultan Selim Mahallesi Eski Büyükdere Caddesi No:61/2 Kağıthane İstanbul",
+        companyAddress2Text: "Antal Teknokent",
 
         // Footer Columns
         footerCol1Title: "Hakkımızda",
@@ -88,6 +143,45 @@ const translations = {
         industry8Title: "Finans & Muhasebe Otomasyonu",
         industry8Desc: "Otomatik fatura oluşturma, ödeme takibi ve finansal raporlama sistemleri",
 
+        // FAQ Section
+        faqTitle: "Sıkça Sorulan Sorular",
+        faqQ1: "Yapay zekâ iletişim sistemleri hangi işletmeler için uygundur?",
+        faqA1: "Sistemlerimiz butik oteller, restoran ve kafeler, diş klinikleri, kuaförler, e-ticaret firmaları ve sosyal medya üzerinden satış yapan işletmelerin süreçlerini hızlandırmak için özel olarak geliştirilmiştir.",
+        faqQ2: "Kurulum süreci ne kadar zaman alıyor?",
+        faqA2: "İşletmenizin mevcut altyapısına bağlı olarak temel entegrasyonlarımızı hızlıca tamamlıyoruz. Sorunsuz bir geçişle, operasyonlarınıza anında hız ve verimlilik kazandırıyoruz.",
+        faqQ3: "Randevu ve rezervasyon işlemleri tam otomatik mi oluyor?",
+        faqA3: "Evet, oteller, klinikler ve güzellik merkezleri için randevu planlaması yapay zekâ asistanlarımız ile 7/24 kesintisiz olarak yönetilir. Böylece müşteri kayıplarının önüne geçilir.",
+        faqQ4: "Sosyal medya satışlarında bize nasıl bir avantaj sağlar?",
+        faqA4: "Sosyal medya kanallarınızdan (Instagram DM, WhatsApp) gelen müşteri taleplerine saniyeler içinde doğal bir dille yanıt vererek sipariş sürecini otomatikleştirir, satışa dönüşüm oranlarınızı artırırız.",
+        faqQ5: "Sistemleri kullanmak için teknik bir bilgiye ihtiyacım var mı?",
+        faqA5: "Kesinlikle hayır, herhangi bir teknik bilgiye veya ek personele ihtiyacınız yok. Kurulum, altyapı yönetimi ve 7/24 teknik destek süreçlerinin tamamını uzman ekibimizle biz üstleniyoruz.",
+        faqQ6: "Sistemin işletmeme katkısını nasıl takip edebilirim?",
+        faqA6: "Sunduğumuz raporlar üzerinden otomatize edilen müşteri iletişimini, başarılı rezervasyonları ve düşen operasyon maliyetlerinizi şeffaf bir şekilde görebilir, yatırımınızın anında dönüşüne şahit olabilirsiniz.",
+        faqCtaTitle: "İşletmenize Özel Otomasyon Çözümünü 7 Gün İçinde Kurabiliriz",
+        faqCtaDesc: "Ücretsiz analiz ile işletmenize en uygun yapay zekâ sistemini birlikte belirleyelim.",
+        faqCtaBtn: "Ücretsiz Analiz Talep Et",
+
+        // Analysis Modal
+        modalTitle: "Ücretsiz Analiz Talebi",
+        placeholderName: "Ad Soyad",
+        placeholderPhone: "Telefon",
+        placeholderEmail: "E-posta",
+        placeholderCompany: "Firma Adı",
+        placeholderSectorSelect: "Sektör Seçin",
+        placeholderOtherSector: "Faaliyet Alanınızı Yazın",
+        placeholderServiceSelect: "Alınacak Hizmetleri Seçin (En az biri)",
+        placeholderNotes: "Notlar",
+        modalSubmit: "Gönder",
+        modalRedirecting: "Yönlendiriliyor...",
+        modalSelectBtn: "Seç",
+        otherOption: "Diğer",
+        analyzeBtn: "Ücretsiz Analiz Talep Et",
+
+        // Sektörler Page
+        comingSoon: "İçerik yakında eklenecektir.",
+        uploadText: "Görsel Yüklemek için Tıklayın veya Sürükleyin",
+        uploadHint: "PNG, JPG veya WEBP (Max 5MB)",
+
         // Global
         rights: "Tüm hakları saklıdır.",
         aiCeoTitle: "AI CEO (Yakında)",
@@ -108,6 +202,18 @@ const translations = {
         ctaButton: "Explore Our Projects",
         secondaryCta: "Contact Us",
 
+        // Internal Hero
+        aboutHeroTitle: "About Us",
+        aboutHeroSubtitle: "Vision, mission, and corporate values of BY Sirius Group.",
+        servicesHeroTitle: "Our Services",
+        servicesHeroSubtitle: "We prepare your business for the future with AI, automation, and digital transformation solutions.",
+        industriesHeroTitle: "Industries",
+        industriesHeroSubtitle: "We customize our technology according to the needs of businesses in different sectors.",
+        contactHeroTitle: "Contact",
+        contactHeroSubtitle: "Contact us for your questions, projects, strategic consulting and strategic partnership requests.",
+        aiCeoHeroTitle: "SIRA N.OVA",
+        aiCeoHeroSubtitle: "AI CEO | Digital Strategy & AI",
+
         // Trust Bar
         trustHeadline: "Trusted Technology & Strategic Solutions",
         trustItem1: "Enterprise Scalable AI Infrastructure Architecture",
@@ -123,7 +229,7 @@ const translations = {
         navBlog: "BLOG",
         fLinkAddress: "Contact",
 
-        // Services Block
+        // Services Block (Homepage/Global)
         servicesTitle: "Our Services",
         servicesIntro: "We design not just software, but sustainable digital growth systems for businesses.",
         service1Title: "STRATEGIC TECHNOLOGY CONSULTING",
@@ -133,6 +239,24 @@ const translations = {
         service3Title: "SCALABLE DIGITAL PRODUCTS & SOFTWARE DEVELOPMENT",
         service3Desc: "We design sustainable technology infrastructures for businesses of all scales, from SMEs to corporate firms.",
 
+        // Services Grid (Internal)
+        serviceGridTitle1: "AI Solutions",
+        serviceGridDesc1: "AI-supported decision systems and smart software solutions that optimize business processes.",
+        serviceGridTitle2: "Automation Systems",
+        serviceGridDesc2: "Systems that provide time and cost savings by digitizing recurring operations.",
+        serviceGridTitle3: "Chatbot & AI Assistants",
+        serviceGridDesc3: "Smart digital assistants that improve customer experience and provide 24/7 communication.",
+        serviceGridTitle4: "Digital Transformation Consulting",
+        serviceGridDesc4: "We strategically restructure your business technology infrastructure.",
+        serviceGridTitle5: "Custom Software Development",
+        serviceGridDesc5: "We develop custom, scalable and secure software projects.",
+        serviceGridTitle6: "System Integration",
+        serviceGridDesc6: "We integrate different platforms and make data flow centralized and efficient.",
+        serviceGridTitle7: "Data Analytics & Reporting",
+        serviceGridDesc7: "Data-driven analysis and reporting systems that strengthen decision-making processes.",
+        serviceGridTitle8: "Business Process Optimization",
+        serviceGridDesc8: "Process design and improvement solutions that increase operational efficiency.",
+
         // About Block
         aboutTitle: "Company Profile",
         aboutText: "As a pioneer in digital transformation, Sirius Group builds the future of your business through modern technology and strategic consulting.",
@@ -140,12 +264,37 @@ const translations = {
         aboutFeature2: "Strategic Technology Consulting",
         aboutFeature3: "Scalable Software and AI Solutions",
 
+        // Corporate Content (About Internal)
+        visionLabel: "Our Vision",
+        visionText: "By using the power of digital transformation and artificial intelligence in the business world, to ensure that businesses become leaders with the most efficient and innovative solutions in the global competitive environment.",
+        missionLabel: "Our Mission",
+        missionText: "By digitizing the operational processes of our customers with smart automation and data-driven strategies, to build technological infrastructures that offer sustainable growth and maximum efficiency.",
+        valuesLabel: "Our Values",
+        value1: "Reliability",
+        value2: "Innovation",
+        value3: "Transparency",
+        value4: "Sustainability",
+
         // Management Block
         managementTitle: "Management",
         member1Name: "SIRA N.OVA",
         member1Title: "AI CEO – Digital Strategy & AI Leader",
         member2Name: "Özgün Üstüay",
         member2Title: "Founder & Business Development Director",
+
+        // AI CEO (Internal)
+        aiCeoMainTitle: "The Mind Governing the Future",
+        aiCeoMainText: "SIRA N.OVA is the AI-based strategic management unit of BY Sirius Group. It optimizes business processes and accelerates the growth of the company by making data-driven decisions.",
+        aiCeoCta: "Start Strategic Analysis",
+
+        // Contact Info
+        companyNameLabel: "Title:",
+        companyVknLabel: "VAT ID:",
+        companyAddressLabel: "Address 1:",
+        companyAddress2Label: "Address 2:",
+        companyPhoneLabel: "Phone:",
+        companyAddressText: "Sultan Selim Mah. Eski Buyukdere Cad. No:61/2 Kagithane Istanbul",
+        companyAddress2Text: "Antalya Technopark",
 
         // Footer Columns
         footerCol1Title: "About Us",
@@ -185,6 +334,45 @@ const translations = {
         industry7Desc: "Student registration and parent information assistant",
         industry8Title: "Finance & Accounting Automation",
         industry8Desc: "Automated invoice generation, payment tracking, and financial reporting systems",
+
+        // FAQ Section
+        faqTitle: "Frequently Asked Questions",
+        faqQ1: "Which businesses are AI communication systems suitable for?",
+        faqA1: "Our systems are specifically developed to accelerate the processes of boutique hotels, restaurants and cafes, dental clinics, hairdressers, e-commerce companies and businesses selling over social media.",
+        faqQ2: "How long does the installation process take?",
+        faqA2: "Depending on your business's existing infrastructure, we complete our basic integrations quickly. With a smooth transition, we immediately bring speed and efficiency to your operations.",
+        faqQ3: "Are appointment and booking processes fully automatic?",
+        faqA3: "Yes, appointment planning for hotels, clinics and beauty centers is managed 24/7 by our AI assistants. Thus, customer losses are prevented.",
+        faqQ4: "What advantage does it provide us in social media sales?",
+        faqA4: "By responding to customer requests from your social media channels (Instagram DM, WhatsApp) in seconds with a natural language, we automate the order process and increase your sales conversion rates.",
+        faqQ5: "Do I need any technical knowledge to use the systems?",
+        faqA5: "Absolutely not, you do not need any technical knowledge or additional personnel. We undertake all the processes of installation, infrastructure management and 24/7 technical support with our expert team.",
+        faqQ6: "How can I track the contribution of the system to my business?",
+        faqA6: "Through the reports we provide, you can transparently see the automated customer communication, successful bookings and your falling operational costs, and witness the instant return of your investment.",
+        faqCtaTitle: "We Can Set Up a Custom Automation Solution for Your Business Within 7 Days",
+        faqCtaDesc: "Let's determine the most suitable AI system for your business together with a free analysis.",
+        faqCtaBtn: "Request Free Analysis",
+
+        // Analysis Modal
+        modalTitle: "Free Analysis Request",
+        placeholderName: "Full Name",
+        placeholderPhone: "Phone",
+        placeholderEmail: "Email",
+        placeholderCompany: "Company Name",
+        placeholderSectorSelect: "Select Sector",
+        placeholderOtherSector: "Write Your Field of Activity",
+        placeholderServiceSelect: "Select Services (At least one)",
+        placeholderNotes: "Notes",
+        modalSubmit: "Submit",
+        modalRedirecting: "Redirecting...",
+        modalSelectBtn: "Select",
+        otherOption: "Other",
+        analyzeBtn: "Request Free Analysis",
+
+        // Sektörler Page
+        comingSoon: "Content will be added soon.",
+        uploadText: "Click or Drag to Upload Image",
+        uploadHint: "PNG, JPG or WEBP (Max 5MB)",
 
         // Global
         rights: "All rights reserved.",
@@ -433,61 +621,64 @@ document.addEventListener('DOMContentLoaded', () => {
             form.addEventListener("submit", function (e) {
                 e.preventDefault();
 
-                // Validate at least one service checkbox is checked
-                const serviceCheckboxes = form.querySelectorAll('input[name="services"]');
+                // Get values
+                const adSoyad = form.querySelector('input[placeholder="Ad Soyad"]').value;
+                const telefon = form.querySelector('input[placeholder="Telefon"]').value;
+                const eposta = form.querySelector('input[placeholder="E-posta"]').value;
+                const firmaAdi = form.querySelector('input[placeholder="Firma Adı"]').value;
+                const notlar = form.querySelector('textarea[placeholder="Notlar"]').value || "";
+
+                // Validate services (Keep existing validation)
+                const selectedServices = [];
+                const serviceCheckboxes = form.querySelectorAll('input[name="services"]:checked');
+
                 if (serviceCheckboxes.length > 0) {
-                    let isChecked = false;
-                    serviceCheckboxes.forEach(cb => {
-                        if (cb.checked) isChecked = true;
-                    });
-                    if (!isChecked) {
-                        alert("Lütfen en az bir hizmet seçiniz.");
-                        return;
+                    serviceCheckboxes.forEach(cb => selectedServices.push(cb.value));
+                } else {
+                    // Fallback for single select version if it exists
+                    const serviceSelect = form.querySelector('select:not(#sectorSelect)');
+                    if (serviceSelect && serviceSelect.value) {
+                        selectedServices.push(serviceSelect.value);
                     }
                 }
+
+                if (selectedServices.length === 0) {
+                    alert("Lütfen en az bir hizmet seçiniz.");
+                    return;
+                }
+
+                const servicesString = selectedServices.join(", ");
+
+                // Build WhatsApp message
+                const messageTemplate = `Merhaba, ücretsiz analiz talebi:
+
+Ad Soyad: ${adSoyad}
+Telefon: ${telefon}
+E-posta: ${eposta}
+Firma: ${firmaAdi}
+Hizmetler: ${servicesString}
+Not: ${notlar}`;
+
+                const whatsappUrl = `https://wa.me/905355032634?text=${encodeURIComponent(messageTemplate)}`;
 
                 const submitBtn = form.querySelector("button[type='submit']");
                 if (submitBtn) {
                     submitBtn.disabled = true;
-                    submitBtn.innerText = "Gönderiliyor...";
+                    submitBtn.innerText = "Yönlendiriliyor...";
                 }
 
-                // Create success box
-                const successMessage = document.createElement("div");
-                successMessage.innerHTML = "Talebiniz alınmıştır. Ekibimiz en kısa sürede sizinle iletişime geçecektir.";
+                // Redirect
+                window.location.href = whatsappUrl;
 
-                successMessage.style.marginTop = "20px";
-                successMessage.style.padding = "15px";
-                successMessage.style.borderRadius = "8px";
-                successMessage.style.background = "rgba(34,197,94,0.1)";
-                successMessage.style.border = "1px solid rgba(34,197,94,0.4)";
-                successMessage.style.color = "#22c55e";
-                successMessage.style.fontWeight = "500";
-                successMessage.style.opacity = "0";
-                successMessage.style.transition = "opacity 0.3s ease";
-
-                form.appendChild(successMessage);
-
-                // Fade in
-                setTimeout(() => {
-                    successMessage.style.opacity = "1";
-                }, 50);
-
-                if (submitBtn) {
-                    submitBtn.innerText = "Gönderildi ✓";
-                }
-
-                // Auto close after 2 seconds
+                // Cleanup (in case user comes back)
                 setTimeout(() => {
                     modal.classList.remove("show");
                     form.reset();
-                    successMessage.remove();
-
                     if (submitBtn) {
                         submitBtn.disabled = false;
                         submitBtn.innerText = "Gönder";
                     }
-                }, 2000);
+                }, 1000);
             });
         }
     }
@@ -541,20 +732,61 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Multi-Select Dropdown Logic
-    const multiSelectToggle = document.querySelector(".multi-select-toggle");
-    const multiSelect = document.querySelector(".multi-select");
+    const multiSelects = document.querySelectorAll(".multi-select");
 
-    if (multiSelectToggle && multiSelect) {
-        multiSelectToggle.addEventListener("click", function (e) {
-            e.stopPropagation();
-            multiSelect.classList.toggle("open");
+    multiSelects.forEach(ms => {
+        const toggle = ms.querySelector(".multi-select-toggle");
+        const dropdown = ms.querySelector(".multi-select-dropdown");
+        const chipsContainer = ms.querySelector(".selected-chips");
+        const checkboxes = ms.querySelectorAll('input[name="services"]');
+
+        // Save placeholder element to re-use
+        const placeholder = ms.querySelector(".placeholder-text");
+
+        const updateChips = () => {
+            chipsContainer.innerHTML = '';
+            const selected = Array.from(checkboxes).filter(cb => cb.checked);
+
+            if (selected.length === 0) {
+                if (placeholder) chipsContainer.appendChild(placeholder);
+                return;
+            }
+
+            selected.forEach(cb => {
+                const chip = document.createElement('span');
+                chip.className = 'chip';
+                chip.textContent = cb.value;
+                chipsContainer.appendChild(chip);
+            });
+        };
+
+        if (toggle) {
+            toggle.addEventListener("click", function (e) {
+                e.stopPropagation();
+                ms.classList.toggle("open");
+            });
+        }
+
+        if (dropdown) {
+            dropdown.addEventListener("click", function (e) {
+                e.stopPropagation(); // Keep dropdown open when clicking options
+            });
+        }
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener("change", updateChips);
         });
 
-        // Close dropdown when clicking outside
-        document.addEventListener("click", function (e) {
-            if (!multiSelect.contains(e.target)) {
-                multiSelect.classList.remove("open");
+        // Initial update
+        updateChips();
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener("click", function (e) {
+        multiSelects.forEach(ms => {
+            if (!ms.contains(e.target)) {
+                ms.classList.remove("open");
             }
         });
-    }
+    });
 });
