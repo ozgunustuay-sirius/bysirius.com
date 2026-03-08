@@ -1,0 +1,38 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-blue: #0F172A;
+    --navy-bg: #0B1220;
+    --gold: #d4af37;
+    --gold-hover: #c5a028;
+    --text-light: #f8f9fa;
+    --text-muted: #a0aabf;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: var(--navy-bg);
+    color: var(--text-light);
+    transition: opacity 0.15s ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+.hero-title,
+.logo-text-fallback {
+    font-family: 'Outfit', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
