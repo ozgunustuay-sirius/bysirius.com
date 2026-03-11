@@ -10,6 +10,20 @@ const translations = {
         ctaButton: "Projelerimizi İnceleyin",
         secondaryCta: "Bize Ulaşın",
 
+        // SEO & Meta
+        homePageTitle: "BY Sirius Group | Yapay Zekâ ve Dijital Dönüşüm Çözümleri",
+        homePageDesc: "İşletmenizi 7/24 çalışan yapay zekâ ve otomasyon sistemleri ile büyütün. Stratejik teknoloji danışmanlığı ve akıllı yazılım çözümleriyle dijital dönüşümde lideriz.",
+        aboutPageTitle: "Hakkımızda | BY Sirius Group Kurumsal Vizyon ve Misyon",
+        aboutPageDesc: "BY Sirius Group'un dijital dönüşüm yolculuğunu, vizyonumuzu, misyonumuzu ve kurumsal değerlerimizi keşfedin. Teknoloji ile işletmelerin geleceğini inşa ediyoruz.",
+        servicesPageTitle: "Hizmetlerimiz | Yapay Zeka ve Otomasyon Çözümleri",
+        servicesPageDesc: "İşletmeniz için özelleştirilmiş AI çözümleri, otomasyon sistemleri ve dijital dönüşüm danışmanlığı.",
+        industriesPageTitle: "Sektörler | Farklı Alanlarda AI Uygulamaları",
+        industriesPageDesc: "Sağlıktan turizme, e-ticaretten finansa kadar farklı sektörler için geliştirdiğimiz AI stratejileri.",
+        contactPageTitle: "İletişim | BY Sirius Group ile Bağlantıya Geçin",
+        contactPageDesc: "Projeleriniz ve danışmanlık talepleriniz için bize ulaşın. Dijital dönüşüm yolculuğunuza bugün başlayın.",
+        aiCeoPageTitle: "SIRA N.OVA | Yapay Zeka CEO",
+        aiCeoPageDesc: "Dünyanın ilk yapay zeka tabanlı stratejik yönetim birimi SIRA N.OVA ile tanışın.",
+
         // Internal Hero
         aboutHeroTitle: "Hakkımızda",
         aboutHeroSubtitle: "BY Sirius Group'un vizyonu, misyonu ve kurumsal değerleri.",
@@ -142,6 +156,7 @@ const translations = {
         industry7Desc: "Öğrenci kaydı ve veli bilgilendirme asistanı",
         industry8Title: "Finans & Muhasebe Otomasyonu",
         industry8Desc: "Otomatik fatura oluşturma, ödeme takibi ve finansal raporlama sistemleri",
+        industryFinance: "Finans & Muhasebe",
 
         // FAQ Section
         faqTitle: "Sıkça Sorulan Sorular",
@@ -161,6 +176,15 @@ const translations = {
         faqCtaDesc: "Ücretsiz analiz ile işletmenize en uygun yapay zekâ sistemini birlikte belirleyelim.",
         faqCtaBtn: "Ücretsiz Analiz Talep Et",
 
+        // Contact Info
+        companyNameLabel: "Unvan:",
+        companyVknLabel: "VKN:",
+        companyAddressLabel: "Adres 1:",
+        companyAddress2Label: "Adres 2:",
+        companyPhoneLabel: "Telefon:",
+        companyAddressText: "Sultan Selim Mahallesi Eski Büyükdere Caddesi No:61/2 Kağıthane İstanbul",
+        companyAddress2Text: "Antalya, Teknokent",
+
         // Analysis Modal
         modalTitle: "Ücretsiz Analiz Talebi",
         placeholderName: "Ad Soyad",
@@ -174,13 +198,33 @@ const translations = {
         modalSubmit: "Gönder",
         modalRedirecting: "Yönlendiriliyor...",
         modalSelectBtn: "Seç",
+        modalOk: "Tamam",
         otherOption: "Diğer",
         analyzeBtn: "Ücretsiz Analiz Talep Et",
+        serviceOption1: "AI Randevu Sistemi",
+        serviceOption2: "CRM Otomasyonu",
+        serviceOption3: "Finans Otomasyonu",
+        serviceOption4: "Chatbot",
+        serviceOption5: "Özel Yazılım",
+        serviceOption6: "Danışmanlık",
+
+        // Blog Page
+        blogPageTitle: "Blog | Teknoloji Trendleri ve Dijital Dönüşüm Analizleri",
+        blogPageDesc: "Yapay zekâ, sektör analizleri ve teknoloji trendleri hakkında güncel içerikleri takip edin. İş dünyasının dijital geleceğine dair stratejik bilgiler burada.",
+        blogHeroTitle: "BLOG",
+        blogHeroSubtitle: "Yakında sektör analizleri, teknoloji trendleri ve dijital dönüşüm içerikleri burada yer alacak.",
+        blogCard1Title: "Sektör Analizleri",
+        blogCard1Desc: "Yapay zekanın farklı sektörlerdeki dönüştürücü etkisini inceleyen kapsamlı rehberler.",
+        blogCard2Title: "Teknoloji Trendleri",
+        blogCard2Desc: "Geleceğin teknolojileri ve işletmeniz için kaçırmamanız gereken dijital yenilikler.",
+        blogCard3Title: "Dijital Dönüşüm",
+        blogCard3Desc: "İş süreçlerinizi optimize etmek ve dijitalleşmek için pratik stratejik öneriler.",
 
         // Sektörler Page
         comingSoon: "İçerik yakında eklenecektir.",
         uploadText: "Görsel Yüklemek için Tıklayın veya Sürükleyin",
         uploadHint: "PNG, JPG veya WEBP (Max 5MB)",
+        uploadTitleAI: "AI Avatar Yükleme Alanı",
 
         // Global
         rights: "Tüm hakları saklıdır.",
@@ -201,6 +245,20 @@ const translations = {
         heroSubtitle: "Fully automate bookings, customer communication, appointments, and sales processes through a single smart infrastructure.",
         ctaButton: "Explore Our Projects",
         secondaryCta: "Contact Us",
+
+        // SEO & Meta
+        homePageTitle: "BY Sirius Group | AI and Digital Transformation Solutions",
+        homePageDesc: "Grow your business with 24/7 AI and automation systems. We are leaders in digital transformation with strategic technology consulting and smart software solutions.",
+        aboutPageTitle: "About Us | BY Sirius Group Corporate Vision and Mission",
+        aboutPageDesc: "Explore BY Sirius Group's digital transformation journey, our vision, mission, and corporate values. We build the future of businesses with technology.",
+        servicesPageTitle: "Our Services | AI and Automation Solutions",
+        servicesPageDesc: "Customized AI solutions, automation systems, and digital transformation consultancy for your business.",
+        industriesPageTitle: "Industries | AI Applications in Different Fields",
+        industriesPageDesc: "AI strategies we have developed for different sectors from health to tourism, e-commerce to finance.",
+        contactPageTitle: "Contact | Get in Touch with BY Sirius Group",
+        contactPageDesc: "Contact us for your projects and consultancy requests. Start your digital transformation journey today.",
+        aiCeoPageTitle: "SIRA N.OVA | Artificial Intelligence CEO",
+        aiCeoPageDesc: "Meet SIRA N.OVA, the world's first AI-based strategic management unit.",
 
         // Internal Hero
         aboutHeroTitle: "About Us",
@@ -334,6 +392,7 @@ const translations = {
         industry7Desc: "Student registration and parent information assistant",
         industry8Title: "Finance & Accounting Automation",
         industry8Desc: "Automated invoice generation, payment tracking, and financial reporting systems",
+        industryFinance: "Finance & Accounting",
 
         // FAQ Section
         faqTitle: "Frequently Asked Questions",
@@ -353,6 +412,15 @@ const translations = {
         faqCtaDesc: "Let's determine the most suitable AI system for your business together with a free analysis.",
         faqCtaBtn: "Request Free Analysis",
 
+        // Contact Info
+        companyNameLabel: "Title:",
+        companyVknLabel: "VAT ID:",
+        companyAddressLabel: "Address 1:",
+        companyAddress2Label: "Address 2:",
+        companyPhoneLabel: "Phone:",
+        companyAddressText: "Sultan Selim Neighborhood Eski Buyukdere Street No:61/2 Kagithane Istanbul",
+        companyAddress2Text: "Antalya, Technopark",
+
         // Analysis Modal
         modalTitle: "Free Analysis Request",
         placeholderName: "Full Name",
@@ -366,13 +434,33 @@ const translations = {
         modalSubmit: "Submit",
         modalRedirecting: "Redirecting...",
         modalSelectBtn: "Select",
+        modalOk: "OK",
         otherOption: "Other",
         analyzeBtn: "Request Free Analysis",
+        serviceOption1: "AI Appointment System",
+        serviceOption2: "CRM Automation",
+        serviceOption3: "Finance Automation",
+        serviceOption4: "Chatbot",
+        serviceOption5: "Custom Software",
+        serviceOption6: "Consultancy",
+
+        // Blog Page
+        blogPageTitle: "Blog | Technology Trends and Digital Transformation Analysis",
+        blogPageDesc: "Follow up-to-date content about artificial intelligence, industry analysis and technology trends. Strategic information about the digital future of the business world is here.",
+        blogHeroTitle: "BLOG",
+        blogHeroSubtitle: "Sector analysis, technology trends, and digital transformation content will be available here soon.",
+        blogCard1Title: "Industry Analysis",
+        blogCard1Desc: "Comprehensive guides examining the transformative impact of AI in different sectors.",
+        blogCard2Title: "Technology Trends",
+        blogCard2Desc: "Future technologies and digital innovations you shouldn't miss for your business.",
+        blogCard3Title: "Digital Transformation",
+        blogCard3Desc: "Practical strategic suggestions for optimizing and digitizing your business processes.",
 
         // Sektörler Page
         comingSoon: "Content will be added soon.",
         uploadText: "Click or Drag to Upload Image",
         uploadHint: "PNG, JPG or WEBP (Max 5MB)",
+        uploadTitleAI: "AI Avatar Upload Area",
 
         // Global
         rights: "All rights reserved.",
@@ -441,6 +529,8 @@ class LanguageSystem {
             if (langData[key]) {
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                     element.placeholder = langData[key];
+                } else if (element.tagName === 'META') {
+                    element.setAttribute('content', langData[key]);
                 } else {
                     element.textContent = langData[key];
                 }
@@ -739,6 +829,7 @@ Not: ${notlar}`;
         const dropdown = ms.querySelector(".multi-select-dropdown");
         const chipsContainer = ms.querySelector(".selected-chips");
         const checkboxes = ms.querySelectorAll('input[name="services"]');
+        const okBtn = ms.querySelector(".btn-ok");
 
         // Save placeholder element to re-use
         const placeholder = ms.querySelector(".placeholder-text");
@@ -755,7 +846,9 @@ Not: ${notlar}`;
             selected.forEach(cb => {
                 const chip = document.createElement('span');
                 chip.className = 'chip';
-                chip.textContent = cb.value;
+                // Use the text from the sibling span which is translated, fallback to value
+                const span = cb.nextElementSibling;
+                chip.textContent = span ? span.textContent : cb.value;
                 chipsContainer.appendChild(chip);
             });
         };
@@ -773,8 +866,24 @@ Not: ${notlar}`;
             });
         }
 
+        if (okBtn) {
+            okBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                ms.classList.remove("open");
+            });
+        }
+
         checkboxes.forEach(cb => {
             cb.addEventListener("change", updateChips);
+        });
+
+        // Close dropdown on Enter key when focused inside
+        ms.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" && ms.classList.contains("open")) {
+                e.preventDefault();
+                ms.classList.remove("open");
+            }
         });
 
         // Initial update

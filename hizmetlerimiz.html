@@ -4,24 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hizmetlerimiz | Yapay Zekâ Otomasyonu ve Dijital Danışmanlık</title>
-    <meta name="description"
+    <title data-i18n="servicesPageTitle">Hizmetlerimiz | Yapay Zekâ Otomasyonu ve Dijital Danışmanlık</title>
+    <meta name="description" data-i18n="servicesPageDesc"
         content="Yapay zekâ çözümleri, akıllı otomasyon sistemleri ve dijital dönüşüm danışmanlığı ile iş süreçlerinizi optimize edin. En verimli teknoloji altyapıları sunuyoruz.">
     <link rel="canonical" href="https://bysiriusgroup.com/hizmetlerimiz.html" />
 
     <!-- Open Graph / Meta -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bysiriusgroup.com/hizmetlerimiz.html">
-    <meta property="og:title" content="Hizmetlerimiz | Yapay Zekâ Otomasyonu ve Dijital Danışmanlık">
-    <meta property="og:description"
+    <meta property="og:title" data-i18n="servicesPageTitle"
+        content="Hizmetlerimiz | Yapay Zekâ Otomasyonu ve Dijital Danışmanlık">
+    <meta property="og:description" data-i18n="servicesPageDesc"
         content="Yapay zekâ çözümleri, akıllı otomasyon sistemleri ve dijital dönüşüm danışmanlığı ile iş süreçlerinizi optimize edin. En verimli teknoloji altyapıları sunuyoruz.">
     <meta property="og:image" content="https://bysiriusgroup.com/assets/images/logo.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://bysiriusgroup.com/hizmetlerimiz.html">
-    <meta property="twitter:title" content="Hizmetlerimiz | Yapay Zekâ Otomasyonu ve Dijital Danışmanlık">
-    <meta property="twitter:description"
+    <meta property="twitter:title" data-i18n="servicesPageTitle"
+        content="Hizmetlerimiz | Yapay Zekâ Otomasyonu ve Dijital Danışmanlık">
+    <meta property="twitter:description" data-i18n="servicesPageDesc"
         content="Yapay zekâ çözümleri, akıllı otomasyon sistemleri ve dijital dönüşüm danışmanlığı ile iş süreçlerinizi optimize edin. En verimli teknoloji altyapıları sunuyoruz.">
     <meta property="twitter:image" content="https://bysiriusgroup.com/assets/images/logo.png">
 
@@ -358,14 +360,14 @@
 
                 <select id="sectorSelect" required>
                     <option value="" data-i18n="placeholderSectorSelect">Sektör Seçin</option>
-                    <option>Oteller & Konaklama</option>
-                    <option>Diş Klinikleri</option>
-                    <option>Gayrimenkul Ofisleri</option>
-                    <option>Güzellik & Estetik Merkezleri</option>
-                    <option>Spor Salonları</option>
-                    <option>Özel Klinik & Sağlık Merkezleri</option>
-                    <option>Eğitim Kurumları</option>
-                    <option>Finans & Muhasebe</option>
+                    <option data-i18n="industry1Title">Oteller & Konaklama</option>
+                    <option data-i18n="industry2Title">Diş Klinikleri</option>
+                    <option data-i18n="industry3Title">Gayrimenkul Ofisleri</option>
+                    <option data-i18n="industry4Title">Güzellik & Estetik Merkezleri</option>
+                    <option data-i18n="industry5Title">Spor Salonları</option>
+                    <option data-i18n="industry6Title">Özel Klinik & Sağlık Merkezleri</option>
+                    <option data-i18n="industry7Title">Eğitim Kurumları</option>
+                    <option data-i18n="industryFinance">Finans & Muhasebe</option>
                     <option value="other" data-i18n="otherOption">Diğer</option>
                 </select>
 
@@ -381,24 +383,35 @@
                         <button type="button" class="btn-select" data-i18n="modalSelectBtn">Seç</button>
                     </div>
                     <div class="multi-select-dropdown">
-                        <label>
-                            <input type="checkbox" name="services" value="AI Randevu Sistemi"> AI Randevu Sistemi
-                        </label>
-                        <label>
-                            <input type="checkbox" name="services" value="CRM Otomasyonu"> CRM Otomasyonu
-                        </label>
-                        <label>
-                            <input type="checkbox" name="services" value="Finans Otomasyonu"> Finans Otomasyonu
-                        </label>
-                        <label>
-                            <input type="checkbox" name="services" value="Chatbot"> Chatbot
-                        </label>
-                        <label>
-                            <input type="checkbox" name="services" value="Özel Yazılım"> Özel Yazılım
-                        </label>
-                        <label>
-                            <input type="checkbox" name="services" value="Danışmanlık"> Danışmanlık
-                        </label>
+                        <div class="multi-options-list">
+                            <label>
+                                <input type="checkbox" name="services" value="AI Randevu Sistemi"> <span
+                                    data-i18n="serviceOption1">AI Randevu Sistemi</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="services" value="CRM Otomasyonu"> <span
+                                    data-i18n="serviceOption2">CRM Otomasyonu</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="services" value="Finans Otomasyonu"> <span
+                                    data-i18n="serviceOption3">Finans Otomasyonu</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="services" value="Chatbot"> <span
+                                    data-i18n="serviceOption4">Chatbot</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="services" value="Özel Yazılım"> <span
+                                    data-i18n="serviceOption5">Özel Yazılım</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="services" value="Danışmanlık"> <span
+                                    data-i18n="serviceOption6">Danışmanlık</span>
+                            </label>
+                        </div>
+                        <div class="dropdown-footer">
+                            <button type="button" class="btn-ok" data-i18n="modalOk">Tamam</button>
+                        </div>
                     </div>
                 </div>
 

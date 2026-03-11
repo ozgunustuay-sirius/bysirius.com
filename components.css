@@ -1,11 +1,13 @@
 /* Components Styles */
 
 /* Header Components */
-.header-logo img {
-    height: 68px;
+.header-logo img,
+.footer-logo img {
+    height: auto;
+    max-height: 68px;
     width: auto;
     display: block;
-    max-height: 100%;
+    max-width: 100%;
 }
 
 .nav-links {
@@ -674,12 +676,14 @@
 
 .modal-content {
     background: #0F172A;
-    padding: 40px;
+    padding: clamp(20px, 5vw, 40px);
     border-radius: 16px;
     width: 500px;
-    max-width: 90%;
+    max-width: 94%;
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    max-height: 94vh;
+    overflow-y: auto;
 }
 
 .modal-content input,
@@ -1007,7 +1011,7 @@
 /* Service Page Grid & Cards */
 .internal-services-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
     gap: 24px;
     margin: 24px 0;
 }
@@ -1059,11 +1063,7 @@
     flex-grow: 1;
 }
 
-@media (max-width: 992px) {
-    .internal-services-grid {
-        grid-template-columns: 1fr;
-    }
-}
+/* Fluid layout handles this now */
 
 /* Corporate Section Styles */
 .corporate-content {
@@ -1290,32 +1290,65 @@
     left: 0;
     right: 0;
     margin-top: 8px;
-    padding: 10px;
-    border-radius: 8px;
+    border-radius: 12px;
     border: 1px solid rgba(212, 175, 55, 0.3);
     background: #0F172A;
     z-index: 1000;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-    max-height: 250px;
-    overflow-y: auto;
+    flex-direction: column;
+    overflow: hidden;
 }
 
-.multi-select-dropdown::-webkit-scrollbar {
+.multi-options-list {
+    max-height: 220px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.dropdown-footer {
+    padding: 10px 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: flex-end;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.btn-ok {
+    background: var(--gold);
+    border: none;
+    padding: 6px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #000;
+    font-family: 'Outfit', sans-serif;
+    transition: transform 0.2s ease;
+}
+
+.btn-ok:hover {
+    transform: scale(1.05);
+}
+
+.multi-select-dropdown::-webkit-scrollbar,
+.multi-options-list::-webkit-scrollbar {
     width: 6px;
 }
 
-.multi-select-dropdown::-webkit-scrollbar-track {
+.multi-select-dropdown::-webkit-scrollbar-track,
+.multi-options-list::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.02);
     border-radius: 10px;
 }
 
-.multi-select-dropdown::-webkit-scrollbar-thumb {
+.multi-select-dropdown::-webkit-scrollbar-thumb,
+.multi-options-list::-webkit-scrollbar-thumb {
     background: rgba(212, 175, 55, 0.2);
     border-radius: 10px;
 }
 
 .multi-select.open .multi-select-dropdown {
-    display: block;
+    display: flex;
 }
 
 .multi-select-dropdown label {
