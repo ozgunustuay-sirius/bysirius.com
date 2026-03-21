@@ -89,6 +89,109 @@
         body {
             transition: opacity 0.15s ease-in-out;
         }
+
+        /* Services Blog Layout */
+        .services-blog {
+            display: flex;
+            flex-direction: column;
+            gap: 120px;
+            padding: 40px 0;
+        }
+
+        .service-row {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .service-row.row-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .service-content {
+            flex: 1;
+        }
+
+        .service-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .visual-inner {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(11, 18, 32, 0.5) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .visual-emoji {
+            font-size: 120px;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+        }
+
+        .service-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: #fff;
+            margin-bottom: 24px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        .service-desc {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 3.5rem;
+        }
+
+        .service-features li {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        @media (max-width: 992px) {
+
+            .service-row,
+            .service-row.row-reverse {
+                flex-direction: column;
+                gap: 50px;
+                text-align: center;
+            }
+
+            .service-features {
+                display: inline-block;
+                text-align: left;
+            }
+
+            .visual-inner {
+                height: 300px;
+            }
+        }
     </style>
 </head>
 
@@ -104,8 +207,52 @@
             <nav class="nav">
                 <ul class="nav-links">
                     <li><a href="hakkimizda.html" data-i18n="fLinkCompany">Hakkımızda</a></li>
-                    <li><a href="hizmetlerimiz.html" data-i18n="fLinkTech">Hizmetlerimiz</a></li>
-                    <li><a href="sektorler.html" data-i18n="fLinkFinance">Sektörler</a></li>
+                    <li class="nav-item-dropdown">
+                        <a href="hizmetlerimiz.html" data-i18n="fLinkTech">Hizmetlerimiz</a>
+                        <div class="dropdown-menu">
+                            <a href="hizmetlerimiz.html#ai-booking" class="dropdown-item"
+                                data-i18n="serviceGridTitle1">AI Randevu & Rezervasyon</a>
+                            <a href="hizmetlerimiz.html#chatbot" class="dropdown-item"
+                                data-i18n="serviceGridTitle2">Chatbot & AI Asistanlar</a>
+                            <a href="hizmetlerimiz.html#crm-lead" class="dropdown-item"
+                                data-i18n="serviceGridTitle3">Akıllı CRM & Lead Yönetimi</a>
+                            <a href="hizmetlerimiz.html#ai-content" class="dropdown-item"
+                                data-i18n="serviceGridTitle4">AI İçerik Üretimi (Metin)</a>
+                            <a href="hizmetlerimiz.html#legal-finance" class="dropdown-item"
+                                data-i18n="serviceGridTitle5">Hukuk & Finans Otomasyonu</a>
+                            <a href="hizmetlerimiz.html#doc-mgmt" class="dropdown-item"
+                                data-i18n="serviceGridTitle6">Belge Yönetimi & Arşiv</a>
+                            <a href="hizmetlerimiz.html#invoicing" class="dropdown-item"
+                                data-i18n="serviceGridTitle7">Otomatik Fatura Düzenleme</a>
+                            <a href="hizmetlerimiz.html#visual-video" class="dropdown-item"
+                                data-i18n="serviceGridTitle8">AI Görsel & Video Oluşturma</a>
+                            <a href="hizmetlerimiz.html#custom-software" class="dropdown-item"
+                                data-i18n="serviceGridTitle9">Özel AI Yazılım</a>
+                            <a href="hizmetlerimiz.html#strategy" class="dropdown-item"
+                                data-i18n="serviceGridTitle10">Dijital Dönüşüm Stratejisi</a>
+                        </div>
+                    </li>
+                    <li class="nav-item-dropdown">
+                        <a href="sektorler.html" data-i18n="fLinkFinance">Sektörler</a>
+                        <div class="dropdown-menu">
+                            <a href="sektorler.html#hotel" class="dropdown-item" data-i18n="industry1Title">Otel ve
+                                Konaklama</a>
+                            <a href="sektorler.html#health" class="dropdown-item" data-i18n="industry2Title">Diş
+                                Klinikleri & Sağlık Merkezleri</a>
+                            <a href="sektorler.html#realestate" class="dropdown-item"
+                                data-i18n="industry3Title">Gayrimenkul Ofisleri</a>
+                            <a href="sektorler.html#beauty" class="dropdown-item" data-i18n="industry4Title">Güzellik &
+                                Estetik Merkezleri</a>
+                            <a href="sektorler.html#gym" class="dropdown-item" data-i18n="industry5Title">Spor
+                                Salonları</a>
+                            <a href="sektorler.html#finance" class="dropdown-item" data-i18n="industryFinance">Finans &
+                                Muhasebe</a>
+                            <a href="sektorler.html#law" class="dropdown-item" data-i18n="industry6Title">Hukuk
+                                Büroları</a>
+                            <a href="sektorler.html#ecommerce" class="dropdown-item"
+                                data-i18n="industry7Title">E-Ticaret & Perakende</a>
+                        </div>
+                    </li>
                     <li><a href="blog.html" data-i18n="navBlog">BLOG</a></li>
                     <li><a href="iletisim.html" data-i18n="fLinkAddress">İletişim</a></li>
                 </ul>
@@ -129,165 +276,274 @@
             </div>
         </section>
 
-        <!-- Services Grid Section -->
+        <!-- Services Blog Section -->
         <section class="section">
-            <div class="container">
-                <div class="internal-services-grid">
-                    <!-- Service 1 -->
-                    <div class="service-item-card accordion-item">
-                        <div class="accordion-header">
-                            <div class="service-visual-placeholder"><span>AI</span></div>
-                            <h2 class="service-item-title" data-i18n="serviceGridTitle1">Yapay Zeka Çözümleri</h2>
-                        </div>
-                        <div class="accordion-body">
-                            <div class="accordion-body-content">
-                                <p class="service-item-desc" data-i18n="serviceGridDesc1">AI destekli karar sistemleri
-                                    ve iş süreçlerini optimize
-                                    eden akıllı
-                                    yazılım çözümleri.</p>
-                                <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
-                                    data-i18n="analyzeBtn">Ücretsiz Analiz
-                                    Talep
-                                    Edin</a>
+            <div class="container services-blog">
+                <!-- Service 1: Randevu & Rezervasyon -->
+                <div class="service-row" id="ai-booking">
+                    <div class="service-content">
+                        <h2 class="service-title" data-i18n="serviceGridTitle1">AI Randevu & Rezervasyon</h2>
+                        <p class="service-desc" data-i18n="serviceGridDesc1"></p>
+                        <ul class="service-features" data-i18n="serviceGridList1"></ul>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
+                            data-i18n="serviceCta1">Ücretsiz Analiz Talep Et 🤖</a>
+                    </div>
+                    <div class="service-visual">
+                        <div class="visual-placeholder">
+                            <div class="placeholder-header">
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
+                            </div>
+                            <div class="placeholder-content">
+                                <p class="visual-desc" data-i18n="serviceVisualDesc1"></p>
+                                <div class="demo-chat-box">
+                                    <div class="chat-bubble" data-i18n="serviceChat1"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Service 2 -->
-                    <div class="service-item-card accordion-item">
-                        <div class="accordion-header">
-                            <div class="service-visual-placeholder"><span>⚙️</span></div>
-                            <h2 class="service-item-title" data-i18n="serviceGridTitle2">Otomasyon Sistemleri</h2>
-                        </div>
-                        <div class="accordion-body">
-                            <div class="accordion-body-content">
-                                <p class="service-item-desc" data-i18n="serviceGridDesc2">Tekrarlayan operasyonları
-                                    dijitalleştirerek zaman ve
-                                    maliyet
-                                    tasarrufu sağlayan sistemler.</p>
-                                <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
-                                    data-i18n="analyzeBtn">Ücretsiz Analiz
-                                    Talep
-                                    Edin</a>
+                <!-- Service 2: Chatbot & AI Assistants -->
+                <div class="service-row row-reverse" id="chatbot">
+                    <div class="service-content">
+                        <h2 class="service-title" data-i18n="serviceGridTitle2">Chatbot & AI Asistanlar</h2>
+                        <p class="service-desc" data-i18n="serviceGridDesc2"></p>
+                        <ul class="service-features" data-i18n="serviceGridList2"></ul>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
+                            data-i18n="serviceCta2">Ücretsiz Analiz Talep Et 💬</a>
+                    </div>
+                    <div class="service-visual">
+                        <div class="visual-placeholder">
+                            <div class="placeholder-header">
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
+                            </div>
+                            <div class="placeholder-content">
+                                <p class="visual-desc" data-i18n="serviceVisualDesc2"></p>
+                                <div class="demo-chat-box">
+                                    <div class="chat-bubble" data-i18n="serviceChat2"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Service 3 -->
-                    <div class="service-item-card accordion-item">
-                        <div class="accordion-header">
-                            <div class="service-visual-placeholder"><span>💬</span></div>
-                            <h2 class="service-item-title" data-i18n="serviceGridTitle3">Chatbot & AI Asistanlar</h2>
-                        </div>
-                        <div class="accordion-body">
-                            <div class="accordion-body-content">
-                                <p class="service-item-desc" data-i18n="serviceGridDesc3">Müşteri deneyimini geliştiren
-                                    ve 7/24 iletişim sağlayan
-                                    akıllı
-                                    dijital asistanlar.</p>
-                                <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
-                                    data-i18n="analyzeBtn">Ücretsiz Analiz
-                                    Talep
-                                    Edin</a>
+                <!-- Service 3: CRM & Lead -->
+                <div class="service-row" id="crm-lead">
+                    <div class="service-content">
+                        <h2 class="service-title" data-i18n="serviceGridTitle3">Akıllı CRM & Lead Yönetimi</h2>
+                        <p class="service-desc" data-i18n="serviceGridDesc3"></p>
+                        <ul class="service-features" data-i18n="serviceGridList3"></ul>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
+                            data-i18n="serviceCta3">Ücretsiz Analiz Talep Et 📈</a>
+                    </div>
+                    <div class="service-visual">
+                        <div class="visual-placeholder">
+                            <div class="placeholder-header">
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
+                            </div>
+                            <div class="placeholder-content">
+                                <p class="visual-desc" data-i18n="serviceVisualDesc3"></p>
+                                <div class="demo-chat-box">
+                                    <div class="chat-bubble" data-i18n="serviceChat3"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Service 4 -->
-                    <div class="service-item-card accordion-item">
-                        <div class="accordion-header">
-                            <div class="service-visual-placeholder"><span>📊</span></div>
-                            <h2 class="service-item-title" data-i18n="serviceGridTitle4">Dijital Dönüşüm Danışmanlığı
-                            </h2>
-                        </div>
-                        <div class="accordion-body">
-                            <div class="accordion-body-content">
-                                <p class="service-item-desc" data-i18n="serviceGridDesc4">İşletmenizin teknoloji
-                                    altyapısını stratejik olarak yeniden
-                                    yapılandırıyoruz.</p>
-                                <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
-                                    data-i18n="analyzeBtn">Ücretsiz Analiz
-                                    Talep
-                                    Edin</a>
+                <!-- Service 4: AI Content -->
+                <div class="service-row row-reverse" id="ai-content">
+                    <div class="service-content">
+                        <h2 class="service-title" data-i18n="serviceGridTitle4">AI İçerik Üretimi (Metin)</h2>
+                        <p class="service-desc" data-i18n="serviceGridDesc4"></p>
+                        <ul class="service-features" data-i18n="serviceGridList4"></ul>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
+                            data-i18n="serviceCta4">Ücretsiz Analiz Talep Et ✍️</a>
+                    </div>
+                    <div class="service-visual">
+                        <div class="visual-placeholder">
+                            <div class="placeholder-header">
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
+                            </div>
+                            <div class="placeholder-content">
+                                <p class="visual-desc" data-i18n="serviceVisualDesc4"></p>
+                                <div class="demo-chat-box">
+                                    <div class="chat-bubble" data-i18n="serviceChat4"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Service 5 -->
-                    <div class="service-item-card accordion-item">
-                        <div class="accordion-header">
-                            <div class="service-visual-placeholder"><span>💻</span></div>
-                            <h2 class="service-item-title" data-i18n="serviceGridTitle5">Özel Yazılım Geliştirme</h2>
-                        </div>
-                        <div class="accordion-body">
-                            <div class="accordion-body-content">
-                                <p class="service-item-desc" data-i18n="serviceGridDesc5">İhtiyaca özel, ölçeklenebilir
-                                    ve güvenli yazılım projeleri
-                                    geliştiriyoruz.</p>
-                                <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
-                                    data-i18n="analyzeBtn">Ücretsiz Analiz
-                                    Talep
-                                    Edin</a>
+                <!-- Service 5: Legal & Finance -->
+                <div class="service-row" id="legal-finance">
+                    <div class="service-content">
+                        <h2 class="service-title" data-i18n="serviceGridTitle5">Hukuk & Finans Otomasyonu</h2>
+                        <p class="service-desc" data-i18n="serviceGridDesc5"></p>
+                        <ul class="service-features" data-i18n="serviceGridList5"></ul>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
+                            data-i18n="serviceCta5">Ücretsiz Analiz Talep Et ⚖️</a>
+                    </div>
+                    <div class="service-visual">
+                        <div class="visual-placeholder">
+                            <div class="placeholder-header">
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
+                            </div>
+                            <div class="placeholder-content">
+                                <p class="visual-desc" data-i18n="serviceVisualDesc5"></p>
+                                <div class="demo-chat-box">
+                                    <div class="chat-bubble" data-i18n="serviceChat5"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Service 6 -->
-                    <div class="service-item-card accordion-item">
-                        <div class="accordion-header">
-                            <div class="service-visual-placeholder"><span>🔗</span></div>
-                            <h2 class="service-item-title" data-i18n="serviceGridTitle6">Sistem Entegrasyonu</h2>
-                        </div>
-                        <div class="accordion-body">
-                            <div class="accordion-body-content">
-                                <p class="service-item-desc" data-i18n="serviceGridDesc6">Farklı platformları entegre
-                                    ederek veri akışını merkezi ve
-                                    verimli
-                                    hale getiriyoruz.</p>
-                                <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
-                                    data-i18n="analyzeBtn">Ücretsiz Analiz
-                                    Talep
-                                    Edin</a>
+                <!-- Service 6: Document Management -->
+                <div class="service-row row-reverse" id="doc-mgmt">
+                    <div class="service-content">
+                        <h2 class="service-title" data-i18n="serviceGridTitle6">Belge Yönetimi & Arşiv</h2>
+                        <p class="service-desc" data-i18n="serviceGridDesc6"></p>
+                        <ul class="service-features" data-i18n="serviceGridList6"></ul>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
+                            data-i18n="serviceCta6">Ücretsiz Analiz Talep Et 📂</a>
+                    </div>
+                    <div class="service-visual">
+                        <div class="visual-placeholder">
+                            <div class="placeholder-header">
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
+                            </div>
+                            <div class="placeholder-content">
+                                <p class="visual-desc" data-i18n="serviceVisualDesc6"></p>
+                                <div class="demo-chat-box">
+                                    <div class="chat-bubble" data-i18n="serviceChat6"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Service 7 -->
-                    <div class="service-item-card accordion-item">
-                        <div class="accordion-header">
-                            <div class="service-visual-placeholder"><span>📈</span></div>
-                            <h2 class="service-item-title" data-i18n="serviceGridTitle7">Veri Analitiği & Raporlama</h2>
-                        </div>
-                        <div class="accordion-body">
-                            <div class="accordion-body-content">
-                                <p class="service-item-desc" data-i18n="serviceGridDesc7">Karar süreçlerini güçlendiren
-                                    veri odaklı analiz ve
-                                    raporlama
-                                    sistemleri.</p>
-                                <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
-                                    data-i18n="analyzeBtn">Ücretsiz Analiz
-                                    Talep
-                                    Edin</a>
+                <!-- Service 7: Autofilling -->
+                <div class="service-row" id="invoicing">
+                    <div class="service-content">
+                        <h2 class="service-title" data-i18n="serviceGridTitle7">Otomatik Fatura Düzenleme</h2>
+                        <p class="service-desc" data-i18n="serviceGridDesc7"></p>
+                        <ul class="service-features" data-i18n="serviceGridList7"></ul>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
+                            data-i18n="serviceCta7">Ücretsiz Analiz Talep Et 🧾</a>
+                    </div>
+                    <div class="service-visual">
+                        <div class="visual-placeholder">
+                            <div class="placeholder-header">
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
+                            </div>
+                            <div class="placeholder-content">
+                                <p class="visual-desc" data-i18n="serviceVisualDesc7"></p>
+                                <div class="demo-chat-box">
+                                    <div class="chat-bubble" data-i18n="serviceChat7"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Service 8 -->
-                    <div class="service-item-card accordion-item">
-                        <div class="accordion-header">
-                            <div class="service-visual-placeholder"><span>🚀</span></div>
-                            <h2 class="service-item-title" data-i18n="serviceGridTitle8">İş Süreçleri Optimizasyonu</h2>
+                <!-- Service 8: Visual & Video -->
+                <div class="service-row row-reverse" id="visual-video">
+                    <div class="service-content">
+                        <h2 class="service-title" data-i18n="serviceGridTitle8">AI Görsel & Video Oluşturma</h2>
+                        <p class="service-desc" data-i18n="serviceGridDesc8"></p>
+                        <ul class="service-features" data-i18n="serviceGridList8"></ul>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
+                            data-i18n="serviceCta8">Ücretsiz Analiz Talep Et 🎬</a>
+                    </div>
+                    <div class="service-visual">
+                        <div class="visual-placeholder">
+                            <div class="placeholder-header">
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
+                            </div>
+                            <div class="placeholder-content">
+                                <p class="visual-desc" data-i18n="serviceVisualDesc8"></p>
+                                <div class="demo-chat-box">
+                                    <div class="chat-bubble" data-i18n="serviceChat8"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="accordion-body">
-                            <div class="accordion-body-content">
-                                <p class="service-item-desc" data-i18n="serviceGridDesc8">Operasyonel verimliliği
-                                    artıran süreç tasarımı ve
-                                    iyileştirme
-                                    çözümleri.</p>
-                                <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
-                                    data-i18n="analyzeBtn">Ücretsiz Analiz
-                                    Talep
-                                    Edin</a>
+                    </div>
+                </div>
+
+                <!-- Service 9: Custom software -->
+                <div class="service-row" id="custom-software">
+                    <div class="service-content">
+                        <h2 class="service-title" data-i18n="serviceGridTitle9">Özel AI Yazılım</h2>
+                        <p class="service-desc" data-i18n="serviceGridDesc9"></p>
+                        <ul class="service-features" data-i18n="serviceGridList9"></ul>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
+                            data-i18n="serviceCta9">Ücretsiz Analiz Talep Et 💻</a>
+                    </div>
+                    <div class="service-visual">
+                        <div class="visual-placeholder">
+                            <div class="placeholder-header">
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
+                            </div>
+                            <div class="placeholder-content">
+                                <p class="visual-desc" data-i18n="serviceVisualDesc9"></p>
+                                <div class="demo-chat-box">
+                                    <div class="chat-bubble" data-i18n="serviceChat9"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 10: Strategy -->
+                <div class="service-row row-reverse" id="strategy">
+                    <div class="service-content">
+                        <h2 class="service-title" data-i18n="serviceGridTitle10">Dijital Dönüşüm Stratejisi</h2>
+                        <p class="service-desc" data-i18n="serviceGridDesc10"></p>
+                        <ul class="service-features" data-i18n="serviceGridList10"></ul>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
+                            data-i18n="serviceCta10">Ücretsiz Analiz Talep Et 📊</a>
+                    </div>
+                    <div class="service-visual">
+                        <div class="visual-placeholder">
+                            <div class="placeholder-header">
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-dot"></span>
+                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
+                            </div>
+                            <div class="placeholder-content">
+                                <p class="visual-desc" data-i18n="serviceVisualDesc10"></p>
+                                <div class="demo-chat-box">
+                                    <div class="chat-bubble" data-i18n="serviceChat10"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -314,10 +570,25 @@
                 <h3 class="footer-title" data-i18n="footerCol2Title">Hizmetlerimiz</h3>
                 <div class="footer-title-accent"></div>
                 <ul class="footer-links">
-                    <li><a href="hizmetlerimiz.html" data-i18n="fLinkAISol">Yapay Zeka Çözümleri</a></li>
-                    <li><a href="hizmetlerimiz.html" data-i18n="fLinkAutoSys">Otomasyon Sistemleri</a></li>
-                    <li><a href="hizmetlerimiz.html" data-i18n="fLinkChatbot">Chatbot & AI Asistanlar</a></li>
-                    <li><a href="hizmetlerimiz.html" data-i18n="fLinkDigital">Dijital Dönüşüm Danışmanlığı</a></li>
+                    <li><a href="hizmetlerimiz.html#ai-booking" data-i18n="serviceGridTitle1">AI Randevu &
+                            Rezervasyon</a></li>
+                    <li><a href="hizmetlerimiz.html#chatbot" data-i18n="serviceGridTitle2">Chatbot & AI Asistanlar</a>
+                    </li>
+                    <li><a href="hizmetlerimiz.html#crm-lead" data-i18n="serviceGridTitle3">Akıllı CRM & Lead
+                            Yönetimi</a></li>
+                    <li><a href="hizmetlerimiz.html#ai-content" data-i18n="serviceGridTitle4">AI İçerik Üretimi</a></li>
+                    <li><a href="hizmetlerimiz.html#legal-finance" class="dropdown-item"
+                            data-i18n="serviceGridTitle5">Hukuk & Finans Otomasyonu</a></li>
+                    <li><a href="hizmetlerimiz.html#doc-mgmt" class="dropdown-item" data-i18n="serviceGridTitle6">Belge
+                            Yönetimi & Arşiv</a></li>
+                    <li><a href="hizmetlerimiz.html#invoicing" class="dropdown-item"
+                            data-i18n="serviceGridTitle7">Otomatik Fatura Düzenleme</a></li>
+                    <li><a href="hizmetlerimiz.html#visual-video" class="dropdown-item" data-i18n="serviceGridTitle8">AI
+                            Görsel & Video Oluşturma</a></li>
+                    <li><a href="hizmetlerimiz.html#custom-software" class="dropdown-item"
+                            data-i18n="serviceGridTitle9">Özel AI Yazılım</a></li>
+                    <li><a href="hizmetlerimiz.html#strategy" class="dropdown-item"
+                            data-i18n="serviceGridTitle10">Dijital Dönüşüm Stratejisi</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -385,28 +656,44 @@
                     <div class="multi-select-dropdown">
                         <div class="multi-options-list">
                             <label>
-                                <input type="checkbox" name="services" value="AI Randevu Sistemi"> <span
-                                    data-i18n="serviceOption1">AI Randevu Sistemi</span>
+                                <input type="checkbox" name="services" value="AI Randevu & Rezervasyon"> <span
+                                    data-i18n="serviceOption1">AI Randevu & Rezervasyon</span>
                             </label>
                             <label>
-                                <input type="checkbox" name="services" value="CRM Otomasyonu"> <span
-                                    data-i18n="serviceOption2">CRM Otomasyonu</span>
+                                <input type="checkbox" name="services" value="Chatbot & AI Asistanlar"> <span
+                                    data-i18n="serviceOption2">Chatbot & AI Asistanlar</span>
                             </label>
                             <label>
-                                <input type="checkbox" name="services" value="Finans Otomasyonu"> <span
-                                    data-i18n="serviceOption3">Finans Otomasyonu</span>
+                                <input type="checkbox" name="services" value="Akıllı CRM & Lead Yönetimi"> <span
+                                    data-i18n="serviceOption3">Akıllı CRM & Lead Yönetimi</span>
                             </label>
                             <label>
-                                <input type="checkbox" name="services" value="Chatbot"> <span
-                                    data-i18n="serviceOption4">Chatbot</span>
+                                <input type="checkbox" name="services" value="AI İçerik Üretimi (Metin)"> <span
+                                    data-i18n="serviceOption4">AI İçerik Üretimi (Metin)</span>
                             </label>
                             <label>
-                                <input type="checkbox" name="services" value="Özel Yazılım"> <span
-                                    data-i18n="serviceOption5">Özel Yazılım</span>
+                                <input type="checkbox" name="services" value="Hukuk & Finans Otomasyonu"> <span
+                                    data-i18n="serviceOption5">Hukuk & Finans Otomasyonu</span>
                             </label>
                             <label>
-                                <input type="checkbox" name="services" value="Danışmanlık"> <span
-                                    data-i18n="serviceOption6">Danışmanlık</span>
+                                <input type="checkbox" name="services" value="Belge Yönetimi & Arşiv"> <span
+                                    data-i18n="serviceOption6">Belge Yönetimi & Arşiv</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="services" value="Otomatik Fatura Düzenleme"> <span
+                                    data-i18n="serviceOption7">Otomatik Fatura Düzenleme</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="services" value="AI Görsel & Video Oluşturma"> <span
+                                    data-i18n="serviceOption8">AI Görsel & Video Oluşturma</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="services" value="Özel AI Yazılım"> <span
+                                    data-i18n="serviceOption9">Özel AI Yazılım</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="services" value="Dijital Dönüşüm Stratejisi"> <span
+                                    data-i18n="serviceOption10">Dijital Dönüşüm Stratejisi</span>
                             </label>
                         </div>
                         <div class="dropdown-footer">

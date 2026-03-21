@@ -61,23 +61,75 @@ const translations = {
         service3Title: "ÖLÇEKLENEBİLİR DİJİTAL ÜRÜN & YAZILIM GELİŞTİRME",
         service3Desc: "KOBİ’lerden kurumsal firmalara kadar farklı ölçeklerde işletmeler için sürdürülebilir teknoloji altyapıları tasarlıyoruz.",
 
-        // Services Grid (Internal)
-        serviceGridTitle1: "Yapay Zeka Çözümleri",
-        serviceGridDesc1: "AI destekli karar sistemleri ve iş süreçlerini optimize eden akıllı yazılım çözümleri.",
-        serviceGridTitle2: "Otomasyon Sistemleri",
-        serviceGridDesc2: "Tekrarlayan operasyonları dijitalleştirerek zaman ve maliyet tasarrufu sağlayan sistemler.",
-        serviceGridTitle3: "Chatbot & AI Asistanlar",
-        serviceGridDesc3: "Müşteri deneyimini geliştiren ve 7/24 iletişim sağlayan akıllı dijital asistanlar.",
-        serviceGridTitle4: "Dijital Dönüşüm Danışmanlığı",
-        serviceGridDesc4: "İşletmenizin teknoloji altyapısını stratejik olarak yeniden yapılandırıyoruz.",
-        serviceGridTitle5: "Özel Yazılım Geliştirme",
-        serviceGridDesc5: "İhtiyaca özel, ölçeklenebilir ve güvenli yazılım projeleri geliştiriyoruz.",
-        serviceGridTitle6: "Sistem Entegrasyonu",
-        serviceGridDesc6: "Farklı platformları entegre ederek veri akışını merkezi ve verimli hale getiriyoruz.",
-        serviceGridTitle7: "Veri Analitiği & Raporlama",
-        serviceGridDesc7: "Karar süreçlerini güçlendiren veri odaklı analiz ve raporlama sistemleri.",
-        serviceGridTitle8: "İş Süreçleri Optimizasyonu",
-        serviceGridDesc8: "Operasyonel verimliliği artıran süreç tasarımı ve iyileştirme çözümleri.",
+        serviceGridTitle1: "AI Randevu & Rezervasyon",
+        serviceGridDesc1: "Oteller, klinikler ve hizmet sektörü için 7/24 kesintisiz rezervasyon yönetimi. Satış hunilerinizi otomatize edin.",
+        serviceGridList1: "<li>7/24 kesintisiz rezervasyon yönetimi</li><li>Otomatik randevu hatırlatma sistemleri</li><li>WhatsApp ve Web üzerinden anlık konfirmasyon</li><li>Müşteri takibi ve geri dönüş otomasyonu</li>",
+        serviceCta1: "Ücretsiz Analiz Talep Et 🤖",
+        serviceVisualDesc1: "Mobile-first AI Booking interface showing a seamless reservation flow on WhatsApp.",
+        serviceChat1: "<strong>Asistan:</strong> Randevunuz başarıyla oluşturuldu. Takviminize eklendi!",
+
+        serviceGridTitle2: "Chatbot & AI Asistanlar",
+        serviceGridDesc2: "Müşteri deneyimini geliştiren ve 7/24 iletişim sağlayan akıllı dijital asistanlar.",
+        serviceGridList2: "<li>Potansiyel müşterilerin bulunması (Lead generation)</li><li>Müşteri takibi ve CRM entegrasyonu</li><li>Kampanya ve bildirim otomasyonları</li><li>Omnichat: WhatsApp, Instagram, TikTok ve Web</li>",
+        serviceCta2: "Ücretsiz Analiz Talep Et 💬",
+        serviceVisualDesc2: "Omnichannel AI Assistant dashboard with unified messaging from social platforms.",
+        serviceChat2: "<strong>Asistan:</strong> Talebiniz alındı, sizi ilgili birime yönlendiriyorum.",
+
+        serviceGridTitle3: "Akıllı CRM & Lead Yönetimi",
+        serviceGridDesc3: "Potansiyel müşteri takibi ve otomatik satış hunileri ile satışlarınızı artırın.",
+        serviceGridList3: "<li>Otomatik lead toplama ve skorlama</li><li>Müşteri davranış analizi ve segmentasyon</li><li>Satış ekibi için otomatik görev atama</li><li>Dinamik teklif ve kampanya yönetimi</li>",
+        serviceCta3: "Ücretsiz Analiz Talep Et 📈",
+        serviceVisualDesc3: "CRM dashboard showing lead conversion rates and automated sales funnel stages.",
+        serviceChat3: "<strong>Sistem:</strong> Yeni potansiyel müşteri yakalandı. Skor: %92.",
+
+        serviceGridTitle4: "AI İçerik Üretimi (Metin & Belge)",
+        serviceGridDesc4: "SEO uyumlu makaleler, ürün açıklamaları ve raporları saniyeler içinde oluşturun.",
+        serviceGridList4: "<li>SEO odaklı blog ve makale yazımı</li><li>Kurumsal rapor ve belge taslağı oluşturma</li><li>Çok dilli içerik yerelleştirme</li><li>Marka diline uygun metin analizi</li>",
+        serviceCta4: "Ücretsiz Analiz Talep Et ✍️",
+        serviceVisualDesc4: "AI Content Studio interface generating long-form articles from simple prompts.",
+        serviceChat4: "<strong>AI:</strong> SEO uyumlu ürün açıklaması 5 farklı dilde hazırlandı.",
+
+        serviceGridTitle5: "Hukuk & Finans Otomasyonu",
+        serviceGridDesc5: "Hukuk büroları ve finans departmanları için akıllı belge ve süreç otomasyonu.",
+        serviceGridList5: "<li>AI destekli dilekçe ve sözleşme analizi</li><li>Akıllı mevzuat ve karar araştırma asistanı</li><li>Finansal veri analizi ve raporlama</li><li>Risk analizi ve uyumluluk denetimi</li>",
+        serviceCta5: "Ücretsiz Analiz Talep Et ⚖️",
+        serviceVisualDesc5: "Legal AI dashboard analyzing complex contracts and highlighting risks.",
+        serviceChat5: "<strong>AI:</strong> Sözleşmedeki 3 kritik risk maddesi tespit edildi.",
+
+        serviceGridTitle6: "Belge Yönetimi & Arşiv",
+        serviceGridDesc6: "Milyonlarca belgeyi yapay zeka ile sınıflandırın, analiz edin ve saniyeler içinde bulun.",
+        serviceGridList6: "<li>Otomatik belge sınıflandırma ve etiketleme</li><li>OCR ile taralı belgelerden veri ayıklama</li><li>Akıllı arama ve içerik analizi</li><li>Güvenli bulut tabanlı arşivleme</li>",
+        serviceCta6: "Ücretsiz Analiz Talep Et 📂",
+        serviceVisualDesc6: "Smart document repository with AI-powered search and classification filters.",
+        serviceChat6: "<strong>Sistem:</strong> 10,000 belge taranarak kategorize edildi.",
+
+        serviceGridTitle7: "Otomatik Fatura Düzenleme",
+        serviceGridDesc7: "Hatasız, hızlı ve tam otomatik fatura ve ödeme takip sistemleri.",
+        serviceGridList7: "<li>E-Fatura ve E-Arşiv otomasyonu</li><li>Otomatik ödeme hatırlatma ve tahsilat</li><li>Gider yönetimi ve fiş okuma</li><li>Banka ve muhasebe entegrasyonu</li>",
+        serviceCta7: "Ücretsiz Analiz Talep Et 🧾",
+        serviceVisualDesc7: "Autofilling invoice system processing payments and sending receipts instantly.",
+        serviceChat7: "<strong>Sistem:</strong> Bu ayki faturalar otomatik oluşturuldu ve gönderildi.",
+
+        serviceGridTitle8: "AI Görsel & Video Oluşturma",
+        serviceGridDesc8: "Reklam filmleri, sosyal medya videoları ve kurumsal görselleri yapay zeka ile üretin.",
+        serviceGridList8: "<li>AI tabanlı reklam filmi ve video üretimi</li><li>Gerçekçi kurumsal görsel ve avatar oluşturma</li><li>Ürün fotoğrafları için AI arka plan tasarımı</li><li>Sosyal medya içerik otomasyonu</li>",
+        serviceCta8: "Ücretsiz Analiz Talep Et 🎬",
+        serviceVisualDesc8: "Video generation studio showing high-quality AI cinematic shots.",
+        serviceChat8: "<strong>AI:</strong> Reklam filmi senaryosu ve görselleri tamamlandı.",
+
+        serviceGridTitle9: "Özel AI Yazılım Geliştirme",
+        serviceGridDesc9: "İşletmenize özel, ölçeklenebilir ve güvenli AI motorları ve yazılım mimarileri.",
+        serviceGridList9: "<li>Kuruma özel makine öğrenmesi modelleri</li><li>Mikroservis ve güvenli API mimarisi</li><li>Bulut tabanlı ölçeklenebilir sistemler</li><li>Yüksek performanslı veri tabanı çözümleri</li>",
+        serviceCta9: "Ücretsiz Analiz Talep Et 💻",
+        serviceVisualDesc9: "Backend architecture diagram showing custom AI engine integration.",
+        serviceChat9: "<strong>AI:</strong> Model eğitimi başarıyla tamamlandı. Doğruluk: %99.",
+
+        serviceGridTitle10: "Dijital Dönüşüm Stratejisi",
+        serviceGridDesc10: "İşletmenizi AI odaklı teknolojik büyüme yol haritasıyla geleceğe taşıyın.",
+        serviceGridList10: "<li>Teknoloji ihtiyaç ve risk analizi</li><li>Stratejik yazılım yol haritası</li><li>Maliyet ve verimlilik optimizasyonu</li><li>Modern altyapı ve mimari danışmanlığı</li>",
+        serviceCta10: "Ücretsiz Analiz Talep Et 📊",
+        serviceVisualDesc10: "Strategic digital roadmap showing phases of technology implementation.",
+        serviceChat10: "<strong>Danışman:</strong> Dijital olgunluk raporunuz hazırlandı.",
 
         // About Block
         aboutTitle: "Şirket Profili",
@@ -142,21 +194,56 @@ const translations = {
         industriesIntro: "AI otomasyon sistemlerimiz belirli sektörlerde maksimum verimlilik sağlamak üzere tasarlanmıştır.",
         industry1Title: "Oteller & Konaklama",
         industry1Desc: "Otomatik rezervasyon ve müşteri takip sistemi",
-        industry2Title: "Diş Klinikleri",
-        industry2Desc: "Randevu yönetimi ve otomatik hatırlatma",
+        industry2Title: "Diş Klinikleri & Sağlık Merkezleri",
+        industry2Desc: "Randevu yönetimi, hasta koordinasyonu ve otomatik hatırlatma sistemleri.",
         industry3Title: "Gayrimenkul Ofisleri",
         industry3Desc: "Potansiyel müşteri takibi ve CRM entegrasyonu",
         industry4Title: "Güzellik & Estetik Merkezleri",
         industry4Desc: "Online randevu ve kampanya yönetimi",
         industry5Title: "Spor Salonları",
         industry5Desc: "Üyelik takibi ve otomatik bildirimler",
-        industry6Title: "Özel Klinik & Sağlık Merkezleri",
-        industry6Desc: "Hasta koordinasyonu ve randevu asistanı",
-        industry7Title: "Eğitim Kurumları",
-        industry7Desc: "Öğrenci kaydı ve veli bilgilendirme asistanı",
+        industry6Title: "Hukuk Büroları & Avukatlar",
+        industry6Desc: "AI destekli dilekçe oluşturma, müvekkil CRM takibi ve akıllı hukuk otomasyonları.",
+        industry7Title: "E-Ticaret & Perakende",
+        industry7Desc: "Stok yönetimi, otomatik ürün içerikleri ve satış artıran AI sistemleri.",
         industry8Title: "Finans & Muhasebe Otomasyonu",
         industry8Desc: "Otomatik fatura oluşturma, ödeme takibi ve finansal raporlama sistemleri",
         industryFinance: "Finans & Muhasebe",
+
+        // Detailed Sector Content (Sektörler Page - Row Style)
+        industry1Title: "Otel ve Konaklama",
+        industry1Para: "Oteller için geliştirdiğimiz yapay zeka destekli otomasyon sistemleri, misafir iletişimini ve rezervasyon süreçlerini tamamen dijitalleştirir.",
+        industry1List: "<li>7/24 çalışan çok dilli sanal asistanlar</li><li>WhatsApp ve web sitesi üzerinden rezervasyon alma</li><li>Google yorumlarının otomatik analiz edilmesi</li><li>Misafir geri bildirimlerinin sınıflandırılması</li><li>Ön görüşme ve rezervasyon yönetimi</li><li>Otomatik kampanya ve teklif gönderimi</li>",
+        industry1Result: "Bu sistemler sayesinde oteller daha fazla rezervasyon alırken operasyonel yüklerini azaltır.",
+
+        industry2Title: "Diş Klinikleri & Sağlık Merkezleri",
+        industry2Para: "Sağlık kuruluşları için geliştirdiğimiz sistemler hasta iletişimini ve randevu süreçlerini tamamen otomatik hale getirir.",
+        industry2List: "<li>Online randevu alma sistemleri</li><li>Otomatik randevu hatırlatma</li><li>Hasta koordinasyon asistanı</li><li>WhatsApp ve web üzerinden hasta iletişimi</li><li>Hasta veri yönetimi ve CRM sistemi</li><li>Tedavi süreci bilgilendirme otomasyonları</li>",
+
+        industry3Title: "Gayrimenkul Ofisleri",
+        industry3Para: "Gayrimenkul ofisleri için geliştirilen AI sistemleri potansiyel müşteri yönetimini ve portföy tanıtımlarını otomatik hale getirir.",
+        industry3List: "<li>Potansiyel müşteri (lead) toplama</li><li>CRM ile müşteri takip sistemi</li><li>WhatsApp otomatik cevap sistemi</li><li>İlan içeriklerinin otomatik oluşturulması</li><li>Gayrimenkul tanıtım videolarının AI ile hazırlanması</li>",
+
+        industry4Title: "Güzellik & Estetik Merkezleri",
+        industry4Para: "Güzellik ve estetik merkezleri için sunduğumuz çözümler müşteri iletişimini ve operasyonel hızı artırır.",
+        industry4List: "<li>Online randevu sistemleri</li><li>Kampanya ve hatırlatma mesajları</li><li>WhatsApp müşteri asistanı</li><li>Sosyal medya içerik üretimi</li><li>AI destekli reklam içerikleri</li>",
+
+        industry5Title: "Spor Salonları",
+        industry5Para: "Spor salonları için geliştirilen sistemler üye yönetimini ve aktif üye iletişimini kolaylaştırır.",
+        industry5List: "<li>Üyelik yönetim sistemi</li><li>Otomatik ödeme hatırlatmaları</li><li>Üye bildirim sistemleri</li><li>Kampanya mesajları</li><li>WhatsApp destek asistanı</li>",
+
+        industryFinanceTitle: "Finans & Muhasebe",
+        industryFinancePara: "Finans ve muhasebe süreçlerini hatasız ve hızlı bir şekilde yönetmenizi sağlayan otomasyonlar.",
+        industryFinanceList: "<li>Otomatik fatura sistemleri</li><li>Finansal raporlama otomasyonları</li><li>Ödeme takibi</li><li>Müşteri veri yönetimi</li><li>Muhasebe veri entegrasyonları</li>",
+
+        industry6Title: "Hukuk Büroları",
+        industry6Para: "Hukuk büroları için geliştirilen AI sistemleri dava süreçlerini ve müvekkil yönetimini hızlandırır.",
+        industry6List: "<li>AI destekli dilekçe oluşturma sistemi</li><li>Otomatik mevzuat ve yasa maddesi bulma</li><li>Müvekkil CRM yönetimi</li><li>Dava takvim sistemi</li><li>Randevu ve hatırlatma otomasyonu</li><li>Mahkemeye uygun yazı formatı oluşturma</li>",
+        industry6Additional: "Avukatlar müvekkil bilgilerini girerek dilekçe oluşturabilir, hukuk konusunu seçebilir ve ilgili yasa maddelerini ekleyebilir.",
+
+        industry7Title: "E-Ticaret & Perakende",
+        industry7Para: "E-ticaret işletmeleri için satış artıran ve müşteri deneyimini mükemmelleştiren akıllı sistemler.",
+        industry7List: "<li>Otomatik ürün açıklaması üretimi</li><li>AI görsel ve reklam içerikleri üretimi</li><li>Stok ve sipariş yönetimi</li><li>WhatsApp satış chatbotu</li><li>Otomatik müşteri destek sistemi</li><li>Kampanya ve satış otomasyonları</li>",
 
         // FAQ Section
         faqTitle: "Sıkça Sorulan Sorular",
@@ -207,6 +294,21 @@ const translations = {
         serviceOption4: "Chatbot",
         serviceOption5: "Özel Yazılım",
         serviceOption6: "Danışmanlık",
+        serviceOption7: "Belge Yönetimi",
+        serviceOption8: "Otomatik Fatura Düzenleme",
+        serviceOption9: "AI İçerik Üretimi",
+        serviceOption10: "AI Görsel / Film / Video Oluşturma",
+
+        // Inline Contact Form
+        contactFormTitle: "Stratejik Analiz & İletişim Formu",
+        contactNameLabel: "Ad Soyad",
+        contactEmailLabel: "E-posta",
+        contactPhoneLabel: "Telefon",
+        contactServicesLabel: "Hizmet Seçimi",
+        contactMessageLabel: "Mesajınız",
+        contactSubmitBtn: "Gönder",
+        contactSuccessMsg: "Talebiniz alınmıştır, en kısa sürede tarafınıza dönüş yapılacaktır.",
+        placeholderContactMessage: "Projeniz veya sorularınız hakkında detay verin...",
 
         // Blog Page
         blogPageTitle: "Blog | Teknoloji Trendleri ve Dijital Dönüşüm Analizleri",
@@ -221,6 +323,7 @@ const translations = {
         blogCard3Desc: "İş süreçlerinizi optimize etmek ve dijitalleşmek için pratik stratejik öneriler.",
 
         // Sektörler Page
+        placeholderVisualTitle: "Demo Görünümü",
         comingSoon: "İçerik yakında eklenecektir.",
         uploadText: "Görsel Yüklemek için Tıklayın veya Sürükleyin",
         uploadHint: "PNG, JPG veya WEBP (Max 5MB)",
@@ -298,22 +401,76 @@ const translations = {
         service3Desc: "We design sustainable technology infrastructures for businesses of all scales, from SMEs to corporate firms.",
 
         // Services Grid (Internal)
-        serviceGridTitle1: "AI Solutions",
-        serviceGridDesc1: "AI-supported decision systems and smart software solutions that optimize business processes.",
-        serviceGridTitle2: "Automation Systems",
-        serviceGridDesc2: "Systems that provide time and cost savings by digitizing recurring operations.",
-        serviceGridTitle3: "Chatbot & AI Assistants",
-        serviceGridDesc3: "Smart digital assistants that improve customer experience and provide 24/7 communication.",
-        serviceGridTitle4: "Digital Transformation Consulting",
-        serviceGridDesc4: "We strategically restructure your business technology infrastructure.",
-        serviceGridTitle5: "Custom Software Development",
-        serviceGridDesc5: "We develop custom, scalable and secure software projects.",
-        serviceGridTitle6: "System Integration",
-        serviceGridDesc6: "We integrate different platforms and make data flow centralized and efficient.",
-        serviceGridTitle7: "Data Analytics & Reporting",
-        serviceGridDesc7: "Data-driven analysis and reporting systems that strengthen decision-making processes.",
-        serviceGridTitle8: "Business Process Optimization",
-        serviceGridDesc8: "Process design and improvement solutions that increase operational efficiency.",
+        // Detailed Services Content (Hizmetlerimiz Page)
+        serviceGridTitle1: "AI Appointment & Booking",
+        serviceGridDesc1: "24/7 seamless reservation management for hotels, clinics, and the service sector. Automate your sales funnels.",
+        serviceGridList1: "<li>24/7 seamless reservation management</li><li>Automated appointment reminder systems</li><li>Instant confirmation via WhatsApp and Web</li><li>Customer tracking and follow-up automation</li>",
+        serviceCta1: "Request Free Analysis 🤖",
+        serviceVisualDesc1: "Mobile-first AI Booking interface showing a seamless reservation flow on WhatsApp.",
+        serviceChat1: "<strong>Assistant:</strong> Your appointment has been successfully created. Added to your calendar!",
+
+        serviceGridTitle2: "Chatbot & AI Assistants",
+        serviceGridDesc2: "Intelligent digital assistants that enhance customer experience and provide 24/7 communication.",
+        serviceGridList2: "<li>Lead generation for potential customers</li><li>Customer tracking and CRM integration</li><li>Campaign and notification automations</li><li>Omnichat: WhatsApp, Instagram, TikTok and Web</li>",
+        serviceCta2: "Request Free Analysis 💬",
+        serviceVisualDesc2: "Omnichannel AI Assistant dashboard with unified messaging from social platforms.",
+        serviceChat2: "<strong>Assistant:</strong> Rezervasyonunuz onaylandı / Your booking is confirmed",
+
+        serviceGridTitle3: "Smart CRM & Lead Management",
+        serviceGridDesc3: "Increase your sales with potential customer tracking and automated sales funnels.",
+        serviceGridList3: "<li>Automated lead collection and scoring</li><li>Customer behavior analysis and segmentation</li><li>Automated task assignment for the sales team</li><li>Dynamic offer and campaign management</li>",
+        serviceCta3: "Request Free Analysis 📈",
+        serviceVisualDesc3: "CRM dashboard showing lead conversion rates and automated sales funnel stages.",
+        serviceChat3: "<strong>System:</strong> New lead captured. Score: 92%.",
+
+        serviceGridTitle4: "AI Content Generation (Text & Doc)",
+        serviceGridDesc4: "Generate SEO-friendly articles, product descriptions, and reports in seconds.",
+        serviceGridList4: "<li>SEO-focused blog and article writing</li><li>Corporate report and document drafting</li><li>Multi-lingual content localization</li><li>Text analysis matching brand voice</li>",
+        serviceCta4: "Request Free Analysis ✍️",
+        serviceVisualDesc4: "AI Content Studio interface generating long-form articles from simple prompts.",
+        serviceChat4: "<strong>AI:</strong> SEO product description prepared in 5 languages.",
+
+        serviceGridTitle5: "Legal & Finance Automation",
+        serviceGridDesc5: "Intelligent document and process automation for law firms and finance departments.",
+        serviceGridList5: "<li>AI-powered petition and contract analysis</li><li>Intelligent legislation and decision research assistant</li><li>Financial data analysis and reporting</li><li>Risk analysis and compliance auditing</li>",
+        serviceCta5: "Request Free Analysis ⚖️",
+        serviceVisualDesc5: "Legal AI dashboard analyzing complex contracts and highlighting risks.",
+        serviceChat5: "<strong>AI:</strong> 3 critical risk clauses detected in the contract.",
+
+        serviceGridTitle6: "Document Management & Archive",
+        serviceGridDesc6: "Classify, analyze, and find millions of documents in seconds with AI.",
+        serviceGridList6: "<li>Automated document classification and tagging</li><li>Data extraction from scanned docs via OCR</li><li>Intelligent search and content analysis</li><li>Secure cloud-based archiving</li>",
+        serviceCta6: "Request Free Analysis 📂",
+        serviceVisualDesc6: "Smart document repository with AI-powered search and classification filters.",
+        serviceChat6: "<strong>System:</strong> 10,000 documents scanned and categorized.",
+
+        serviceGridTitle7: "Automated Invoicing",
+        serviceGridDesc7: "Error-free, fast, and fully automated invoice and payment tracking systems.",
+        serviceGridList7: "<li>E-Invoice and E-Archive automation</li><li>Automated payment reminders and collection</li><li>Expense management and receipt reading</li><li>Bank and accounting integration</li>",
+        serviceCta7: "Request Free Analysis 🧾",
+        serviceVisualDesc7: "Autofilling invoice system processing payments and sending receipts instantly.",
+        serviceChat7: "<strong>System:</strong> Invoices for this month generated and sent automatically.",
+
+        serviceGridTitle8: "AI Visual & Video Creation",
+        serviceGridDesc8: "Produce advertising films, social media videos, and corporate visuals with AI.",
+        serviceGridList8: "<li>AI-based ad film and video production</li><li>Realistic corporate visual and avatar creation</li><li>AI background design for product photos</li><li>Social media content automation</li>",
+        serviceCta8: "Request Free Analysis 🎬",
+        serviceVisualDesc8: "Video generation studio showing high-quality AI cinematic shots.",
+        serviceChat8: "<strong>AI:</strong> Ad script and visuals completed.",
+
+        serviceGridTitle9: "Custom AI Software Development",
+        serviceGridDesc9: "Custom, scalable, and secure AI engines and software architectures for your business.",
+        serviceGridList9: "<li>Custom machine learning models</li><li>Microservices and secure API architecture</li><li>Cloud-based scalable systems</li><li>High-performance database solutions</li>",
+        serviceCta9: "Request Free Analysis 💻",
+        serviceVisualDesc9: "Backend architecture diagram showing custom AI engine integration.",
+        serviceChat9: "<strong>AI:</strong> Model training completed successfully. Accuracy: 99%.",
+
+        serviceGridTitle10: "Digital Transformation Strategy",
+        serviceGridDesc10: "Carry your business into the future with an AI-focused technological growth roadmap.",
+        serviceGridList10: "<li>Technology needs and risk analysis</li><li>Strategic software roadmap</li><li>Cost and efficiency optimization</li><li>Modern infrastructure and architectural consulting</li>",
+        serviceCta10: "Request Free Analysis 📊",
+        serviceVisualDesc10: "Strategic digital roadmap showing phases of technology implementation.",
+        serviceChat10: "<strong>Consultant:</strong> Your digital maturity report is ready.",
 
         // About Block
         aboutTitle: "Company Profile",
@@ -378,21 +535,56 @@ const translations = {
         industriesIntro: "Our AI automation systems are designed to ensure maximum efficiency in specific sectors.",
         industry1Title: "Hotels & Hospitality",
         industry1Desc: "Automated booking and customer tracking system",
-        industry2Title: "Dental Clinics",
-        industry2Desc: "Appointment management and automatic reminders",
+        industry2Title: "Dental Clinics & Health Centers",
+        industry2Desc: "Appointment management, patient coordination and automatic reminder systems.",
         industry3Title: "Real Estate Offices",
         industry3Desc: "Lead tracking and CRM integration",
         industry4Title: "Beauty & Aesthetic Centers",
         industry4Desc: "Online booking and campaign management",
         industry5Title: "Gyms & Fitness Centers",
         industry5Desc: "Membership tracking and automated notifications",
-        industry6Title: "Private Clinics & Health Centers",
-        industry6Desc: "Patient coordination and appointment assistant",
-        industry7Title: "Educational Institutions",
-        industry7Desc: "Student registration and parent information assistant",
+        industry6Title: "Law Firms & Attorneys",
+        industry6Desc: "AI-powered petition creation, client CRM tracking and smart legal automations.",
+        industry7Title: "E-Commerce & Retail",
+        industry7Desc: "Stock management, automatic product content and sales-boosting AI systems.",
         industry8Title: "Finance & Accounting Automation",
         industry8Desc: "Automated invoice generation, payment tracking, and financial reporting systems",
         industryFinance: "Finance & Accounting",
+
+        // Detailed Sector Content (Sektörler Page - Row Style)
+        industry1Title: "Hotel and Accommodation",
+        industry1Para: "The AI-powered automation systems we develop for hotels completely digitize guest communication and booking processes.",
+        industry1List: "<li>24/7 multi-lingual virtual assistants</li><li>Receiving reservations via WhatsApp and website</li><li>Automatic analysis of Google reviews</li><li>Classification of guest feedback</li><li>Preliminary meeting and reservation management</li><li>Automatic campaign and offer sending</li>",
+        industry1Result: "Thanks to these systems, hotels receive more reservations while reducing their operational burdens.",
+
+        industry2Title: "Dental Clinics & Health Centers",
+        industry2Para: "The systems we develop for healthcare organizations fully automate patient communication and appointment processes.",
+        industry2List: "<li>Online appointment systems</li><li>Automatic appointment reminders</li><li>Patient coordination assistant</li><li>Patient communication via WhatsApp and web</li><li>Patient data management and CRM system</li><li>Treatment process information automations</li>",
+
+        industry3Title: "Real Estate Offices",
+        industry3Para: "AI systems developed for real estate offices automate lead management and portfolio presentations.",
+        industry3List: "<li>Lead collection</li><li>Customer tracking system with CRM</li><li>WhatsApp automated response system</li><li>Automatic generation of listing content</li><li>Preparation of real estate promotion videos with AI</li>",
+
+        industry4Title: "Beauty & Aesthetic Centers",
+        industry4Para: "The solutions we offer for beauty and aesthetic centers increase customer communication and operational speed.",
+        industry4List: "<li>Online appointment systems</li><li>Campaign and reminder messages</li><li>WhatsApp customer assistant</li><li>Social media content production</li><li>AI-powered advertising content</li>",
+
+        industry5Title: "Gyms",
+        industry5Para: "Systems developed for gyms facilitate membership management and active member communication.",
+        industry5List: "<li>Membership management system</li><li>Automatic payment reminders</li><li>Member notification systems</li><li>Campaign messages</li><li>WhatsApp support assistant</li>",
+
+        industryFinanceTitle: "Finance & Accounting",
+        industryFinancePara: "Automations that enable you to manage financial and accounting processes accurately and quickly.",
+        industryFinanceList: "<li>Automatic invoice systems</li><li>Financial reporting automations</li><li>Payment tracking</li><li>Customer data management</li><li>Accounting data integrations</li>",
+
+        industry6Title: "Law Firms",
+        industry6Para: "AI systems developed for law firms accelerate case processes and client management.",
+        industry6List: "<li>AI-powered petition creation system</li><li>Automatic legislation and law article search</li><li>Client CRM management</li><li>Case calendar system</li><li>Appointment and reminder automation</li><li>Creating a legal document format</li>",
+        industry6Additional: "Lawyers can generate petitions by entering client information, selecting legal topic and choosing law articles.",
+
+        industry7Title: "E-Commerce & Retail",
+        industry7Para: "Smart systems for e-commerce businesses that increase sales and perfect the customer experience.",
+        industry7List: "<li>Automatic product description production</li><li>AI visual and advertising content production</li><li>Stock and order management</li><li>WhatsApp sales chatbot</li><li>Automatic customer support system</li><li>Campaign and sales automations</li>",
 
         // FAQ Section
         faqTitle: "Frequently Asked Questions",
@@ -443,6 +635,21 @@ const translations = {
         serviceOption4: "Chatbot",
         serviceOption5: "Custom Software",
         serviceOption6: "Consultancy",
+        serviceOption7: "Document Management",
+        serviceOption8: "Automated Invoicing",
+        serviceOption9: "AI Content Generation",
+        serviceOption10: "AI Visual & Film & Video Creation",
+
+        // Inline Contact Form
+        contactFormTitle: "Strategic Analysis & Contact Form",
+        contactNameLabel: "Full Name",
+        contactEmailLabel: "Email",
+        contactPhoneLabel: "Phone",
+        contactServicesLabel: "Service Selection",
+        contactMessageLabel: "Your Message",
+        contactSubmitBtn: "Submit",
+        contactSuccessMsg: "Your request has been received, we will contact you as soon as possible.",
+        placeholderContactMessage: "Give details about your project or questions...",
 
         // Blog Page
         blogPageTitle: "Blog | Technology Trends and Digital Transformation Analysis",
@@ -457,6 +664,7 @@ const translations = {
         blogCard3Desc: "Practical strategic suggestions for optimizing and digitizing your business processes.",
 
         // Sektörler Page
+        placeholderVisualTitle: "Demo View",
         comingSoon: "Content will be added soon.",
         uploadText: "Click or Drag to Upload Image",
         uploadHint: "PNG, JPG or WEBP (Max 5MB)",
@@ -532,7 +740,11 @@ class LanguageSystem {
                 } else if (element.tagName === 'META') {
                     element.setAttribute('content', langData[key]);
                 } else {
-                    element.textContent = langData[key];
+                    if (typeof langData[key] === 'string' && langData[key].includes('<') && langData[key].includes('>')) {
+                        element.innerHTML = langData[key];
+                    } else {
+                        element.textContent = langData[key];
+                    }
                 }
             }
         });
@@ -773,6 +985,77 @@ Not: ${notlar}`;
         }
     }
 
+    // Inline Contact Form Logic (İletişim Page)
+    const contactPageForm = document.getElementById("contactPageForm");
+    const contactSuccess = document.getElementById("contactSuccess");
+
+    if (contactPageForm && contactSuccess) {
+        contactPageForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const name = contactPageForm.querySelector('input[name="name"]').value;
+            const email = contactPageForm.querySelector('input[name="email"]').value;
+            const phone = contactPageForm.querySelector('input[name="phone"]').value;
+            const messageInput = contactPageForm.querySelector('textarea[name="message"]');
+            const message = messageInput ? messageInput.value : "";
+            const selectedServices = [];
+            const checkboxes = contactPageForm.querySelectorAll('input[name="services"]:checked');
+
+            checkboxes.forEach(cb => selectedServices.push(cb.value));
+
+            if (selectedServices.length === 0) {
+                alert("Lütfen en az bir hizmet seçiniz.");
+                return;
+            }
+
+            const servicesStr = selectedServices.join(", ");
+            const whatsappMsg = `Merhaba, İletişim Sayfası Formu:
+
+Ad Soyad: ${name}
+E-posta: ${email}
+Telefon: ${phone}
+Hizmetler: ${servicesStr}
+Mesaj: ${message}`;
+
+            const whatsappUrl = `https://wa.me/905355032634?text=${encodeURIComponent(whatsappMsg)}`;
+
+            const submitBtn = contactPageForm.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = "0.7";
+            }
+
+            // Show Success UI
+            contactSuccess.classList.add("show");
+            contactPageForm.reset();
+
+            // Re-initialize chips
+            const chipContainer = contactPageForm.querySelector(".selected-chips");
+            if (chipContainer) {
+                // The multi-select logic in script.js will handle this if we trigger change, 
+                // but let's do a manual reset to be safe
+                const placeholder = chipContainer.querySelector(".placeholder-text");
+                // The chips are dynamically generated, so clearing and adding placeholder is good
+                chipContainer.innerHTML = '';
+                // But wait, the placeholder element might have been removed or kept.
+                // The multiSelects logic uses ms.querySelector(".placeholder-text") as a reference.
+                // Better to just let the updateChips handle it by triggering change on checkboxes
+                const cbs = contactPageForm.querySelectorAll('input[name="services"]');
+                cbs.forEach(cb => cb.checked = false);
+                if (cbs[0]) cbs[0].dispatchEvent(new Event('change'));
+            }
+
+            // Redirect to WhatsApp after a short delay
+            setTimeout(() => {
+                window.location.href = whatsappUrl;
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = "1";
+                }
+            }, 1500);
+        });
+    }
+
     // ESC to close modal
     document.addEventListener("keydown", function (e) {
         if (modal && e.key === "Escape" && modal.classList.contains("show")) {
@@ -891,11 +1174,36 @@ Not: ${notlar}`;
     });
 
     // Close dropdowns when clicking outside
+    // Mobile Dropdown Toggle
+    const dropdowns = document.querySelectorAll(".nav-item-dropdown > a");
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener("click", function (e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const parent = this.parentElement;
+
+                // Close other dropdowns
+                document.querySelectorAll(".nav-item-dropdown").forEach(item => {
+                    if (item !== parent) item.classList.remove("active");
+                });
+
+                parent.classList.toggle("active");
+            }
+        });
+    });
+
     document.addEventListener("click", function (e) {
         multiSelects.forEach(ms => {
             if (!ms.contains(e.target)) {
                 ms.classList.remove("open");
             }
         });
+
+        // Close dropdowns when clicking outside
+        if (!e.target.closest(".nav-item-dropdown")) {
+            document.querySelectorAll(".nav-item-dropdown").forEach(item => {
+                item.classList.remove("active");
+            });
+        }
     });
 });

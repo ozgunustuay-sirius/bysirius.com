@@ -50,6 +50,143 @@
         body {
             transition: opacity 0.15s ease-in-out;
         }
+
+        /* Sector Blog Layout */
+        .sectors-blog {
+            display: flex;
+            flex-direction: column;
+            gap: 120px;
+            padding: 40px 0;
+        }
+
+        .sector-row {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .sector-row.row-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .sector-content {
+            flex: 1;
+        }
+
+        .sector-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .visual-inner {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(11, 18, 32, 0.5) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .visual-emoji {
+            font-size: 120px;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+        }
+
+        .sector-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: #fff;
+            margin-bottom: 24px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        .sector-desc {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .sector-features {
+            list-style: none;
+            margin-bottom: 3rem;
+        }
+
+        .sector-features li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        .sector-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .sector-result-box {
+            background: rgba(212, 175, 55, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 20px 24px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .result-icon {
+            font-size: 1.5rem;
+        }
+
+        .sector-result {
+            margin: 0;
+            color: var(--text-light);
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .sector-additional-info {
+            font-size: 1rem;
+            color: var(--gold);
+            font-style: italic;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 992px) {
+
+            .sector-row,
+            .sector-row.row-reverse {
+                flex-direction: column;
+                gap: 50px;
+                text-align: center;
+            }
+
+            .sector-features {
+                display: inline-block;
+                text-align: left;
+            }
+
+            .visual-inner {
+                height: 300px;
+            }
+
+            .sector-result-box {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
@@ -65,8 +202,52 @@
             <nav class="nav">
                 <ul class="nav-links">
                     <li><a href="hakkimizda.html" data-i18n="fLinkCompany">Hakkımızda</a></li>
-                    <li><a href="hizmetlerimiz.html" data-i18n="fLinkTech">Hizmetlerimiz</a></li>
-                    <li><a href="sektorler.html" data-i18n="fLinkFinance">Sektörler</a></li>
+                    <li class="nav-item-dropdown">
+                        <a href="hizmetlerimiz.html" data-i18n="fLinkTech">Hizmetlerimiz</a>
+                        <div class="dropdown-menu">
+                            <a href="hizmetlerimiz.html#ai-booking" class="dropdown-item"
+                                data-i18n="serviceGridTitle1">AI Randevu & Rezervasyon</a>
+                            <a href="hizmetlerimiz.html#chatbot" class="dropdown-item"
+                                data-i18n="serviceGridTitle2">Chatbot & AI Asistanlar</a>
+                            <a href="hizmetlerimiz.html#crm-lead" class="dropdown-item"
+                                data-i18n="serviceGridTitle3">Akıllı CRM & Lead Yönetimi</a>
+                            <a href="hizmetlerimiz.html#ai-content" class="dropdown-item"
+                                data-i18n="serviceGridTitle4">AI İçerik Üretimi (Metin)</a>
+                            <a href="hizmetlerimiz.html#legal-finance" class="dropdown-item"
+                                data-i18n="serviceGridTitle5">Hukuk & Finans Otomasyonu</a>
+                            <a href="hizmetlerimiz.html#doc-mgmt" class="dropdown-item"
+                                data-i18n="serviceGridTitle6">Belge Yönetimi & Arşiv</a>
+                            <a href="hizmetlerimiz.html#invoicing" class="dropdown-item"
+                                data-i18n="serviceGridTitle7">Otomatik Fatura Düzenleme</a>
+                            <a href="hizmetlerimiz.html#visual-video" class="dropdown-item"
+                                data-i18n="serviceGridTitle8">AI Görsel & Video Oluşturma</a>
+                            <a href="hizmetlerimiz.html#custom-software" class="dropdown-item"
+                                data-i18n="serviceGridTitle9">Özel AI Yazılım</a>
+                            <a href="hizmetlerimiz.html#strategy" class="dropdown-item"
+                                data-i18n="serviceGridTitle10">Dijital Dönüşüm Stratejisi</a>
+                        </div>
+                    </li>
+                    <li class="nav-item-dropdown">
+                        <a href="sektorler.html" data-i18n="fLinkFinance">Sektörler</a>
+                        <div class="dropdown-menu">
+                            <a href="sektorler.html#hotel" class="dropdown-item" data-i18n="industry1Title">Otel ve
+                                Konaklama</a>
+                            <a href="sektorler.html#health" class="dropdown-item" data-i18n="industry2Title">Diş
+                                Klinikleri & Sağlık Merkezleri</a>
+                            <a href="sektorler.html#realestate" class="dropdown-item"
+                                data-i18n="industry3Title">Gayrimenkul Ofisleri</a>
+                            <a href="sektorler.html#beauty" class="dropdown-item" data-i18n="industry4Title">Güzellik &
+                                Estetik Merkezleri</a>
+                            <a href="sektorler.html#gym" class="dropdown-item" data-i18n="industry5Title">Spor
+                                Salonları</a>
+                            <a href="sektorler.html#finance" class="dropdown-item" data-i18n="industryFinance">Finans &
+                                Muhasebe</a>
+                            <a href="sektorler.html#law" class="dropdown-item" data-i18n="industry6Title">Hukuk
+                                Büroları</a>
+                            <a href="sektorler.html#ecommerce" class="dropdown-item"
+                                data-i18n="industry7Title">E-Ticaret & Perakende</a>
+                        </div>
+                    </li>
                     <li><a href="blog.html" data-i18n="navBlog">BLOG</a></li>
                     <li><a href="iletisim.html" data-i18n="fLinkAddress">İletişim</a></li>
                 </ul>
@@ -90,26 +271,138 @@
             </div>
         </section>
 
-        <!-- Content Block -->
+        <!-- Sectors Blog Section -->
         <section class="section">
-            <div class="container">
-                <div class="content-placeholder">
-                    <span data-i18n="comingSoon">İçerik yakında eklenecektir.</span>
+            <div class="container sectors-blog">
+                <!-- Sector 1: Oteller -->
+                <div class="sector-row" id="hotel">
+                    <div class="sector-content">
+                        <h2 class="sector-title" data-i18n="industry1Title">Otel ve Konaklama</h2>
+                        <p class="sector-desc" data-i18n="industry1Para"></p>
+                        <ul class="sector-features" data-i18n="industry1List"></ul>
+                        <div class="sector-result-box">
+                            <span class="result-icon">✨</span>
+                            <p class="sector-result" data-i18n="industry1Result"></p>
+                        </div>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
+                            data-i18n="analyzeBtn">Ücretsiz Analiz Talep Edin</a>
+                    </div>
+                    <div class="sector-visual">
+                        <div class="visual-inner">
+                            <span class="visual-emoji">🏨</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Drag & Drop Image Area -->
-        <section class="section" style="padding-top: 0;">
-            <div class="container">
-                <div class="upload-area" id="drop-area">
-                    <span class="upload-icon">↑</span>
-                    <p class="upload-text" data-i18n="uploadText">Görsel Yüklemek için Tıklayın veya Sürükleyin</p>
-                    <p class="upload-hint" data-i18n="uploadHint">PNG, JPG veya WEBP (Max 5MB)</p>
-                    <input type="file" id="file-input" class="hidden-input" accept="image/*">
+                <div class="sector-row row-reverse" id="health">
+                    <div class="sector-content">
+                        <h2 class="sector-title" data-i18n="industry2Title">Diş Klinikleri & Sağlık Merkezleri</h2>
+                        <p class="sector-desc" data-i18n="industry2Para"></p>
+                        <ul class="sector-features" data-i18n="industry2List"></ul>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
+                            data-i18n="analyzeBtn">Ücretsiz Analiz Talep Edin</a>
+                    </div>
+                    <div class="sector-visual">
+                        <div class="visual-inner">
+                            <span class="visual-emoji">🦷</span>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="preview-container" id="preview-container">
-                        <img id="preview-img" src="" alt="Önizleme">
+                <!-- Sector 3: Gayrimenkul -->
+                <div class="sector-row" id="realestate">
+                    <div class="sector-content">
+                        <h2 class="sector-title" data-i18n="industry3Title">Gayrimenkul Ofisleri</h2>
+                        <p class="sector-desc" data-i18n="industry3Para"></p>
+                        <ul class="sector-features" data-i18n="industry3List"></ul>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
+                            data-i18n="analyzeBtn">Ücretsiz Analiz Talep Edin</a>
+                    </div>
+                    <div class="sector-visual">
+                        <div class="visual-inner">
+                            <span class="visual-emoji">🏠</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sector 4: Güzellik -->
+                <div class="sector-row row-reverse" id="beauty">
+                    <div class="sector-content">
+                        <h2 class="sector-title" data-i18n="industry4Title">Güzellik & Estetik Merkezleri</h2>
+                        <p class="sector-desc" data-i18n="industry4Para"></p>
+                        <ul class="sector-features" data-i18n="industry4List"></ul>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
+                            data-i18n="analyzeBtn">Ücretsiz Analiz Talep Edin</a>
+                    </div>
+                    <div class="sector-visual">
+                        <div class="visual-inner">
+                            <span class="visual-emoji">✨</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sector 5: Spor -->
+                <div class="sector-row" id="gym">
+                    <div class="sector-content">
+                        <h2 class="sector-title" data-i18n="industry5Title">Spor Salonları</h2>
+                        <p class="sector-desc" data-i18n="industry5Para"></p>
+                        <ul class="sector-features" data-i18n="industry5List"></ul>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
+                            data-i18n="analyzeBtn">Ücretsiz Analiz Talep Edin</a>
+                    </div>
+                    <div class="sector-visual">
+                        <div class="visual-inner">
+                            <span class="visual-emoji">💪</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sector 6: Finans -->
+                <div class="sector-row row-reverse" id="finance">
+                    <div class="sector-content">
+                        <h2 class="sector-title" data-i18n="industryFinance">Finans & Muhasebe</h2>
+                        <p class="sector-desc" data-i18n="industryFinancePara"></p>
+                        <ul class="sector-features" data-i18n="industryFinanceList"></ul>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
+                            data-i18n="analyzeBtn">Ücretsiz Analiz Talep Edin</a>
+                    </div>
+                    <div class="sector-visual">
+                        <div class="visual-inner">
+                            <span class="visual-emoji">💰</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sector 7: Hukuk -->
+                <div class="sector-row" id="law">
+                    <div class="sector-content">
+                        <h2 class="sector-title" data-i18n="industry6Title">Hukuk Büroları</h2>
+                        <p class="sector-desc" data-i18n="industry6Para"></p>
+                        <ul class="sector-features" data-i18n="industry6List"></ul>
+                        <p class="sector-additional-info" data-i18n="industry6Additional"></p>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
+                            data-i18n="analyzeBtn">Ücretsiz Analiz Talep Edin</a>
+                    </div>
+                    <div class="sector-visual">
+                        <div class="visual-inner">
+                            <span class="visual-emoji">⚖️</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sector 8: E-Ticaret -->
+                <div class="sector-row row-reverse" id="ecommerce">
+                    <div class="sector-content">
+                        <h2 class="sector-title" data-i18n="industry7Title">E-Ticaret & Perakende</h2>
+                        <p class="sector-desc" data-i18n="industry7Para"></p>
+                        <ul class="sector-features" data-i18n="industry7List"></ul>
+                        <a href="javascript:void(0)" class="btn btn-outline btn-modal-trigger"
+                            data-i18n="analyzeBtn">Ücretsiz Analiz Talep Edin</a>
+                    </div>
+                    <div class="sector-visual">
+                        <div class="visual-inner">
+                            <span class="visual-emoji">🛍️</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -227,6 +520,22 @@
                             <label>
                                 <input type="checkbox" name="services" value="Danışmanlık"> <span
                                     data-i18n="serviceOption6">Danışmanlık</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="services" value="Belge Yönetimi"> <span
+                                    data-i18n="serviceOption7">Belge Yönetimi</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="services" value="Otomatik Fatura Düzenleme"> <span
+                                    data-i18n="serviceOption8">Otomatik Fatura Düzenleme</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="services" value="AI İçerik Üretimi"> <span
+                                    data-i18n="serviceOption9">AI İçerik Üretimi</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="services" value="AI Görsel / Film / Video Oluşturma"> <span
+                                    data-i18n="serviceOption10">AI Görsel / Film / Video Oluşturma</span>
                             </label>
                         </div>
                         <div class="dropdown-footer">

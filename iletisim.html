@@ -65,8 +65,58 @@
             <nav class="nav">
                 <ul class="nav-links">
                     <li><a href="hakkimizda.html" data-i18n="fLinkCompany">Hakkımızda</a></li>
-                    <li><a href="hizmetlerimiz.html" data-i18n="fLinkTech">Hizmetlerimiz</a></li>
-                    <li><a href="sektorler.html" data-i18n="fLinkFinance">Sektörler</a></li>
+                    <li class="nav-item-dropdown">
+                        <a href="hizmetlerimiz.html" data-i18n="fLinkTech">Hizmetlerimiz</a>
+                        <div class="dropdown-menu">
+                            <a href="hizmetlerimiz.html#ai-booking" class="dropdown-item"
+                                data-i18n="serviceGridTitle1">AI
+                                Randevu & Rezervasyon</a>
+                            <a href="hizmetlerimiz.html#chatbot" class="dropdown-item"
+                                data-i18n="serviceGridTitle2">Chatbot
+                                & AI Asistanlar</a>
+                            <a href="hizmetlerimiz.html#crm-lead" class="dropdown-item"
+                                data-i18n="serviceGridTitle3">Akıllı
+                                CRM & Lead Yönetimi</a>
+                            <a href="hizmetlerimiz.html#ai-content" class="dropdown-item"
+                                data-i18n="serviceGridTitle4">AI
+                                İçerik Üretimi (Metin)</a>
+                            <a href="hizmetlerimiz.html#legal-finance" class="dropdown-item"
+                                data-i18n="serviceGridTitle5">Hukuk & Finans Otomasyonu</a>
+                            <a href="hizmetlerimiz.html#doc-mgmt" class="dropdown-item"
+                                data-i18n="serviceGridTitle6">Belge
+                                Yönetimi & Arşiv</a>
+                            <a href="hizmetlerimiz.html#invoicing" class="dropdown-item"
+                                data-i18n="serviceGridTitle7">Otomatik Fatura Düzenleme</a>
+                            <a href="hizmetlerimiz.html#visual-video" class="dropdown-item"
+                                data-i18n="serviceGridTitle8">AI
+                                Görsel & Video Oluşturma</a>
+                            <a href="hizmetlerimiz.html#custom-software" class="dropdown-item"
+                                data-i18n="serviceGridTitle9">Özel AI Yazılım</a>
+                            <a href="hizmetlerimiz.html#strategy" class="dropdown-item"
+                                data-i18n="serviceGridTitle10">Dijital Dönüşüm Stratejisi</a>
+                        </div>
+                    </li>
+                    <li class="nav-item-dropdown">
+                        <a href="sektorler.html" data-i18n="fLinkFinance">Sektörler</a>
+                        <div class="dropdown-menu">
+                            <a href="sektorler.html#hotel" class="dropdown-item" data-i18n="industry1Title">Otel ve
+                                Konaklama</a>
+                            <a href="sektorler.html#health" class="dropdown-item" data-i18n="industry2Title">Diş
+                                Klinikleri & Sağlık Merkezleri</a>
+                            <a href="sektorler.html#realestate" class="dropdown-item"
+                                data-i18n="industry3Title">Gayrimenkul Ofisleri</a>
+                            <a href="sektorler.html#beauty" class="dropdown-item" data-i18n="industry4Title">Güzellik &
+                                Estetik Merkezleri</a>
+                            <a href="sektorler.html#gym" class="dropdown-item" data-i18n="industry5Title">Spor
+                                Salonları</a>
+                            <a href="sektorler.html#finance" class="dropdown-item" data-i18n="industryFinance">Finans &
+                                Muhasebe</a>
+                            <a href="sektorler.html#law" class="dropdown-item" data-i18n="industry6Title">Hukuk
+                                Büroları</a>
+                            <a href="sektorler.html#ecommerce" class="dropdown-item"
+                                data-i18n="industry7Title">E-Ticaret & Perakende</a>
+                        </div>
+                    </li>
                     <li><a href="blog.html" data-i18n="navBlog">BLOG</a></li>
                     <li><a href="iletisim.html" data-i18n="fLinkAddress">İletişim</a></li>
                 </ul>
@@ -93,8 +143,108 @@
         <!-- Content Block -->
         <section class="section">
             <div class="container">
+                <div class="contact-form-container">
+                    <form id="contactPageForm" class="inline-form">
+                        <h2 data-i18n="contactFormTitle">Stratejik Analiz & İletişim Formu</h2>
+
+                        <div class="form-group">
+                            <label data-i18n="contactNameLabel">Ad Soyad</label>
+                            <input type="text" name="name" required placeholder="Ad Soyad"
+                                data-i18n-placeholder="placeholderName">
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="contactEmailLabel">E-posta</label>
+                            <input type="email" name="email" required placeholder="E-posta"
+                                data-i18n-placeholder="placeholderEmail">
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="contactPhoneLabel">Telefon</label>
+                            <input type="tel" name="phone" required placeholder="Telefon"
+                                data-i18n-placeholder="placeholderPhone">
+                        </div>
+
+                        <div class="form-group">
+                            <label data-i18n="contactServicesLabel">Hizmet Seçimi</label>
+                            <div class="multi-select">
+                                <div class="multi-select-toggle">
+                                    <div class="selected-chips">
+                                        <span class="placeholder-text" data-i18n="placeholderServiceSelect">Hizmet
+                                            Seçin</span>
+                                    </div>
+                                    <button type="button" class="btn-select" data-i18n="modalSelectBtn">Seç</button>
+                                </div>
+                                <div class="multi-select-dropdown">
+                                    <div class="multi-options-list">
+                                        <label>
+                                            <input type="checkbox" name="services" value="AI Randevu Sistemi"> <span
+                                                data-i18n="serviceOption1">AI Randevu Sistemi</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="services" value="CRM Otomasyonu"> <span
+                                                data-i18n="serviceOption2">CRM Otomasyonu</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="services" value="Finans Otomasyonu"> <span
+                                                data-i18n="serviceOption3">Finans Otomasyonu</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="services" value="Chatbot"> <span
+                                                data-i18n="serviceOption4">Chatbot</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="services" value="Özel Yazılım"> <span
+                                                data-i18n="serviceOption5">Özel Yazılım</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="services" value="Danışmanlık"> <span
+                                                data-i18n="serviceOption6">Danışmanlık</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="services" value="Belge Yönetimi"> <span
+                                                data-i18n="serviceOption7">Belge Yönetimi</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="services" value="Otomatik Fatura Düzenleme">
+                                            <span data-i18n="serviceOption8">Otomatik Fatura Düzenleme</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="services" value="AI İçerik Üretimi"> <span
+                                                data-i18n="serviceOption9">AI İçerik Üretimi</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="services"
+                                                value="AI Görsel / Film / Video Oluşturma"> <span
+                                                data-i18n="serviceOption10">AI Görsel / Film / Video Oluşturma</span>
+                                        </label>
+                                    </div>
+                                    <div class="dropdown-footer">
+                                        <button type="button" class="btn-ok" data-i18n="modalOk">Tamam</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label data-i18n="contactMessageLabel">Mesajınız</label>
+                            <textarea name="message" rows="5" placeholder="Mesajınız"
+                                data-i18n-placeholder="placeholderContactMessage"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit" data-i18n="contactSubmitBtn">Gönder</button>
+
+                        <!-- Success Message Container -->
+                        <div class="form-success-container" id="contactSuccess">
+                            <span class="success-icon">✓</span>
+                            <p class="success-msg" data-i18n="contactSuccessMsg">Talebiniz alınmıştır, en kısa sürede
+                                tarafınıza dönüş yapılacaktır.</p>
+                        </div>
+                    </form>
+                </div>
+
                 <div class="company-info"
-                    style="margin-bottom: 2rem; background: rgba(255, 255, 255, 0.02); padding: 2.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05);">
+                    style="margin-top: 2rem; background: rgba(255, 255, 255, 0.02); padding: 2.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05);">
                     <p style="margin-bottom: 0.8rem; font-size: 1.05rem; color: var(--text-muted);"><strong
                             style="color: #fff; min-width: 90px; display: inline-block;"
                             data-i18n="companyNameLabel">Unvan:</strong> BY Sirius Group
@@ -117,12 +267,6 @@
                             data-i18n="companyPhoneLabel">Telefon:</strong> +90 535 503
                         26 34</p>
                 </div>
-
-                <a href="#" class="btn-primary open-analysis-modal"
-                    style="display: inline-flex; align-items: center; justify-content: center; padding: 1.1rem 2.8rem; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 8px; background: linear-gradient(135deg, var(--gold) 0%, #aa8c2c 100%); color: #000; cursor: pointer; border: none; text-decoration: none;"
-                    data-i18n="analyzeBtn">
-                    Ücretsiz Analiz Talep Et
-                </a>
             </div>
         </section>
 
@@ -161,10 +305,13 @@
                 <h3 class="footer-title" data-i18n="footerCol2Title">Hizmetlerimiz</h3>
                 <div class="footer-title-accent"></div>
                 <ul class="footer-links">
-                    <li><a href="hizmetlerimiz.html" data-i18n="fLinkAISol">Yapay Zeka Çözümleri</a></li>
-                    <li><a href="hizmetlerimiz.html" data-i18n="fLinkAutoSys">Otomasyon Sistemleri</a></li>
-                    <li><a href="hizmetlerimiz.html" data-i18n="fLinkChatbot">Chatbot & AI Asistanlar</a></li>
-                    <li><a href="hizmetlerimiz.html" data-i18n="fLinkDigital">Dijital Dönüşüm Danışmanlığı</a></li>
+                    <li><a href="hizmetlerimiz.html#ai-booking" data-i18n="serviceGridTitle1">AI Randevu &
+                            Rezervasyon</a></li>
+                    <li><a href="hizmetlerimiz.html#chatbot" data-i18n="serviceGridTitle2">Chatbot & AI Asistanlar</a>
+                    </li>
+                    <li><a href="hizmetlerimiz.html#crm-lead" data-i18n="serviceGridTitle3">Akıllı CRM & Lead
+                            Yönetimi</a></li>
+                    <li><a href="hizmetlerimiz.html#ai-content" data-i18n="serviceGridTitle4">AI İçerik Üretimi</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -193,81 +340,6 @@
             </div>
         </div>
     </footer>
-
-    <div id="analysisModal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h2 data-i18n="modalTitle">Ücretsiz Analiz Talebi</h2>
-
-            <form id="analysisForm">
-                <input type="text" placeholder="Ad Soyad" data-i18n-placeholder="placeholderName" required>
-                <input type="text" placeholder="Telefon" data-i18n-placeholder="placeholderPhone" required>
-                <input type="email" placeholder="E-posta" data-i18n-placeholder="placeholderEmail" required>
-                <input type="text" placeholder="Firma Adı" data-i18n-placeholder="placeholderCompany" required>
-
-                <select id="sectorSelect" required>
-                    <option value="" data-i18n="placeholderSectorSelect">Sektör Seçin</option>
-                    <option data-i18n="industry1Title">Oteller & Konaklama</option>
-                    <option data-i18n="industry2Title">Diş Klinikleri</option>
-                    <option data-i18n="industry3Title">Gayrimenkul Ofisleri</option>
-                    <option data-i18n="industry4Title">Güzellik & Estetik Merkezleri</option>
-                    <option data-i18n="industry5Title">Spor Salonları</option>
-                    <option data-i18n="industry6Title">Özel Klinik & Sağlık Merkezleri</option>
-                    <option data-i18n="industry7Title">Eğitim Kurumları</option>
-                    <option data-i18n="industryFinance">Finans & Muhasebe</option>
-                    <option value="other" data-i18n="otherOption">Diğer</option>
-                </select>
-
-                <input type="text" id="otherSector" placeholder="Faaliyet Alanınızı Yazın"
-                    data-i18n-placeholder="placeholderOtherSector" style="display:none;">
-
-                <div class="multi-select">
-                    <div class="multi-select-toggle">
-                        <div class="selected-chips">
-                            <span class="placeholder-text" data-i18n="placeholderServiceSelect">Alınacak Hizmetleri
-                                Seçin (En az biri)</span>
-                        </div>
-                        <button type="button" class="btn-select" data-i18n="modalSelectBtn">Seç</button>
-                    </div>
-                    <div class="multi-select-dropdown">
-                        <div class="multi-options-list">
-                            <label>
-                                <input type="checkbox" name="services" value="AI Randevu Sistemi"> <span
-                                    data-i18n="serviceOption1">AI Randevu Sistemi</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" name="services" value="CRM Otomasyonu"> <span
-                                    data-i18n="serviceOption2">CRM Otomasyonu</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" name="services" value="Finans Otomasyonu"> <span
-                                    data-i18n="serviceOption3">Finans Otomasyonu</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" name="services" value="Chatbot"> <span
-                                    data-i18n="serviceOption4">Chatbot</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" name="services" value="Özel Yazılım"> <span
-                                    data-i18n="serviceOption5">Özel Yazılım</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" name="services" value="Danışmanlık"> <span
-                                    data-i18n="serviceOption6">Danışmanlık</span>
-                            </label>
-                        </div>
-                        <div class="dropdown-footer">
-                            <button type="button" class="btn-ok" data-i18n="modalOk">Tamam</button>
-                        </div>
-                    </div>
-                </div>
-
-                <textarea placeholder="Notlar" data-i18n-placeholder="placeholderNotes"></textarea>
-
-                <button type="submit" data-i18n="modalSubmit">Gönder</button>
-            </form>
-        </div>
-    </div>
 
     <!-- Scripts -->
     <script src="script.js"></script>

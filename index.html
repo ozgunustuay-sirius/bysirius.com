@@ -90,8 +90,52 @@
             <nav class="nav">
                 <ul class="nav-links">
                     <li><a href="hakkimizda.html" data-i18n="fLinkCompany">Hakkımızda</a></li>
-                    <li><a href="hizmetlerimiz.html" data-i18n="fLinkTech">Hizmetlerimiz</a></li>
-                    <li><a href="sektorler.html" data-i18n="fLinkFinance">Sektörler</a></li>
+                    <li class="nav-item-dropdown">
+                        <a href="hizmetlerimiz.html" data-i18n="fLinkTech">Hizmetlerimiz</a>
+                        <div class="dropdown-menu">
+                            <a href="hizmetlerimiz.html#ai-booking" class="dropdown-item"
+                                data-i18n="serviceGridTitle1">AI Randevu & Rezervasyon</a>
+                            <a href="hizmetlerimiz.html#chatbot" class="dropdown-item"
+                                data-i18n="serviceGridTitle2">Chatbot & AI Asistanlar</a>
+                            <a href="hizmetlerimiz.html#crm-lead" class="dropdown-item"
+                                data-i18n="serviceGridTitle3">Akıllı CRM & Lead Yönetimi</a>
+                            <a href="hizmetlerimiz.html#ai-content" class="dropdown-item"
+                                data-i18n="serviceGridTitle4">AI İçerik Üretimi (Metin)</a>
+                            <a href="hizmetlerimiz.html#legal-finance" class="dropdown-item"
+                                data-i18n="serviceGridTitle5">Hukuk & Finans Otomasyonu</a>
+                            <a href="hizmetlerimiz.html#doc-mgmt" class="dropdown-item"
+                                data-i18n="serviceGridTitle6">Belge Yönetimi & Arşiv</a>
+                            <a href="hizmetlerimiz.html#invoicing" class="dropdown-item"
+                                data-i18n="serviceGridTitle7">Otomatik Fatura Düzenleme</a>
+                            <a href="hizmetlerimiz.html#visual-video" class="dropdown-item"
+                                data-i18n="serviceGridTitle8">AI Görsel & Video Oluşturma</a>
+                            <a href="hizmetlerimiz.html#custom-software" class="dropdown-item"
+                                data-i18n="serviceGridTitle9">Özel AI Yazılım</a>
+                            <a href="hizmetlerimiz.html#strategy" class="dropdown-item"
+                                data-i18n="serviceGridTitle10">Dijital Dönüşüm Stratejisi</a>
+                        </div>
+                    </li>
+                    <li class="nav-item-dropdown">
+                        <a href="sektorler.html" data-i18n="fLinkFinance">Sektörler</a>
+                        <div class="dropdown-menu">
+                            <a href="sektorler.html#hotel" class="dropdown-item" data-i18n="industry1Title">Otel ve
+                                Konaklama</a>
+                            <a href="sektorler.html#health" class="dropdown-item" data-i18n="industry2Title">Diş
+                                Klinikleri & Sağlık Merkezleri</a>
+                            <a href="sektorler.html#realestate" class="dropdown-item"
+                                data-i18n="industry3Title">Gayrimenkul Ofisleri</a>
+                            <a href="sektorler.html#beauty" class="dropdown-item" data-i18n="industry4Title">Güzellik &
+                                Estetik Merkezleri</a>
+                            <a href="sektorler.html#gym" class="dropdown-item" data-i18n="industry5Title">Spor
+                                Salonları</a>
+                            <a href="sektorler.html#finance" class="dropdown-item" data-i18n="industryFinance">Finans &
+                                Muhasebe</a>
+                            <a href="sektorler.html#law" class="dropdown-item" data-i18n="industry6Title">Hukuk
+                                Büroları</a>
+                            <a href="sektorler.html#ecommerce" class="dropdown-item"
+                                data-i18n="industry7Title">E-Ticaret & Perakende</a>
+                        </div>
+                    </li>
                     <li><a href="blog.html" data-i18n="navBlog">BLOG</a></li>
                     <li><a href="iletisim.html" data-i18n="fLinkAddress">İletişim</a></li>
                 </ul>
@@ -114,8 +158,8 @@
                 <p class="hero-subtitle" data-i18n="heroSubtitle">Rezervasyonları, müşteri iletişimini, randevuları ve
                     satış süreçlerini tek bir akıllı altyapı üzerinden tamamen otomatik hale getirin.</p>
                 <div class="hero-actions">
-                    <button class="btn btn-gold" data-i18n="ctaButton">Projelerimizi İnceleyin</button>
-                    <button class="btn btn-outline" data-i18n="secondaryCta">Bize Ulaşın</button>
+                    <a href="hizmetlerimiz.html" class="btn btn-gold" data-i18n="ctaButton">Projelerimizi İnceleyin</a>
+                    <a href="iletisim.html" class="btn btn-outline" data-i18n="secondaryCta">Bize Ulaşın</a>
                 </div>
             </div>
         </section>
@@ -242,12 +286,13 @@
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="industry-card-icon">
                                             <path
-                                                d="M4.5 7c0-2 1-3.5 3-3.5a3.5 3.5 0 0 1 3.5 3.5c0 2-1.5 3.5-3.5 3.5-2 0-3-1.5-3-3.5zM19.5 7c0-2-1-3.5-3-3.5a3.5 3.5 0 0 0-3.5 3.5c0 2 1.5 3.5 3.5 3.5 2 0 3-1.5 3-3.5zM4.5 17c0 2 1 3.5 3 3.5a3.5 3.5 0 0 0 3.5-3.5c0-2-1.5-3.5-3.5-3.5-2 0-3 1.5-3 3.5zM19.5 17c0 2-1 3.5-3 3.5a3.5 3.5 0 0 1-3.5-3.5c0-2 1.5-3.5 3.5-3.5 2 0 3 1.5 3 3.5z">
+                                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
                                             </path>
                                         </svg>
                                     </div>
-                                    <h4 data-i18n="industry2Title">Diş Klinikleri</h4>
-                                    <p data-i18n="industry2Desc">Randevu yönetimi ve otomatik hatırlatma</p>
+                                    <h4 data-i18n="industry2Title">Diş Klinikleri & Sağlık Merkezleri</h4>
+                                    <p data-i18n="industry2Desc">Randevu yönetimi, hasta koordinasyonu ve otomatik
+                                        hatırlatma sistemleri.</p>
                                 </div>
                             </a>
 
@@ -302,13 +347,16 @@
                                     <div class="industry-icon-wrapper">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="industry-card-icon">
-                                            <path
-                                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z">
-                                            </path>
+                                            <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+                                            <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+                                            <path d="M7 21h10"></path>
+                                            <path d="M12 21V3"></path>
+                                            <path d="M3 7h18"></path>
                                         </svg>
                                     </div>
-                                    <h4 data-i18n="industry6Title">Özel Klinik & Sağlık Merkezleri</h4>
-                                    <p data-i18n="industry6Desc">Hasta koordinasyonu ve randevu asistanı</p>
+                                    <h4 data-i18n="industry6Title">Hukuk Büroları & Avukatlar</h4>
+                                    <p data-i18n="industry6Desc">AI destekli dilekçe oluşturma, müvekkil CRM takibi ve
+                                        akıllı hukuk otomasyonları.</p>
                                 </div>
                             </a>
 
@@ -318,12 +366,14 @@
                                     <div class="industry-icon-wrapper">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="industry-card-icon">
-                                            <path d="M22 10v6M2 10l10-5 10 5-10 5zM6 12v5c0 2 2 3 6 3s6-1 6-3v-5">
-                                            </path>
+                                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                                            <path d="M3 6h18"></path>
+                                            <path d="M16 10a4 4 0 0 1-8 0"></path>
                                         </svg>
                                     </div>
-                                    <h4 data-i18n="industry7Title">Eğitim Kurumları</h4>
-                                    <p data-i18n="industry7Desc">Öğrenci kaydı ve veli bilgilendirme asistanı</p>
+                                    <h4 data-i18n="industry7Title">E-Ticaret & Perakende</h4>
+                                    <p data-i18n="industry7Desc">Stok yönetimi, otomatik ürün içerikleri ve satış
+                                        artıran AI sistemleri.</p>
                                 </div>
                             </a>
 
@@ -528,10 +578,14 @@
                 <h3 class="footer-title" data-i18n="footerCol2Title">Hizmetlerimiz</h3>
                 <div class="footer-title-accent"></div>
                 <ul class="footer-links">
-                    <li><a href="hizmetlerimiz.html" data-i18n="fLinkAISol">Yapay Zeka Çözümleri</a></li>
-                    <li><a href="hizmetlerimiz.html" data-i18n="fLinkAutoSys">Otomasyon Sistemleri</a></li>
-                    <li><a href="hizmetlerimiz.html" data-i18n="fLinkChatbot">Chatbot & AI Asistanlar</a></li>
-                    <li><a href="hizmetlerimiz.html" data-i18n="fLinkDigital">Dijital Dönüşüm Danışmanlığı</a></li>
+                    <li><a href="hizmetlerimiz.html#ai-booking" data-i18n="serviceGridTitle1">AI Randevu &
+                            Rezervasyon</a></li>
+                    <li><a href="hizmetlerimiz.html#chatbot" data-i18n="serviceGridTitle2">Chatbot & AI Asistanlar</a>
+                    </li>
+                    <li><a href="hizmetlerimiz.html#crm-lead" data-i18n="serviceGridTitle3">Akıllı CRM & Lead
+                            Yönetimi</a></li>
+                    <li><a href="hizmetlerimiz.html#ai-marketing" data-i18n="serviceGridTitle4">AI İçerik &
+                            Pazarlama</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -634,12 +688,12 @@
                 <select id="sectorSelect" required>
                     <option value="" data-i18n="placeholderSectorSelect">Sektör Seçin</option>
                     <option data-i18n="industry1Title">Oteller & Konaklama</option>
-                    <option data-i18n="industry2Title">Diş Klinikleri</option>
+                    <option data-i18n="industry2Title">Diş Klinikleri & Sağlık Merkezleri</option>
                     <option data-i18n="industry3Title">Gayrimenkul Ofisleri</option>
                     <option data-i18n="industry4Title">Güzellik & Estetik Merkezleri</option>
                     <option data-i18n="industry5Title">Spor Salonları</option>
-                    <option data-i18n="industry6Title">Özel Klinik & Sağlık Merkezleri</option>
-                    <option data-i18n="industry7Title">Eğitim Kurumları</option>
+                    <option data-i18n="industry6Title">Hukuk Büroları & Avukatlar</option>
+                    <option data-i18n="industry7Title">E-Ticaret & Perakende</option>
                     <option data-i18n="industryFinance">Finans & Muhasebe</option>
                     <option value="other" data-i18n="otherOption">Diğer</option>
                 </select>
@@ -679,6 +733,22 @@
                             <label>
                                 <input type="checkbox" name="services" value="Danışmanlık"> <span
                                     data-i18n="serviceOption6">Danışmanlık</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="services" value="Belge Yönetimi"> <span
+                                    data-i18n="serviceOption7">Belge Yönetimi</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="services" value="Otomatik Fatura Düzenleme"> <span
+                                    data-i18n="serviceOption8">Otomatik Fatura Düzenleme</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="services" value="AI İçerik Üretimi"> <span
+                                    data-i18n="serviceOption9">AI İçerik Üretimi</span>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="services" value="AI Görsel / Film / Video Oluşturma"> <span
+                                    data-i18n="serviceOption10">AI Görsel / Film / Video Oluşturma</span>
                             </label>
                         </div>
                         <div class="dropdown-footer">
