@@ -163,12 +163,11 @@ const translations = {
 
         // Contact Info
         companyNameLabel: "Unvan:",
-        companyVknLabel: "VKN:",
         companyAddressLabel: "Adres 1:",
         companyAddress2Label: "Adres 2:",
         companyPhoneLabel: "Telefon:",
-        companyAddressText: "Sultan Selim Mahallesi Eski Büyükdere Caddesi No:61/2 Kağıthane İstanbul",
-        companyAddress2Text: "Antal Teknokent",
+        companyAddressText: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ",
+        companyAddress2Text: "Antalya, Teknokent",
 
         // Footer Columns
         footerCol1Title: "Hakkımızda",
@@ -265,11 +264,10 @@ const translations = {
 
         // Contact Info
         companyNameLabel: "Unvan:",
-        companyVknLabel: "VKN:",
         companyAddressLabel: "Adres 1:",
         companyAddress2Label: "Adres 2:",
         companyPhoneLabel: "Telefon:",
-        companyAddressText: "Sultan Selim Mahallesi Eski Büyükdere Caddesi No:61/2 Kağıthane İstanbul",
+        companyAddressText: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ",
         companyAddress2Text: "Antalya, Teknokent",
 
         // Analysis Modal
@@ -504,12 +502,11 @@ const translations = {
 
         // Contact Info
         companyNameLabel: "Title:",
-        companyVknLabel: "VAT ID:",
         companyAddressLabel: "Address 1:",
         companyAddress2Label: "Address 2:",
         companyPhoneLabel: "Phone:",
-        companyAddressText: "Sultan Selim Mah. Eski Buyukdere Cad. No:61/2 Kagithane Istanbul",
-        companyAddress2Text: "Antalya Technopark",
+        companyAddressText: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ",
+        companyAddress2Text: "Antalya, Technopark",
 
         // Footer Columns
         footerCol1Title: "About Us",
@@ -606,11 +603,10 @@ const translations = {
 
         // Contact Info
         companyNameLabel: "Title:",
-        companyVknLabel: "VAT ID:",
         companyAddressLabel: "Address 1:",
         companyAddress2Label: "Address 2:",
         companyPhoneLabel: "Phone:",
-        companyAddressText: "Sultan Selim Neighborhood Eski Buyukdere Street No:61/2 Kagithane Istanbul",
+        companyAddressText: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ",
         companyAddress2Text: "Antalya, Technopark",
 
         // Analysis Modal
