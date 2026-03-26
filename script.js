@@ -331,7 +331,7 @@ const translations = {
 
         // Global
         rights: "Tüm hakları saklıdır.",
-        aiCeoTitle: "AI CEO (Yakında)",
+        aiCeoTitle: "Yapay Zeka CEO",
         liveSupport: "Canlı Destek",
         whatsAppSupport: "WhatsApp Destek",
 
@@ -672,7 +672,7 @@ const translations = {
 
         // Global
         rights: "All rights reserved.",
-        aiCeoTitle: "AI CEO (Coming Soon)",
+        aiCeoTitle: "AI CEO",
         liveSupport: "Live Support",
         whatsAppSupport: "WhatsApp Support",
 
@@ -856,13 +856,123 @@ class ChatSystem {
     }
 }
 
-// Initialize on DOM load
-document.addEventListener('DOMContentLoaded', () => {
+class CEOVideoSystem {
+    constructor() {
+        this.container = document.getElementById('ceo-video-container');
+        this.closeBtn = document.getElementById('ceo-video-close');
+        this.player = document.getElementById('ceo-video-player');
+        this.source = document.getElementById('ceo-video-source');
+        this.avatar = document.querySelector('.ai-ceo-avatar');
+        this.indicator = this.avatar ? this.avatar.querySelector('.status-indicator') : null;
+        this.autoCloseTimer = null;
+
+        if (this.container && this.avatar) {
+            this.init();
+        }
+    }
+
+    init() {
+        this.avatar.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.toggle();
+        });
+
+        if (this.closeBtn) {
+            this.closeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.hide();
+            });
+        }
+
+        if (this.player) {
+            this.player.addEventListener('ended', () => {
+                this.autoCloseTimer = setTimeout(() => {
+                    this.hide();
+                }, 3000);
+            });
+        }
+
+        // Listen for language changes via buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.id.replace('lang-', '');
+                this.updateSource(lang);
+            });
+        });
+
+        // initial set based on current language
+        setTimeout(() => {
+            const currentLang = document.documentElement.lang || 'tr';
+            this.updateSource(currentLang);
+        }, 100);
+
+        // Mark as active
+        if (this.indicator) {
+            this.indicator.classList.remove('inactive');
+            this.indicator.classList.add('active');
+        }
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (this.container.classList.contains('active') && !this.container.contains(e.target) && !this.avatar.contains(e.target)) {
+                this.hide();
+            }
+        });
+    }
+
+    toggle() {
+        if (this.container.classList.contains('active')) {
+            this.hide();
+        } else {
+            this.show();
+        }
+    }
+
+    show() {
+        if (!this.container || !this.player) return;
+        clearTimeout(this.autoCloseTimer);
+        this.container.classList.add('active');
+        document.body.classList.add('video-active'); // For hero text sliding
+        if (this.player.paused) {
+            this.player.play().catch(err => {
+                console.log("Auto-play blocked or source missing.");
+            });
+        }
+    }
+
+    hide() {
+        if (!this.container || !this.player) return;
+        clearTimeout(this.autoCloseTimer);
+        this.container.classList.remove('active');
+        document.body.classList.remove('video-active'); // Revert hero text
+        this.player.pause();
+    }
+
+    updateSource(lang) {
+        if (!this.source || !this.player) return;
+        const newSrc = `assets/videos/${lang}/ceo.mp4`;
+        if (this.source.getAttribute('src') !== newSrc) {
+            this.source.setAttribute('src', newSrc);
+            this.player.load();
+            // If already active, play the new one
+            if (this.container.classList.contains('active')) {
+                clearTimeout(this.autoCloseTimer);
+                this.player.play().catch(e => { });
+            }
+        }
+    }
+}
+
+// Initialize all systems on DOM load
+document.addEventListener("DOMContentLoaded", () => {
     // Start Language System
     new LanguageSystem();
 
     // Start Chat System
     new ChatSystem();
+
+    // Start CEO Video System
+    new CEOVideoSystem();
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

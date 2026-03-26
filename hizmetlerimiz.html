@@ -113,7 +113,7 @@
         }
 
         .service-visual {
-            flex: 1;
+            flex: 1.4; /* Increased visual area for better image detail */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -121,7 +121,7 @@
 
         .visual-inner {
             width: 100%;
-            height: 400px;
+            height: 550px; /* Increased for maximum readability */
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(11, 18, 32, 0.5) 100%);
             border: 1px solid rgba(212, 175, 55, 0.15);
             border-radius: 24px;
@@ -131,11 +131,23 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            padding: 4px; /* Minimal padding to maximize image content */
         }
 
         .visual-emoji {
             font-size: 120px;
             filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+        }
+
+        .visual-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ensures all text and details are visible */
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .service-row:hover .visual-inner img {
+            transform: scale(1.05);
         }
 
         .service-title {
@@ -189,7 +201,7 @@
             }
 
             .visual-inner {
-                height: 300px;
+                height: 420px; /* Taller on mobile as well */
             }
         }
     </style>
@@ -289,19 +301,8 @@
                             data-i18n="serviceCta1">Ücretsiz Analiz Talep Et 🤖</a>
                     </div>
                     <div class="service-visual">
-                        <div class="visual-placeholder">
-                            <div class="placeholder-header">
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
-                            </div>
-                            <div class="placeholder-content">
-                                <p class="visual-desc" data-i18n="serviceVisualDesc1"></p>
-                                <div class="demo-chat-box">
-                                    <div class="chat-bubble" data-i18n="serviceChat1"></div>
-                                </div>
-                            </div>
+                        <div class="visual-inner">
+                            <img src="assets/images/services/ai-AIRandevuRezervasyon.png" alt="AI Randevu & Rezervasyon" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -316,19 +317,8 @@
                             data-i18n="serviceCta2">Ücretsiz Analiz Talep Et 💬</a>
                     </div>
                     <div class="service-visual">
-                        <div class="visual-placeholder">
-                            <div class="placeholder-header">
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
-                            </div>
-                            <div class="placeholder-content">
-                                <p class="visual-desc" data-i18n="serviceVisualDesc2"></p>
-                                <div class="demo-chat-box">
-                                    <div class="chat-bubble" data-i18n="serviceChat2"></div>
-                                </div>
-                            </div>
+                        <div class="visual-inner">
+                            <img src="assets/images/services/ai-chatbotaiasistanlar.png" alt="Chatbot & AI Asistanlar" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -343,19 +333,8 @@
                             data-i18n="serviceCta3">Ücretsiz Analiz Talep Et 📈</a>
                     </div>
                     <div class="service-visual">
-                        <div class="visual-placeholder">
-                            <div class="placeholder-header">
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
-                            </div>
-                            <div class="placeholder-content">
-                                <p class="visual-desc" data-i18n="serviceVisualDesc3"></p>
-                                <div class="demo-chat-box">
-                                    <div class="chat-bubble" data-i18n="serviceChat3"></div>
-                                </div>
-                            </div>
+                        <div class="visual-inner">
+                            <img src="assets/images/services/ai-AkilliCRMLeadYonetimi.png" alt="Akıllı CRM & Lead Yönetimi" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -370,19 +349,8 @@
                             data-i18n="serviceCta4">Ücretsiz Analiz Talep Et ✍️</a>
                     </div>
                     <div class="service-visual">
-                        <div class="visual-placeholder">
-                            <div class="placeholder-header">
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
-                            </div>
-                            <div class="placeholder-content">
-                                <p class="visual-desc" data-i18n="serviceVisualDesc4"></p>
-                                <div class="demo-chat-box">
-                                    <div class="chat-bubble" data-i18n="serviceChat4"></div>
-                                </div>
-                            </div>
+                        <div class="visual-inner">
+                            <img src="assets/images/services/ai-aiicerikuretim.png" alt="AI İçerik Üretimi (Metin)" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -397,19 +365,8 @@
                             data-i18n="serviceCta5">Ücretsiz Analiz Talep Et ⚖️</a>
                     </div>
                     <div class="service-visual">
-                        <div class="visual-placeholder">
-                            <div class="placeholder-header">
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
-                            </div>
-                            <div class="placeholder-content">
-                                <p class="visual-desc" data-i18n="serviceVisualDesc5"></p>
-                                <div class="demo-chat-box">
-                                    <div class="chat-bubble" data-i18n="serviceChat5"></div>
-                                </div>
-                            </div>
+                        <div class="visual-inner">
+                            <img src="assets/images/services/ai-HukukFinansOtomasyonu.png" alt="Hukuk & Finans Otomasyonu" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -424,19 +381,8 @@
                             data-i18n="serviceCta6">Ücretsiz Analiz Talep Et 📂</a>
                     </div>
                     <div class="service-visual">
-                        <div class="visual-placeholder">
-                            <div class="placeholder-header">
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
-                            </div>
-                            <div class="placeholder-content">
-                                <p class="visual-desc" data-i18n="serviceVisualDesc6"></p>
-                                <div class="demo-chat-box">
-                                    <div class="chat-bubble" data-i18n="serviceChat6"></div>
-                                </div>
-                            </div>
+                        <div class="visual-inner">
+                            <img src="assets/images/services/ai-belgeyonetimiarsiv.png" alt="Belge Yönetimi & Arşiv" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -451,19 +397,8 @@
                             data-i18n="serviceCta7">Ücretsiz Analiz Talep Et 🧾</a>
                     </div>
                     <div class="service-visual">
-                        <div class="visual-placeholder">
-                            <div class="placeholder-header">
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
-                            </div>
-                            <div class="placeholder-content">
-                                <p class="visual-desc" data-i18n="serviceVisualDesc7"></p>
-                                <div class="demo-chat-box">
-                                    <div class="chat-bubble" data-i18n="serviceChat7"></div>
-                                </div>
-                            </div>
+                        <div class="visual-inner">
+                            <img src="assets/images/services/ai-otomatikfatura.png" alt="Otomatik Fatura Düzenleme" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -478,19 +413,8 @@
                             data-i18n="serviceCta8">Ücretsiz Analiz Talep Et 🎬</a>
                     </div>
                     <div class="service-visual">
-                        <div class="visual-placeholder">
-                            <div class="placeholder-header">
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
-                            </div>
-                            <div class="placeholder-content">
-                                <p class="visual-desc" data-i18n="serviceVisualDesc8"></p>
-                                <div class="demo-chat-box">
-                                    <div class="chat-bubble" data-i18n="serviceChat8"></div>
-                                </div>
-                            </div>
+                        <div class="visual-inner">
+                            <img src="assets/images/services/ai-aigorselvideoolusturma.png" alt="AI Görsel & Video Oluşturma" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -505,19 +429,8 @@
                             data-i18n="serviceCta9">Ücretsiz Analiz Talep Et 💻</a>
                     </div>
                     <div class="service-visual">
-                        <div class="visual-placeholder">
-                            <div class="placeholder-header">
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
-                            </div>
-                            <div class="placeholder-content">
-                                <p class="visual-desc" data-i18n="serviceVisualDesc9"></p>
-                                <div class="demo-chat-box">
-                                    <div class="chat-bubble" data-i18n="serviceChat9"></div>
-                                </div>
-                            </div>
+                        <div class="visual-inner">
+                            <img src="assets/images/services/ai-ozelAIYazilimGelistirme.png" alt="Özel AI Yazılım" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -532,19 +445,8 @@
                             data-i18n="serviceCta10">Ücretsiz Analiz Talep Et 📊</a>
                     </div>
                     <div class="service-visual">
-                        <div class="visual-placeholder">
-                            <div class="placeholder-header">
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-dot"></span>
-                                <span class="placeholder-title" data-i18n="placeholderVisualTitle">Demo View</span>
-                            </div>
-                            <div class="placeholder-content">
-                                <p class="visual-desc" data-i18n="serviceVisualDesc10"></p>
-                                <div class="demo-chat-box">
-                                    <div class="chat-bubble" data-i18n="serviceChat10"></div>
-                                </div>
-                            </div>
+                        <div class="visual-inner">
+                            <img src="assets/images/services/ai-DijitalDonusumStratejisi.png" alt="Dijital Dönüşüm Stratejisi" loading="lazy">
                         </div>
                     </div>
                 </div>
