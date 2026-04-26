@@ -148,6 +148,7 @@ const translations = {
         value2: "Yenilikçilik",
         value3: "Şeffaflık",
         value4: "Sürdürülebilirlik",
+        aboutIntroText: "BY Sirius Group AI and Technology Co., B2B ve B2C müşterileri için yapay zeka destekli otomasyon sistemleri ve dijital uygulamalar geliştiren bir teknoloji şirketidir. SaaS çözümleri, özel chatbot’lar, sesli asistanlar, operasyonel otomasyon araçları, dijital içerik dağıtımı ve kişiselleştirilmiş veri analizi platformları geliştirmektedir. Şirketlere uçtan uca otomasyon sistemleri kurarak iş süreçlerinin daha verimli, ölçülebilir ve ölçeklenebilir hale gelmesini sağlar. İş modelimiz; abonelik tabanlı platformlar, özel yazılım geliştirme ve teknoloji danışmanlığı hizmetleriyle desteklenmekte olup, yurtiçi ve yurtdışı müşterilere yönelik çözümler sunmaktadır.",
 
         // Management Block
         managementTitle: "Yönetim",
@@ -487,6 +488,7 @@ const translations = {
         value2: "Innovation",
         value3: "Transparency",
         value4: "Sustainability",
+        aboutIntroText: "BY Sirius Group AI and Technology Co. is a technology company that develops AI-powered automation systems and digital applications for B2B and B2C customers. The company builds SaaS solutions, custom chatbots, voice assistants, operational automation tools, digital content distribution platforms, and personalized data analytics products. By designing end-to-end automation systems for businesses, BY Sirius helps companies make their processes more efficient, measurable, and scalable. Its business model is supported by subscription-based platforms, custom software development, and technology consulting services, serving both domestic and international clients.",
 
         // Management Block
         managementTitle: "Management",
