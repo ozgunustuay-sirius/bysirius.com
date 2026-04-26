@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bysirius.com/sitemap.xml
