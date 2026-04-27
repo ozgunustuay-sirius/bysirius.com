@@ -1547,7 +1547,7 @@ Firma: ${firmaAdi}
 Hizmetler: ${servicesString}
 Not: ${notlar}`;
 
-                const whatsappUrl = `https://wa.me/905355032634?text=${encodeURIComponent(messageTemplate)}`;
+                const whatsappUrl = `https://wa.me/447442056474?text=${encodeURIComponent(messageTemplate)}`;
 
                 const submitBtn = form.querySelector("button[type='submit']");
                 if (submitBtn) {
@@ -1603,7 +1603,7 @@ Telefon: ${phone}
 Hizmetler: ${servicesStr}
 Mesaj: ${message}`;
 
-            const whatsappUrl = `https://wa.me/905355032634?text=${encodeURIComponent(whatsappMsg)}`;
+            const whatsappUrl = `https://wa.me/447442056474?text=${encodeURIComponent(whatsappMsg)}`;
 
             const submitBtn = contactPageForm.querySelector('button[type="submit"]');
             if (submitBtn) {
