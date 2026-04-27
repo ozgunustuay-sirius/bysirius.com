@@ -1556,7 +1556,7 @@ Not: ${notlar}`;
                 }
 
                 // Redirect
-                window.location.href = whatsappUrl;
+                // window.location.href = whatsappUrl;
 
                 // Cleanup (in case user comes back)
                 setTimeout(() => {
@@ -1632,13 +1632,13 @@ Mesaj: ${message}`;
             }
 
             // Redirect to WhatsApp after a short delay
-            setTimeout(() => {
-                window.location.href = whatsappUrl;
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.style.opacity = "1";
-                }
-            }, 1500);
+            // setTimeout(() => {
+            //     window.location.href = whatsappUrl;
+            //     if (submitBtn) {
+            //         submitBtn.disabled = false;
+            //         submitBtn.style.opacity = "1";
+            //     }
+            // }, 1500);
         });
     }
 
