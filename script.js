@@ -21,6 +21,16 @@ const translations = {
         industriesPageDesc: "Sağlıktan turizme, e-ticaretten finansa kadar farklı sektörler için geliştirdiğimiz AI stratejileri.",
         contactPageTitle: "İletişim | BY Sirius Group ile Bağlantıya Geçin",
         contactPageDesc: "Projeleriniz ve danışmanlık talepleriniz için bize ulaşın. Dijital dönüşüm yolculuğunuza bugün başlayın.",
+        privacyPageTitle: "Gizlilik Politikası | BY Sirius Group",
+        privacyPageDesc: "BY Sirius Group'un veri gizliliği, ödeme bilgileri ve kişisel verilerin korunması hakkındaki politika metnini okuyun.",
+        termsPageTitle: "Hizmet Şartları | BY Sirius Group",
+        termsPageDesc: "Dijital hizmetler, teklif süreçleri, ödeme koşulları ve proje sözleşme şartları hakkında bilgi alın.",
+        refundPageTitle: "İade & İptal Politikası | BY Sirius Group",
+        refundPageDesc: "İade ve iptal koşulları, Stripe Payment Link ile ödeme süreci ve dijital hizmet değerlendirmesi hakkında bilgi.",
+        deliveryPageTitle: "Teslimat & Hizmet Süreci | BY Sirius Group",
+        deliveryPageDesc: "Hizmet teslimatı, proje aşamaları, onay süreci ve iş akışı hakkında net bilgiler.",
+        paymentPageTitle: "Ödeme | BY Sirius Group",
+        paymentPageDesc: "Stripe Payment Link ile teklif bazlı ödeme süreci, hizmet listesi ve proje bazlı ücretlendirme bilgileri.",
         aiCeoPageTitle: "SIRA N.OVA | Yapay Zeka CEO",
         aiCeoPageDesc: "Dünyanın ilk yapay zeka tabanlı stratejik yönetim birimi SIRA N.OVA ile tanışın.",
 
@@ -33,6 +43,230 @@ const translations = {
         industriesHeroSubtitle: "Teknolojimizi farklı sektörlerdeki işletmelerin ihtiyaçlarına göre özelleştiriyoruz.",
         contactHeroTitle: "İletişim",
         contactHeroSubtitle: "Sorularınız, projeleriniz, stratejik danışmanlık ve stratejik partnerlik talepleriniz için bizimle iletişime geçin.",
+        privacyHeroTitle: "Gizlilik Politikası",
+        privacyHeroSubtitle: "Veri gizliliği, ödeme güvenliği ve İngiltere merkezli şirket bilgilerimize ilişkin taahhütler.",
+        termsHeroTitle: "Hizmet Şartları",
+        termsHeroSubtitle: "Dijital hizmetler, proje teklifleri ve ödeme koşulları için temel iş kuralları.",
+        refundHeroTitle: "İade & İptal Politikası",
+        refundHeroSubtitle: "Stripe Payment Link ile güvenli ödeme sonrası iptal ve iade süreçleri.",
+        deliveryHeroTitle: "Teslimat & Hizmet Süreci",
+        deliveryHeroSubtitle: "Proje aşamaları, onay süreci ve teslimat akışımız.",
+        paymentHeroTitle: "Ödeme",
+        paymentHeroSubtitle: "Stripe tabanlı ödeme süreci, teklif bazlı fiyatlandırma ve hizmet listemiz.",
+        privacyBody: `
+            <section class='section section-compact'>
+                <div class='container'>
+                    <div class='legal-content'>
+                        <h2>Veri Gizliliği</h2>
+                        <p>BY Sirius Group olarak kişisel verilerinizi yalnızca teklif, sözleşme ve hizmet sağlama amaçlarıyla işleriz. Tüm veri işleme sürecimiz İngiltere ve GDPR uyumluluğu çerçevesindedir.</p>
+                        <h3>Stripe Payment Link ve Ödeme Verileri</h3>
+                        <p>Ödemeler Stripe Payment Link üzerinden gerçekleşir. BY Sirius Group, kart verilerine erişmez; yalnızca işlem onayı ve proje referans bilgilerini saklar.</p>
+                        <h3>Şirket Bilgisi</h3>
+                        <p>BY Sirius Group AI and Technology Co. Ltd., Companies House No: 17142392, 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.</p>
+                        <p>Gizlilik taleplerinizi <a href='mailto:info@bysiriusgroup.com'>info@bysiriusgroup.com</a> adresine yazılı olarak iletebilirsiniz.</p>
+                        <h3>Haklarınız</h3>
+                        <p>Verilerinize erişim, düzeltme veya silme talepleri İngiltere mevzuatı doğrultusunda değerlendirilir.</p>
+                    </div>
+                </div>
+            </section>`,
+        termsBody: `
+            <section class='section section-compact'>
+                <div class='container'>
+                    <div class='legal-content'>
+                        <h2>Hizmet Kapsamı</h2>
+                        <p>Hizmetlerimiz dijital hizmet, yazılım, AI otomasyon, web sitesi, entegrasyon, SEO, analytics ve danışmanlık kapsamındadır. Her proje teklif kapsamında netleştirilir.</p>
+                        <h3>Teklif & Onay</h3>
+                        <p>Müşteriye özel teklif hazırlanır. Hizmet kapsamı, süresi ve teslim şartları yazılı olarak onaylanmadan çalışma başlamaz.</p>
+                        <h3>Stripe Payment Link</h3>
+                        <p>Ödeme Stripe Payment Link üzerinden güvenli şekilde alınır. Teklif onayına göre müşteriye özel ödeme linki oluşturulur.</p>
+                        <h3>Hizmet Sözleşmesi</h3>
+                        <p>Teklifte belirtilen kapsam, maliyet ve teslimat koşulları hizmet sözleşmesinin temelini oluşturur. Değişiklik talepleri ayrıca değerlendirilir.</p>
+                    </div>
+                </div>
+            </section>`,
+        refundBody: `
+            <section class='section section-compact'>
+                <div class='container'>
+                    <div class='legal-content'>
+                        <h2>İade & İptal Mantığı</h2>
+                        <p>Hizmetler dijital hizmet, yazılım, AI otomasyon, web sitesi, entegrasyon, SEO, analytics ve danışmanlık kapsamındadır. Her ödeme müşteriyle mutabık kalınan hizmet kapsamı, teklif, süre ve koşullara göre alınır.</p>
+                        <h3>Stripe Payment Link</h3>
+                        <p>Ödeme güvenli şekilde Stripe Payment Link üzerinden yapılabilir. Müşteriye özel ödeme linki oluşturulur.</p>
+                        <h3>İade Değerlendirme</h3>
+                        <p>Hizmet başladıktan sonra yapılan iş, kullanılan kaynak ve teslim edilen çıktılar dikkate alınarak iade değerlendirilir. Henüz başlamamış hizmetlerde iptal/iade talebi ayrıca değerlendirilebilir.</p>
+                        <h3>Tamamlanmış Hizmetler</h3>
+                        <p>Tamamlanmış, teslim edilmiş veya müşteri onayıyla başlatılmış dijital hizmetlerde tam iade garanti edilmez.</p>
+                        <h3>Başvuru</h3>
+                        <p>İade talepleri yazılı olarak <a href='mailto:info@bysiriusgroup.com'>info@bysiriusgroup.com</a> adresine gönderilmelidir.</p>
+                    </div>
+                </div>
+            </section>`,
+        deliveryBody: `
+            <section class='section section-compact'>
+                <div class='container'>
+                    <div class='legal-content'>
+                        <h2>Hizmet Teslim Modeli</h2>
+                        <p>Projelerimiz teklif, planlama, uygulama ve teslimattan oluşan aşamalı bir süreçle yürütülür. Tüm çalışmalar İngiltere merkezli şirket bilgileriyle yönetilir.</p>
+                        <h3>Teklif ve Onay</h3>
+                        <p>Hizmet kapsamı teklifte tanımlanır. Müşteri onayı sonrası proje zaman çizelgesi belirlenir ve sonraki aşamalara geçilir.</p>
+                        <h3>Geliştirme & Entegrasyon</h3>
+                        <p>AI otomasyon, web sitesi kurulumu, SEO, analytics ve entegrasyon çalışmaları proje spesifikasyonuna göre teslim edilir.</p>
+                        <h3>Test & Onay</h3>
+                        <p>Teslimat öncesi kalite kontrol, müşteri kontrolü ve son onay süreçleri tamamlanır.</p>
+                        <h3>Destek</h3>
+                        <p>Teslimattan sonra bakım ve destek talepleri için özel teklifler sunulur.</p>
+                    </div>
+                </div>
+            </section>`,
+        paymentBody: `
+            <section class='section section-compact'>
+                <div class='container'>
+                    <div class='legal-content'>
+                        <h2>Ödeme Süreci</h2>
+                        <p>Hizmetler için ödeme süreci Stripe Payment Link ile yönetilir. Fiyatlar müşteriye özel teklif, hizmet kapsamı ve proje ihtiyaçlarına göre belirlenir.</p>
+                        <table class='pricing-table'>
+                            <thead>
+                                <tr>
+                                    <th>Hizmet</th>
+                                    <th>Stripe ürün adı</th>
+                                    <th>Açıklama</th>
+                                    <th>Fiyat yapısı</th>
+                                    <th>Ödeme süreci</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>AI Randevu & Rezervasyon Otomasyonu</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>AI tabanlı randevu ve rezervasyon sistemi kurulumu.</td>
+                                    <td>Müşteriye özel teklif</td>
+                                    <td>Müşteriye özel Stripe Payment Link.</td>
+                                </tr>
+                                <tr>
+                                    <td>Chatbot & AI Asistanlar</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>AI chatbot ve asistan sistemleri geliştirme.</td>
+                                    <td>Müşteriye özel teklif</td>
+                                    <td>Müşteriye özel Stripe Payment Link.</td>
+                                </tr>
+                                <tr>
+                                    <td>Sesli Asistan Otomasyonu</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Sesli asistan entegrasyonu ve otomasyonu.</td>
+                                    <td>Müşteriye özel teklif</td>
+                                    <td>Müşteriye özel Stripe Payment Link.</td>
+                                </tr>
+                                <tr>
+                                    <td>E-mail Otomasyonu</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>E-posta pazarlama ve otomasyon sistemi.</td>
+                                    <td>Müşteriye özel teklif</td>
+                                    <td>Müşteriye özel Stripe Payment Link.</td>
+                                </tr>
+                                <tr>
+                                    <td>Satış & Pazarlama Otomasyonu</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Satış ve pazarlama süreçleri otomasyonu.</td>
+                                    <td>Müşteriye özel teklif</td>
+                                    <td>Müşteriye özel Stripe Payment Link.</td>
+                                </tr>
+                                <tr>
+                                    <td>Akıllı CRM & Lead Yönetimi</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>CRM ve lead yönetimi otomasyonu.</td>
+                                    <td>Müşteriye özel teklif</td>
+                                    <td>Müşteriye özel Stripe Payment Link.</td>
+                                </tr>
+                                <tr>
+                                    <td>AI İçerik Üretimi</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>AI ile metin içerik üretimi ve yönetimi.</td>
+                                    <td>Müşteriye özel teklif</td>
+                                    <td>Müşteriye özel Stripe Payment Link.</td>
+                                </tr>
+                                <tr>
+                                    <td>Belge Yönetimi & Arşiv Otomasyonu</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Dijital belge yönetimi ve arşiv sistemi.</td>
+                                    <td>Müşteriye özel teklif</td>
+                                    <td>Müşteriye özel Stripe Payment Link.</td>
+                                </tr>
+                                <tr>
+                                    <td>Fatura & Finans Süreç Otomasyonu</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Otomatik fatura ve finans süreçleri otomasyonu.</td>
+                                    <td>Müşteriye özel teklif</td>
+                                    <td>Müşteriye özel Stripe Payment Link.</td>
+                                </tr>
+                                <tr>
+                                    <td>Hukuk & Finans Otomasyonu</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Hukuk ve finans süreçleri için AI otomasyonu.</td>
+                                    <td>Müşteriye özel teklif</td>
+                                    <td>Müşteriye özel Stripe Payment Link.</td>
+                                </tr>
+                                <tr>
+                                    <td>AI Görsel & Video Üretimi</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>AI ile görsel ve video içerik üretimi.</td>
+                                    <td>Müşteriye özel teklif</td>
+                                    <td>Müşteriye özel Stripe Payment Link.</td>
+                                </tr>
+                                <tr>
+                                    <td>Web Sitesi Kurulum</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Profesyonel web sitesi kurulumu ve tasarımı.</td>
+                                    <td>Hizmet kapsamına göre fiyatlandırma</td>
+                                    <td>Müşteriye özel Stripe Payment Link.</td>
+                                </tr>
+                                <tr>
+                                    <td>Landing Page Tasarımı</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Dönüşüm odaklı landing page tasarımı.</td>
+                                    <td>Hizmet kapsamına göre fiyatlandırma</td>
+                                    <td>Müşteriye özel Stripe Payment Link.</td>
+                                </tr>
+                                <tr>
+                                    <td>SEO & Teknik Optimizasyon</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>SEO ve teknik web optimizasyonu.</td>
+                                    <td>Hizmet kapsamına göre fiyatlandırma</td>
+                                    <td>Müşteriye özel Stripe Payment Link.</td>
+                                </tr>
+                                <tr>
+                                    <td>Analytics & Sosyal Medya Kurulumu</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Analytics ve sosyal medya entegrasyonu.</td>
+                                    <td>Hizmet kapsamına göre fiyatlandırma</td>
+                                    <td>Müşteriye özel Stripe Payment Link.</td>
+                                </tr>
+                                <tr>
+                                    <td>Bakım & Destek</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Web sitesi bakım ve teknik destek.</td>
+                                    <td>Hizmet kapsamına göre fiyatlandırma</td>
+                                    <td>Müşteriye özel Stripe Payment Link.</td>
+                                </tr>
+                                <tr>
+                                    <td>Özel AI Yazılım & Entegrasyon</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Özel AI yazılım geliştirme ve entegrasyon.</td>
+                                    <td>Hizmet kapsamına göre fiyatlandırma</td>
+                                    <td>Müşteriye özel Stripe Payment Link.</td>
+                                </tr>
+                                <tr>
+                                    <td>Dijital Dönüşüm Stratejisi</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Dijital dönüşüm danışmanlığı ve strateji geliştirme.</td>
+                                    <td>Hizmet kapsamına göre fiyatlandırma</td>
+                                    <td>Müşteriye özel Stripe Payment Link.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Fiyat tutarı yazılmamıştır; projeler müşteri ihtiyaçlarına göre özel olarak hesaplanır.</p>
+                    </div>
+                </div>
+            </section>`,
         aiCeoHeroTitle: "SIRA N.OVA",
         aiCeoHeroSubtitle: "AI CEO | Dijital Strateji & Yapay Zeka",
 
@@ -50,6 +284,11 @@ const translations = {
         fLinkFinance: "Sektörler",
         navBlog: "BLOG",
         fLinkAddress: "İletişim",
+        fLinkPrivacy: "Gizlilik Politikası",
+        fLinkTerms: "Hizmet Şartları",
+        fLinkRefund: "İade & İptal",
+        fLinkDelivery: "Teslimat Süreci",
+        fLinkPayment: "Ödeme",
 
         // Services Block (Homepage/Global)
         servicesTitle: "Hizmetlerimiz",
@@ -168,7 +407,7 @@ const translations = {
         companyAddress2Label: "Adres 2:",
         companyPhoneLabel: "Telefon:",
         companyAddressText: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ",
-        companyAddress2Text: "Antalya, Teknokent",
+        companyAddress2Text: "United Kingdom",
 
         // Footer Columns
         footerCol1Title: "Hakkımızda",
@@ -269,7 +508,7 @@ const translations = {
         companyAddress2Label: "Adres 2:",
         companyPhoneLabel: "Telefon:",
         companyAddressText: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ",
-        companyAddress2Text: "Antalya, Teknokent",
+        companyAddress2Text: "United Kingdom",
 
         // Analysis Modal
         modalTitle: "Ücretsiz Analiz Talebi",
@@ -359,6 +598,16 @@ const translations = {
         industriesPageDesc: "AI strategies we have developed for different sectors from health to tourism, e-commerce to finance.",
         contactPageTitle: "Contact | Get in Touch with BY Sirius Group",
         contactPageDesc: "Contact us for your projects and consultancy requests. Start your digital transformation journey today.",
+        privacyPageTitle: "Privacy Policy | BY Sirius Group",
+        privacyPageDesc: "Read our privacy policy covering data protection, payment security, and company information in the UK.",
+        termsPageTitle: "Terms of Service | BY Sirius Group",
+        termsPageDesc: "Learn about digital services, proposal approval, payment terms and project contract conditions.",
+        refundPageTitle: "Refund & Cancellation Policy | BY Sirius Sirius Group",
+        refundPageDesc: "Refund and cancellation terms, Stripe Payment Link payments, and digital service assessment details.",
+        deliveryPageTitle: "Delivery & Service Process | BY Sirius Group",
+        deliveryPageDesc: "Clear information on service delivery phases, approvals, and digital project workflow.",
+        paymentPageTitle: "Payment | BY Sirius Group",
+        paymentPageDesc: "Stripe Payment Link based payment process, service list and quote-based pricing information.",
         aiCeoPageTitle: "SIRA N.OVA | Artificial Intelligence CEO",
         aiCeoPageDesc: "Meet SIRA N.OVA, the world's first AI-based strategic management unit.",
 
@@ -371,6 +620,230 @@ const translations = {
         industriesHeroSubtitle: "We customize our technology according to the needs of businesses in different sectors.",
         contactHeroTitle: "Contact",
         contactHeroSubtitle: "Contact us for your questions, projects, strategic consulting and strategic partnership requests.",
+        privacyHeroTitle: "Privacy Policy",
+        privacyHeroSubtitle: "Commitments on data privacy, payment security and UK company information.",
+        termsHeroTitle: "Terms of Service",
+        termsHeroSubtitle: "Core business rules for digital services, proposals and payment terms.",
+        refundHeroTitle: "Refund & Cancellation Policy",
+        refundHeroSubtitle: "Secure post-payment cancellation and refund procedures via Stripe Payment Link.",
+        deliveryHeroTitle: "Delivery & Service Process",
+        deliveryHeroSubtitle: "Project stages, approvals and digital service delivery workflow.",
+        paymentHeroTitle: "Payment",
+        paymentHeroSubtitle: "Stripe-based payment flow, quote-driven pricing and service listing.",
+        privacyBody: `
+            <section class='section section-compact'>
+                <div class='container'>
+                    <div class='legal-content'>
+                        <h2>Data Privacy</h2>
+                        <p>At BY Sirius Group, we process personal data only for proposal, contract and service delivery purposes. All processing is aligned with UK regulations and GDPR compliance.</p>
+                        <h3>Stripe Payment Link and Payment Data</h3>
+                        <p>Payments are processed via Stripe Payment Link. BY Sirius Group does not access card data; we retain only transaction confirmation and project reference details.</p>
+                        <h3>Company Information</h3>
+                        <p>BY Sirius Group AI and Technology Co. Ltd., Companies House No: 17142392, 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.</p>
+                        <p>Privacy requests should be submitted in writing to <a href='mailto:info@bysiriusgroup.com'>info@bysiriusgroup.com</a>.</p>
+                        <h3>Your Rights</h3>
+                        <p>You have the right to access, correct or delete your data. All requests are handled under UK legal requirements.</p>
+                    </div>
+                </div>
+            </section>`,
+        termsBody: `
+            <section class='section section-compact'>
+                <div class='container'>
+                    <div class='legal-content'>
+                        <h2>Service Scope</h2>
+                        <p>Our services include digital service delivery, software, AI automation, website setups, integrations, SEO, analytics and consultancy. Each project is defined within a proposal.</p>
+                        <h3>Proposal & Approval</h3>
+                        <p>A custom proposal is prepared for each client. Work does not begin until the scope, duration and delivery terms are accepted in writing.</p>
+                        <h3>Stripe Payment Link</h3>
+                        <p>Payments are collected securely through Stripe Payment Link. A custom payment link is generated based on the approved proposal.</p>
+                        <h3>Service Agreement</h3>
+                        <p>The scope, cost and delivery conditions in the proposal form the basis of the service agreement. Change requests are reviewed separately.</p>
+                    </div>
+                </div>
+            </section>`,
+        refundBody: `
+            <section class='section section-compact'>
+                <div class='container'>
+                    <div class='legal-content'>
+                        <h2>Refund & Cancellation Policy</h2>
+                        <p>Services include digital services, software, AI automation, websites, integrations, SEO, analytics and consulting. All payments are collected based on the agreed scope, proposal, timeline and conditions.</p>
+                        <h3>Stripe Payment Link</h3>
+                        <p>Payments may be made securely via Stripe Payment Link. A custom payment link is created for the client.</p>
+                        <h3>Refund Assessment</h3>
+                        <p>Once work has started, refunds are evaluated by considering work performed, resources used and delivered outputs. Cancellation/refund requests for services that have not started are evaluated separately.</p>
+                        <h3>Completed Services</h3>
+                        <p>Fully completed, delivered or customer-approved digital services are not guaranteed to be fully refundable.</p>
+                        <h3>Submission</h3>
+                        <p>Refund requests must be submitted in writing to <a href='mailto:info@bysiriusgroup.com'>info@bysiriusgroup.com</a>.</p>
+                    </div>
+                </div>
+            </section>`,
+        deliveryBody: `
+            <section class='section section-compact'>
+                <div class='container'>
+                    <div class='legal-content'>
+                        <h2>Delivery Model</h2>
+                        <p>Our projects follow a phased process of proposal, planning, implementation and delivery. All work is managed under the UK company information.</p>
+                        <h3>Proposal and Acceptance</h3>
+                        <p>The service scope is defined in the proposal. After client approval, a project timeline is set and the project moves forward.</p>
+                        <h3>Development & Integration</h3>
+                        <p>AI automation, website setup, SEO, analytics and integration work is delivered according to the project specification.</p>
+                        <h3>Testing & Approval</h3>
+                        <p>Pre-delivery quality checks, client review and final approval processes are completed.</p>
+                        <h3>Support</h3>
+                        <p>After delivery, maintenance and support requests are addressed with tailored offers.</p>
+                    </div>
+                </div>
+            </section>`,
+        paymentBody: `
+            <section class='section section-compact'>
+                <div class='container'>
+                    <div class='legal-content'>
+                        <h2>Payment Process</h2>
+                        <p>Payment for services is managed by Stripe Payment Link. Prices are calculated with custom client proposals based on service scope and project needs.</p>
+                        <table class='pricing-table'>
+                            <thead>
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Stripe product name</th>
+                                    <th>Description</th>
+                                    <th>Pricing model</th>
+                                    <th>Payment process</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>AI Appointment & Booking Automation</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>AI-based appointment and booking system setup.</td>
+                                    <td>Custom client quote</td>
+                                    <td>Custom Stripe Payment Link for client.</td>
+                                </tr>
+                                <tr>
+                                    <td>Chatbot & AI Assistants</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Development of AI chatbot and assistant systems.</td>
+                                    <td>Custom client quote</td>
+                                    <td>Custom Stripe Payment Link for client.</td>
+                                </tr>
+                                <tr>
+                                    <td>Voice Assistant Automation</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Voice assistant integration and automation.</td>
+                                    <td>Custom client quote</td>
+                                    <td>Custom Stripe Payment Link for client.</td>
+                                </tr>
+                                <tr>
+                                    <td>E-mail Automation</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Email marketing and automation system.</td>
+                                    <td>Custom client quote</td>
+                                    <td>Custom Stripe Payment Link for client.</td>
+                                </tr>
+                                <tr>
+                                    <td>Sales & Marketing Automation</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Sales and marketing process automation.</td>
+                                    <td>Custom client quote</td>
+                                    <td>Custom Stripe Payment Link for client.</td>
+                                </tr>
+                                <tr>
+                                    <td>Smart CRM & Lead Management</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>CRM and lead management automation.</td>
+                                    <td>Custom client quote</td>
+                                    <td>Custom Stripe Payment Link for client.</td>
+                                </tr>
+                                <tr>
+                                    <td>AI Content Creation</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>AI-powered text content creation and management.</td>
+                                    <td>Custom client quote</td>
+                                    <td>Custom Stripe Payment Link for client.</td>
+                                </tr>
+                                <tr>
+                                    <td>Document Management & Archive Automation</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Digital document management and archive system.</td>
+                                    <td>Custom client quote</td>
+                                    <td>Custom Stripe Payment Link for client.</td>
+                                </tr>
+                                <tr>
+                                    <td>Invoice & Finance Process Automation</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Automated invoice and finance process automation.</td>
+                                    <td>Custom client quote</td>
+                                    <td>Custom Stripe Payment Link for client.</td>
+                                </tr>
+                                <tr>
+                                    <td>Legal & Finance Automation</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>AI automation for legal and finance processes.</td>
+                                    <td>Custom client quote</td>
+                                    <td>Custom Stripe Payment Link for client.</td>
+                                </tr>
+                                <tr>
+                                    <td>AI Visual & Video Production</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>AI-powered visual and video content creation.</td>
+                                    <td>Custom client quote</td>
+                                    <td>Custom Stripe Payment Link for client.</td>
+                                </tr>
+                                <tr>
+                                    <td>Website Setup</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Professional website setup and design.</td>
+                                    <td>Pricing based on service scope</td>
+                                    <td>Custom Stripe Payment Link for client.</td>
+                                </tr>
+                                <tr>
+                                    <td>Landing Page Design</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Conversion-focused landing page design.</td>
+                                    <td>Pricing based on service scope</td>
+                                    <td>Custom Stripe Payment Link for client.</td>
+                                </tr>
+                                <tr>
+                                    <td>SEO & Technical Optimization</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>SEO and technical website optimization.</td>
+                                    <td>Pricing based on service scope</td>
+                                    <td>Custom Stripe Payment Link for client.</td>
+                                </tr>
+                                <tr>
+                                    <td>Analytics & Social Media Setup</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Analytics and social media integration.</td>
+                                    <td>Pricing based on service scope</td>
+                                    <td>Custom Stripe Payment Link for client.</td>
+                                </tr>
+                                <tr>
+                                    <td>Maintenance & Support</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Website maintenance and technical support.</td>
+                                    <td>Pricing based on service scope</td>
+                                    <td>Custom Stripe Payment Link for client.</td>
+                                </tr>
+                                <tr>
+                                    <td>Custom AI Software & Integration</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Custom AI software development and integration.</td>
+                                    <td>Pricing based on service scope</td>
+                                    <td>Custom Stripe Payment Link for client.</td>
+                                </tr>
+                                <tr>
+                                    <td>Digital Transformation Strategy</td>
+                                    <td>BY Sirius Service Quote</td>
+                                    <td>Digital transformation consulting and strategy development.</td>
+                                    <td>Pricing based on service scope</td>
+                                    <td>Custom Stripe Payment Link for client.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>No price amounts are listed; each project is calculated custom for the client.</p>
+                    </div>
+                </div>
+            </section>`,
         aiCeoHeroTitle: "SIRA N.OVA",
         aiCeoHeroSubtitle: "AI CEO | Digital Strategy & AI",
 
@@ -388,6 +861,11 @@ const translations = {
         fLinkFinance: "Industries",
         navBlog: "BLOG",
         fLinkAddress: "Contact",
+        fLinkPrivacy: "Privacy Policy",
+        fLinkTerms: "Terms of Service",
+        fLinkRefund: "Refund & Cancellation",
+        fLinkDelivery: "Delivery Process",
+        fLinkPayment: "Payment",
 
         // Services Block (Homepage/Global)
         servicesTitle: "Our Services",
@@ -508,7 +986,7 @@ const translations = {
         companyAddress2Label: "Address 2:",
         companyPhoneLabel: "Phone:",
         companyAddressText: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ",
-        companyAddress2Text: "Antalya, Technopark",
+        companyAddress2Text: "United Kingdom",
 
         // Footer Columns
         footerCol1Title: "About Us",
@@ -609,7 +1087,7 @@ const translations = {
         companyAddress2Label: "Address 2:",
         companyPhoneLabel: "Phone:",
         companyAddressText: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ",
-        companyAddress2Text: "Antalya, Technopark",
+        companyAddress2Text: "United Kingdom",
 
         // Analysis Modal
         modalTitle: "Free Analysis Request",
@@ -689,7 +1167,7 @@ const translations = {
 
 class LanguageSystem {
     constructor() {
-        this.currentLang = localStorage.getItem('sirius_lang') || 'tr';
+        this.currentLang = localStorage.getItem('sirius_lang') || 'en';
         this.langButtons = document.querySelectorAll('.lang-btn');
         this.init();
     }
@@ -837,7 +1315,7 @@ class ChatSystem {
 
         // Simulate Bot Response
         setTimeout(() => {
-            const lang = localStorage.getItem('sirius_lang') || 'tr';
+            const lang = localStorage.getItem('sirius_lang') || 'en';
             const response = translations[lang].chatBotResponse || "...";
             this.addMessage(response, 'system-message');
         }, 1000);

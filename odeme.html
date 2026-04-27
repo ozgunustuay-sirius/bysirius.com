@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="BY SIRIUS GROUP" />
+    <meta property="og:description" content="BY Sirius Group ödeme süreçleri ve hizmet teklifleri." />
+    <meta property="og:url" content="https://bysirius.com/odeme.html" />
+    <meta property="og:image" content="https://bysirius.com/assets/images/og-image.png" />
+    <meta property="og:image:secure_url" content="https://bysirius.com/assets/images/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BY SIRIUS GROUP" />
+    <meta name="twitter:description" content="BY Sirius Group ödeme süreçleri ve hizmet teklifleri." />
+    <meta name="twitter:image" content="https://bysirius.com/assets/images/og-image.png" />
+    <title data-i18n="paymentPageTitle">Ödeme | BY Sirius Group</title>
+    <meta name="description" data-i18n="paymentPageDesc"
+        content="Stripe Payment Link ile teklif bazlı ödeme süreci, hizmet listesi ve proje bazlı ücretlendirme bilgileri.">
+    <link rel="canonical" href="https://bysiriusgroup.com/odeme.html" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="shortcut icon" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="assets/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="animations.css">
+    <style>
+        body {
+            transition: opacity 0.15s ease-in-out;
+        }
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+        .pricing-table th,
+        .pricing-table td {
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 1rem;
+            vertical-align: top;
+        }
+        .pricing-table th {
+            background: rgba(255,255,255,0.05);
+            text-align: left;
+        }
+        .pricing-table ul {
+            margin: 0;
+            padding-left: 1.05rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="sticky-header">
+        <div class="container header-container">
+            <div class="logo-area">
+                <a href="index.html" class="header-logo">
+                    <img src="assets/images/logo.png?v=1" alt="BY Sirius Group" class="logo-img">
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="hakkimizda.html" data-i18n="fLinkCompany">Hakkımızda</a></li>
+                    <li class="nav-item-dropdown">
+                        <a href="hizmetlerimiz.html" data-i18n="fLinkTech">Hizmetlerimiz</a>
+                        <div class="dropdown-menu">
+                            <a href="hizmetlerimiz.html#ai-booking" class="dropdown-item"
+                                data-i18n="serviceGridTitle1">AI Randevu & Rezervasyon</a>
+                            <a href="hizmetlerimiz.html#chatbot" class="dropdown-item"
+                                data-i18n="serviceGridTitle2">Chatbot & AI Asistanlar</a>
+                            <a href="hizmetlerimiz.html#crm-lead" class="dropdown-item"
+                                data-i18n="serviceGridTitle3">Akıllı CRM & Lead Yönetimi</a>
+                            <a href="hizmetlerimiz.html#ai-content" class="dropdown-item"
+                                data-i18n="serviceGridTitle4">AI İçerik Üretimi (Metin)</a>
+                            <a href="hizmetlerimiz.html#legal-finance" class="dropdown-item"
+                                data-i18n="serviceGridTitle5">Hukuk & Finans Otomasyonu</a>
+                            <a href="hizmetlerimiz.html#doc-mgmt" class="dropdown-item"
+                                data-i18n="serviceGridTitle6">Belge Yönetimi & Arşiv</a>
+                            <a href="hizmetlerimiz.html#invoicing" class="dropdown-item"
+                                data-i18n="serviceGridTitle7">Otomatik Fatura Düzenleme</a>
+                            <a href="hizmetlerimiz.html#visual-video" class="dropdown-item"
+                                data-i18n="serviceGridTitle8">AI Görsel & Video Oluşturma</a>
+                            <a href="hizmetlerimiz.html#custom-software" class="dropdown-item"
+                                data-i18n="serviceGridTitle9">Özel AI Yazılım</a>
+                            <a href="hizmetlerimiz.html#strategy" class="dropdown-item"
+                                data-i18n="serviceGridTitle10">Dijital Dönüşüm Stratejisi</a>
+                        </div>
+                    </li>
+                    <li class="nav-item-dropdown">
+                        <a href="sektorler.html" data-i18n="fLinkFinance">Sektörler</a>
+                        <div class="dropdown-menu">
+                            <a href="sektorler.html#hotel" class="dropdown-item" data-i18n="industry1Title">Otel ve
+                                Konaklama</a>
+                            <a href="sektorler.html#health" class="dropdown-item" data-i18n="industry2Title">Diş
+                                Klinikleri & Sağlık Merkezleri</a>
+                            <a href="sektorler.html#realestate" class="dropdown-item"
+                                data-i18n="industry3Title">Gayrimenkul Ofisleri</a>
+                            <a href="sektorler.html#beauty" class="dropdown-item" data-i18n="industry4Title">Güzellik &
+                                Estetik Merkezleri</a>
+                            <a href="sektorler.html#gym" class="dropdown-item" data-i18n="industry5Title">Spor
+                                Salonları</a>
+                            <a href="sektorler.html#finance" class="dropdown-item" data-i18n="industryFinance">Finans &
+                                Muhasebe</a>
+                            <a href="sektorler.html#law" class="dropdown-item" data-i18n="industry6Title">Hukuk
+                                Büroları</a>
+                            <a href="sektorler.html#ecommerce" class="dropdown-item"
+                                data-i18n="industry7Title">E-Ticaret & Perakende</a>
+                        </div>
+                    </li>
+                    <li><a href="blog.html" data-i18n="navBlog">BLOG</a></li>
+                    <li><a href="iletisim.html" data-i18n="fLinkAddress">İletişim</a></li>
+                </ul>
+            </nav>
+            <div class="language-switch">
+                <button id="lang-tr" class="lang-btn" aria-label="Türkçe" title="Türkçe">TR</button>
+                <div class="lang-divider"></div>
+                <button id="lang-en" class="lang-btn active" aria-label="English" title="English">EN</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="internal-hero">
+            <div class="container">
+                <h1 class="hero-title" data-i18n="paymentHeroTitle">Ödeme</h1>
+                <p class="hero-subtitle" data-i18n="paymentHeroSubtitle">Stripe tabanlı ödeme süreci, teklif bazlı fiyatlandırma ve hizmet listemiz.</p>
+            </div>
+        </section>
+
+        <div class="section section-compact">
+            <div class="container">
+                <div class="legal-content" data-i18n="paymentBody">
+            </div>
+        </div>
+    </main>
+
+    <footer class="structured-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3 class="footer-title" data-i18n="footerCol1Title">Hakkımızda</h3>
+                <div class="footer-title-accent"></div>
+                <ul class="footer-links">
+                    <li><a href="hakkimizda.html" data-i18n="fLinkCompany">Hakkımızda</a></li>
+                    <li><a href="hakkimizda.html" data-i18n="fLinkVision">Vizyon & Misyon</a></li>
+                    <li><a href="hakkimizda.html" data-i18n="fLinkManagement">Yönetim</a></li>
+                    <li><a href="hakkimizda.html" data-i18n="fLinkValues">Değerlerimiz</a></li>
+                    <li><a href="hakkimizda.html" data-i18n="fLinkWhyUs">Neden Biz?</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title" data-i18n="footerCol2Title">Hizmetlerimiz</h3>
+                <div class="footer-title-accent"></div>
+                <ul class="footer-links">
+                    <li><a href="hizmetlerimiz.html#ai-booking" data-i18n="serviceGridTitle1">AI Randevu & Rezervasyon</a></li>
+                    <li><a href="hizmetlerimiz.html#chatbot" data-i18n="serviceGridTitle2">Chatbot & AI Asistanlar</a></li>
+                    <li><a href="hizmetlerimiz.html#crm-lead" data-i18n="serviceGridTitle3">Akıllı CRM & Lead Yönetimi</a></li>
+                    <li><a href="hizmetlerimiz.html#ai-marketing" data-i18n="serviceGridTitle4">AI İçerik & Pazarlama</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title" data-i18n="footerCol3Title">Sektörler</h3>
+                <div class="footer-title-accent"></div>
+                <ul class="footer-links">
+                    <li><a href="sektorler.html" data-i18n="fLinkHealth">Sağlık Teknolojileri</a></li>
+                    <li><a href="sektorler.html" data-i18n="fLinkTourism">Turizm & Hizmet Sektörü</a></li>
+                    <li><a href="sektorler.html" data-i18n="fLinkEcommerce">E-Ticaret</a></li>
+                    <li><a href="sektorler.html" data-i18n="fLinkCorporate">Kurumsal & KOBİ Çözümleri</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3 class="footer-title" data-i18n="footerCol4Title">İletişim</h3>
+                <div class="footer-title-accent"></div>
+                <ul class="footer-links">
+                    <li><a href="iletisim.html" data-i18n="fLinkAddress">London, UK</a></li>
+                    <li><a href="gizlilik-politikasi.html" data-i18n="fLinkPrivacy">Gizlilik Politikası</a></li>
+                    <li><a href="hizmet-sartlari.html" data-i18n="fLinkTerms">Hizmet Şartları</a></li>
+                    <li><a href="iade-iptal-politikasi.html" data-i18n="fLinkRefund">İade & İptal</a></li>
+                    <li><a href="teslimat-hizmet-sureci.html" data-i18n="fLinkDelivery">Teslimat Süreci</a></li>
+                    <li><a href="odeme.html" data-i18n="fLinkPayment">Ödeme</a></li>
+                    <li><a href="mailto:info@bysiriusgroup.com">info@bysiriusgroup.com</a></li>
+                    <li><a href="tel:+447442056474">+44 7442 056474</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 BY Sirius Group AI and Technology Co. Ltd. | Companies House No: 17142392 | London, UK</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
