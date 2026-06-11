@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BY Sirius Group — Hizmet Kataloğu</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; color: #1a202c; font-size: 13px; }
+
+  /* SCREEN STYLES */
+  .screen-header { background: #0c1220; padding: 20px 40px; display: flex; align-items: center; justify-content: space-between; }
+  .screen-header img { height: 48px; }
+  .screen-header .tagline { color: rgba(255,255,255,0.65); font-size: 0.78rem; text-align: right; line-height: 1.5; }
+  .print-btn { margin: 20px 40px; display: inline-flex; align-items: center; gap: 8px; background: #2563eb; color: #fff; border: none; padding: 10px 24px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; }
+  .print-btn:hover { background: #1d4ed8; }
+
+  .catalog { max-width: 900px; margin: 0 auto; padding: 20px 40px 60px; }
+  .cat-section { margin-bottom: 36px; }
+  .cat-title { font-size: 1rem; font-weight: 700; color: #1a3a6e; border-bottom: 2px solid #2563eb; padding-bottom: 6px; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .cat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .cat-grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .cat-grid-4 { grid-template-columns: repeat(4, 1fr); }
+  .product-card { border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #f8fafc; display: flex; flex-direction: column; gap: 6px; }
+  .product-name { font-weight: 700; font-size: 0.83rem; color: #1a202c; line-height: 1.35; }
+  .product-desc { font-size: 0.78rem; color: #4a5568; line-height: 1.5; flex: 1; }
+  .product-price { font-size: 0.72rem; font-weight: 600; color: #2563eb; margin-top: 4px; }
+  .product-tag { display: inline-block; font-size: 0.65rem; font-weight: 700; padding: 2px 7px; border-radius: 20px; background: #ebf4ff; color: #2563eb; margin-bottom: 4px; letter-spacing: 0.04em; }
+  .product-tag.pro { background: #ebf8ff; color: #0369a1; }
+  .product-tag.enterprise { background: #f0fff4; color: #047857; }
+
+  .page-break { page-break-before: always; }
+  .catalog-intro { background: #ebf4ff; border-radius: 10px; padding: 16px 20px; margin-bottom: 28px; font-size: 0.85rem; color: #1e3a8a; line-height: 1.6; }
+  .catalog-intro strong { display: block; font-size: 0.95rem; margin-bottom: 4px; }
+
+  /* PRINT HEADER — appears on every page */
+  @media print {
+    .screen-header, .print-btn { display: none !important; }
+    .print-logo-header { display: flex !important; }
+    body { font-size: 11px; }
+    .catalog { padding: 0 20px 20px; max-width: 100%; }
+    .product-card { border: 1px solid #ccc; background: #f9f9f9; }
+    .cat-section { break-inside: avoid; margin-bottom: 24px; }
+    .cat-grid, .cat-grid-2, .cat-grid-4 { gap: 8px; }
+    a { color: inherit; text-decoration: none; }
+    .print-btn { display: none; }
+  }
+
+  .print-logo-header {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #fff;
+    border-bottom: 2px solid #2563eb;
+    padding: 8px 20px;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+  }
+  .print-logo-header img { height: 32px; }
+  .print-logo-header span { font-size: 0.7rem; color: #666; }
+  @media print {
+    .print-logo-header { display: flex !important; }
+    .catalog { margin-top: 55px; }
+    .page-break { page-break-before: always; margin-top: 55px; }
+  }
+
+  .contact-box { background: #1a3a6e; color: #fff; border-radius: 10px; padding: 20px 24px; margin-top: 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .contact-box h3 { grid-column: 1/-1; font-size: 0.95rem; margin-bottom: 6px; }
+  .contact-item { font-size: 0.82rem; opacity: 0.9; line-height: 1.7; }
+  .contact-item strong { display: block; font-size: 0.72rem; opacity: 0.65; letter-spacing: 0.05em; text-transform: uppercase; }
+  .footer-note { text-align: center; margin-top: 30px; font-size: 0.75rem; color: #718096; border-top: 1px solid #e2e8f0; padding-top: 16px; }
+</style>
+</head>
+<body>
+
+<!-- Screen Header (hidden on print) -->
+<div class="screen-header">
+  <img src="assets/images/logo.png" alt="BY Sirius Group">
+  <div class="tagline">AI and Technology Co. Ltd.<br>Companies House No: 17142392 · London, UK</div>
+</div>
+<button class="print-btn" onclick="window.print()">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+  PDF olarak kaydet (Yazdır)
+</button>
+
+<!-- Print Header (visible only on print, fixed on every page) -->
+<div class="print-logo-header">
+  <img src="assets/images/logo.png" alt="BY Sirius Group">
+  <span>BY Sirius Group AI and Technology Co. Ltd. · Companies House No: 17142392 · bysirius.com</span>
+</div>
+
+<div class="catalog">
+
+  <div class="catalog-intro">
+    <strong>BY Sirius Group — Hizmet Kataloğu 2026</strong>
+    Tüm hizmetlerimiz müşteriye özel teklif bazlıdır. Ödeme güvenli Stripe Payment Link üzerinden alınır.
+    Teklif ve bilgi için: <strong>info@bysiriusgroup.com</strong> · +90 535 503 26 34 · bysirius.com
+  </div>
+
+  <!-- WEB TASARIM -->
+  <div class="cat-section">
+    <div class="cat-title">🌐 Web Tasarım Paketleri</div>
+    <div class="cat-grid cat-grid-4">
+      <div class="product-card">
+        <span class="product-tag">Starter</span>
+        <div class="product-name">WEB TASARIM STARTER</div>
+        <div class="product-desc">7 sayfalık profesyonel web sitesi · Mobil uyumlu · WhatsApp butonu + iletişim formu · SSL, domain + 1 yıl hosting · 2 revizyon · 30 gün garanti</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">Dijital</span>
+        <div class="product-name">WEB TASARIM DİJİTAL</div>
+        <div class="product-desc">12 sayfa + blog altyapısı · Google Analytics 4 + Search Console · Google Business Profile kurulumu · Temel On-Page SEO · 3 revizyon + eğitim kılavuzu</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik</div>
+      </div>
+      <div class="product-card" style="border-color:#2563eb;background:#ebf4ff">
+        <span class="product-tag pro">Büyüme PRO ⭐</span>
+        <div class="product-name">WEB TASARIM BÜYÜME-PRO</div>
+        <div class="product-desc">20 sayfa + içerik yönetim paneli · AI chatbot + WhatsApp Business API · İleri SEO + anahtar kelime araştırması · Çok dilli (TR/EN), schema verisi · 3 ay GBP yönetimi + 3 ay bakım</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik</div>
+      </div>
+      <div class="product-card" style="border-color:#047857;background:#f0fff4">
+        <span class="product-tag enterprise">Kurumsal</span>
+        <div class="product-name">WEB TASARIM KURUMSAL</div>
+        <div class="product-desc">Sınırsız sayfa + e-ticaret altyapısı · Online ödeme entegrasyonu · Özel CRM + gelişmiş AI chatbot · 7/24 öncelikli destek · 6 ay ücretsiz bakım + sınırsız revizyon</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEO -->
+  <div class="cat-section">
+    <div class="cat-title">🔍 SEO Hizmetleri</div>
+    <div class="cat-grid cat-grid-4">
+      <div class="product-card">
+        <span class="product-tag">SEO</span>
+        <div class="product-name">Temel On-Page SEO</div>
+        <div class="product-desc">Meta etiketleri, başlık yapısı, iç link optimizasyonu ve hız iyileştirme.</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">SEO</span>
+        <div class="product-name">Anahtar Kelime Araştırması</div>
+        <div class="product-desc">50 anahtar kelime analizi, rakip değerlendirmesi ve içerik planı.</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">SEO</span>
+        <div class="product-name">Aylık SEO Yönetimi</div>
+        <div class="product-desc">Off-page optimizasyon, backlink çalışması, içerik üretimi ve aylık raporlama.</div>
+        <div class="product-price">Teklif bazlı · Aylık abonelik</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">SEO</span>
+        <div class="product-name">Yerel SEO Paketi</div>
+        <div class="product-desc">Google Maps optimizasyonu ve yerel anahtar kelime çalışması.</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANALİTİK -->
+  <div class="cat-section">
+    <div class="cat-title">📊 Analitik Kurulumları</div>
+    <div class="cat-grid">
+      <div class="product-card">
+        <span class="product-tag">Analitik</span>
+        <div class="product-name">Google Analytics 4 Kurulumu</div>
+        <div class="product-desc">Event tracking, dönüşüm hedefleri ve özel dashboard kurulumu.</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">Analitik</span>
+        <div class="product-name">Google Search Console</div>
+        <div class="product-desc">Site doğrulama, sitemap gönderimi ve indeksleme izleme.</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik</div>
+      </div>
+      <div class="product-card" style="border-color:#2563eb;background:#ebf4ff">
+        <span class="product-tag pro">Kombo ⭐</span>
+        <div class="product-name">GA4 + Search Console Kombo</div>
+        <div class="product-desc">Tam analitik altyapısı — GA4 ve Search Console birlikte kurulur.</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GBP -->
+  <div class="cat-section">
+    <div class="cat-title">📍 Google Business Profile</div>
+    <div class="cat-grid">
+      <div class="product-card">
+        <span class="product-tag">GBP</span>
+        <div class="product-name">GBP Kurulum & Optimizasyon</div>
+        <div class="product-desc">Profil oluşturma, kategori seçimi, fotoğraf yükleme ve çalışma saatleri ayarı.</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">GBP</span>
+        <div class="product-name">GBP Aylık Yönetimi</div>
+        <div class="product-desc">Düzenli post, yorum yanıtlama ve aylık analiz raporu.</div>
+        <div class="product-price">Teklif bazlı · Aylık abonelik</div>
+      </div>
+      <div class="product-card" style="border-color:#2563eb;background:#ebf4ff">
+        <span class="product-tag pro">Premium ⭐</span>
+        <div class="product-name">GBP Premium Yönetimi</div>
+        <div class="product-desc">Haftada 2 post, Q&A yönetimi, fotoğraf güncellemeleri ve detaylı raporlama.</div>
+        <div class="product-price">Teklif bazlı · Aylık abonelik</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- BAKIM -->
+  <div class="cat-section">
+    <div class="cat-title">🔧 Web Sitesi Aylık Bakım</div>
+    <div class="cat-grid cat-grid-2">
+      <div class="product-card">
+        <span class="product-tag">Bakım</span>
+        <div class="product-name">Aylık Web Sitesi Bakım</div>
+        <div class="product-desc">Güncelleme, yedekleme, hata düzeltme ve 2 içerik değişikliği / ay.</div>
+        <div class="product-price">Teklif bazlı · Aylık abonelik</div>
+      </div>
+      <div class="product-card" style="border-color:#2563eb;background:#ebf4ff">
+        <span class="product-tag pro">PRO ⭐</span>
+        <div class="product-name">Aylık Web Sitesi Bakım PRO</div>
+        <div class="product-desc">Temel bakım + 5 değişiklik + aylık SEO raporu + öncelikli destek.</div>
+        <div class="product-price">Teklif bazlı · Aylık abonelik</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHATBOT & OTOMASYON -->
+  <div class="cat-section">
+    <div class="cat-title">🤖 Chatbot & Otomasyon</div>
+    <div class="cat-grid">
+      <div class="product-card">
+        <span class="product-tag">Chatbot</span>
+        <div class="product-name">Temel AI Web Chatbot</div>
+        <div class="product-desc">SSS tabanlı bot, lead yakalama ve e-posta bildirimi.</div>
+        <div class="product-price">Teklif bazlı · Kurulum</div>
+      </div>
+      <div class="product-card" style="border-color:#2563eb;background:#ebf4ff">
+        <span class="product-tag pro">GPT ⭐</span>
+        <div class="product-name">GPT Destekli AI Chatbot</div>
+        <div class="product-desc">Özel eğitimli model, çok dilli destek ve raporlama dahil.</div>
+        <div class="product-price">Teklif bazlı · Kurulum</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">WhatsApp</span>
+        <div class="product-name">WhatsApp Business API — Kurulum</div>
+        <div class="product-desc">Otomatik yanıt sistemi ve akış tasarımı.</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">WhatsApp</span>
+        <div class="product-name">WhatsApp Business API — Bakım</div>
+        <div class="product-desc">Aylık bakım, akış güncellemeleri ve raporlama.</div>
+        <div class="product-price">Teklif bazlı · Aylık abonelik</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">Instagram</span>
+        <div class="product-name">Instagram & Messenger — Kurulum</div>
+        <div class="product-desc">DM otomasyonu ve lead yönlendirme akışı kurulumu.</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">Instagram</span>
+        <div class="product-name">Instagram & Messenger — Bakım</div>
+        <div class="product-desc">Aylık bakım, akış optimizasyonu ve performans takibi.</div>
+        <div class="product-price">Teklif bazlı · Aylık abonelik</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARKA & PAZARLAMA -->
+  <div class="cat-section">
+    <div class="cat-title">🎨 Marka & Pazarlama</div>
+    <div class="cat-grid cat-grid-4">
+      <div class="product-card">
+        <span class="product-tag">Marka</span>
+        <div class="product-name">Logo & Marka Kimliği</div>
+        <div class="product-desc">3 konsept, renk paleti, tipografi ve kurumsal kimlik kılavuzu.</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">Sosyal Medya</span>
+        <div class="product-name">Sosyal Medya Görsel Seti</div>
+        <div class="product-desc">15 post tasarımı + profil ve kapak fotoğrafı tasarımı.</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">E-Posta</span>
+        <div class="product-name">E-Posta Pazarlama Kurulumu</div>
+        <div class="product-desc">Platform kurulumu + 3 e-posta şablonu + 3 kampanya hazırlığı.</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">Dijital</span>
+        <div class="product-name">QR Menü / Dijital Katalog</div>
+        <div class="product-desc">Ürün/hizmet kataloğu tasarımı ve QR kod üretimi.</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- AI OTOMASYON -->
+  <div class="cat-section">
+    <div class="cat-title">⚡ AI Otomasyon Hizmetleri</div>
+    <div class="cat-grid">
+      <div class="product-card">
+        <span class="product-tag">AI Otomasyon</span>
+        <div class="product-name">📅 AI Randevu & Rezervasyon</div>
+        <div class="product-desc">7/24 kesintisiz AI tabanlı randevu ve rezervasyon sistemi kurulumu ve yönetimi.</div>
+        <div class="product-price">Teklif bazlı · Kurulum</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">AI Otomasyon</span>
+        <div class="product-name">🎙️ Sesli Asistan Otomasyonu</div>
+        <div class="product-desc">Sesli AI asistan entegrasyonu ile telefon ve IVR sistemlerini otomatikleştirin.</div>
+        <div class="product-price">Teklif bazlı · Kurulum</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">AI Otomasyon</span>
+        <div class="product-name">📧 E-mail Otomasyonu</div>
+        <div class="product-desc">Segmente özel kampanya akışları, tetikleyici diziler ve otomatik takip e-postaları.</div>
+        <div class="product-price">Teklif bazlı · Kurulum</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">AI Otomasyon</span>
+        <div class="product-name">📈 Satış & Pazarlama Otomasyonu</div>
+        <div class="product-desc">Satış hunilerini ve pazarlama süreçlerini AI ile otomatikleştirerek büyümeyi hızlandırın.</div>
+        <div class="product-price">Teklif bazlı · Kurulum</div>
+      </div>
+      <div class="product-card" style="border-color:#2563eb;background:#ebf4ff">
+        <span class="product-tag pro">CRM ⭐</span>
+        <div class="product-name">🎯 Akıllı CRM & Lead Yönetimi</div>
+        <div class="product-desc">Otomatik lead toplama, skorlama ve dinamik satış huni yönetimi entegrasyonu.</div>
+        <div class="product-price">Teklif bazlı · Kurulum</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">AI İçerik</span>
+        <div class="product-name">✍️ AI İçerik Üretimi</div>
+        <div class="product-desc">SEO uyumlu makale, blog, ürün açıklaması ve kurumsal metin AI ile dakikalar içinde.</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik / Abonelik</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">AI Otomasyon</span>
+        <div class="product-name">📁 Belge Yönetimi & Arşiv</div>
+        <div class="product-desc">Dijital belge işleme, akıllı arşivleme ve belge tabanlı iş akışı otomasyonu.</div>
+        <div class="product-price">Teklif bazlı · Kurulum</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">Finans</span>
+        <div class="product-name">🧾 Fatura & Finans Otomasyonu</div>
+        <div class="product-desc">Otomatik fatura oluşturma, gönderim, takip ve finans süreç yönetimi.</div>
+        <div class="product-price">Teklif bazlı · Kurulum</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">Hukuk</span>
+        <div class="product-name">⚖️ Hukuk & Finans Otomasyonu</div>
+        <div class="product-desc">Sözleşme taslağı, hukuki belge işleme ve uyumluluk süreçleri için AI çözümleri.</div>
+        <div class="product-price">Teklif bazlı · Kurulum</div>
+      </div>
+      <div class="product-card">
+        <span class="product-tag">AI Medya</span>
+        <div class="product-name">🖼️ AI Görsel & Video Üretimi</div>
+        <div class="product-desc">Marka kimliğine uygun görsel ve video içerik AI destekli üretim ve düzenleme.</div>
+        <div class="product-price">Teklif bazlı · Tek seferlik / Abonelik</div>
+      </div>
+      <div class="product-card" style="border-color:#047857;background:#f0fff4">
+        <span class="product-tag enterprise">Kurumsal</span>
+        <div class="product-name">⚡ Özel AI Yazılım & Entegrasyon</div>
+        <div class="product-desc">İşletmenize özel AI yazılım geliştirme, API entegrasyonu ve sistem mimarisi.</div>
+        <div class="product-price">Teklif bazlı · Proje bazlı</div>
+      </div>
+      <div class="product-card" style="border-color:#2563eb;background:#ebf4ff">
+        <span class="product-tag pro">Strateji ⭐</span>
+        <div class="product-name">🚀 Dijital Dönüşüm Stratejisi</div>
+        <div class="product-desc">Kapsamlı dijital dönüşüm analizi, AI odaklı yol haritası ve danışmanlık hizmeti.</div>
+        <div class="product-price">Teklif bazlı · Proje bazlı</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- İLETİŞİM -->
+  <div class="contact-box">
+    <h3>Teklif & İletişim Bilgileri</h3>
+    <div class="contact-item">
+      <strong>E-posta</strong>
+      info@bysiriusgroup.com
+    </div>
+    <div class="contact-item">
+      <strong>Web Sitesi</strong>
+      bysirius.com
+    </div>
+    <div class="contact-item">
+      <strong>Telefon (UK)</strong>
+      +44 7442 056474
+    </div>
+    <div class="contact-item">
+      <strong>Telefon (TR) / WhatsApp</strong>
+      +90 535 503 26 34
+    </div>
+    <div class="contact-item" style="grid-column:1/-1">
+      <strong>Adres</strong>
+      71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom · Companies House No: 17142392
+    </div>
+  </div>
+
+  <div class="footer-note">
+    © 2026 BY Sirius Group AI and Technology Co. Ltd. · Tüm fiyatlar proje kapsamına ve müşteri ihtiyaçlarına göre özel teklif ile belirlenir. · Ödeme Stripe Payment Link üzerinden yapılır.
+  </div>
+
+</div>
+</body>
+</html>
