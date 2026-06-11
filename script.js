@@ -1869,6 +1869,10 @@ document.addEventListener("DOMContentLoaded", () => {
             form.addEventListener("submit", async function (e) {
                 e.preventDefault();
 
+                // Honeypot spam check
+                const honeypot = form.querySelector('input[name="website"]');
+                if (honeypot && honeypot.value) return;
+
                 const adSoyad = form.querySelector('input[placeholder="Ad Soyad"]').value;
                 const telefon = form.querySelector('input[placeholder="Telefon"]').value;
                 const eposta = form.querySelector('input[placeholder="E-posta"]').value;
@@ -1893,6 +1897,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (submitBtn) {
                     submitBtn.disabled = true;
                     submitBtn.innerText = "Gönderiliyor...";
+                }
+
+                // GA4 event: lead form submit
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'generate_lead', {
+                        'event_category': 'Form',
+                        'event_label': 'Ücretsiz Analiz Talebi'
+                    });
                 }
 
                 try {
@@ -1929,6 +1941,18 @@ document.addEventListener("DOMContentLoaded", () => {
     if (contactPageForm && contactSuccess) {
         contactPageForm.addEventListener("submit", async function (e) {
             e.preventDefault();
+
+            // Honeypot spam check
+            const hp = contactPageForm.querySelector('input[name="website"]');
+            if (hp && hp.value) return;
+
+            // GA4 event: contact form submit
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'generate_lead', {
+                    'event_category': 'Form',
+                    'event_label': 'İletişim Formu'
+                });
+            }
 
             const name = contactPageForm.querySelector('input[name="name"]').value;
             const email = contactPageForm.querySelector('input[name="email"]').value;
@@ -2173,4 +2197,73 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.appendChild(btn);
         });
     }
+}());
+
+// Microsoft Clarity — Heatmap & Session Recording
+// TODO: Replace YOUR_CLARITY_PROJECT_ID with your actual ID from clarity.microsoft.com
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window,document,'clarity','script','YOUR_CLARITY_PROJECT_ID');
+
+// GA4 Event Tracking — WhatsApp & Phone clicks
+(function () {
+    function trackClick(category, label) {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'click', { 'event_category': category, 'event_label': label });
+        }
+    }
+
+    document.addEventListener('click', function (e) {
+        var el = e.target.closest('a');
+        if (!el) return;
+        var href = el.getAttribute('href') || '';
+        if (href.startsWith('https://wa.me') || href.includes('whatsapp')) {
+            trackClick('Contact', 'WhatsApp');
+        } else if (href.startsWith('tel:')) {
+            trackClick('Contact', 'Phone — ' + href.replace('tel:', ''));
+        } else if (href.startsWith('mailto:')) {
+            trackClick('Contact', 'Email');
+        }
+    });
+}());
+
+// GDPR Cookie Consent Banner
+(function () {
+    var consent = localStorage.getItem('bys_cookie_consent');
+
+    function updateGtag(state) {
+        if (typeof gtag !== 'undefined') {
+            gtag('consent', 'update', { 'analytics_storage': state, 'ad_storage': 'denied' });
+        }
+    }
+
+    if (consent === 'granted') {
+        updateGtag('granted');
+        return;
+    }
+    if (consent === 'denied') return;
+
+    var style = document.createElement('style');
+    style.textContent = '#bys-cookie{position:fixed;bottom:0;left:0;right:0;background:#111;border-top:1px solid #2a2a2a;padding:14px 24px;z-index:10000;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:Inter,sans-serif;box-shadow:0 -4px 20px rgba(0,0,0,0.4)}#bys-cookie p{color:#bbb;font-size:13.5px;margin:0;flex:1;min-width:200px;line-height:1.5}#bys-cookie p a{color:#c9a84c;text-decoration:none}#bys-cookie p a:hover{text-decoration:underline}.bys-cookie-btns{display:flex;gap:10px;flex-shrink:0}.bys-cb-accept{background:#c9a84c;color:#000;border:none;padding:9px 20px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;transition:background 0.2s}.bys-cb-accept:hover{background:#e0ba5a}.bys-cb-reject{background:transparent;color:#888;border:1px solid #3a3a3a;padding:9px 16px;border-radius:6px;font-size:13px;cursor:pointer;transition:border-color 0.2s}.bys-cb-reject:hover{border-color:#666;color:#bbb}@media(max-width:600px){#bys-cookie{flex-direction:column;text-align:center}.bys-cookie-btns{justify-content:center;width:100%}}';
+    document.head.appendChild(style);
+
+    var banner = document.createElement('div');
+    banner.id = 'bys-cookie';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Çerez tercihleri');
+    banner.innerHTML = '<p>Bu site deneyiminizi iyileştirmek için analitik çerezler kullanır. Devam ederek <a href="gizlilik-politikasi.html">Gizlilik Politikamızı</a> kabul etmiş sayılırsınız.</p><div class="bys-cookie-btns"><button class="bys-cb-accept" id="bys-accept">Kabul Et</button><button class="bys-cb-reject" id="bys-reject">Reddet</button></div>';
+    document.body.appendChild(banner);
+
+    document.getElementById('bys-accept').addEventListener('click', function () {
+        localStorage.setItem('bys_cookie_consent', 'granted');
+        updateGtag('granted');
+        banner.remove();
+    });
+
+    document.getElementById('bys-reject').addEventListener('click', function () {
+        localStorage.setItem('bys_cookie_consent', 'denied');
+        banner.remove();
+    });
 }());
