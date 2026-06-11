@@ -694,55 +694,6 @@
         </div>
     </div>
 
-    <!-- Global Floating Elements -->
-    <div class="floating-actions">
-        <!-- WhatsApp Floating Button -->
-        <a href="https://wa.me/447442056474" class="floating-btn btn-whatsapp" data-i18n-label="whatsAppSupport"
-            aria-label="WhatsApp Support" data-i18n-title="whatsAppSupport" title="WhatsApp Destek" style="display: none;">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-                <path
-                    d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.827z" />
-            </svg>
-        </a>
-
-        <!-- Live Chat Floating Button -->
-        <div class="chat-container">
-            <div class="chat-panel" id="chat-panel">
-                <div class="chat-header">
-                    <div class="chat-header-info">
-                        <span class="chat-title" data-i18n="chatTitle">AI Strategy Assistant</span>
-                        <span class="chat-subtitle" data-i18n="chatSubtitle">Powered by BY Sirius Group AI and Technology Co. Ltd.</span>
-                    </div>
-                    <button class="chat-close" id="chat-close" aria-label="Close Chat">&times;</button>
-                </div>
-                <div class="chat-messages" id="chat-messages">
-                    <div class="message system-message">
-                        <p data-i18n="chatWelcome">Merhaba! Ben Sirius AI. Projeleriniz veya teknoloji stratejileriniz
-                            hakkında size nasıl yardımcı olabilirim?</p>
-                    </div>
-                </div>
-                <div class="chat-input-area">
-                    <input type="text" id="chat-input" data-i18n-placeholder="chatPlaceholder"
-                        placeholder="Mesajınızı yazın...">
-                    <button id="chat-send" class="chat-send-btn">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="22" y1="2" x2="11" y2="13"></line>
-                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <button class="floating-btn btn-chatbot" id="chat-toggle" data-i18n-label="liveSupport"
-                aria-label="Open Chat" data-i18n-title="liveSupport" title="Canlı Destek">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
-            </button>
-        </div>
-    </div>
-
     <div id="analysisModal" class="modal-overlay">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
@@ -750,10 +701,10 @@
 
             <form id="analysisForm">
                 <input type="text" name="website" style="display:none!important" tabindex="-1" autocomplete="off" aria-hidden="true">
-                <input type="text" placeholder="Ad Soyad" data-i18n-placeholder="placeholderName" required>
-                <input type="text" placeholder="Telefon" data-i18n-placeholder="placeholderPhone" required>
-                <input type="email" placeholder="E-posta" data-i18n-placeholder="placeholderEmail" required>
-                <input type="text" placeholder="Firma Adı" data-i18n-placeholder="placeholderCompany" required>
+                <input type="text" name="name" placeholder="Ad Soyad" data-i18n-placeholder="placeholderName" required>
+                <input type="text" name="phone" placeholder="Telefon" data-i18n-placeholder="placeholderPhone" required>
+                <input type="email" name="email" placeholder="E-posta" data-i18n-placeholder="placeholderEmail" required>
+                <input type="text" name="company" placeholder="Firma Adı" data-i18n-placeholder="placeholderCompany" required>
 
                 <select id="sectorSelect" required>
                     <option value="" data-i18n="placeholderSectorSelect">Sektör Seçin</option>

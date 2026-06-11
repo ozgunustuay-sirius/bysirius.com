@@ -1622,75 +1622,6 @@ class LanguageSystem {
     }
 }
 
-class ChatSystem {
-    constructor() {
-        this.panel = document.getElementById('chat-panel');
-        this.toggle = document.getElementById('chat-toggle');
-        this.close = document.getElementById('chat-close');
-        this.input = document.getElementById('chat-input');
-        this.sendBtn = document.getElementById('chat-send');
-        this.messages = document.getElementById('chat-messages');
-
-        if (this.panel && this.toggle) {
-            this.init();
-        }
-    }
-
-    init() {
-        // Toggle Panel
-        this.toggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            this.panel.classList.toggle('active');
-            if (this.panel.classList.contains('active')) {
-                this.input.focus();
-            }
-        });
-
-        // Close Panel
-        this.close.addEventListener('click', () => {
-            this.panel.classList.remove('active');
-        });
-
-        // Click Outside to Close
-        document.addEventListener('click', (e) => {
-            if (!this.panel.contains(e.target) && !this.toggle.contains(e.target)) {
-                this.panel.classList.remove('active');
-            }
-        });
-
-        // Send Message
-        this.sendBtn.addEventListener('click', () => this.sendMessage());
-        this.input.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') this.sendMessage();
-        });
-    }
-
-    sendMessage() {
-        const text = this.input.value.trim();
-        if (!text) return;
-
-        // Add User Message
-        this.addMessage(text, 'user-message');
-        this.input.value = '';
-
-        // Simulate Bot Response
-        setTimeout(() => {
-            const lang = localStorage.getItem('sirius_lang') || 'en';
-            const response = translations[lang].chatBotResponse || "...";
-            this.addMessage(response, 'system-message');
-        }, 1000);
-    }
-
-    addMessage(text, type) {
-        const msgDiv = document.createElement('div');
-        msgDiv.className = `message ${type}`;
-        msgDiv.innerHTML = `<p>${text}</p>`;
-        this.messages.appendChild(msgDiv);
-
-        // Scroll to bottom
-        this.messages.scrollTop = this.messages.scrollHeight;
-    }
-}
 
 class CEOVideoSystem {
     constructor() {
@@ -1804,9 +1735,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Start Language System
     new LanguageSystem();
 
-    // Start Chat System
-    new ChatSystem();
-
     // Start CEO Video System
     new CEOVideoSystem();
 
@@ -1873,11 +1801,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 const honeypot = form.querySelector('input[name="website"]');
                 if (honeypot && honeypot.value) return;
 
-                const adSoyad = form.querySelector('input[placeholder="Ad Soyad"]').value;
-                const telefon = form.querySelector('input[placeholder="Telefon"]').value;
-                const eposta = form.querySelector('input[placeholder="E-posta"]').value;
-                const firmaAdi = form.querySelector('input[placeholder="Firma Adı"]').value;
-                const notlar = form.querySelector('textarea[placeholder="Notlar"]').value || "";
+                const adSoyad = (form.querySelector('input[name="name"]') || form.querySelector('input[placeholder="Ad Soyad"]') || {}).value || '';
+                const telefon = (form.querySelector('input[name="phone"]') || form.querySelector('input[placeholder="Telefon"]') || {}).value || '';
+                const eposta = (form.querySelector('input[name="email"]') || form.querySelector('input[placeholder="E-posta"]') || {}).value || '';
+                const firmaAdi = (form.querySelector('input[name="company"]') || form.querySelector('input[placeholder="Firma Adı"]') || {}).value || '';
+                const notlar = (form.querySelector('textarea[name="message"]') || form.querySelector('textarea') || {}).value || '';
 
                 const selectedServices = [];
                 const serviceCheckboxes = form.querySelectorAll('input[name="services"]:checked');
