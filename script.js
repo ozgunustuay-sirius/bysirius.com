@@ -63,7 +63,7 @@ const translations = {
                         <p>Ödemeler Stripe Payment Link üzerinden gerçekleşir. BY Sirius Group, kart verilerine erişmez; yalnızca işlem onayı ve proje referans bilgilerini saklar.</p>
                         <h3>Şirket Bilgisi</h3>
                         <p>BY Sirius Group AI and Technology Co. Ltd., Companies House No: 17142392, 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.</p>
-                        <p>Gizlilik taleplerinizi <a href='mailto:info@bysiriusgroup.com'>info@bysiriusgroup.com</a> adresine yazılı olarak iletebilirsiniz.</p>
+                        <p>Gizlilik taleplerinizi <a href='mailto:info@bysirius.com'>info@bysirius.com</a> adresine yazılı olarak iletebilirsiniz.</p>
                         <h3>Haklarınız</h3>
                         <p>Verilerinize erişim, düzeltme veya silme talepleri İngiltere mevzuatı doğrultusunda değerlendirilir.</p>
                     </div>
@@ -97,7 +97,7 @@ const translations = {
                         <h3>Tamamlanmış Hizmetler</h3>
                         <p>Tamamlanmış, teslim edilmiş veya müşteri onayıyla başlatılmış dijital hizmetlerde tam iade garanti edilmez.</p>
                         <h3>Başvuru</h3>
-                        <p>İade talepleri yazılı olarak <a href='mailto:info@bysiriusgroup.com'>info@bysiriusgroup.com</a> adresine gönderilmelidir.</p>
+                        <p>İade talepleri yazılı olarak <a href='mailto:info@bysirius.com'>info@bysirius.com</a> adresine gönderilmelidir.</p>
                     </div>
                 </div>
             </section>`,
@@ -440,7 +440,7 @@ const translations = {
                                 Verileriniz üçüncü taraflarla paylaşılmaz; yalnızca ödeme altyapısı sağlayıcısı <strong>Stripe</strong> ile zorunlu ölçüde paylaşılır. Stripe, PCI-DSS uyumlu altyapısıyla kart verilerini işler; BY Sirius Group kart bilgilerine erişmez.
                             </p>
                             <p style='font-size:0.8rem;opacity:0.7;line-height:1.7'>
-                                KVKK kapsamındaki haklarınız (erişim, düzeltme, silme, işlemeye itiraz) için <a href='mailto:info@bysiriusgroup.com' style='color:inherit;text-decoration:underline'>info@bysiriusgroup.com</a> adresine yazılı başvurabilirsiniz.
+                                KVKK kapsamındaki haklarınız (erişim, düzeltme, silme, işlemeye itiraz) için <a href='mailto:info@bysirius.com' style='color:inherit;text-decoration:underline'>info@bysirius.com</a> adresine yazılı başvurabilirsiniz.
                                 Ayrıntılı bilgi için <a href='gizlilik-politikasi.html' style='color:inherit;text-decoration:underline'>Gizlilik Politikamızı</a> inceleyebilirsiniz.
                             </p>
                         </div>
@@ -820,7 +820,7 @@ const translations = {
                         <p>Payments are processed via Stripe Payment Link. BY Sirius Group does not access card data; we retain only transaction confirmation and project reference details.</p>
                         <h3>Company Information</h3>
                         <p>BY Sirius Group AI and Technology Co. Ltd., Companies House No: 17142392, 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.</p>
-                        <p>Privacy requests should be submitted in writing to <a href='mailto:info@bysiriusgroup.com'>info@bysiriusgroup.com</a>.</p>
+                        <p>Privacy requests should be submitted in writing to <a href='mailto:info@bysirius.com'>info@bysirius.com</a>.</p>
                         <h3>Your Rights</h3>
                         <p>You have the right to access, correct or delete your data. All requests are handled under UK legal requirements.</p>
                     </div>
@@ -854,7 +854,7 @@ const translations = {
                         <h3>Completed Services</h3>
                         <p>Fully completed, delivered or customer-approved digital services are not guaranteed to be fully refundable.</p>
                         <h3>Submission</h3>
-                        <p>Refund requests must be submitted in writing to <a href='mailto:info@bysiriusgroup.com'>info@bysiriusgroup.com</a>.</p>
+                        <p>Refund requests must be submitted in writing to <a href='mailto:info@bysirius.com'>info@bysirius.com</a>.</p>
                     </div>
                 </div>
             </section>`,
@@ -1197,7 +1197,7 @@ const translations = {
                                 Your data is not shared with third parties, except with <strong>Stripe</strong> to the extent necessary for payment processing. Stripe is PCI-DSS compliant; BY Sirius Group does not access card details at any time.
                             </p>
                             <p style='font-size:0.8rem;opacity:0.7;line-height:1.7'>
-                                To exercise your rights (access, rectification, erasure, objection) under UK GDPR / KVKK, contact us at <a href='mailto:info@bysiriusgroup.com' style='color:inherit;text-decoration:underline'>info@bysiriusgroup.com</a>.
+                                To exercise your rights (access, rectification, erasure, objection) under UK GDPR / KVKK, contact us at <a href='mailto:info@bysirius.com' style='color:inherit;text-decoration:underline'>info@bysirius.com</a>.
                                 For full details, see our <a href='gizlilik-politikasi.html' style='color:inherit;text-decoration:underline'>Privacy Policy</a>.
                             </p>
                         </div>
