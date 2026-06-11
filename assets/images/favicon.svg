@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Dark navy background matching site theme -->
+  <rect width="32" height="32" rx="6" fill="#0C1220"/>
+  <!-- Large main star (top-right, as in logo) center(20,10) outer=9 inner=3.44 -->
+  <polygon fill="#D4AF37"
+    points="20,1 22.02,7.22 28.56,7.22 23.27,11.06 25.29,17.28 20,13.44 14.71,17.28 16.73,11.06 11.44,7.22 17.98,7.22"/>
+  <!-- Medium trailing star center(11,22) outer=4.5 inner=1.72 -->
+  <polygon fill="#D4AF37"
+    points="11,17.5 12.01,20.61 15.28,20.61 12.64,22.53 13.65,25.64 11,23.72 8.35,25.64 9.36,22.53 6.72,20.61 9.99,20.61"/>
+  <!-- Small trailing star center(4,27.5) outer=2 inner=0.76 -->
+  <polygon fill="#D4AF37"
+    points="4,25.5 4.45,26.96 5.90,26.98 4.76,27.88 5.18,29.33 4,28.45 2.82,29.33 3.24,27.88 2.10,26.98 3.55,26.96"/>
+</svg>
