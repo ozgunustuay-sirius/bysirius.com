@@ -342,6 +342,20 @@ const translations = {
                         </div>
 
                         <p class='catalog-note'>Tüm fiyatlar proje kapsamına, müşteri ihtiyaçlarına ve teknik gereksinimlere göre belirlenir. Stripe Payment Link yalnızca teklif onayından sonra oluşturulur. Sorularınız için <a href='iletisim.html'>iletişim formunu</a> kullanabilirsiniz.</p>
+
+                        <div style='margin-top:2.5rem;padding:1.25rem 1.5rem;border:1px solid rgba(255,255,255,0.1);border-radius:12px;background:rgba(255,255,255,0.03)'>
+                            <h3 style='font-size:0.95rem;font-weight:600;margin-bottom:0.75rem'>KVKK Aydınlatma Metni</h3>
+                            <p style='font-size:0.8rem;opacity:0.7;line-height:1.7;margin-bottom:0.5rem'>
+                                6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında; iletişim formları ve teklif süreçleri aracılığıyla toplanan kişisel verileriniz (ad, e-posta, telefon) yalnızca hizmet teklifi hazırlama, sözleşme kurma ve iletişim amaçlarıyla işlenmektedir.
+                            </p>
+                            <p style='font-size:0.8rem;opacity:0.7;line-height:1.7;margin-bottom:0.5rem'>
+                                Verileriniz üçüncü taraflarla paylaşılmaz; yalnızca ödeme altyapısı sağlayıcısı <strong>Stripe</strong> ile zorunlu ölçüde paylaşılır. Stripe, PCI-DSS uyumlu altyapısıyla kart verilerini işler; BY Sirius Group kart bilgilerine erişmez.
+                            </p>
+                            <p style='font-size:0.8rem;opacity:0.7;line-height:1.7'>
+                                KVKK kapsamındaki haklarınız (erişim, düzeltme, silme, işlemeye itiraz) için <a href='mailto:info@bysiriusgroup.com' style='color:inherit;text-decoration:underline'>info@bysiriusgroup.com</a> adresine yazılı başvurabilirsiniz.
+                                Ayrıntılı bilgi için <a href='gizlilik-politikasi.html' style='color:inherit;text-decoration:underline'>Gizlilik Politikamızı</a> inceleyebilirsiniz.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>`,
@@ -997,6 +1011,20 @@ const translations = {
                         </div>
 
                         <p class='catalog-note'>All prices are determined by project scope, client requirements and technical specifications. Stripe Payment Links are generated only after quote approval. Use the <a href='iletisim.html'>contact form</a> for any enquiries.</p>
+
+                        <div style='margin-top:2.5rem;padding:1.25rem 1.5rem;border:1px solid rgba(255,255,255,0.1);border-radius:12px;background:rgba(255,255,255,0.03)'>
+                            <h3 style='font-size:0.95rem;font-weight:600;margin-bottom:0.75rem'>Data Protection Notice (GDPR / UK GDPR)</h3>
+                            <p style='font-size:0.8rem;opacity:0.7;line-height:1.7;margin-bottom:0.5rem'>
+                                Personal data collected through our contact forms and proposal processes (name, email, phone) is processed solely for the purpose of preparing service quotations, forming contracts, and communication, in accordance with UK GDPR and, where applicable, Turkish Law No. 6698 (KVKK).
+                            </p>
+                            <p style='font-size:0.8rem;opacity:0.7;line-height:1.7;margin-bottom:0.5rem'>
+                                Your data is not shared with third parties, except with <strong>Stripe</strong> to the extent necessary for payment processing. Stripe is PCI-DSS compliant; BY Sirius Group does not access card details at any time.
+                            </p>
+                            <p style='font-size:0.8rem;opacity:0.7;line-height:1.7'>
+                                To exercise your rights (access, rectification, erasure, objection) under UK GDPR / KVKK, contact us at <a href='mailto:info@bysiriusgroup.com' style='color:inherit;text-decoration:underline'>info@bysiriusgroup.com</a>.
+                                For full details, see our <a href='gizlilik-politikasi.html' style='color:inherit;text-decoration:underline'>Privacy Policy</a>.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>`,
