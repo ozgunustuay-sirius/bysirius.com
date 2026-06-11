@@ -341,6 +341,94 @@ const translations = {
                             </div>
                         </div>
 
+                        <h3 class='catalog-category'>🤖 AI Otomasyon Hizmetleri</h3>
+                        <div class='catalog-grid catalog-grid-3'>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>Otomasyon</span>
+                                <h4>📅 AI Randevu & Rezervasyon</h4>
+                                <p>7/24 kesintisiz AI tabanlı randevu ve rezervasyon sistemi kurulumu ve yönetimi.</p>
+                                <p class='catalog-price'>Teklif bazlı · Kurulum</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>Otomasyon</span>
+                                <h4>🎙️ Sesli Asistan Otomasyonu</h4>
+                                <p>Sesli AI asistan entegrasyonu ile telefon ve IVR sistemlerini otomatikleştirin.</p>
+                                <p class='catalog-price'>Teklif bazlı · Kurulum</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>Otomasyon</span>
+                                <h4>📧 E-mail Otomasyonu</h4>
+                                <p>Segmente özel kampanya akışları, tetikleyici diziler ve otomatik takip e-postaları.</p>
+                                <p class='catalog-price'>Teklif bazlı · Kurulum</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>Otomasyon</span>
+                                <h4>📈 Satış & Pazarlama Otomasyonu</h4>
+                                <p>Satış hunilerini ve pazarlama süreçlerini AI ile otomatikleştirerek büyümeyi hızlandırın.</p>
+                                <p class='catalog-price'>Teklif bazlı · Kurulum</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card catalog-card-featured'>
+                                <span class='catalog-tag catalog-tag-pro'>CRM</span>
+                                <h4>🎯 Akıllı CRM & Lead Yönetimi</h4>
+                                <p>Otomatik lead toplama, skorlama ve dinamik satış huni yönetimi entegrasyonu.</p>
+                                <p class='catalog-price'>Teklif bazlı · Kurulum</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>AI İçerik</span>
+                                <h4>✍️ AI İçerik Üretimi</h4>
+                                <p>SEO uyumlu makale, blog, ürün açıklaması ve kurumsal metin AI ile dakikalar içinde.</p>
+                                <p class='catalog-price'>Teklif bazlı · Tek seferlik / Abonelik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>Otomasyon</span>
+                                <h4>📁 Belge Yönetimi & Arşiv</h4>
+                                <p>Dijital belge işleme, akıllı arşivleme ve belge tabanlı iş akışı otomasyonu.</p>
+                                <p class='catalog-price'>Teklif bazlı · Kurulum</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>Finans</span>
+                                <h4>🧾 Fatura & Finans Otomasyonu</h4>
+                                <p>Otomatik fatura oluşturma, gönderim, takip ve finans süreç yönetimi.</p>
+                                <p class='catalog-price'>Teklif bazlı · Kurulum</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>Hukuk</span>
+                                <h4>⚖️ Hukuk & Finans Otomasyonu</h4>
+                                <p>Sözleşme taslağı, hukuki belge işleme ve uyumluluk süreçleri için AI çözümleri.</p>
+                                <p class='catalog-price'>Teklif bazlı · Kurulum</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>AI Medya</span>
+                                <h4>🖼️ AI Görsel & Video Üretimi</h4>
+                                <p>Marka kimliğine uygun görsel ve video içerik AI destekli üretim ve düzenleme.</p>
+                                <p class='catalog-price'>Teklif bazlı · Tek seferlik / Abonelik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card catalog-card-featured'>
+                                <span class='catalog-tag catalog-tag-enterprise'>Kurumsal</span>
+                                <h4>⚡ Özel AI Yazılım & Entegrasyon</h4>
+                                <p>İşletmenize özel AI yazılım geliştirme, API entegrasyonu ve sistem mimarisi.</p>
+                                <p class='catalog-price'>Teklif bazlı · Proje bazlı</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card catalog-card-featured'>
+                                <span class='catalog-tag catalog-tag-pro'>Strateji</span>
+                                <h4>🚀 Dijital Dönüşüm Stratejisi</h4>
+                                <p>Kapsamlı dijital dönüşüm analizi, AI odaklı yol haritası ve danışmanlık hizmeti.</p>
+                                <p class='catalog-price'>Teklif bazlı · Proje bazlı</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                        </div>
+
                         <p class='catalog-note'>Tüm fiyatlar proje kapsamına, müşteri ihtiyaçlarına ve teknik gereksinimlere göre belirlenir. Stripe Payment Link yalnızca teklif onayından sonra oluşturulur. Sorularınız için <a href='iletisim.html'>iletişim formunu</a> kullanabilirsiniz.</p>
 
                         <div style='margin-top:2.5rem;padding:1.25rem 1.5rem;border:1px solid rgba(255,255,255,0.1);border-radius:12px;background:rgba(255,255,255,0.03)'>
@@ -1006,6 +1094,94 @@ const translations = {
                                 <h4>QR Menu / Digital Catalogue</h4>
                                 <p>Product/service catalogue design and QR code generation.</p>
                                 <p class='catalog-price'>Quote-based · One-time</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                        </div>
+
+                        <h3 class='catalog-category'>🤖 AI Automation Services</h3>
+                        <div class='catalog-grid catalog-grid-3'>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>Automation</span>
+                                <h4>📅 AI Booking & Reservation</h4>
+                                <p>24/7 AI-powered booking and reservation system setup and management.</p>
+                                <p class='catalog-price'>Quote-based · Setup</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>Automation</span>
+                                <h4>🎙️ Voice Assistant Automation</h4>
+                                <p>AI voice assistant integration to automate telephone and IVR systems.</p>
+                                <p class='catalog-price'>Quote-based · Setup</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>Automation</span>
+                                <h4>📧 Email Automation</h4>
+                                <p>Segmented campaign flows, trigger sequences and automated follow-up emails.</p>
+                                <p class='catalog-price'>Quote-based · Setup</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>Automation</span>
+                                <h4>📈 Sales & Marketing Automation</h4>
+                                <p>Automate sales funnels and marketing processes with AI to accelerate growth.</p>
+                                <p class='catalog-price'>Quote-based · Setup</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card catalog-card-featured'>
+                                <span class='catalog-tag catalog-tag-pro'>CRM</span>
+                                <h4>🎯 Smart CRM & Lead Management</h4>
+                                <p>Automated lead capture, scoring and dynamic sales funnel management integration.</p>
+                                <p class='catalog-price'>Quote-based · Setup</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>AI Content</span>
+                                <h4>✍️ AI Content Generation</h4>
+                                <p>SEO-optimised articles, blog posts, product descriptions and corporate copy in minutes.</p>
+                                <p class='catalog-price'>Quote-based · One-time / Subscription</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>Automation</span>
+                                <h4>📁 Document Management & Archive</h4>
+                                <p>Digital document processing, smart archiving and document workflow automation.</p>
+                                <p class='catalog-price'>Quote-based · Setup</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>Finance</span>
+                                <h4>🧾 Invoice & Finance Automation</h4>
+                                <p>Automated invoice creation, dispatch, tracking and financial process management.</p>
+                                <p class='catalog-price'>Quote-based · Setup</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>Legal</span>
+                                <h4>⚖️ Legal & Finance Automation</h4>
+                                <p>AI solutions for contract drafting, legal document processing and compliance workflows.</p>
+                                <p class='catalog-price'>Quote-based · Setup</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>AI Media</span>
+                                <h4>🖼️ AI Visual & Video Production</h4>
+                                <p>AI-powered generation and editing of brand-consistent visuals and video content.</p>
+                                <p class='catalog-price'>Quote-based · One-time / Subscription</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card catalog-card-featured'>
+                                <span class='catalog-tag catalog-tag-enterprise'>Enterprise</span>
+                                <h4>⚡ Custom AI Software & Integration</h4>
+                                <p>Bespoke AI software development, API integration and system architecture for your business.</p>
+                                <p class='catalog-price'>Quote-based · Project-based</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card catalog-card-featured'>
+                                <span class='catalog-tag catalog-tag-pro'>Strategy</span>
+                                <h4>🚀 Digital Transformation Strategy</h4>
+                                <p>Comprehensive digital transformation analysis, AI-focused roadmap and consultancy.</p>
+                                <p class='catalog-price'>Quote-based · Project-based</p>
                                 <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
                             </div>
                         </div>
@@ -1956,4 +2132,45 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     });
-});
+})();
+
+// WhatsApp floating button
+(function () {
+    var btn = document.createElement('a');
+    btn.href = 'https://wa.me/905355032634';
+    btn.target = '_blank';
+    btn.rel = 'noopener noreferrer';
+    btn.setAttribute('aria-label', 'WhatsApp ile iletişime geç');
+    btn.style.cssText = [
+        'position:fixed',
+        'bottom:24px',
+        'right:24px',
+        'z-index:9999',
+        'width:56px',
+        'height:56px',
+        'border-radius:50%',
+        'background:#25D366',
+        'display:flex',
+        'align-items:center',
+        'justify-content:center',
+        'box-shadow:0 4px 16px rgba(0,0,0,0.35)',
+        'text-decoration:none',
+        'transition:transform 0.2s,box-shadow 0.2s'
+    ].join(';');
+    btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>';
+    btn.addEventListener('mouseenter', function () {
+        this.style.transform = 'scale(1.1)';
+        this.style.boxShadow = '0 6px 22px rgba(0,0,0,0.45)';
+    });
+    btn.addEventListener('mouseleave', function () {
+        this.style.transform = 'scale(1)';
+        this.style.boxShadow = '0 4px 16px rgba(0,0,0,0.35)';
+    });
+    if (document.body) {
+        document.body.appendChild(btn);
+    } else {
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.appendChild(btn);
+        });
+    }
+}());
