@@ -122,148 +122,226 @@ const translations = {
             <section class='section section-compact'>
                 <div class='container'>
                     <div class='legal-content'>
-                        <h2>Ödeme Süreci</h2>
-                        <p>Hizmetler için ödeme süreci Stripe Payment Link ile yönetilir. Fiyatlar müşteriye özel teklif, hizmet kapsamı ve proje ihtiyaçlarına göre belirlenir.</p>
-                        <table class='pricing-table'>
-                            <thead>
-                                <tr>
-                                    <th>Hizmet</th>
-                                    <th>Stripe ürün adı</th>
-                                    <th>Açıklama</th>
-                                    <th>Fiyat yapısı</th>
-                                    <th>Ödeme süreci</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>AI Randevu & Rezervasyon Otomasyonu</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>AI tabanlı randevu ve rezervasyon sistemi kurulumu.</td>
-                                    <td>Müşteriye özel teklif</td>
-                                    <td>Müşteriye özel Stripe Payment Link.</td>
-                                </tr>
-                                <tr>
-                                    <td>Chatbot & AI Asistanlar</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>AI chatbot ve asistan sistemleri geliştirme.</td>
-                                    <td>Müşteriye özel teklif</td>
-                                    <td>Müşteriye özel Stripe Payment Link.</td>
-                                </tr>
-                                <tr>
-                                    <td>Sesli Asistan Otomasyonu</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Sesli asistan entegrasyonu ve otomasyonu.</td>
-                                    <td>Müşteriye özel teklif</td>
-                                    <td>Müşteriye özel Stripe Payment Link.</td>
-                                </tr>
-                                <tr>
-                                    <td>E-mail Otomasyonu</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>E-posta pazarlama ve otomasyon sistemi.</td>
-                                    <td>Müşteriye özel teklif</td>
-                                    <td>Müşteriye özel Stripe Payment Link.</td>
-                                </tr>
-                                <tr>
-                                    <td>Satış & Pazarlama Otomasyonu</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Satış ve pazarlama süreçleri otomasyonu.</td>
-                                    <td>Müşteriye özel teklif</td>
-                                    <td>Müşteriye özel Stripe Payment Link.</td>
-                                </tr>
-                                <tr>
-                                    <td>Akıllı CRM & Lead Yönetimi</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>CRM ve lead yönetimi otomasyonu.</td>
-                                    <td>Müşteriye özel teklif</td>
-                                    <td>Müşteriye özel Stripe Payment Link.</td>
-                                </tr>
-                                <tr>
-                                    <td>AI İçerik Üretimi</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>AI ile metin içerik üretimi ve yönetimi.</td>
-                                    <td>Müşteriye özel teklif</td>
-                                    <td>Müşteriye özel Stripe Payment Link.</td>
-                                </tr>
-                                <tr>
-                                    <td>Belge Yönetimi & Arşiv Otomasyonu</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Dijital belge yönetimi ve arşiv sistemi.</td>
-                                    <td>Müşteriye özel teklif</td>
-                                    <td>Müşteriye özel Stripe Payment Link.</td>
-                                </tr>
-                                <tr>
-                                    <td>Fatura & Finans Süreç Otomasyonu</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Otomatik fatura ve finans süreçleri otomasyonu.</td>
-                                    <td>Müşteriye özel teklif</td>
-                                    <td>Müşteriye özel Stripe Payment Link.</td>
-                                </tr>
-                                <tr>
-                                    <td>Hukuk & Finans Otomasyonu</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Hukuk ve finans süreçleri için AI otomasyonu.</td>
-                                    <td>Müşteriye özel teklif</td>
-                                    <td>Müşteriye özel Stripe Payment Link.</td>
-                                </tr>
-                                <tr>
-                                    <td>AI Görsel & Video Üretimi</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>AI ile görsel ve video içerik üretimi.</td>
-                                    <td>Müşteriye özel teklif</td>
-                                    <td>Müşteriye özel Stripe Payment Link.</td>
-                                </tr>
-                                <tr>
-                                    <td>Web Sitesi Kurulum</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Profesyonel web sitesi kurulumu ve tasarımı.</td>
-                                    <td>Hizmet kapsamına göre fiyatlandırma</td>
-                                    <td>Müşteriye özel Stripe Payment Link.</td>
-                                </tr>
-                                <tr>
-                                    <td>Landing Page Tasarımı</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Dönüşüm odaklı landing page tasarımı.</td>
-                                    <td>Hizmet kapsamına göre fiyatlandırma</td>
-                                    <td>Müşteriye özel Stripe Payment Link.</td>
-                                </tr>
-                                <tr>
-                                    <td>SEO & Teknik Optimizasyon</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>SEO ve teknik web optimizasyonu.</td>
-                                    <td>Hizmet kapsamına göre fiyatlandırma</td>
-                                    <td>Müşteriye özel Stripe Payment Link.</td>
-                                </tr>
-                                <tr>
-                                    <td>Analytics & Sosyal Medya Kurulumu</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Analytics ve sosyal medya entegrasyonu.</td>
-                                    <td>Hizmet kapsamına göre fiyatlandırma</td>
-                                    <td>Müşteriye özel Stripe Payment Link.</td>
-                                </tr>
-                                <tr>
-                                    <td>Bakım & Destek</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Web sitesi bakım ve teknik destek.</td>
-                                    <td>Hizmet kapsamına göre fiyatlandırma</td>
-                                    <td>Müşteriye özel Stripe Payment Link.</td>
-                                </tr>
-                                <tr>
-                                    <td>Özel AI Yazılım & Entegrasyon</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Özel AI yazılım geliştirme ve entegrasyon.</td>
-                                    <td>Hizmet kapsamına göre fiyatlandırma</td>
-                                    <td>Müşteriye özel Stripe Payment Link.</td>
-                                </tr>
-                                <tr>
-                                    <td>Dijital Dönüşüm Stratejisi</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Dijital dönüşüm danışmanlığı ve strateji geliştirme.</td>
-                                    <td>Hizmet kapsamına göre fiyatlandırma</td>
-                                    <td>Müşteriye özel Stripe Payment Link.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <p>Fiyat tutarı yazılmamıştır; projeler müşteri ihtiyaçlarına göre özel olarak hesaplanır.</p>
+                        <h2>Hizmet Kataloğu & Ödeme</h2>
+                        <p>Tüm hizmetler Stripe Payment Link üzerinden tahsil edilir. İhtiyacınıza uygun paketi belirlemek için iletişim formundan teklif talep edin; size özel ödeme linki oluşturulur.</p>
+
+                        <h3 class='catalog-category'>🌐 Web Tasarım Paketleri</h3>
+                        <div class='catalog-grid'>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>Starter</span>
+                                <h4>WEB TASARIM STARTER</h4>
+                                <ul>
+                                    <li>7 sayfalık profesyonel web sitesi</li>
+                                    <li>Mobil uyumlu, modern tasarım</li>
+                                    <li>WhatsApp butonu + iletişim formu</li>
+                                    <li>SSL, alan adı + 1 yıl hosting</li>
+                                    <li>2 revizyon, 30 gün garanti</li>
+                                </ul>
+                                <p class='catalog-price'>Teklif bazlı fiyatlandırma</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>Dijital</span>
+                                <h4>WEB TASARIM DİJİTAL</h4>
+                                <ul>
+                                    <li>12 sayfa + blog altyapısı</li>
+                                    <li>Google Analytics 4 + Search Console</li>
+                                    <li>Google Business Profile kurulumu</li>
+                                    <li>Temel On-Page SEO optimizasyonu</li>
+                                    <li>3 revizyon + eğitim kılavuzu</li>
+                                </ul>
+                                <p class='catalog-price'>Teklif bazlı fiyatlandırma</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card catalog-card-featured'>
+                                <span class='catalog-tag catalog-tag-pro'>Büyüme PRO</span>
+                                <h4>WEB TASARIM BÜYÜME-PRO</h4>
+                                <ul>
+                                    <li>20 sayfa + içerik yönetim paneli</li>
+                                    <li>AI chatbot + WhatsApp Business API</li>
+                                    <li>İleri SEO + anahtar kelime araştırması</li>
+                                    <li>Çok dilli site (TR/EN), schema verisi</li>
+                                    <li>3 ay GBP yönetimi + 3 ay bakım</li>
+                                </ul>
+                                <p class='catalog-price'>Teklif bazlı fiyatlandırma</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag catalog-tag-enterprise'>Kurumsal</span>
+                                <h4>WEB TASARIM KURUMSAL</h4>
+                                <ul>
+                                    <li>Sınırsız sayfa + e-ticaret altyapısı</li>
+                                    <li>Online ödeme sistemi entegrasyonu</li>
+                                    <li>Özel CRM + gelişmiş AI chatbot</li>
+                                    <li>7/24 öncelikli destek hattı</li>
+                                    <li>6 ay ücretsiz bakım + sınırsız revizyon</li>
+                                </ul>
+                                <p class='catalog-price'>Teklif bazlı fiyatlandırma</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                        </div>
+
+                        <h3 class='catalog-category'>🔍 SEO Hizmetleri</h3>
+                        <div class='catalog-grid catalog-grid-3'>
+                            <div class='catalog-card'>
+                                <h4>Temel On-Page SEO</h4>
+                                <p>Meta etiketleri, başlık yapısı, iç link optimizasyonu ve hız iyileştirme.</p>
+                                <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>Anahtar Kelime Araştırması</h4>
+                                <p>50 anahtar kelime analizi, rakip değerlendirmesi ve içerik planı.</p>
+                                <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>Aylık SEO Yönetimi</h4>
+                                <p>Off-page optimizasyon, backlink çalışması, içerik üretimi ve aylık raporlama.</p>
+                                <p class='catalog-price'>Teklif bazlı · Aylık abonelik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>Yerel SEO Paketi</h4>
+                                <p>Google Maps optimizasyonu ve yerel anahtar kelime çalışması.</p>
+                                <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                        </div>
+
+                        <h3 class='catalog-category'>📊 Analitik Kurulumları</h3>
+                        <div class='catalog-grid catalog-grid-3'>
+                            <div class='catalog-card'>
+                                <h4>Google Analytics 4 Kurulumu</h4>
+                                <p>Event tracking, dönüşüm hedefleri ve özel dashboard kurulumu.</p>
+                                <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>Google Search Console</h4>
+                                <p>Site doğrulama, sitemap gönderimi ve indeksleme izleme.</p>
+                                <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card catalog-card-featured'>
+                                <span class='catalog-tag catalog-tag-pro'>Kombo</span>
+                                <h4>GA4 + Search Console Kombo</h4>
+                                <p>Tam analitik altyapısı — GA4 ve Search Console birlikte kurulur.</p>
+                                <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                        </div>
+
+                        <h3 class='catalog-category'>📍 Google Business Profile</h3>
+                        <div class='catalog-grid catalog-grid-3'>
+                            <div class='catalog-card'>
+                                <h4>GBP Kurulum & Optimizasyon</h4>
+                                <p>Profil oluşturma, kategori seçimi, fotoğraf yükleme ve çalışma saatleri ayarı.</p>
+                                <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>GBP Aylık Yönetimi</h4>
+                                <p>Düzenli post, yorum yanıtlama ve aylık analiz raporu.</p>
+                                <p class='catalog-price'>Teklif bazlı · Aylık abonelik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card catalog-card-featured'>
+                                <span class='catalog-tag catalog-tag-pro'>Premium</span>
+                                <h4>GBP Premium Yönetimi</h4>
+                                <p>Haftada 2 post, Q&A yönetimi, fotoğraf güncellemeleri ve detaylı raporlama.</p>
+                                <p class='catalog-price'>Teklif bazlı · Aylık abonelik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                        </div>
+
+                        <h3 class='catalog-category'>🔧 Web Sitesi Bakım</h3>
+                        <div class='catalog-grid catalog-grid-3'>
+                            <div class='catalog-card'>
+                                <h4>Aylık Web Sitesi Bakım</h4>
+                                <p>Güncelleme, yedekleme, hata düzeltme ve 2 içerik değişikliği.</p>
+                                <p class='catalog-price'>Teklif bazlı · Aylık abonelik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card catalog-card-featured'>
+                                <span class='catalog-tag catalog-tag-pro'>Pro</span>
+                                <h4>Aylık Web Sitesi Bakım PRO</h4>
+                                <p>Temel bakım + 5 değişiklik + aylık SEO raporu + öncelikli destek.</p>
+                                <p class='catalog-price'>Teklif bazlı · Aylık abonelik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                        </div>
+
+                        <h3 class='catalog-category'>🤖 Chatbot & Otomasyon</h3>
+                        <div class='catalog-grid catalog-grid-3'>
+                            <div class='catalog-card'>
+                                <h4>Temel AI Web Chatbot</h4>
+                                <p>SSS tabanlı bot, lead yakalama ve e-posta bildirimi.</p>
+                                <p class='catalog-price'>Teklif bazlı · Kurulum</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card catalog-card-featured'>
+                                <span class='catalog-tag catalog-tag-pro'>GPT</span>
+                                <h4>GPT Destekli AI Chatbot</h4>
+                                <p>Özel eğitimli model, çok dilli destek ve raporlama dahil.</p>
+                                <p class='catalog-price'>Teklif bazlı · Kurulum</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>WhatsApp Business API — Kurulum</h4>
+                                <p>Otomatik yanıt sistemi ve akış tasarımı.</p>
+                                <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>WhatsApp Business API — Bakım</h4>
+                                <p>Aylık bakım, akış güncellemeleri ve raporlama.</p>
+                                <p class='catalog-price'>Teklif bazlı · Aylık abonelik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>Instagram & Messenger Otomasyon — Kurulum</h4>
+                                <p>DM otomasyonu ve lead yönlendirme akışı kurulumu.</p>
+                                <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>Instagram & Messenger Otomasyon — Bakım</h4>
+                                <p>Aylık bakım, akış optimizasyonu ve performans takibi.</p>
+                                <p class='catalog-price'>Teklif bazlı · Aylık abonelik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                        </div>
+
+                        <h3 class='catalog-category'>🎨 Marka & Pazarlama</h3>
+                        <div class='catalog-grid catalog-grid-3'>
+                            <div class='catalog-card'>
+                                <h4>Logo & Marka Kimliği</h4>
+                                <p>3 konsept, renk paleti, tipografi ve kurumsal kimlik kılavuzu.</p>
+                                <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>Sosyal Medya Görsel Seti</h4>
+                                <p>15 post tasarımı + profil ve kapak fotoğrafı tasarımı.</p>
+                                <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>E-Posta Pazarlama Kurulumu</h4>
+                                <p>Platform kurulumu + 3 e-posta şablonu + 3 kampanya hazırlığı.</p>
+                                <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>QR Menü / Dijital Katalog</h4>
+                                <p>Ürün/hizmet kataloğu tasarımı ve QR kod üretimi.</p>
+                                <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
+                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                            </div>
+                        </div>
+
+                        <p class='catalog-note'>Tüm fiyatlar proje kapsamına, müşteri ihtiyaçlarına ve teknik gereksinimlere göre belirlenir. Stripe Payment Link yalnızca teklif onayından sonra oluşturulur. Sorularınız için <a href='iletisim.html'>iletişim formunu</a> kullanabilirsiniz.</p>
                     </div>
                 </div>
             </section>`,
@@ -699,148 +777,226 @@ const translations = {
             <section class='section section-compact'>
                 <div class='container'>
                     <div class='legal-content'>
-                        <h2>Payment Process</h2>
-                        <p>Payment for services is managed by Stripe Payment Link. Prices are calculated with custom client proposals based on service scope and project needs.</p>
-                        <table class='pricing-table'>
-                            <thead>
-                                <tr>
-                                    <th>Service</th>
-                                    <th>Stripe product name</th>
-                                    <th>Description</th>
-                                    <th>Pricing model</th>
-                                    <th>Payment process</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>AI Appointment & Booking Automation</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>AI-based appointment and booking system setup.</td>
-                                    <td>Custom client quote</td>
-                                    <td>Custom Stripe Payment Link for client.</td>
-                                </tr>
-                                <tr>
-                                    <td>Chatbot & AI Assistants</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Development of AI chatbot and assistant systems.</td>
-                                    <td>Custom client quote</td>
-                                    <td>Custom Stripe Payment Link for client.</td>
-                                </tr>
-                                <tr>
-                                    <td>Voice Assistant Automation</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Voice assistant integration and automation.</td>
-                                    <td>Custom client quote</td>
-                                    <td>Custom Stripe Payment Link for client.</td>
-                                </tr>
-                                <tr>
-                                    <td>E-mail Automation</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Email marketing and automation system.</td>
-                                    <td>Custom client quote</td>
-                                    <td>Custom Stripe Payment Link for client.</td>
-                                </tr>
-                                <tr>
-                                    <td>Sales & Marketing Automation</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Sales and marketing process automation.</td>
-                                    <td>Custom client quote</td>
-                                    <td>Custom Stripe Payment Link for client.</td>
-                                </tr>
-                                <tr>
-                                    <td>Smart CRM & Lead Management</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>CRM and lead management automation.</td>
-                                    <td>Custom client quote</td>
-                                    <td>Custom Stripe Payment Link for client.</td>
-                                </tr>
-                                <tr>
-                                    <td>AI Content Creation</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>AI-powered text content creation and management.</td>
-                                    <td>Custom client quote</td>
-                                    <td>Custom Stripe Payment Link for client.</td>
-                                </tr>
-                                <tr>
-                                    <td>Document Management & Archive Automation</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Digital document management and archive system.</td>
-                                    <td>Custom client quote</td>
-                                    <td>Custom Stripe Payment Link for client.</td>
-                                </tr>
-                                <tr>
-                                    <td>Invoice & Finance Process Automation</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Automated invoice and finance process automation.</td>
-                                    <td>Custom client quote</td>
-                                    <td>Custom Stripe Payment Link for client.</td>
-                                </tr>
-                                <tr>
-                                    <td>Legal & Finance Automation</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>AI automation for legal and finance processes.</td>
-                                    <td>Custom client quote</td>
-                                    <td>Custom Stripe Payment Link for client.</td>
-                                </tr>
-                                <tr>
-                                    <td>AI Visual & Video Production</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>AI-powered visual and video content creation.</td>
-                                    <td>Custom client quote</td>
-                                    <td>Custom Stripe Payment Link for client.</td>
-                                </tr>
-                                <tr>
-                                    <td>Website Setup</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Professional website setup and design.</td>
-                                    <td>Pricing based on service scope</td>
-                                    <td>Custom Stripe Payment Link for client.</td>
-                                </tr>
-                                <tr>
-                                    <td>Landing Page Design</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Conversion-focused landing page design.</td>
-                                    <td>Pricing based on service scope</td>
-                                    <td>Custom Stripe Payment Link for client.</td>
-                                </tr>
-                                <tr>
-                                    <td>SEO & Technical Optimization</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>SEO and technical website optimization.</td>
-                                    <td>Pricing based on service scope</td>
-                                    <td>Custom Stripe Payment Link for client.</td>
-                                </tr>
-                                <tr>
-                                    <td>Analytics & Social Media Setup</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Analytics and social media integration.</td>
-                                    <td>Pricing based on service scope</td>
-                                    <td>Custom Stripe Payment Link for client.</td>
-                                </tr>
-                                <tr>
-                                    <td>Maintenance & Support</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Website maintenance and technical support.</td>
-                                    <td>Pricing based on service scope</td>
-                                    <td>Custom Stripe Payment Link for client.</td>
-                                </tr>
-                                <tr>
-                                    <td>Custom AI Software & Integration</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Custom AI software development and integration.</td>
-                                    <td>Pricing based on service scope</td>
-                                    <td>Custom Stripe Payment Link for client.</td>
-                                </tr>
-                                <tr>
-                                    <td>Digital Transformation Strategy</td>
-                                    <td>BY Sirius Service Quote</td>
-                                    <td>Digital transformation consulting and strategy development.</td>
-                                    <td>Pricing based on service scope</td>
-                                    <td>Custom Stripe Payment Link for client.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <p>No price amounts are listed; each project is calculated custom for the client.</p>
+                        <h2>Service Catalogue & Payment</h2>
+                        <p>All services are billed via Stripe Payment Link. Request a quote through our contact form and a custom payment link will be generated for you.</p>
+
+                        <h3 class='catalog-category'>🌐 Website Design Packages</h3>
+                        <div class='catalog-grid'>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>Starter</span>
+                                <h4>WEB DESIGN STARTER</h4>
+                                <ul>
+                                    <li>7-page professional website</li>
+                                    <li>Mobile-responsive, modern design</li>
+                                    <li>WhatsApp button + contact form</li>
+                                    <li>SSL, domain + 1 year hosting</li>
+                                    <li>2 revisions, 30-day guarantee</li>
+                                </ul>
+                                <p class='catalog-price'>Quote-based pricing</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag'>Digital</span>
+                                <h4>WEB DESIGN DIGITAL</h4>
+                                <ul>
+                                    <li>12 pages + blog infrastructure</li>
+                                    <li>Google Analytics 4 + Search Console</li>
+                                    <li>Google Business Profile setup</li>
+                                    <li>Basic On-Page SEO optimisation</li>
+                                    <li>3 revisions + training guide</li>
+                                </ul>
+                                <p class='catalog-price'>Quote-based pricing</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card catalog-card-featured'>
+                                <span class='catalog-tag catalog-tag-pro'>Growth PRO</span>
+                                <h4>WEB DESIGN GROWTH-PRO</h4>
+                                <ul>
+                                    <li>20 pages + content management panel</li>
+                                    <li>AI chatbot + WhatsApp Business API</li>
+                                    <li>Advanced SEO + keyword research</li>
+                                    <li>Multilingual site (TR/EN), schema data</li>
+                                    <li>3 months GBP management + 3 months maintenance</li>
+                                </ul>
+                                <p class='catalog-price'>Quote-based pricing</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <span class='catalog-tag catalog-tag-enterprise'>Enterprise</span>
+                                <h4>WEB DESIGN CORPORATE</h4>
+                                <ul>
+                                    <li>Unlimited pages + e-commerce infrastructure</li>
+                                    <li>Online payment system integration</li>
+                                    <li>Custom CRM + advanced AI chatbot</li>
+                                    <li>24/7 priority support line</li>
+                                    <li>6 months free maintenance + unlimited revisions</li>
+                                </ul>
+                                <p class='catalog-price'>Quote-based pricing</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                        </div>
+
+                        <h3 class='catalog-category'>🔍 SEO Services</h3>
+                        <div class='catalog-grid catalog-grid-3'>
+                            <div class='catalog-card'>
+                                <h4>Basic On-Page SEO</h4>
+                                <p>Meta tags, heading structure, internal link optimisation and speed improvements.</p>
+                                <p class='catalog-price'>Quote-based · One-time</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>Keyword Research</h4>
+                                <p>50-keyword analysis, competitor evaluation and content plan.</p>
+                                <p class='catalog-price'>Quote-based · One-time</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>Monthly SEO Management</h4>
+                                <p>Off-page optimisation, backlink building, content creation and monthly reporting.</p>
+                                <p class='catalog-price'>Quote-based · Monthly subscription</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>Local SEO Package</h4>
+                                <p>Google Maps optimisation and local keyword targeting.</p>
+                                <p class='catalog-price'>Quote-based · One-time</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                        </div>
+
+                        <h3 class='catalog-category'>📊 Analytics Setup</h3>
+                        <div class='catalog-grid catalog-grid-3'>
+                            <div class='catalog-card'>
+                                <h4>Google Analytics 4 Setup</h4>
+                                <p>Event tracking, conversion goals and custom dashboard configuration.</p>
+                                <p class='catalog-price'>Quote-based · One-time</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>Google Search Console</h4>
+                                <p>Site verification, sitemap submission and indexing monitoring.</p>
+                                <p class='catalog-price'>Quote-based · One-time</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card catalog-card-featured'>
+                                <span class='catalog-tag catalog-tag-pro'>Combo</span>
+                                <h4>GA4 + Search Console Combo</h4>
+                                <p>Full analytics infrastructure — GA4 and Search Console set up together.</p>
+                                <p class='catalog-price'>Quote-based · One-time</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                        </div>
+
+                        <h3 class='catalog-category'>📍 Google Business Profile</h3>
+                        <div class='catalog-grid catalog-grid-3'>
+                            <div class='catalog-card'>
+                                <h4>GBP Setup & Optimisation</h4>
+                                <p>Profile creation, category selection, photo uploads and business hours.</p>
+                                <p class='catalog-price'>Quote-based · One-time</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>GBP Monthly Management</h4>
+                                <p>Regular posts, review responses and monthly analytics report.</p>
+                                <p class='catalog-price'>Quote-based · Monthly subscription</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card catalog-card-featured'>
+                                <span class='catalog-tag catalog-tag-pro'>Premium</span>
+                                <h4>GBP Premium Management</h4>
+                                <p>2 posts per week, Q&A management, photo updates and detailed reporting.</p>
+                                <p class='catalog-price'>Quote-based · Monthly subscription</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                        </div>
+
+                        <h3 class='catalog-category'>🔧 Website Maintenance</h3>
+                        <div class='catalog-grid catalog-grid-3'>
+                            <div class='catalog-card'>
+                                <h4>Monthly Website Maintenance</h4>
+                                <p>Updates, backups, bug fixes and 2 content changes per month.</p>
+                                <p class='catalog-price'>Quote-based · Monthly subscription</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card catalog-card-featured'>
+                                <span class='catalog-tag catalog-tag-pro'>Pro</span>
+                                <h4>Monthly Maintenance PRO</h4>
+                                <p>Standard maintenance + 5 changes + monthly SEO report + priority support.</p>
+                                <p class='catalog-price'>Quote-based · Monthly subscription</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                        </div>
+
+                        <h3 class='catalog-category'>🤖 Chatbot & Automation</h3>
+                        <div class='catalog-grid catalog-grid-3'>
+                            <div class='catalog-card'>
+                                <h4>Basic AI Web Chatbot</h4>
+                                <p>FAQ-based bot, lead capture and email notification.</p>
+                                <p class='catalog-price'>Quote-based · Setup</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card catalog-card-featured'>
+                                <span class='catalog-tag catalog-tag-pro'>GPT</span>
+                                <h4>GPT-Powered AI Chatbot</h4>
+                                <p>Custom-trained model, multilingual support and reporting included.</p>
+                                <p class='catalog-price'>Quote-based · Setup</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>WhatsApp Business API — Setup</h4>
+                                <p>Automated reply system and conversation flow design.</p>
+                                <p class='catalog-price'>Quote-based · One-time</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>WhatsApp Business API — Maintenance</h4>
+                                <p>Monthly maintenance, flow updates and reporting.</p>
+                                <p class='catalog-price'>Quote-based · Monthly subscription</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>Instagram & Messenger Automation — Setup</h4>
+                                <p>DM automation and lead routing flow setup.</p>
+                                <p class='catalog-price'>Quote-based · One-time</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>Instagram & Messenger Automation — Maintenance</h4>
+                                <p>Monthly maintenance, flow optimisation and performance tracking.</p>
+                                <p class='catalog-price'>Quote-based · Monthly subscription</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                        </div>
+
+                        <h3 class='catalog-category'>🎨 Branding & Marketing</h3>
+                        <div class='catalog-grid catalog-grid-3'>
+                            <div class='catalog-card'>
+                                <h4>Logo & Brand Identity</h4>
+                                <p>3 concepts, colour palette, typography and corporate brand guide.</p>
+                                <p class='catalog-price'>Quote-based · One-time</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>Social Media Visual Set</h4>
+                                <p>15 post designs + profile and cover photo design.</p>
+                                <p class='catalog-price'>Quote-based · One-time</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>Email Marketing Setup</h4>
+                                <p>Platform setup + 3 email templates + 3 campaign preparations.</p>
+                                <p class='catalog-price'>Quote-based · One-time</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                            <div class='catalog-card'>
+                                <h4>QR Menu / Digital Catalogue</h4>
+                                <p>Product/service catalogue design and QR code generation.</p>
+                                <p class='catalog-price'>Quote-based · One-time</p>
+                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                            </div>
+                        </div>
+
+                        <p class='catalog-note'>All prices are determined by project scope, client requirements and technical specifications. Stripe Payment Links are generated only after quote approval. Use the <a href='iletisim.html'>contact form</a> for any enquiries.</p>
                     </div>
                 </div>
             </section>`,
@@ -1506,28 +1662,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const form = modal.querySelector("form");
         if (form) {
-            form.addEventListener("submit", function (e) {
+            form.addEventListener("submit", async function (e) {
                 e.preventDefault();
 
-                // Get values
                 const adSoyad = form.querySelector('input[placeholder="Ad Soyad"]').value;
                 const telefon = form.querySelector('input[placeholder="Telefon"]').value;
                 const eposta = form.querySelector('input[placeholder="E-posta"]').value;
                 const firmaAdi = form.querySelector('input[placeholder="Firma Adı"]').value;
                 const notlar = form.querySelector('textarea[placeholder="Notlar"]').value || "";
 
-                // Validate services (Keep existing validation)
                 const selectedServices = [];
                 const serviceCheckboxes = form.querySelectorAll('input[name="services"]:checked');
-
                 if (serviceCheckboxes.length > 0) {
                     serviceCheckboxes.forEach(cb => selectedServices.push(cb.value));
                 } else {
-                    // Fallback for single select version if it exists
                     const serviceSelect = form.querySelector('select:not(#sectorSelect)');
-                    if (serviceSelect && serviceSelect.value) {
-                        selectedServices.push(serviceSelect.value);
-                    }
+                    if (serviceSelect && serviceSelect.value) selectedServices.push(serviceSelect.value);
                 }
 
                 if (selectedServices.length === 0) {
@@ -1535,30 +1685,27 @@ document.addEventListener("DOMContentLoaded", () => {
                     return;
                 }
 
-                const servicesString = selectedServices.join(", ");
-
-                // Build WhatsApp message
-                const messageTemplate = `Merhaba, ücretsiz analiz talebi:
-
-Ad Soyad: ${adSoyad}
-Telefon: ${telefon}
-E-posta: ${eposta}
-Firma: ${firmaAdi}
-Hizmetler: ${servicesString}
-Not: ${notlar}`;
-
-                const whatsappUrl = `https://wa.me/447442056474?text=${encodeURIComponent(messageTemplate)}`;
-
                 const submitBtn = form.querySelector("button[type='submit']");
                 if (submitBtn) {
                     submitBtn.disabled = true;
-                    submitBtn.innerText = "Yönlendiriliyor...";
+                    submitBtn.innerText = "Gönderiliyor...";
                 }
 
-                // Redirect
-                // window.location.href = whatsappUrl;
+                try {
+                    await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            formType: 'analysis',
+                            name: adSoyad,
+                            email: eposta,
+                            phone: telefon,
+                            services: selectedServices.join(', '),
+                            message: `Firma: ${firmaAdi}${notlar ? ' | Not: ' + notlar : ''}`
+                        })
+                    });
+                } catch (_) { /* sessizce devam et */ }
 
-                // Cleanup (in case user comes back)
                 setTimeout(() => {
                     modal.classList.remove("show");
                     form.reset();
@@ -1566,7 +1713,7 @@ Not: ${notlar}`;
                         submitBtn.disabled = false;
                         submitBtn.innerText = "Gönder";
                     }
-                }, 1000);
+                }, 800);
             });
         }
     }
@@ -1576,7 +1723,7 @@ Not: ${notlar}`;
     const contactSuccess = document.getElementById("contactSuccess");
 
     if (contactPageForm && contactSuccess) {
-        contactPageForm.addEventListener("submit", function (e) {
+        contactPageForm.addEventListener("submit", async function (e) {
             e.preventDefault();
 
             const name = contactPageForm.querySelector('input[name="name"]').value;
@@ -1586,7 +1733,6 @@ Not: ${notlar}`;
             const message = messageInput ? messageInput.value : "";
             const selectedServices = [];
             const checkboxes = contactPageForm.querySelectorAll('input[name="services"]:checked');
-
             checkboxes.forEach(cb => selectedServices.push(cb.value));
 
             if (selectedServices.length === 0) {
@@ -1594,51 +1740,41 @@ Not: ${notlar}`;
                 return;
             }
 
-            const servicesStr = selectedServices.join(", ");
-            const whatsappMsg = `Merhaba, İletişim Sayfası Formu:
-
-Ad Soyad: ${name}
-E-posta: ${email}
-Telefon: ${phone}
-Hizmetler: ${servicesStr}
-Mesaj: ${message}`;
-
-            const whatsappUrl = `https://wa.me/447442056474?text=${encodeURIComponent(whatsappMsg)}`;
-
             const submitBtn = contactPageForm.querySelector('button[type="submit"]');
             if (submitBtn) {
                 submitBtn.disabled = true;
                 submitBtn.style.opacity = "0.7";
             }
 
-            // Show Success UI
+            try {
+                await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        formType: 'contact',
+                        name,
+                        email,
+                        phone,
+                        services: selectedServices.join(', '),
+                        message
+                    })
+                });
+            } catch (_) { /* sessizce devam et */ }
+
             contactSuccess.classList.add("show");
             contactPageForm.reset();
 
-            // Re-initialize chips
             const chipContainer = contactPageForm.querySelector(".selected-chips");
             if (chipContainer) {
-                // The multi-select logic in script.js will handle this if we trigger change, 
-                // but let's do a manual reset to be safe
-                const placeholder = chipContainer.querySelector(".placeholder-text");
-                // The chips are dynamically generated, so clearing and adding placeholder is good
-                chipContainer.innerHTML = '';
-                // But wait, the placeholder element might have been removed or kept.
-                // The multiSelects logic uses ms.querySelector(".placeholder-text") as a reference.
-                // Better to just let the updateChips handle it by triggering change on checkboxes
                 const cbs = contactPageForm.querySelectorAll('input[name="services"]');
                 cbs.forEach(cb => cb.checked = false);
                 if (cbs[0]) cbs[0].dispatchEvent(new Event('change'));
             }
 
-            // Redirect to WhatsApp after a short delay
-            // setTimeout(() => {
-            //     window.location.href = whatsappUrl;
-            //     if (submitBtn) {
-            //         submitBtn.disabled = false;
-            //         submitBtn.style.opacity = "1";
-            //     }
-            // }, 1500);
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = "1";
+            }
         });
     }
 
