@@ -29,7 +29,7 @@ const translations = {
         refundPageDesc: "İade ve iptal koşulları, Stripe Payment Link ile ödeme süreci ve dijital hizmet değerlendirmesi hakkında bilgi.",
         deliveryPageTitle: "Teslimat & Hizmet Süreci | BY Sirius Group",
         deliveryPageDesc: "Hizmet teslimatı, proje aşamaları, onay süreci ve iş akışı hakkında net bilgiler.",
-        paymentPageTitle: "Ödeme | BY Sirius Group",
+        paymentPageTitle: "Katalog | BY Sirius Group",
         paymentPageDesc: "Stripe Payment Link ile teklif bazlı ödeme süreci, hizmet listesi ve proje bazlı ücretlendirme bilgileri.",
         aiCeoPageTitle: "SIRA N.OVA | Yapay Zeka CEO",
         aiCeoPageDesc: "Dünyanın ilk yapay zeka tabanlı stratejik yönetim birimi SIRA N.OVA ile tanışın.",
@@ -51,7 +51,7 @@ const translations = {
         refundHeroSubtitle: "Stripe Payment Link ile güvenli ödeme sonrası iptal ve iade süreçleri.",
         deliveryHeroTitle: "Teslimat & Hizmet Süreci",
         deliveryHeroSubtitle: "Proje aşamaları, onay süreci ve teslimat akışımız.",
-        paymentHeroTitle: "Ödeme",
+        paymentHeroTitle: "Katalog",
         paymentHeroSubtitle: "Stripe tabanlı ödeme süreci, teklif bazlı fiyatlandırma ve hizmet listemiz.",
         privacyBody: `
             <section class='section section-compact'>
@@ -468,7 +468,7 @@ const translations = {
         fLinkTerms: "Hizmet Şartları",
         fLinkRefund: "İade & İptal",
         fLinkDelivery: "Teslimat Süreci",
-        fLinkPayment: "Ödeme",
+        fLinkPayment: "Katalog",
 
         // Services Block (Homepage/Global)
         servicesTitle: "Hizmetlerimiz",
@@ -583,7 +583,7 @@ const translations = {
 
         // Contact Info
         companyNameLabel: "Unvan:",
-        companyAddressLabel: "Adres 1:",
+        companyAddressLabel: "Genel Merkez:",
         companyAddress2Label: "Adres 2:",
         companyPhoneLabel: "Telefon:",
         companyAddressText: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ",
@@ -684,7 +684,7 @@ const translations = {
 
         // Contact Info
         companyNameLabel: "Unvan:",
-        companyAddressLabel: "Adres 1:",
+        companyAddressLabel: "Genel Merkez:",
         companyAddress2Label: "Adres 2:",
         companyPhoneLabel: "Telefon:",
         companyAddressText: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ",
@@ -786,7 +786,7 @@ const translations = {
         refundPageDesc: "Refund and cancellation terms, Stripe Payment Link payments, and digital service assessment details.",
         deliveryPageTitle: "Delivery & Service Process | BY Sirius Group",
         deliveryPageDesc: "Clear information on service delivery phases, approvals, and digital project workflow.",
-        paymentPageTitle: "Payment | BY Sirius Group",
+        paymentPageTitle: "Catalogue | BY Sirius Group",
         paymentPageDesc: "Stripe Payment Link based payment process, service list and quote-based pricing information.",
         aiCeoPageTitle: "SIRA N.OVA | Artificial Intelligence CEO",
         aiCeoPageDesc: "Meet SIRA N.OVA, the world's first AI-based strategic management unit.",
@@ -808,7 +808,7 @@ const translations = {
         refundHeroSubtitle: "Secure post-payment cancellation and refund procedures via Stripe Payment Link.",
         deliveryHeroTitle: "Delivery & Service Process",
         deliveryHeroSubtitle: "Project stages, approvals and digital service delivery workflow.",
-        paymentHeroTitle: "Payment",
+        paymentHeroTitle: "Catalogue",
         paymentHeroSubtitle: "Stripe-based payment flow, quote-driven pricing and service listing.",
         privacyBody: `
             <section class='section section-compact'>
@@ -1225,7 +1225,7 @@ const translations = {
         fLinkTerms: "Terms of Service",
         fLinkRefund: "Refund & Cancellation",
         fLinkDelivery: "Delivery Process",
-        fLinkPayment: "Payment",
+        fLinkPayment: "Catalogue",
 
         // Services Block (Homepage/Global)
         servicesTitle: "Our Services",
@@ -1342,7 +1342,7 @@ const translations = {
 
         // Contact Info
         companyNameLabel: "Title:",
-        companyAddressLabel: "Address 1:",
+        companyAddressLabel: "Head Office:",
         companyAddress2Label: "Address 2:",
         companyPhoneLabel: "Phone:",
         companyAddressText: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ",
@@ -1443,7 +1443,7 @@ const translations = {
 
         // Contact Info
         companyNameLabel: "Title:",
-        companyAddressLabel: "Address 1:",
+        companyAddressLabel: "Head Office:",
         companyAddress2Label: "Address 2:",
         companyPhoneLabel: "Phone:",
         companyAddressText: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ",
