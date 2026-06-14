@@ -700,7 +700,17 @@ const translations = {
         placeholderOtherSector: "Faaliyet Alanınızı Yazın",
         placeholderServiceSelect: "Alınacak Hizmetleri Seçin (En az biri)",
         placeholderNotes: "Notlar",
+        kvkkConsentText: "<a href='gizlilik-politikasi.html' style='color:#c9a84c;' target='_blank'>Gizlilik Politikası</a> ve KVKK kapsamında kişisel verilerimin işlenmesine, analiz süreciyle ilgili iletişim kurulmasına onay veriyorum.",
         modalSubmit: "Gönder",
+        resultsTitle: "Otomasyon, Rakamlarla Kendini Kanıtlar",
+        stat1Val: "%70", stat1Label: "Ortalama operasyonel maliyet düşüşü",
+        stat2Val: "7/24", stat2Label: "Kesintisiz müşteri iletişim kapasitesi",
+        stat3Val: "5–10", stat3Label: "İş günü ortalama entegrasyon süresi",
+        stat4Val: "3. Ay", stat4Label: "Ortalama yatırım geri dönüş süresi",
+        badge1: "UK Tescilli Şirket No. 17142392",
+        badge2: "GDPR & KVKK Uyumlu Süreçler",
+        badge3: "TR & UK Ofisleriyle Çift Kıta Destek",
+        badge4: "8 Sektörde Aktif Proje Deneyimi",
         modalRedirecting: "Yönlendiriliyor...",
         modalSelectBtn: "Seç",
         modalOk: "Tamam",
@@ -1459,7 +1469,17 @@ const translations = {
         placeholderOtherSector: "Write Your Field of Activity",
         placeholderServiceSelect: "Select Services (At least one)",
         placeholderNotes: "Notes",
+        kvkkConsentText: "<a href='gizlilik-politikasi.html' style='color:#c9a84c;' target='_blank'>Privacy Policy</a> — I consent to the processing of my personal data for analysis and related communication purposes (UK GDPR / KVKK).",
         modalSubmit: "Submit",
+        resultsTitle: "Automation Speaks in Numbers",
+        stat1Val: "70%", stat1Label: "Average reduction in operational costs",
+        stat2Val: "24/7", stat2Label: "Uninterrupted customer communication capacity",
+        stat3Val: "5–10", stat3Label: "Business days average integration time",
+        stat4Val: "Month 3", stat4Label: "Average return on investment timeline",
+        badge1: "UK Registered Company No. 17142392",
+        badge2: "GDPR & KVKK Compliant Processes",
+        badge3: "Dual-Continent Support — TR & UK Offices",
+        badge4: "Active Project Experience in 8 Sectors",
         modalRedirecting: "Redirecting...",
         modalSelectBtn: "Select",
         modalOk: "OK",
@@ -1807,6 +1827,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 const firmaAdi = (form.querySelector('input[name="company"]') || form.querySelector('input[placeholder="Firma Adı"]') || {}).value || '';
                 const notlar = (form.querySelector('textarea[name="message"]') || form.querySelector('textarea') || {}).value || '';
 
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+                if (!emailRegex.test(eposta)) {
+                    const emailInput = form.querySelector('input[name="email"]') || form.querySelector('input[placeholder="E-posta"]');
+                    if (emailInput) { emailInput.focus(); emailInput.style.borderColor = '#e05555'; setTimeout(() => { emailInput.style.borderColor = ''; }, 2500); }
+                    alert("Lütfen geçerli bir e-posta adresi giriniz.\nÖrnek: ad@firma.com");
+                    return;
+                }
+
                 const selectedServices = [];
                 const serviceCheckboxes = form.querySelectorAll('input[name="services"]:checked');
                 if (serviceCheckboxes.length > 0) {
@@ -1885,6 +1913,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const name = contactPageForm.querySelector('input[name="name"]').value;
             const email = contactPageForm.querySelector('input[name="email"]').value;
             const phone = contactPageForm.querySelector('input[name="phone"]').value;
+
+            const contactEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+            if (!contactEmailRegex.test(email)) {
+                const emailInput = contactPageForm.querySelector('input[name="email"]');
+                if (emailInput) { emailInput.focus(); emailInput.style.borderColor = '#e05555'; setTimeout(() => { emailInput.style.borderColor = ''; }, 2500); }
+                alert("Lütfen geçerli bir e-posta adresi giriniz.\nÖrnek: ad@firma.com");
+                return;
+            }
             const messageInput = contactPageForm.querySelector('textarea[name="message"]');
             const message = messageInput ? messageInput.value : "";
             const selectedServices = [];
@@ -2154,6 +2190,39 @@ document.addEventListener("DOMContentLoaded", () => {
             trackClick('Contact', 'Email');
         }
     });
+}());
+
+// Social Media Icons in Footer
+(function () {
+    var footerBottom = document.querySelector('.footer-bottom .container');
+    if (!footerBottom) return;
+    var socialDiv = document.createElement('div');
+    socialDiv.style.cssText = 'margin-top:12px;display:flex;justify-content:center;gap:12px;';
+    var socials = [
+        {
+            href: 'https://www.linkedin.com/company/bysiriusgroup',
+            label: 'LinkedIn',
+            svg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>'
+        },
+        {
+            href: 'https://www.instagram.com/bysiriusgroup',
+            label: 'Instagram',
+            svg: '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>'
+        }
+    ];
+    socials.forEach(function (s) {
+        var a = document.createElement('a');
+        a.href = s.href;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.setAttribute('aria-label', s.label);
+        a.style.cssText = 'display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#c9a84c;transition:background 0.2s,border-color 0.2s;text-decoration:none;';
+        a.innerHTML = s.svg;
+        a.addEventListener('mouseenter', function () { this.style.background = 'rgba(201,168,76,0.15)'; this.style.borderColor = 'rgba(201,168,76,0.4)'; });
+        a.addEventListener('mouseleave', function () { this.style.background = 'rgba(255,255,255,0.06)'; this.style.borderColor = 'rgba(255,255,255,0.1)'; });
+        socialDiv.appendChild(a);
+    });
+    footerBottom.appendChild(socialDiv);
 }());
 
 // GDPR Cookie Consent Banner
