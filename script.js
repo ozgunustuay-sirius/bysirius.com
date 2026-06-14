@@ -2206,7 +2206,10 @@ document.addEventListener("DOMContentLoaded", () => {
         updateGtag('granted');
         return;
     }
-    if (consent === 'denied') return;
+    if (consent === 'denied') {
+        window['ga-disable-G-H18YPZVNYJ'] = true;
+        return;
+    }
 
     var style = document.createElement('style');
     style.textContent = '#bys-cookie{position:fixed;bottom:0;left:0;right:0;background:#111;border-top:1px solid #2a2a2a;padding:14px 24px;z-index:10000;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:Inter,sans-serif;box-shadow:0 -4px 20px rgba(0,0,0,0.4)}#bys-cookie p{color:#bbb;font-size:13.5px;margin:0;flex:1;min-width:200px;line-height:1.5}#bys-cookie p a{color:#c9a84c;text-decoration:none}#bys-cookie p a:hover{text-decoration:underline}.bys-cookie-btns{display:flex;gap:10px;flex-shrink:0}.bys-cb-accept{background:#c9a84c;color:#000;border:none;padding:9px 20px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;transition:background 0.2s}.bys-cb-accept:hover{background:#e0ba5a}.bys-cb-reject{background:transparent;color:#888;border:1px solid #3a3a3a;padding:9px 16px;border-radius:6px;font-size:13px;cursor:pointer;transition:border-color 0.2s}.bys-cb-reject:hover{border-color:#666;color:#bbb}@media(max-width:600px){#bys-cookie{flex-direction:column;text-align:center}.bys-cookie-btns{justify-content:center;width:100%}}';
@@ -2227,6 +2230,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById('bys-reject').addEventListener('click', function () {
         localStorage.setItem('bys_cookie_consent', 'denied');
+        window['ga-disable-G-H18YPZVNYJ'] = true;
+        updateGtag('denied');
         banner.remove();
     });
 }());

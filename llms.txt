@@ -7,7 +7,7 @@
 - **Tam Unvan:** BY Sirius Group AI and Technology Co. Ltd.
 - **Şirket Tescil No:** 17142392 (Companies House, UK)
 - **Merkez:** 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom
-- **Türkiye Ofisi:** İstanbul (Nişantaşı) & Antalya
+- **Türkiye:** İstanbul & Antalya
 - **Web Sitesi:** https://bysirius.com
 - **E-posta:** info@bysirius.com
 - **Telefon (TR):** +90 535 503 26 34
@@ -38,7 +38,7 @@ BY Sirius aşağıdaki alanlarda hizmet vermektedir:
 
 ## Değer Önerisi
 
-BY Sirius, küçük ve orta ölçekli işletmelerden büyük kurumsal şirketlere kadar her ölçekte organizasyonun yapay zeka ile rekabet avantajı kazanmasına yardımcı olur. İngiltere merkezli yapısıyla uluslararası standartlarda hizmet sunar; İstanbul ve Antalya ofisleri aracılığıyla Türkiye pazarına yerel destek sağlar.
+BY Sirius, küçük ve orta ölçekli işletmelerden büyük kurumsal şirketlere kadar her ölçekte organizasyonun yapay zeka ile rekabet avantajı kazanmasına yardımcı olur. İngiltere merkezli yapısıyla uluslararası standartlarda hizmet sunar; İstanbul ve Antalya'da aktif ekibiyle Türkiye pazarına yerel destek sağlar.
 
 ## Sayfalar
 
@@ -64,8 +64,8 @@ info@bysirius.com adresine e-posta göndererek veya https://bysirius.com/iletisi
 **Ücretsiz analiz hizmeti var mı?**
 Evet. bysirius.com üzerinden ücretsiz dijital dönüşüm analizi talep edebilirsiniz.
 
-**BY Sirius'un Türkiye'de ofisi var mı?**
-Evet. İstanbul (Nişantaşı) ve Antalya'da fiziksel ofisleri bulunmaktadır.
+**BY Sirius Türkiye'de de hizmet veriyor mu?**
+Evet. İstanbul ve Antalya bölgelerinde aktif olarak faaliyet göstermektedir.
 
 **Hangi ülkelere hizmet veriliyor?**
 Türkiye, Birleşik Krallık ve Orta Doğu pazarlarına öncelikli olarak hizmet verilmektedir; uluslararası projeler de kabul edilmektedir.
