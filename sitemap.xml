@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bysirius.com/</loc>
@@ -7,67 +7,67 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://bysirius.com/hakkimizda.html</loc>
+    <loc>https://bysirius.com/hakkimizda</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bysirius.com/hizmetlerimiz.html</loc>
+    <loc>https://bysirius.com/hizmetlerimiz</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bysirius.com/sektorler.html</loc>
+    <loc>https://bysirius.com/sektorler</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bysirius.com/blog.html</loc>
+    <loc>https://bysirius.com/blog</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bysirius.com/ai-ceo.html</loc>
+    <loc>https://bysirius.com/ai-ceo</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bysirius.com/iletisim.html</loc>
+    <loc>https://bysirius.com/iletisim</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bysirius.com/odeme.html</loc>
+    <loc>https://bysirius.com/odeme</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bysirius.com/gizlilik-politikasi.html</loc>
+    <loc>https://bysirius.com/gizlilik-politikasi</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://bysirius.com/hizmet-sartlari.html</loc>
+    <loc>https://bysirius.com/hizmet-sartlari</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://bysirius.com/iade-iptal-politikasi.html</loc>
+    <loc>https://bysirius.com/iade-iptal-politikasi</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://bysirius.com/teslimat-hizmet-sureci.html</loc>
+    <loc>https://bysirius.com/teslimat-hizmet-sureci</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>

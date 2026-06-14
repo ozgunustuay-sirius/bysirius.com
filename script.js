@@ -1,4 +1,4 @@
-/**
+﻿/**
  * BY Sirius Group - Multi-language System (Scalable)
  */
 
@@ -138,7 +138,7 @@ const translations = {
                                     <li>2 revizyon, 30 gün garanti</li>
                                 </ul>
                                 <p class='catalog-price'>Teklif bazlı fiyatlandırma</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag'>Dijital</span>
@@ -151,7 +151,7 @@ const translations = {
                                     <li>3 revizyon + eğitim kılavuzu</li>
                                 </ul>
                                 <p class='catalog-price'>Teklif bazlı fiyatlandırma</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card catalog-card-featured'>
                                 <span class='catalog-tag catalog-tag-pro'>Büyüme PRO</span>
@@ -164,7 +164,7 @@ const translations = {
                                     <li>3 ay GBP yönetimi + 3 ay bakım</li>
                                 </ul>
                                 <p class='catalog-price'>Teklif bazlı fiyatlandırma</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag catalog-tag-enterprise'>Kurumsal</span>
@@ -177,7 +177,7 @@ const translations = {
                                     <li>6 ay ücretsiz bakım + sınırsız revizyon</li>
                                 </ul>
                                 <p class='catalog-price'>Teklif bazlı fiyatlandırma</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                         </div>
 
@@ -187,25 +187,25 @@ const translations = {
                                 <h4>Temel On-Page SEO</h4>
                                 <p>Meta etiketleri, başlık yapısı, iç link optimizasyonu ve hız iyileştirme.</p>
                                 <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>Anahtar Kelime Araştırması</h4>
                                 <p>50 anahtar kelime analizi, rakip değerlendirmesi ve içerik planı.</p>
                                 <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>Aylık SEO Yönetimi</h4>
                                 <p>Off-page optimizasyon, backlink çalışması, içerik üretimi ve aylık raporlama.</p>
                                 <p class='catalog-price'>Teklif bazlı · Aylık abonelik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>Yerel SEO Paketi</h4>
                                 <p>Google Maps optimizasyonu ve yerel anahtar kelime çalışması.</p>
                                 <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                         </div>
 
@@ -215,20 +215,20 @@ const translations = {
                                 <h4>Google Analytics 4 Kurulumu</h4>
                                 <p>Event tracking, dönüşüm hedefleri ve özel dashboard kurulumu.</p>
                                 <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>Google Search Console</h4>
                                 <p>Site doğrulama, sitemap gönderimi ve indeksleme izleme.</p>
                                 <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card catalog-card-featured'>
                                 <span class='catalog-tag catalog-tag-pro'>Kombo</span>
                                 <h4>GA4 + Search Console Kombo</h4>
                                 <p>Tam analitik altyapısı — GA4 ve Search Console birlikte kurulur.</p>
                                 <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                         </div>
 
@@ -238,20 +238,20 @@ const translations = {
                                 <h4>GBP Kurulum & Optimizasyon</h4>
                                 <p>Profil oluşturma, kategori seçimi, fotoğraf yükleme ve çalışma saatleri ayarı.</p>
                                 <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>GBP Aylık Yönetimi</h4>
                                 <p>Düzenli post, yorum yanıtlama ve aylık analiz raporu.</p>
                                 <p class='catalog-price'>Teklif bazlı · Aylık abonelik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card catalog-card-featured'>
                                 <span class='catalog-tag catalog-tag-pro'>Premium</span>
                                 <h4>GBP Premium Yönetimi</h4>
                                 <p>Haftada 2 post, Q&A yönetimi, fotoğraf güncellemeleri ve detaylı raporlama.</p>
                                 <p class='catalog-price'>Teklif bazlı · Aylık abonelik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                         </div>
 
@@ -261,14 +261,14 @@ const translations = {
                                 <h4>Aylık Web Sitesi Bakım</h4>
                                 <p>Güncelleme, yedekleme, hata düzeltme ve 2 içerik değişikliği.</p>
                                 <p class='catalog-price'>Teklif bazlı · Aylık abonelik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card catalog-card-featured'>
                                 <span class='catalog-tag catalog-tag-pro'>Pro</span>
                                 <h4>Aylık Web Sitesi Bakım PRO</h4>
                                 <p>Temel bakım + 5 değişiklik + aylık SEO raporu + öncelikli destek.</p>
                                 <p class='catalog-price'>Teklif bazlı · Aylık abonelik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                         </div>
 
@@ -278,38 +278,38 @@ const translations = {
                                 <h4>Temel AI Web Chatbot</h4>
                                 <p>SSS tabanlı bot, lead yakalama ve e-posta bildirimi.</p>
                                 <p class='catalog-price'>Teklif bazlı · Kurulum</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card catalog-card-featured'>
                                 <span class='catalog-tag catalog-tag-pro'>GPT</span>
                                 <h4>GPT Destekli AI Chatbot</h4>
                                 <p>Özel eğitimli model, çok dilli destek ve raporlama dahil.</p>
                                 <p class='catalog-price'>Teklif bazlı · Kurulum</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>WhatsApp Business API — Kurulum</h4>
                                 <p>Otomatik yanıt sistemi ve akış tasarımı.</p>
                                 <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>WhatsApp Business API — Bakım</h4>
                                 <p>Aylık bakım, akış güncellemeleri ve raporlama.</p>
                                 <p class='catalog-price'>Teklif bazlı · Aylık abonelik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>Instagram & Messenger Otomasyon — Kurulum</h4>
                                 <p>DM otomasyonu ve lead yönlendirme akışı kurulumu.</p>
                                 <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>Instagram & Messenger Otomasyon — Bakım</h4>
                                 <p>Aylık bakım, akış optimizasyonu ve performans takibi.</p>
                                 <p class='catalog-price'>Teklif bazlı · Aylık abonelik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                         </div>
 
@@ -319,25 +319,25 @@ const translations = {
                                 <h4>Logo & Marka Kimliği</h4>
                                 <p>3 konsept, renk paleti, tipografi ve kurumsal kimlik kılavuzu.</p>
                                 <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>Sosyal Medya Görsel Seti</h4>
                                 <p>15 post tasarımı + profil ve kapak fotoğrafı tasarımı.</p>
                                 <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>E-Posta Pazarlama Kurulumu</h4>
                                 <p>Platform kurulumu + 3 e-posta şablonu + 3 kampanya hazırlığı.</p>
                                 <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>QR Menü / Dijital Katalog</h4>
                                 <p>Ürün/hizmet kataloğu tasarımı ve QR kod üretimi.</p>
                                 <p class='catalog-price'>Teklif bazlı · Tek seferlik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                         </div>
 
@@ -348,88 +348,88 @@ const translations = {
                                 <h4>📅 AI Randevu & Rezervasyon</h4>
                                 <p>7/24 kesintisiz AI tabanlı randevu ve rezervasyon sistemi kurulumu ve yönetimi.</p>
                                 <p class='catalog-price'>Teklif bazlı · Kurulum</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag'>Otomasyon</span>
                                 <h4>🎙️ Sesli Asistan Otomasyonu</h4>
                                 <p>Sesli AI asistan entegrasyonu ile telefon ve IVR sistemlerini otomatikleştirin.</p>
                                 <p class='catalog-price'>Teklif bazlı · Kurulum</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag'>Otomasyon</span>
                                 <h4>📧 E-mail Otomasyonu</h4>
                                 <p>Segmente özel kampanya akışları, tetikleyici diziler ve otomatik takip e-postaları.</p>
                                 <p class='catalog-price'>Teklif bazlı · Kurulum</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag'>Otomasyon</span>
                                 <h4>📈 Satış & Pazarlama Otomasyonu</h4>
                                 <p>Satış hunilerini ve pazarlama süreçlerini AI ile otomatikleştirerek büyümeyi hızlandırın.</p>
                                 <p class='catalog-price'>Teklif bazlı · Kurulum</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card catalog-card-featured'>
                                 <span class='catalog-tag catalog-tag-pro'>CRM</span>
                                 <h4>🎯 Akıllı CRM & Lead Yönetimi</h4>
                                 <p>Otomatik lead toplama, skorlama ve dinamik satış huni yönetimi entegrasyonu.</p>
                                 <p class='catalog-price'>Teklif bazlı · Kurulum</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag'>AI İçerik</span>
                                 <h4>✍️ AI İçerik Üretimi</h4>
                                 <p>SEO uyumlu makale, blog, ürün açıklaması ve kurumsal metin AI ile dakikalar içinde.</p>
                                 <p class='catalog-price'>Teklif bazlı · Tek seferlik / Abonelik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag'>Otomasyon</span>
                                 <h4>📁 Belge Yönetimi & Arşiv</h4>
                                 <p>Dijital belge işleme, akıllı arşivleme ve belge tabanlı iş akışı otomasyonu.</p>
                                 <p class='catalog-price'>Teklif bazlı · Kurulum</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag'>Finans</span>
                                 <h4>🧾 Fatura & Finans Otomasyonu</h4>
                                 <p>Otomatik fatura oluşturma, gönderim, takip ve finans süreç yönetimi.</p>
                                 <p class='catalog-price'>Teklif bazlı · Kurulum</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag'>Hukuk</span>
                                 <h4>⚖️ Hukuk & Finans Otomasyonu</h4>
                                 <p>Sözleşme taslağı, hukuki belge işleme ve uyumluluk süreçleri için AI çözümleri.</p>
                                 <p class='catalog-price'>Teklif bazlı · Kurulum</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag'>AI Medya</span>
                                 <h4>🖼️ AI Görsel & Video Üretimi</h4>
                                 <p>Marka kimliğine uygun görsel ve video içerik AI destekli üretim ve düzenleme.</p>
                                 <p class='catalog-price'>Teklif bazlı · Tek seferlik / Abonelik</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card catalog-card-featured'>
                                 <span class='catalog-tag catalog-tag-enterprise'>Kurumsal</span>
                                 <h4>⚡ Özel AI Yazılım & Entegrasyon</h4>
                                 <p>İşletmenize özel AI yazılım geliştirme, API entegrasyonu ve sistem mimarisi.</p>
                                 <p class='catalog-price'>Teklif bazlı · Proje bazlı</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                             <div class='catalog-card catalog-card-featured'>
                                 <span class='catalog-tag catalog-tag-pro'>Strateji</span>
                                 <h4>🚀 Dijital Dönüşüm Stratejisi</h4>
                                 <p>Kapsamlı dijital dönüşüm analizi, AI odaklı yol haritası ve danışmanlık hizmeti.</p>
                                 <p class='catalog-price'>Teklif bazlı · Proje bazlı</p>
-                                <a href='iletisim.html' class='catalog-cta'>Teklif Al</a>
+                                <a href='iletisim' class='catalog-cta'>Teklif Al</a>
                             </div>
                         </div>
 
-                        <p class='catalog-note'>Tüm fiyatlar proje kapsamına, müşteri ihtiyaçlarına ve teknik gereksinimlere göre belirlenir. Stripe Payment Link yalnızca teklif onayından sonra oluşturulur. Sorularınız için <a href='iletisim.html'>iletişim formunu</a> kullanabilirsiniz.</p>
+                        <p class='catalog-note'>Tüm fiyatlar proje kapsamına, müşteri ihtiyaçlarına ve teknik gereksinimlere göre belirlenir. Stripe Payment Link yalnızca teklif onayından sonra oluşturulur. Sorularınız için <a href='iletisim'>iletişim formunu</a> kullanabilirsiniz.</p>
 
                         <div style='margin-top:2.5rem;padding:1.25rem 1.5rem;border:1px solid rgba(255,255,255,0.1);border-radius:12px;background:rgba(255,255,255,0.03)'>
                             <h3 style='font-size:0.95rem;font-weight:600;margin-bottom:0.75rem'>KVKK Aydınlatma Metni</h3>
@@ -441,7 +441,7 @@ const translations = {
                             </p>
                             <p style='font-size:0.8rem;opacity:0.7;line-height:1.7'>
                                 KVKK kapsamındaki haklarınız (erişim, düzeltme, silme, işlemeye itiraz) için <a href='mailto:info@bysirius.com' style='color:inherit;text-decoration:underline'>info@bysirius.com</a> adresine yazılı başvurabilirsiniz.
-                                Ayrıntılı bilgi için <a href='gizlilik-politikasi.html' style='color:inherit;text-decoration:underline'>Gizlilik Politikamızı</a> inceleyebilirsiniz.
+                                Ayrıntılı bilgi için <a href='gizlilik-politikasi' style='color:inherit;text-decoration:underline'>Gizlilik Politikamızı</a> inceleyebilirsiniz.
                             </p>
                         </div>
                     </div>
@@ -700,7 +700,7 @@ const translations = {
         placeholderOtherSector: "Faaliyet Alanınızı Yazın",
         placeholderServiceSelect: "Alınacak Hizmetleri Seçin (En az biri)",
         placeholderNotes: "Notlar",
-        kvkkConsentText: "<a href='gizlilik-politikasi.html' style='color:#c9a84c;' target='_blank'>Gizlilik Politikası</a> ve KVKK kapsamında kişisel verilerimin işlenmesine, analiz süreciyle ilgili iletişim kurulmasına onay veriyorum.",
+        kvkkConsentText: "<a href='gizlilik-politikasi' style='color:#c9a84c;' target='_blank'>Gizlilik Politikası</a> ve KVKK kapsamında kişisel verilerimin işlenmesine, analiz süreciyle ilgili iletişim kurulmasına onay veriyorum.",
         modalSubmit: "Gönder",
         resultsTitle: "Otomasyon, Rakamlarla Kendini Kanıtlar",
         stat1Val: "%70", stat1Label: "Ortalama operasyonel maliyet düşüşü",
@@ -905,7 +905,7 @@ const translations = {
                                     <li>2 revisions, 30-day guarantee</li>
                                 </ul>
                                 <p class='catalog-price'>Quote-based pricing</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag'>Digital</span>
@@ -918,7 +918,7 @@ const translations = {
                                     <li>3 revisions + training guide</li>
                                 </ul>
                                 <p class='catalog-price'>Quote-based pricing</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card catalog-card-featured'>
                                 <span class='catalog-tag catalog-tag-pro'>Growth PRO</span>
@@ -931,7 +931,7 @@ const translations = {
                                     <li>3 months GBP management + 3 months maintenance</li>
                                 </ul>
                                 <p class='catalog-price'>Quote-based pricing</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag catalog-tag-enterprise'>Enterprise</span>
@@ -944,7 +944,7 @@ const translations = {
                                     <li>6 months free maintenance + unlimited revisions</li>
                                 </ul>
                                 <p class='catalog-price'>Quote-based pricing</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                         </div>
 
@@ -954,25 +954,25 @@ const translations = {
                                 <h4>Basic On-Page SEO</h4>
                                 <p>Meta tags, heading structure, internal link optimisation and speed improvements.</p>
                                 <p class='catalog-price'>Quote-based · One-time</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>Keyword Research</h4>
                                 <p>50-keyword analysis, competitor evaluation and content plan.</p>
                                 <p class='catalog-price'>Quote-based · One-time</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>Monthly SEO Management</h4>
                                 <p>Off-page optimisation, backlink building, content creation and monthly reporting.</p>
                                 <p class='catalog-price'>Quote-based · Monthly subscription</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>Local SEO Package</h4>
                                 <p>Google Maps optimisation and local keyword targeting.</p>
                                 <p class='catalog-price'>Quote-based · One-time</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                         </div>
 
@@ -982,20 +982,20 @@ const translations = {
                                 <h4>Google Analytics 4 Setup</h4>
                                 <p>Event tracking, conversion goals and custom dashboard configuration.</p>
                                 <p class='catalog-price'>Quote-based · One-time</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>Google Search Console</h4>
                                 <p>Site verification, sitemap submission and indexing monitoring.</p>
                                 <p class='catalog-price'>Quote-based · One-time</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card catalog-card-featured'>
                                 <span class='catalog-tag catalog-tag-pro'>Combo</span>
                                 <h4>GA4 + Search Console Combo</h4>
                                 <p>Full analytics infrastructure — GA4 and Search Console set up together.</p>
                                 <p class='catalog-price'>Quote-based · One-time</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                         </div>
 
@@ -1005,20 +1005,20 @@ const translations = {
                                 <h4>GBP Setup & Optimisation</h4>
                                 <p>Profile creation, category selection, photo uploads and business hours.</p>
                                 <p class='catalog-price'>Quote-based · One-time</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>GBP Monthly Management</h4>
                                 <p>Regular posts, review responses and monthly analytics report.</p>
                                 <p class='catalog-price'>Quote-based · Monthly subscription</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card catalog-card-featured'>
                                 <span class='catalog-tag catalog-tag-pro'>Premium</span>
                                 <h4>GBP Premium Management</h4>
                                 <p>2 posts per week, Q&A management, photo updates and detailed reporting.</p>
                                 <p class='catalog-price'>Quote-based · Monthly subscription</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                         </div>
 
@@ -1028,14 +1028,14 @@ const translations = {
                                 <h4>Monthly Website Maintenance</h4>
                                 <p>Updates, backups, bug fixes and 2 content changes per month.</p>
                                 <p class='catalog-price'>Quote-based · Monthly subscription</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card catalog-card-featured'>
                                 <span class='catalog-tag catalog-tag-pro'>Pro</span>
                                 <h4>Monthly Maintenance PRO</h4>
                                 <p>Standard maintenance + 5 changes + monthly SEO report + priority support.</p>
                                 <p class='catalog-price'>Quote-based · Monthly subscription</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                         </div>
 
@@ -1045,38 +1045,38 @@ const translations = {
                                 <h4>Basic AI Web Chatbot</h4>
                                 <p>FAQ-based bot, lead capture and email notification.</p>
                                 <p class='catalog-price'>Quote-based · Setup</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card catalog-card-featured'>
                                 <span class='catalog-tag catalog-tag-pro'>GPT</span>
                                 <h4>GPT-Powered AI Chatbot</h4>
                                 <p>Custom-trained model, multilingual support and reporting included.</p>
                                 <p class='catalog-price'>Quote-based · Setup</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>WhatsApp Business API — Setup</h4>
                                 <p>Automated reply system and conversation flow design.</p>
                                 <p class='catalog-price'>Quote-based · One-time</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>WhatsApp Business API — Maintenance</h4>
                                 <p>Monthly maintenance, flow updates and reporting.</p>
                                 <p class='catalog-price'>Quote-based · Monthly subscription</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>Instagram & Messenger Automation — Setup</h4>
                                 <p>DM automation and lead routing flow setup.</p>
                                 <p class='catalog-price'>Quote-based · One-time</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>Instagram & Messenger Automation — Maintenance</h4>
                                 <p>Monthly maintenance, flow optimisation and performance tracking.</p>
                                 <p class='catalog-price'>Quote-based · Monthly subscription</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                         </div>
 
@@ -1086,25 +1086,25 @@ const translations = {
                                 <h4>Logo & Brand Identity</h4>
                                 <p>3 concepts, colour palette, typography and corporate brand guide.</p>
                                 <p class='catalog-price'>Quote-based · One-time</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>Social Media Visual Set</h4>
                                 <p>15 post designs + profile and cover photo design.</p>
                                 <p class='catalog-price'>Quote-based · One-time</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>Email Marketing Setup</h4>
                                 <p>Platform setup + 3 email templates + 3 campaign preparations.</p>
                                 <p class='catalog-price'>Quote-based · One-time</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <h4>QR Menu / Digital Catalogue</h4>
                                 <p>Product/service catalogue design and QR code generation.</p>
                                 <p class='catalog-price'>Quote-based · One-time</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                         </div>
 
@@ -1115,88 +1115,88 @@ const translations = {
                                 <h4>📅 AI Booking & Reservation</h4>
                                 <p>24/7 AI-powered booking and reservation system setup and management.</p>
                                 <p class='catalog-price'>Quote-based · Setup</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag'>Automation</span>
                                 <h4>🎙️ Voice Assistant Automation</h4>
                                 <p>AI voice assistant integration to automate telephone and IVR systems.</p>
                                 <p class='catalog-price'>Quote-based · Setup</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag'>Automation</span>
                                 <h4>📧 Email Automation</h4>
                                 <p>Segmented campaign flows, trigger sequences and automated follow-up emails.</p>
                                 <p class='catalog-price'>Quote-based · Setup</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag'>Automation</span>
                                 <h4>📈 Sales & Marketing Automation</h4>
                                 <p>Automate sales funnels and marketing processes with AI to accelerate growth.</p>
                                 <p class='catalog-price'>Quote-based · Setup</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card catalog-card-featured'>
                                 <span class='catalog-tag catalog-tag-pro'>CRM</span>
                                 <h4>🎯 Smart CRM & Lead Management</h4>
                                 <p>Automated lead capture, scoring and dynamic sales funnel management integration.</p>
                                 <p class='catalog-price'>Quote-based · Setup</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag'>AI Content</span>
                                 <h4>✍️ AI Content Generation</h4>
                                 <p>SEO-optimised articles, blog posts, product descriptions and corporate copy in minutes.</p>
                                 <p class='catalog-price'>Quote-based · One-time / Subscription</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag'>Automation</span>
                                 <h4>📁 Document Management & Archive</h4>
                                 <p>Digital document processing, smart archiving and document workflow automation.</p>
                                 <p class='catalog-price'>Quote-based · Setup</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag'>Finance</span>
                                 <h4>🧾 Invoice & Finance Automation</h4>
                                 <p>Automated invoice creation, dispatch, tracking and financial process management.</p>
                                 <p class='catalog-price'>Quote-based · Setup</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag'>Legal</span>
                                 <h4>⚖️ Legal & Finance Automation</h4>
                                 <p>AI solutions for contract drafting, legal document processing and compliance workflows.</p>
                                 <p class='catalog-price'>Quote-based · Setup</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card'>
                                 <span class='catalog-tag'>AI Media</span>
                                 <h4>🖼️ AI Visual & Video Production</h4>
                                 <p>AI-powered generation and editing of brand-consistent visuals and video content.</p>
                                 <p class='catalog-price'>Quote-based · One-time / Subscription</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card catalog-card-featured'>
                                 <span class='catalog-tag catalog-tag-enterprise'>Enterprise</span>
                                 <h4>⚡ Custom AI Software & Integration</h4>
                                 <p>Bespoke AI software development, API integration and system architecture for your business.</p>
                                 <p class='catalog-price'>Quote-based · Project-based</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                             <div class='catalog-card catalog-card-featured'>
                                 <span class='catalog-tag catalog-tag-pro'>Strategy</span>
                                 <h4>🚀 Digital Transformation Strategy</h4>
                                 <p>Comprehensive digital transformation analysis, AI-focused roadmap and consultancy.</p>
                                 <p class='catalog-price'>Quote-based · Project-based</p>
-                                <a href='iletisim.html' class='catalog-cta'>Get a Quote</a>
+                                <a href='iletisim' class='catalog-cta'>Get a Quote</a>
                             </div>
                         </div>
 
-                        <p class='catalog-note'>All prices are determined by project scope, client requirements and technical specifications. Stripe Payment Links are generated only after quote approval. Use the <a href='iletisim.html'>contact form</a> for any enquiries.</p>
+                        <p class='catalog-note'>All prices are determined by project scope, client requirements and technical specifications. Stripe Payment Links are generated only after quote approval. Use the <a href='iletisim'>contact form</a> for any enquiries.</p>
 
                         <div style='margin-top:2.5rem;padding:1.25rem 1.5rem;border:1px solid rgba(255,255,255,0.1);border-radius:12px;background:rgba(255,255,255,0.03)'>
                             <h3 style='font-size:0.95rem;font-weight:600;margin-bottom:0.75rem'>Data Protection Notice (GDPR / UK GDPR)</h3>
@@ -1208,7 +1208,7 @@ const translations = {
                             </p>
                             <p style='font-size:0.8rem;opacity:0.7;line-height:1.7'>
                                 To exercise your rights (access, rectification, erasure, objection) under UK GDPR / KVKK, contact us at <a href='mailto:info@bysirius.com' style='color:inherit;text-decoration:underline'>info@bysirius.com</a>.
-                                For full details, see our <a href='gizlilik-politikasi.html' style='color:inherit;text-decoration:underline'>Privacy Policy</a>.
+                                For full details, see our <a href='gizlilik-politikasi' style='color:inherit;text-decoration:underline'>Privacy Policy</a>.
                             </p>
                         </div>
                     </div>
@@ -1469,7 +1469,7 @@ const translations = {
         placeholderOtherSector: "Write Your Field of Activity",
         placeholderServiceSelect: "Select Services (At least one)",
         placeholderNotes: "Notes",
-        kvkkConsentText: "<a href='gizlilik-politikasi.html' style='color:#c9a84c;' target='_blank'>Privacy Policy</a> — I consent to the processing of my personal data for analysis and related communication purposes (UK GDPR / KVKK).",
+        kvkkConsentText: "<a href='gizlilik-politikasi' style='color:#c9a84c;' target='_blank'>Privacy Policy</a> — I consent to the processing of my personal data for analysis and related communication purposes (UK GDPR / KVKK).",
         modalSubmit: "Submit",
         resultsTitle: "Automation Speaks in Numbers",
         stat1Val: "70%", stat1Label: "Average reduction in operational costs",
@@ -1779,7 +1779,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Modal Logic
     const modal = document.getElementById("analysisModal");
-    const modalTriggers = document.querySelectorAll(".btn-modal-trigger, .btn-gold-gradient[href='#iletisim'], .btn-outline[href='index.html#iletisim'], .open-analysis-modal");
+    const modalTriggers = document.querySelectorAll(".btn-modal-trigger, .btn-gold-gradient[href='#iletisim'], .btn-outline[href='/#iletisim'], .open-analysis-modal");
     const closeBtn = document.querySelector(".modal-close");
     const sectorSelect = document.getElementById("sectorSelect");
     const otherSector = document.getElementById("otherSector");
@@ -2216,7 +2216,7 @@ document.addEventListener("DOMContentLoaded", () => {
     banner.id = 'bys-cookie';
     banner.setAttribute('role', 'dialog');
     banner.setAttribute('aria-label', 'Çerez tercihleri');
-    banner.innerHTML = '<p>Bu site deneyiminizi iyileştirmek için analitik çerezler kullanır. Devam ederek <a href="gizlilik-politikasi.html">Gizlilik Politikamızı</a> kabul etmiş sayılırsınız.</p><div class="bys-cookie-btns"><button class="bys-cb-accept" id="bys-accept">Kabul Et</button><button class="bys-cb-reject" id="bys-reject">Reddet</button></div>';
+    banner.innerHTML = '<p>Bu site deneyiminizi iyileştirmek için analitik çerezler kullanır. Devam ederek <a href="gizlilik-politikasi">Gizlilik Politikamızı</a> kabul etmiş sayılırsınız.</p><div class="bys-cookie-btns"><button class="bys-cb-accept" id="bys-accept">Kabul Et</button><button class="bys-cb-reject" id="bys-reject">Reddet</button></div>';
     document.body.appendChild(banner);
 
     document.getElementById('bys-accept').addEventListener('click', function () {
