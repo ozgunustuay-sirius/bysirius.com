@@ -1784,13 +1784,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const sectorSelect = document.getElementById("sectorSelect");
     const otherSector = document.getElementById("otherSector");
 
+    // Event delegation — querySelectorAll zamanlamasından bağımsız çalışır
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.btn-modal-trigger, .open-analysis-modal')) {
+            e.preventDefault();
+            if (modal) modal.classList.add('show');
+        }
+    });
+
     if (modal && closeBtn) {
-        modalTriggers.forEach(trigger => {
-            trigger.addEventListener("click", function (e) {
-                e.preventDefault();
-                modal.classList.add("show");
-            });
-        });
 
         closeBtn.addEventListener("click", function () {
             modal.classList.remove("show");
