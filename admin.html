@@ -338,14 +338,23 @@ function getToken() { return localStorage.getItem('bs_crm_token') || ''; }
 async function doLogin() {
   const pw = document.getElementById('pw-input').value.trim();
   if (!pw) return;
+  const errEl = document.getElementById('login-err');
+  errEl.style.display = 'none';
   try {
-    const res = await apiFetch('?action=list', 'GET', null, pw);
-    if (res.error) throw new Error(res.error);
+    const res = await fetch(BASE + '?action=list', {
+      headers: { 'Authorization': `Bearer ${pw}` }
+    });
+    // 401 = wrong password; 503 = CRM not configured but password OK; 200 = all good
+    if (res.status === 401) {
+      errEl.style.display = 'block';
+      return;
+    }
     localStorage.setItem('bs_crm_token', pw);
     showApp();
     loadData();
   } catch {
-    document.getElementById('login-err').style.display = 'block';
+    errEl.textContent = 'Sunucuya bağlanılamadı. Lütfen tekrar deneyin.';
+    errEl.style.display = 'block';
   }
 }
 
