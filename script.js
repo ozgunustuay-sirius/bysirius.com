@@ -2194,9 +2194,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 }());
 
-// GDPR Cookie Consent Banner
+// GDPR / UK ICO Cookie Consent Banner
 (function () {
-    var consent = localStorage.getItem('bys_cookie_consent');
+    var stored = localStorage.getItem('bysirius_cookies');
 
     function updateGtag(state) {
         if (typeof gtag !== 'undefined') {
@@ -2204,36 +2204,27 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    if (consent === 'granted') {
+    if (stored === 'accepted') { updateGtag('granted'); return; }
+    if (stored === 'rejected') { window['ga-disable-G-H18YPZVNYJ'] = true; return; }
+
+    var cookieBanner = document.createElement('div');
+    cookieBanner.id = 'cookie-banner';
+    cookieBanner.setAttribute('role', 'dialog');
+    cookieBanner.setAttribute('aria-label', 'Çerez tercihleri');
+    cookieBanner.innerHTML = '<div style="position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:10000;flex-wrap:wrap;box-shadow:0 -4px 20px rgba(0,0,0,0.5);font-family:Inter,sans-serif;"><p style="margin:0;font-size:13px;flex:1;color:#ccc;line-height:1.5;">Bu site analitik çerezler kullanır. <a href="gizlilik-politikasi" style="color:#c9a84c;text-decoration:none;">Gizlilik Politikası</a></p><div style="display:flex;gap:8px;flex-shrink:0;"><button id="cookie-reject" style="padding:7px 16px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.4);border-radius:6px;cursor:pointer;font-size:13px;">Reddet</button><button id="cookie-accept" style="padding:7px 16px;background:#c9a84c;color:#000;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;">Kabul Et</button></div></div>';
+
+    document.body.appendChild(cookieBanner);
+
+    document.getElementById('cookie-accept').onclick = function () {
+        localStorage.setItem('bysirius_cookies', 'accepted');
         updateGtag('granted');
-        return;
-    }
-    if (consent === 'denied') {
-        window['ga-disable-G-H18YPZVNYJ'] = true;
-        return;
-    }
+        cookieBanner.remove();
+    };
 
-    var style = document.createElement('style');
-    style.textContent = '#bys-cookie{position:fixed;bottom:0;left:0;right:0;background:#111;border-top:1px solid #2a2a2a;padding:14px 24px;z-index:10000;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:Inter,sans-serif;box-shadow:0 -4px 20px rgba(0,0,0,0.4)}#bys-cookie p{color:#bbb;font-size:13.5px;margin:0;flex:1;min-width:200px;line-height:1.5}#bys-cookie p a{color:#c9a84c;text-decoration:none}#bys-cookie p a:hover{text-decoration:underline}.bys-cookie-btns{display:flex;gap:10px;flex-shrink:0}.bys-cb-accept{background:#c9a84c;color:#000;border:none;padding:9px 20px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;transition:background 0.2s}.bys-cb-accept:hover{background:#e0ba5a}.bys-cb-reject{background:transparent;color:#888;border:1px solid #3a3a3a;padding:9px 16px;border-radius:6px;font-size:13px;cursor:pointer;transition:border-color 0.2s}.bys-cb-reject:hover{border-color:#666;color:#bbb}@media(max-width:600px){#bys-cookie{flex-direction:column;text-align:center}.bys-cookie-btns{justify-content:center;width:100%}}';
-    document.head.appendChild(style);
-
-    var banner = document.createElement('div');
-    banner.id = 'bys-cookie';
-    banner.setAttribute('role', 'dialog');
-    banner.setAttribute('aria-label', 'Çerez tercihleri');
-    banner.innerHTML = '<p>Bu site deneyiminizi iyileştirmek için analitik çerezler kullanır. Devam ederek <a href="gizlilik-politikasi">Gizlilik Politikamızı</a> kabul etmiş sayılırsınız.</p><div class="bys-cookie-btns"><button class="bys-cb-accept" id="bys-accept">Kabul Et</button><button class="bys-cb-reject" id="bys-reject">Reddet</button></div>';
-    document.body.appendChild(banner);
-
-    document.getElementById('bys-accept').addEventListener('click', function () {
-        localStorage.setItem('bys_cookie_consent', 'granted');
-        updateGtag('granted');
-        banner.remove();
-    });
-
-    document.getElementById('bys-reject').addEventListener('click', function () {
-        localStorage.setItem('bys_cookie_consent', 'denied');
+    document.getElementById('cookie-reject').onclick = function () {
+        localStorage.setItem('bysirius_cookies', 'rejected');
         window['ga-disable-G-H18YPZVNYJ'] = true;
         updateGtag('denied');
-        banner.remove();
-    });
+        cookieBanner.remove();
+    };
 }());
