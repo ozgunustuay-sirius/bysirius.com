@@ -108,13 +108,21 @@
 
 export const config = { runtime: 'edge' };
 
-const CORS = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Authorization, Content-Type'
-};
+const ALLOWED_ORIGINS = new Set(['https://bysirius.com', 'https://www.bysirius.com']);
+
+function corsHeaders(req) {
+  const origin = req.headers.get('origin') || '';
+  const allow  = ALLOWED_ORIGINS.has(origin) ? origin : 'https://www.bysirius.com';
+  return {
+    'Access-Control-Allow-Origin':  allow,
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Authorization, Content-Type',
+    'Vary': 'Origin'
+  };
+}
 
 export default async function handler(req) {
+  const CORS = corsHeaders(req);
   if (req.method === 'OPTIONS') {
     return new Response(null, { status: 200, headers: CORS });
   }
@@ -122,6 +130,13 @@ export default async function handler(req) {
   const adminPw    = process.env.ADMIN_PASSWORD;
   const crmSecret  = process.env.CRM_SECRET;
   const crmUrl     = process.env.CRM_SCRIPT_URL;
+
+  function json(data, status = 200) {
+    return new Response(JSON.stringify(data), {
+      status,
+      headers: { 'Content-Type': 'application/json', ...CORS }
+    });
+  }
 
   // Auth: admin password OR internal CRM secret
   const auth = (req.headers.get('Authorization') || '').replace('Bearer ', '');
@@ -158,11 +173,4 @@ export default async function handler(req) {
   } catch (err) {
     return json({ error: err.message }, 500);
   }
-}
-
-function json(data, status = 200) {
-  return new Response(JSON.stringify(data), {
-    status,
-    headers: { 'Content-Type': 'application/json', ...CORS }
-  });
 }

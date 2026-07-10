@@ -324,7 +324,7 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
 <div class="toast" id="toast"></div>
 
 <script>
-const BASE = '/api/crm';
+const BASE = 'https://www.bysirius.com/api/crm';
 let records = [];
 let editId  = null;
 let deleteId = null;
@@ -638,7 +638,9 @@ document.querySelectorAll('.overlay').forEach(o => {
 });
 
 function esc(str) {
-  return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  return String(str || '')
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 }
 
 function fmtDate(str) {

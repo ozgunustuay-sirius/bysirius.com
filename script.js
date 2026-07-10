@@ -2204,7 +2204,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    if (stored === 'accepted') { updateGtag('granted'); return; }
+    if (stored === 'granted') { updateGtag('granted'); return; }
     if (stored === 'rejected') { window['ga-disable-G-H18YPZVNYJ'] = true; return; }
 
     var cookieBanner = document.createElement('div');
@@ -2216,7 +2216,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(cookieBanner);
 
     document.getElementById('cookie-accept').onclick = function () {
-        localStorage.setItem('bysirius_cookies', 'accepted');
+        localStorage.setItem('bysirius_cookies', 'granted');
         updateGtag('granted');
         cookieBanner.remove();
     };
