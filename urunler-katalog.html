@@ -98,7 +98,9 @@
     Teklif ve bilgi için: <strong>info@bysirius.com</strong> · +90 535 503 26 34 · bysirius.com
   </div>
 
-  <!-- WEB TASARIM -->
+  <div id="dynamic-catalog"><div style="text-align:center;padding:3rem;color:#718096"><div style="width:24px;height:24px;border:2px solid #e2e8f0;border-top-color:#2563eb;border-radius:50%;animation:spin .7s linear infinite;display:inline-block"></div></div></div>
+
+  <!-- static fallback hidden --><div style="display:none"><!-- WEB TASARIM -->
   <div class="cat-section">
     <div class="cat-title">🌐 Web Tasarım Paketleri</div>
     <div class="cat-grid cat-grid-4">
@@ -386,6 +388,8 @@
     </div>
   </div>
 
+  </div><!-- /static fallback -->
+
   <!-- İLETİŞİM -->
   <div class="contact-box">
     <h3>Teklif & İletişim Bilgileri</h3>
@@ -416,5 +420,54 @@
   </div>
 
 </div>
+
+<script>
+(function() {
+  var GRID_CLASS = { 2:'cat-grid-2', 3:'', 4:'cat-grid-4' };
+  var HL_STYLE   = {
+    pro:        'border-color:#2563eb;background:#ebf4ff',
+    enterprise: 'border-color:#047857;background:#f0fff4'
+  };
+  var TAG_CLASS  = {
+    pro:        'product-tag pro',
+    enterprise: 'product-tag enterprise'
+  };
+
+  function esc(s) {
+    return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function renderCatalog(categories) {
+    var html = '';
+    for (var i = 0; i < categories.length; i++) {
+      var cat = categories[i];
+      var gc  = GRID_CLASS[cat.grid] || '';
+      html += '<div class="cat-section"><div class="cat-title">' + esc(cat.emoji) + ' ' + esc(cat.title) + '</div>';
+      html += '<div class="cat-grid ' + gc + '">';
+      for (var j = 0; j < cat.products.length; j++) {
+        var p   = cat.products[j];
+        var hl  = HL_STYLE[p.highlight]  || '';
+        var tc  = TAG_CLASS[p.highlight] || 'product-tag';
+        html += '<div class="product-card"' + (hl ? ' style="' + hl + '"' : '') + '>';
+        html += '<span class="' + tc + '">' + esc(p.tag) + '</span>';
+        html += '<div class="product-name">' + esc(p.name) + '</div>';
+        html += '<div class="product-desc">' + esc(p.desc) + '</div>';
+        html += '<div class="product-price">' + esc(p.price) + '</div>';
+        html += '</div>';
+      }
+      html += '</div></div>';
+    }
+    return html;
+  }
+
+  fetch('/products.json?_=' + Date.now())
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var el = document.getElementById('dynamic-catalog');
+      if (el && data.categories) el.innerHTML = renderCatalog(data.categories);
+    })
+    .catch(function() {});
+})();
+</script>
 </body>
 </html>

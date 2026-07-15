@@ -110,6 +110,38 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
 .spin{display:inline-block;width:24px;height:24px;border:2px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin .7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 
+/* ── Tabs ── */
+.tab-nav{display:flex;gap:.25rem;padding:.6rem 1.5rem;border-bottom:1px solid var(--border);background:var(--surface);flex-shrink:0}
+.tab-btn{padding:.4rem 1rem;border:none;border-radius:6px;cursor:pointer;font-size:.83rem;font-weight:600;background:transparent;color:var(--muted);transition:.15s}
+.tab-btn.active{background:var(--surface2);color:var(--text)}
+.tab-btn:hover:not(.active){color:var(--text)}
+.panel{display:none}.panel.active{display:block}
+
+/* ── Products ── */
+.cat-block{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:1rem}
+.cat-header{display:flex;align-items:center;justify-content:space-between;padding:.65rem 1rem;background:var(--surface2);border-bottom:1px solid var(--border)}
+.cat-header h3{font-size:.85rem;font-weight:700;color:var(--text);margin:0}
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.6rem;padding:.75rem}
+.prod-card{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:.75rem;position:relative;display:flex;flex-direction:column;gap:.3rem}
+.prod-card.hl-pro{border-color:var(--info)}
+.prod-card.hl-enterprise{border-color:var(--success)}
+.p-tag{font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:20px;background:rgba(76,143,224,.15);color:var(--info);display:inline-block}
+.p-name{font-weight:700;font-size:.82rem;color:var(--text)}
+.p-desc{font-size:.77rem;color:var(--muted);line-height:1.5;flex:1}
+.p-price{font-size:.74rem;color:var(--info);font-weight:600;margin-top:.2rem}
+.p-actions{display:flex;gap:.3rem;justify-content:flex-end;margin-top:.4rem}
+
+/* ── Page editor ── */
+.file-toolbar{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;margin-bottom:.75rem}
+.file-sel{padding:.55rem .9rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);outline:none;font-size:.9rem;cursor:pointer;flex:1;min-width:200px}
+.code-area{width:100%;font-family:'Consolas','Courier New',monospace;font-size:.8rem;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:.75rem;min-height:480px;resize:vertical;outline:none;line-height:1.5;tab-size:2}
+.code-area:focus{border-color:var(--primary)}
+.deploy-note{font-size:.8rem;color:var(--muted);padding:.5rem .8rem;background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.25);border-radius:6px;margin-top:.5rem}
+.setup-box{background:var(--surface);border:1px solid var(--warn);border-radius:10px;padding:1.5rem;max-width:560px}
+.setup-box h3{color:var(--warn);font-size:.95rem;margin-bottom:.75rem}
+.setup-box ol{padding-left:1.25rem;color:var(--muted);font-size:.85rem;line-height:2}
+.setup-box code{background:var(--surface2);padding:2px 6px;border-radius:4px;font-family:monospace;color:var(--text);font-size:.82rem}
+
 /* ── Toast ── */
 .toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:.75rem 1.25rem;font-size:.85rem;z-index:9999;transform:translateY(4rem);opacity:0;transition:.3s;pointer-events:none}
 .toast.show{transform:none;opacity:1}
@@ -140,12 +172,19 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
 <div id="app" style="display:none;flex-direction:column">
 
   <div class="topbar">
-    <div class="brand">BY Sirius — CRM</div>
+    <div class="brand">BY Sirius — Admin</div>
     <span class="user-info" id="record-count"></span>
     <button class="btn-logout" onclick="logout()">Çıkış</button>
   </div>
 
-  <div class="main">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('customers',this)">Müşteriler</button>
+    <button class="tab-btn" onclick="switchTab('products',this)">Ürünler</button>
+    <button class="tab-btn" onclick="switchTab('pages',this)">Sayfalar</button>
+  </div>
+
+  <!-- ═══ PANEL: Müşteriler ═══ -->
+  <div class="main panel active" id="panel-customers">
 
     <!-- Stats -->
     <div class="stats" id="stats-row">
@@ -199,6 +238,62 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
       </table>
     </div>
 
+  </div>
+</div>
+
+<!-- ═══ PANEL: Ürünler ═══ -->
+<div class="main panel" id="panel-products">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem">
+    <h2 style="font-size:1rem;font-weight:700;color:var(--primary)">Ürün Kataloğu</h2>
+    <div style="display:flex;gap:.5rem">
+      <button class="btn btn-primary btn-sm" onclick="openAddProduct()">+ Yeni Ürün</button>
+      <button class="btn btn-sm" style="background:var(--surface2);border:1px solid var(--border);color:var(--text)" onclick="loadProducts()">↻ Yenile</button>
+      <button class="btn btn-sm" style="background:var(--surface2);border:1px solid var(--border);color:var(--text)" onclick="saveProducts()">💾 Kaydet &amp; Deploy</button>
+    </div>
+  </div>
+  <div id="prod-list"><div class="empty"><div class="spin"></div></div></div>
+</div>
+
+<!-- ═══ PANEL: Sayfalar ═══ -->
+<div class="main panel" id="panel-pages">
+  <h2 style="font-size:1rem;font-weight:700;color:var(--primary);margin-bottom:1rem">Sayfa Editörü</h2>
+  <div id="pages-setup-check">
+    <div class="file-toolbar">
+      <select class="file-sel" id="file-select" onchange="loadFile()">
+        <option value="">— Düzenlemek istediğiniz dosyayı seçin —</option>
+        <option value="products.json">Ürün Kataloğu (products.json)</option>
+        <option value="llms.txt">AI Asistan Talimatları (llms.txt)</option>
+        <option value="robots.txt">Robots.txt</option>
+        <option value="index.html">Ana Sayfa (index.html)</option>
+        <option value="hakkimizda.html">Hakkımızda</option>
+        <option value="hizmetlerimiz.html">Hizmetlerimiz</option>
+        <option value="sektorler.html">Sektörler</option>
+        <option value="ai-ceo.html">AI CEO</option>
+        <option value="blog.html">Blog</option>
+        <option value="iletisim.html">İletişim</option>
+        <option value="urunler-katalog.html">Ürün Kataloğu (HTML)</option>
+      </select>
+      <button class="btn btn-primary" onclick="saveFile()" id="save-file-btn" style="display:none">💾 Kaydet &amp; Deploy</button>
+      <button class="btn btn-sm" style="background:var(--surface2);border:1px solid var(--border);color:var(--text);display:none" id="reload-file-btn" onclick="loadFile()">↻</button>
+    </div>
+    <div id="github-setup-warn" style="display:none">
+      <div class="setup-box">
+        <h3>⚠ GITHUB_TOKEN gerekli</h3>
+        <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem">Sayfa editörü çalışmak için GitHub Personal Access Token gerektirir.</p>
+        <ol>
+          <li>GitHub → Settings → Developer settings → <strong>Personal access tokens → Fine-grained</strong></li>
+          <li>Repository: <code>ozgunustuay-sirius/bysirius.com</code></li>
+          <li>Permission: <strong>Contents → Read &amp; Write</strong></li>
+          <li>Token'ı kopyalayın</li>
+          <li>Vercel dashboard → her iki proje → Environment Variables → <code>GITHUB_TOKEN</code> ekle</li>
+          <li>Redeploy yapın</li>
+        </ol>
+      </div>
+    </div>
+    <textarea class="code-area" id="code-editor" spellcheck="false" style="display:none" placeholder="Dosya içeriği burada görünecek..."></textarea>
+    <div class="deploy-note" id="deploy-note" style="display:none">
+      ✓ Kaydedildiğinde GitHub'a commit atılır → Vercel otomatik yeniden deploy eder (~30 saniye).
+    </div>
   </div>
 </div>
 
@@ -272,6 +367,47 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
   </div>
 </div>
 
+<!-- ═══ Product Add/Edit Modal ═══ -->
+<div class="overlay" id="modal-prod">
+  <div class="modal">
+    <h2 id="pm-title">Yeni Ürün</h2>
+    <div class="form-grid">
+      <div class="field full">
+        <label>Kategori</label>
+        <select id="pm-cat"></select>
+      </div>
+      <div class="field full">
+        <label>Ürün Adı *</label>
+        <input id="pm-name" placeholder="Ürün veya hizmet adı">
+      </div>
+      <div class="field full">
+        <label>Açıklama</label>
+        <textarea id="pm-desc" placeholder="Kısa açıklama" style="min-height:70px"></textarea>
+      </div>
+      <div class="field">
+        <label>Fiyat / Ödeme</label>
+        <input id="pm-price" placeholder="Teklif bazlı · Tek seferlik">
+      </div>
+      <div class="field">
+        <label>Etiket</label>
+        <input id="pm-tag" placeholder="Starter, PRO ⭐, SEO…">
+      </div>
+      <div class="field">
+        <label>Vurgulama</label>
+        <select id="pm-hl">
+          <option value="">Yok (varsayılan)</option>
+          <option value="pro">Pro (mavi çerçeve)</option>
+          <option value="enterprise">Kurumsal (yeşil çerçeve)</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-cancel" onclick="closeModal('modal-prod')">İptal</button>
+      <button class="btn btn-primary" onclick="saveProdModal()">Kaydet</button>
+    </div>
+  </div>
+</div>
+
 <!-- ═══ Delete Confirm Modal ═══ -->
 <div class="overlay" id="modal-del">
   <div class="modal" style="max-width:380px;text-align:center">
@@ -324,13 +460,197 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
 <div class="toast" id="toast"></div>
 
 <script>
-const BASE = 'https://www.bysirius.com/api/crm';
+const BASE       = 'https://www.bysirius.com/api/crm';
+const GITHUB_API = 'https://www.bysirius.com/api/github';
 let records = [];
 let editId  = null;
 let deleteId = null;
 let sozlesmeRecord = null;
 let sortField = 'firma_adi';
 let sortDir   = 1;
+
+// ─── Tab switching ────────────────────────────────────────────────────────────
+function switchTab(name, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  btn.classList.add('active');
+  if (name === 'products' && prodCategories.length === 0) loadProducts();
+}
+
+// ─── Products ─────────────────────────────────────────────────────────────────
+let prodCategories = [];
+let editProdCatId  = null;
+let editProdId     = null;
+
+async function loadProducts() {
+  document.getElementById('prod-list').innerHTML = '<div class="empty"><div class="spin"></div></div>';
+  try {
+    const res  = await fetch('/products.json?_=' + Date.now());
+    const data = await res.json();
+    prodCategories = data.categories || [];
+    renderProducts();
+  } catch { toast('Ürünler yüklenemedi', 'err'); }
+}
+
+function populateCatSelect() {
+  const sel = document.getElementById('pm-cat');
+  sel.innerHTML = prodCategories.map(c => `<option value="${esc(c.id)}">${esc(c.emoji)} ${esc(c.title)}</option>`).join('');
+}
+
+function renderProducts() {
+  populateCatSelect();
+  const el = document.getElementById('prod-list');
+  if (!prodCategories.length) { el.innerHTML = '<p class="empty">Ürün bulunamadı.</p>'; return; }
+  el.innerHTML = prodCategories.map(cat => `
+    <div class="cat-block">
+      <div class="cat-header">
+        <h3>${esc(cat.emoji)} ${esc(cat.title)}</h3>
+        <button class="btn btn-sm btn-primary" onclick="openAddProduct('${esc(cat.id)}')">+ Ürün Ekle</button>
+      </div>
+      <div class="prod-grid">
+        ${cat.products.map(p => `
+          <div class="prod-card ${p.highlight === 'pro' ? 'hl-pro' : p.highlight === 'enterprise' ? 'hl-enterprise' : ''}">
+            <span class="p-tag">${esc(p.tag)}</span>
+            <div class="p-name">${esc(p.name)}</div>
+            <div class="p-desc">${esc(p.desc)}</div>
+            <div class="p-price">${esc(p.price)}</div>
+            <div class="p-actions">
+              <button class="btn btn-sm btn-edit" onclick="openEditProduct('${esc(cat.id)}','${esc(p.id)}')">✏</button>
+              <button class="btn btn-sm btn-del" onclick="deleteProduct('${esc(cat.id)}','${esc(p.id)}')">🗑</button>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function openAddProduct(catId) {
+  editProdCatId = catId || null;
+  editProdId    = null;
+  document.getElementById('pm-title').textContent = 'Yeni Ürün';
+  document.getElementById('pm-cat').value  = catId || (prodCategories[0]?.id || '');
+  document.getElementById('pm-name').value = '';
+  document.getElementById('pm-desc').value = '';
+  document.getElementById('pm-price').value= 'Teklif bazlı · Tek seferlik';
+  document.getElementById('pm-tag').value  = '';
+  document.getElementById('pm-hl').value   = '';
+  openModal('modal-prod');
+}
+
+function openEditProduct(catId, prodId) {
+  const cat  = prodCategories.find(c => c.id === catId);
+  const prod = cat?.products.find(p => p.id === prodId);
+  if (!prod) return;
+  editProdCatId = catId;
+  editProdId    = prodId;
+  document.getElementById('pm-title').textContent = 'Ürün Düzenle';
+  document.getElementById('pm-cat').value  = catId;
+  document.getElementById('pm-name').value = prod.name;
+  document.getElementById('pm-desc').value = prod.desc;
+  document.getElementById('pm-price').value= prod.price;
+  document.getElementById('pm-tag').value  = prod.tag;
+  document.getElementById('pm-hl').value   = prod.highlight || '';
+  openModal('modal-prod');
+}
+
+function saveProdModal() {
+  const catId = document.getElementById('pm-cat').value;
+  const cat   = prodCategories.find(c => c.id === catId);
+  if (!cat) { toast('Kategori seçin', 'err'); return; }
+
+  const name  = document.getElementById('pm-name').value.trim();
+  if (!name) { toast('Ürün adı zorunlu', 'err'); return; }
+
+  const prod = {
+    id:        editProdId || ('p-' + Date.now()),
+    name,
+    desc:      document.getElementById('pm-desc').value.trim(),
+    price:     document.getElementById('pm-price').value.trim(),
+    tag:       document.getElementById('pm-tag').value.trim(),
+    highlight: document.getElementById('pm-hl').value
+  };
+
+  if (editProdId) {
+    const idx = cat.products.findIndex(p => p.id === editProdId);
+    if (idx >= 0) cat.products[idx] = prod;
+  } else {
+    cat.products.push(prod);
+  }
+  closeModal('modal-prod');
+  renderProducts();
+  toast('Ürün güncellendi. Kaydet & Deploy ile yayınlayın.', 'ok');
+}
+
+function deleteProduct(catId, prodId) {
+  const cat = prodCategories.find(c => c.id === catId);
+  if (!cat) return;
+  cat.products = cat.products.filter(p => p.id !== prodId);
+  renderProducts();
+  toast('Ürün silindi. Kaydet & Deploy ile yayınlayın.', 'ok');
+}
+
+async function saveProducts() {
+  const content = JSON.stringify({ updated: new Date().toISOString().slice(0,10), categories: prodCategories }, null, 2);
+  try {
+    const res = await fetch(GITHUB_API + '?file=products.json', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${getToken()}` },
+      body: JSON.stringify({ content, message: 'Update products.json via admin panel' })
+    });
+    const data = await res.json();
+    if (res.ok && data.success) toast(data.message, 'ok');
+    else if (res.status === 503) toast('GITHUB_TOKEN eksik — Vercel\'de ekleyin.', 'err');
+    else toast(data.error || 'Hata oluştu', 'err');
+  } catch { toast('Sunucuya bağlanılamadı', 'err'); }
+}
+
+// ─── Pages (file editor) ──────────────────────────────────────────────────────
+async function loadFile() {
+  const file = document.getElementById('file-select').value;
+  if (!file) return;
+  const editor  = document.getElementById('code-editor');
+  const saveBtn = document.getElementById('save-file-btn');
+  const relBtn  = document.getElementById('reload-file-btn');
+  const warn    = document.getElementById('github-setup-warn');
+  const note    = document.getElementById('deploy-note');
+
+  editor.style.display = 'none';
+  warn.style.display   = 'none';
+  saveBtn.style.display= 'none';
+  relBtn.style.display = 'none';
+  note.style.display   = 'none';
+  editor.value = 'Yükleniyor…';
+
+  try {
+    const res = await fetch(GITHUB_API + '?file=' + encodeURIComponent(file));
+    if (res.status === 503) { warn.style.display = 'block'; return; }
+    const text = await res.text();
+    editor.value = text;
+    editor.style.display = 'block';
+    saveBtn.style.display= 'inline-flex';
+    relBtn.style.display = 'inline-flex';
+    note.style.display   = 'block';
+  } catch { toast('Dosya yüklenemedi', 'err'); }
+}
+
+async function saveFile() {
+  const file    = document.getElementById('file-select').value;
+  const content = document.getElementById('code-editor').value;
+  if (!file) return;
+  try {
+    const res = await fetch(GITHUB_API + '?file=' + encodeURIComponent(file), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${getToken()}` },
+      body: JSON.stringify({ content, message: `Update ${file} via admin panel` })
+    });
+    const data = await res.json();
+    if (res.ok && data.success) toast(data.message, 'ok');
+    else if (res.status === 503) toast('GITHUB_TOKEN eksik — Vercel\'de ekleyin.', 'err');
+    else toast(data.error || 'Hata oluştu', 'err');
+  } catch { toast('Sunucuya bağlanılamadı', 'err'); }
+}
 
 // ─── Auth ────────────────────────────────────────────────────────────────────
 function getToken() { return localStorage.getItem('bs_crm_token') || ''; }

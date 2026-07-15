@@ -1,0 +1,107 @@
+{
+  "updated": "2026-07-15",
+  "categories": [
+    {
+      "id": "web-tasarim",
+      "emoji": "🌐",
+      "title": "Web Tasarım Paketleri",
+      "grid": 4,
+      "products": [
+        { "id": "wt-1", "name": "WEB TASARIM STARTER", "desc": "7 sayfalık profesyonel web sitesi · Mobil uyumlu · WhatsApp butonu + iletişim formu · SSL, domain + 1 yıl hosting · 2 revizyon · 30 gün garanti", "price": "Teklif bazlı · Tek seferlik", "tag": "Starter", "highlight": "" },
+        { "id": "wt-2", "name": "WEB TASARIM DİJİTAL", "desc": "12 sayfa + blog altyapısı · Google Analytics 4 + Search Console · Google Business Profile kurulumu · Temel On-Page SEO · 3 revizyon + eğitim kılavuzu", "price": "Teklif bazlı · Tek seferlik", "tag": "Dijital", "highlight": "" },
+        { "id": "wt-3", "name": "WEB TASARIM BÜYÜME-PRO", "desc": "20 sayfa + içerik yönetim paneli · AI chatbot + WhatsApp Business API · İleri SEO + anahtar kelime araştırması · Çok dilli (TR/EN), schema verisi · 3 ay GBP yönetimi + 3 ay bakım", "price": "Teklif bazlı · Tek seferlik", "tag": "Büyüme PRO ⭐", "highlight": "pro" },
+        { "id": "wt-4", "name": "WEB TASARIM KURUMSAL", "desc": "Sınırsız sayfa + e-ticaret altyapısı · Online ödeme entegrasyonu · Özel CRM + gelişmiş AI chatbot · 7/24 öncelikli destek · 6 ay ücretsiz bakım + sınırsız revizyon", "price": "Teklif bazlı · Tek seferlik", "tag": "Kurumsal", "highlight": "enterprise" }
+      ]
+    },
+    {
+      "id": "seo",
+      "emoji": "🔍",
+      "title": "SEO Hizmetleri",
+      "grid": 4,
+      "products": [
+        { "id": "seo-1", "name": "Temel On-Page SEO", "desc": "Meta etiketleri, başlık yapısı, iç link optimizasyonu ve hız iyileştirme.", "price": "Teklif bazlı · Tek seferlik", "tag": "SEO", "highlight": "" },
+        { "id": "seo-2", "name": "Anahtar Kelime Araştırması", "desc": "50 anahtar kelime analizi, rakip değerlendirmesi ve içerik planı.", "price": "Teklif bazlı · Tek seferlik", "tag": "SEO", "highlight": "" },
+        { "id": "seo-3", "name": "Aylık SEO Yönetimi", "desc": "Off-page optimizasyon, backlink çalışması, içerik üretimi ve aylık raporlama.", "price": "Teklif bazlı · Aylık abonelik", "tag": "SEO", "highlight": "" },
+        { "id": "seo-4", "name": "Yerel SEO Paketi", "desc": "Google Maps optimizasyonu ve yerel anahtar kelime çalışması.", "price": "Teklif bazlı · Tek seferlik", "tag": "SEO", "highlight": "" }
+      ]
+    },
+    {
+      "id": "analitik",
+      "emoji": "📊",
+      "title": "Analitik Kurulumları",
+      "grid": 3,
+      "products": [
+        { "id": "an-1", "name": "Google Analytics 4 Kurulumu", "desc": "Event tracking, dönüşüm hedefleri ve özel dashboard kurulumu.", "price": "Teklif bazlı · Tek seferlik", "tag": "Analitik", "highlight": "" },
+        { "id": "an-2", "name": "Google Search Console", "desc": "Site doğrulama, sitemap gönderimi ve indeksleme izleme.", "price": "Teklif bazlı · Tek seferlik", "tag": "Analitik", "highlight": "" },
+        { "id": "an-3", "name": "GA4 + Search Console Kombo", "desc": "Tam analitik altyapısı — GA4 ve Search Console birlikte kurulur.", "price": "Teklif bazlı · Tek seferlik", "tag": "Kombo ⭐", "highlight": "pro" }
+      ]
+    },
+    {
+      "id": "gbp",
+      "emoji": "📍",
+      "title": "Google Business Profile",
+      "grid": 3,
+      "products": [
+        { "id": "gbp-1", "name": "GBP Kurulum & Optimizasyon", "desc": "Profil oluşturma, kategori seçimi, fotoğraf yükleme ve çalışma saatleri ayarı.", "price": "Teklif bazlı · Tek seferlik", "tag": "GBP", "highlight": "" },
+        { "id": "gbp-2", "name": "GBP Aylık Yönetimi", "desc": "Düzenli post, yorum yanıtlama ve aylık analiz raporu.", "price": "Teklif bazlı · Aylık abonelik", "tag": "GBP", "highlight": "" },
+        { "id": "gbp-3", "name": "GBP Premium Yönetimi", "desc": "Haftada 2 post, Q&A yönetimi, fotoğraf güncellemeleri ve detaylı raporlama.", "price": "Teklif bazlı · Aylık abonelik", "tag": "Premium ⭐", "highlight": "pro" }
+      ]
+    },
+    {
+      "id": "bakim",
+      "emoji": "🔧",
+      "title": "Web Sitesi Aylık Bakım",
+      "grid": 2,
+      "products": [
+        { "id": "bk-1", "name": "Aylık Web Sitesi Bakım", "desc": "Güncelleme, yedekleme, hata düzeltme ve 2 içerik değişikliği / ay.", "price": "Teklif bazlı · Aylık abonelik", "tag": "Bakım", "highlight": "" },
+        { "id": "bk-2", "name": "Aylık Web Sitesi Bakım PRO", "desc": "Temel bakım + 5 değişiklik + aylık SEO raporu + öncelikli destek.", "price": "Teklif bazlı · Aylık abonelik", "tag": "PRO ⭐", "highlight": "pro" }
+      ]
+    },
+    {
+      "id": "chatbot",
+      "emoji": "🤖",
+      "title": "Chatbot & Otomasyon",
+      "grid": 3,
+      "products": [
+        { "id": "cb-1", "name": "Temel AI Web Chatbot", "desc": "SSS tabanlı bot, lead yakalama ve e-posta bildirimi.", "price": "Teklif bazlı · Kurulum", "tag": "Chatbot", "highlight": "" },
+        { "id": "cb-2", "name": "GPT Destekli AI Chatbot", "desc": "Özel eğitimli model, çok dilli destek ve raporlama dahil.", "price": "Teklif bazlı · Kurulum", "tag": "GPT ⭐", "highlight": "pro" },
+        { "id": "cb-3", "name": "WhatsApp Business API — Kurulum", "desc": "Otomatik yanıt sistemi ve akış tasarımı.", "price": "Teklif bazlı · Tek seferlik", "tag": "WhatsApp", "highlight": "" },
+        { "id": "cb-4", "name": "WhatsApp Business API — Bakım", "desc": "Aylık bakım, akış güncellemeleri ve raporlama.", "price": "Teklif bazlı · Aylık abonelik", "tag": "WhatsApp", "highlight": "" },
+        { "id": "cb-5", "name": "Instagram & Messenger — Kurulum", "desc": "DM otomasyonu ve lead yönlendirme akışı kurulumu.", "price": "Teklif bazlı · Tek seferlik", "tag": "Instagram", "highlight": "" },
+        { "id": "cb-6", "name": "Instagram & Messenger — Bakım", "desc": "Aylık bakım, akış optimizasyonu ve performans takibi.", "price": "Teklif bazlı · Aylık abonelik", "tag": "Instagram", "highlight": "" }
+      ]
+    },
+    {
+      "id": "marka",
+      "emoji": "🎨",
+      "title": "Marka & Pazarlama",
+      "grid": 4,
+      "products": [
+        { "id": "mk-1", "name": "Logo & Marka Kimliği", "desc": "3 konsept, renk paleti, tipografi ve kurumsal kimlik kılavuzu.", "price": "Teklif bazlı · Tek seferlik", "tag": "Marka", "highlight": "" },
+        { "id": "mk-2", "name": "Sosyal Medya Görsel Seti", "desc": "15 post tasarımı + profil ve kapak fotoğrafı tasarımı.", "price": "Teklif bazlı · Tek seferlik", "tag": "Sosyal Medya", "highlight": "" },
+        { "id": "mk-3", "name": "E-Posta Pazarlama Kurulumu", "desc": "Platform kurulumu + 3 e-posta şablonu + 3 kampanya hazırlığı.", "price": "Teklif bazlı · Tek seferlik", "tag": "E-Posta", "highlight": "" },
+        { "id": "mk-4", "name": "QR Menü / Dijital Katalog", "desc": "Ürün/hizmet kataloğu tasarımı ve QR kod üretimi.", "price": "Teklif bazlı · Tek seferlik", "tag": "Dijital", "highlight": "" }
+      ]
+    },
+    {
+      "id": "ai-otomasyon",
+      "emoji": "⚡",
+      "title": "AI Otomasyon Hizmetleri",
+      "grid": 3,
+      "products": [
+        { "id": "ai-1", "name": "📅 AI Randevu & Rezervasyon", "desc": "7/24 kesintisiz AI tabanlı randevu ve rezervasyon sistemi kurulumu ve yönetimi.", "price": "Teklif bazlı · Kurulum", "tag": "AI Otomasyon", "highlight": "" },
+        { "id": "ai-2", "name": "🎙️ Sesli Asistan Otomasyonu", "desc": "Sesli AI asistan entegrasyonu ile telefon ve IVR sistemlerini otomatikleştirin.", "price": "Teklif bazlı · Kurulum", "tag": "AI Otomasyon", "highlight": "" },
+        { "id": "ai-3", "name": "📧 E-mail Otomasyonu", "desc": "Segmente özel kampanya akışları, tetikleyici diziler ve otomatik takip e-postaları.", "price": "Teklif bazlı · Kurulum", "tag": "AI Otomasyon", "highlight": "" },
+        { "id": "ai-4", "name": "📈 Satış & Pazarlama Otomasyonu", "desc": "Satış hunilerini ve pazarlama süreçlerini AI ile otomatikleştirerek büyümeyi hızlandırın.", "price": "Teklif bazlı · Kurulum", "tag": "AI Otomasyon", "highlight": "" },
+        { "id": "ai-5", "name": "🎯 Akıllı CRM & Lead Yönetimi", "desc": "Otomatik lead toplama, skorlama ve dinamik satış huni yönetimi entegrasyonu.", "price": "Teklif bazlı · Kurulum", "tag": "CRM ⭐", "highlight": "pro" },
+        { "id": "ai-6", "name": "✍️ AI İçerik Üretimi", "desc": "SEO uyumlu makale, blog, ürün açıklaması ve kurumsal metin AI ile dakikalar içinde.", "price": "Teklif bazlı · Tek seferlik / Abonelik", "tag": "AI İçerik", "highlight": "" },
+        { "id": "ai-7", "name": "📁 Belge Yönetimi & Arşiv", "desc": "Dijital belge işleme, akıllı arşivleme ve belge tabanlı iş akışı otomasyonu.", "price": "Teklif bazlı · Kurulum", "tag": "AI Otomasyon", "highlight": "" },
+        { "id": "ai-8", "name": "🧾 Fatura & Finans Otomasyonu", "desc": "Otomatik fatura oluşturma, gönderim, takip ve finans süreç yönetimi.", "price": "Teklif bazlı · Kurulum", "tag": "Finans", "highlight": "" },
+        { "id": "ai-9", "name": "⚖️ Hukuk & Finans Otomasyonu", "desc": "Sözleşme taslağı, hukuki belge işleme ve uyumluluk süreçleri için AI çözümleri.", "price": "Teklif bazlı · Kurulum", "tag": "Hukuk", "highlight": "" },
+        { "id": "ai-10", "name": "🖼️ AI Görsel & Video Üretimi", "desc": "Marka kimliğine uygun görsel ve video içerik AI destekli üretim ve düzenleme.", "price": "Teklif bazlı · Tek seferlik / Abonelik", "tag": "AI Medya", "highlight": "" },
+        { "id": "ai-11", "name": "⚡ Özel AI Yazılım & Entegrasyon", "desc": "İşletmenize özel AI yazılım geliştirme, API entegrasyonu ve sistem mimarisi.", "price": "Teklif bazlı · Proje bazlı", "tag": "Kurumsal", "highlight": "enterprise" },
+        { "id": "ai-12", "name": "🚀 Dijital Dönüşüm Stratejisi", "desc": "Kapsamlı dijital dönüşüm analizi, AI odaklı yol haritası ve danışmanlık hizmeti.", "price": "Teklif bazlı · Proje bazlı", "tag": "Strateji ⭐", "highlight": "pro" }
+      ]
+    }
+  ]
+}
