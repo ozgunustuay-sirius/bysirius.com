@@ -138,9 +138,10 @@ export default async function handler(req) {
     });
   }
 
-  // Auth: admin password OR internal CRM secret
+  // Auth: env var OR CRM secret OR GitHub-stored hash
   const auth = (req.headers.get('Authorization') || '').replace('Bearer ', '');
-  if (!adminPw || (auth !== adminPw && auth !== crmSecret)) {
+  const authorized = await checkAuth(auth, adminPw, crmSecret);
+  if (!authorized) {
     return json({ error: 'Unauthorized' }, 401);
   }
 
@@ -173,4 +174,29 @@ export default async function handler(req) {
   } catch (err) {
     return json({ error: err.message }, 500);
   }
+}
+
+async function checkAuth(auth, adminPw, crmSecret) {
+  if (!auth) return false;
+  if (adminPw && (auth === adminPw || auth === crmSecret)) return true;
+  // fallback: check GitHub-stored password hash
+  try {
+    const res = await fetch(
+      'https://raw.githubusercontent.com/ozgunustuay-sirius/bysirius.com/main/admin-config.json',
+      { signal: AbortSignal.timeout(2000) }
+    );
+    if (res.ok) {
+      const cfg = await res.json();
+      if (cfg.passwordHash) {
+        const hash = await sha256(auth);
+        if (hash === cfg.passwordHash) return true;
+      }
+    }
+  } catch { /* ignore */ }
+  return false;
+}
+
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
 }

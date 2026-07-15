@@ -59,7 +59,8 @@ export default async function handler(req) {
   if (req.method === 'POST') {
     const adminPw = process.env.ADMIN_PASSWORD;
     const auth    = (req.headers.get('Authorization') || '').replace('Bearer ', '');
-    if (!adminPw || auth !== adminPw) return json({ error: 'Yetkisiz erişim' }, 401, CORS);
+    const ok      = await checkAuth(auth, adminPw);
+    if (!ok) return json({ error: 'Yetkisiz erişim' }, 401, CORS);
     if (!ghToken) return json({ error: 'GITHUB_TOKEN env var eksik. Vercel\'de ekleyin.' }, 503, CORS);
 
     const body    = await req.json();
@@ -113,4 +114,28 @@ function guessType(file) {
   if (file.endsWith('.json')) return 'application/json; charset=utf-8';
   if (file.endsWith('.html')) return 'text/html; charset=utf-8';
   return 'text/plain; charset=utf-8';
+}
+
+async function checkAuth(auth, adminPw) {
+  if (!auth) return false;
+  if (adminPw && auth === adminPw) return true;
+  try {
+    const res = await fetch(
+      'https://raw.githubusercontent.com/ozgunustuay-sirius/bysirius.com/main/admin-config.json',
+      { signal: AbortSignal.timeout(2000) }
+    );
+    if (res.ok) {
+      const cfg = await res.json();
+      if (cfg.passwordHash) {
+        const hash = await sha256(auth);
+        if (hash === cfg.passwordHash) return true;
+      }
+    }
+  } catch { /* ignore */ }
+  return false;
+}
+
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
 }
