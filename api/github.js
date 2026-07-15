@@ -14,7 +14,7 @@ const OWNER  = 'ozgunustuay-sirius';
 const REPO   = 'bysirius.com';
 const BRANCH = 'main';
 
-const ALLOWED = /^([\w\-]+\/)*([\w\-]+\.(html|json|txt|js|css))$/;
+const ALLOWED = /^([\w\-]+\/)*([\w\-]+\.(html|json|txt|js|css|jpg|jpeg|png|gif|webp|svg|ico))$/;
 
 function corsHeaders(req) {
   const origin = req.headers.get('origin') || '';
@@ -49,8 +49,10 @@ export default async function handler(req) {
       { headers: ghHeaders }
     );
     if (!res.ok) return json({ error: 'Dosya bulunamadı' }, 404, CORS);
-    const data    = await res.json();
-    const content = atob(data.content.replace(/\n/g, ''));
+    const data  = await res.json();
+    // Decode base64 → binary bytes → UTF-8 string (fixes Turkish/non-ASCII char corruption)
+    const bytes   = Uint8Array.from(atob(data.content.replace(/\n/g,'')), c => c.charCodeAt(0));
+    const content = new TextDecoder('utf-8').decode(bytes);
     return new Response(content, {
       headers: { 'Content-Type': guessType(file), ...CORS }
     });
@@ -64,8 +66,9 @@ export default async function handler(req) {
     if (!ghToken) return json({ error: 'GITHUB_TOKEN env var eksik. Vercel\'de ekleyin.' }, 503, CORS);
 
     const body    = await req.json();
-    const content = body.content;
-    const message = body.message || `Update ${file} via BY Sirius admin`;
+    const content  = body.content;
+    const message  = body.message || `Update ${file} via BY Sirius admin`;
+    const isBinary = body.binary === true;
 
     if (typeof content !== 'string') return json({ error: 'content string olmalı' }, 400, CORS);
 
@@ -77,8 +80,8 @@ export default async function handler(req) {
     let sha;
     if (getRes.ok) { const d = await getRes.json(); sha = d.sha; }
 
-    // encode to base64 (UTF-8 safe)
-    const b64 = btoa(unescape(encodeURIComponent(content)));
+    // encode to base64: binary files arrive already base64, text files need UTF-8 safe encode
+    const b64 = isBinary ? content : btoa(unescape(encodeURIComponent(content)));
 
     const putRes = await fetch(
       `https://api.github.com/repos/${OWNER}/${REPO}/contents/${file}`,
@@ -111,8 +114,13 @@ function json(data, status, cors) {
 }
 
 function guessType(file) {
-  if (file.endsWith('.json')) return 'application/json; charset=utf-8';
-  if (file.endsWith('.html')) return 'text/html; charset=utf-8';
+  if (file.endsWith('.json'))             return 'application/json; charset=utf-8';
+  if (file.endsWith('.html'))             return 'text/html; charset=utf-8';
+  if (file.match(/\.(jpg|jpeg)$/i))       return 'image/jpeg';
+  if (file.endsWith('.png'))              return 'image/png';
+  if (file.endsWith('.gif'))              return 'image/gif';
+  if (file.endsWith('.webp'))             return 'image/webp';
+  if (file.endsWith('.svg'))              return 'image/svg+xml';
   return 'text/plain; charset=utf-8';
 }
 

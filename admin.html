@@ -182,9 +182,12 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
 .pg-divider{border:none;border-top:1px solid var(--border);margin:.1rem 0}
 .pg-imgs-wrap{display:flex;flex-direction:column;gap:.75rem}
 .pg-img-card{background:var(--surface2);border:1px solid var(--border);border-radius:8px;overflow:hidden}
-.pg-img-preview-area{background:var(--border);position:relative;min-height:50px}
+.pg-img-preview-area{background:var(--border);position:relative;min-height:50px;cursor:pointer}
 .pg-img-preview{width:100%;height:180px;object-fit:cover;display:block}
-.pg-img-ph{height:70px;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--muted)}
+.pg-img-ph{height:90px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;color:var(--muted);flex-direction:column;gap:.3rem}
+.pg-img-ph span{font-size:.75rem;color:var(--muted)}
+.pg-img-overlay{position:absolute;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem;font-weight:600;opacity:0;transition:.18s;gap:.4rem}
+.pg-img-preview-area:hover .pg-img-overlay{opacity:1}
 .pg-img-controls{padding:.75rem .85rem;display:flex;flex-direction:column;gap:.5rem}
 .pg-img-ctrl-row{display:flex;gap:.5rem;align-items:center}
 .pg-img-ctrl-label{font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;flex-shrink:0;width:56px}
@@ -577,6 +580,9 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
 <!-- ═══ Toast ═══ -->
 <div class="toast" id="toast"></div>
 
+<!-- Hidden file input for image upload -->
+<input type="file" id="pg-file-input" accept="image/*" style="display:none" onchange="pgHandleImageUpload(this)">
+
 <script>
 const BASE       = 'https://www.bysirius.com/api/crm';
 const GITHUB_API = 'https://www.bysirius.com/api/github';
@@ -885,30 +891,36 @@ function pgRenderEditPanel(idx) {
   // Build images HTML (src/alt values set via JS after render)
   const imgsHTML = `
     <hr class="pg-divider">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem">
-      <div style="font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Görseller</div>
-    </div>
+    <div style="font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem">Görseller</div>
     <div class="pg-imgs-wrap" id="pg-imgs-${idx}">
       ${sec.images.map((img,j) => `
         <div class="pg-img-card">
-          <div class="pg-img-preview-area">
-            ${img.src
-              ? `<img class="pg-img-preview" data-si="${idx}" data-ii="${j}" src="" alt="" onerror="this.style.display='none'">`
-              : `<div class="pg-img-ph">🖼</div>`}
+          <div class="pg-img-preview-area" onclick="pgTriggerUpload(${idx},${j})">
+            <img class="pg-img-preview" data-si="${idx}" data-ii="${j}" src="" alt=""
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+                 style="${img.src?'':'display:none'}">
+            <div class="pg-img-ph" style="${img.src?'display:none':'display:flex'}">
+              🖼<span>Tıkla veya URL gir</span>
+            </div>
+            <div class="pg-img-overlay">📁 Değiştir</div>
           </div>
           <div class="pg-img-controls">
             <div class="pg-img-ctrl-row">
               <span class="pg-img-ctrl-label">URL</span>
-              <input class="pg-img-input" type="text" placeholder="/img/gorsel.jpg veya https://..."
+              <input class="pg-img-input" type="text" placeholder="/img/gorsel.jpg  veya  https://..."
                      data-si="${idx}" data-ii="${j}" data-prop="src"
                      oninput="pgUpdateImg(${idx},${j},'src',this.value);pgLivePreview(${idx},${j},this.value)">
             </div>
-            <div class="pg-img-ctrl-row">
-              <span class="pg-img-ctrl-label">Alt metin</span>
-              <input class="pg-img-input" type="text" placeholder="Görsel açıklaması (SEO için)"
+            <div class="pg-img-ctrl-row" style="gap:.4rem;margin-top:.1rem">
+              <button class="btn btn-sm" style="background:var(--surface2);border:1px solid var(--border);color:var(--text);flex:1;font-size:.78rem"
+                      onclick="pgTriggerUpload(${idx},${j})">📁 Bilgisayardan Yükle</button>
+              <button class="pg-img-del-btn" onclick="pgRemoveImg(${idx},${j})">🗑 Kaldır</button>
+            </div>
+            <div class="pg-img-ctrl-row" style="margin-top:.3rem">
+              <span class="pg-img-ctrl-label">Alt metni</span>
+              <input class="pg-img-input" type="text" placeholder="SEO için görsel açıklaması"
                      data-si="${idx}" data-ii="${j}" data-prop="alt"
                      oninput="pgUpdateImg(${idx},${j},'alt',this.value)">
-              <button class="pg-img-del-btn" onclick="pgRemoveImg(${idx},${j})">🗑 Kaldır</button>
             </div>
           </div>
         </div>
@@ -950,7 +962,72 @@ function pgRenderEditPanel(idx) {
 
 function pgLivePreview(secIdx, imgIdx, src) {
   const imgEl = document.querySelector(`img.pg-img-preview[data-si="${secIdx}"][data-ii="${imgIdx}"]`);
-  if (imgEl) { imgEl.src = src; imgEl.style.display = ''; }
+  const ph    = imgEl?.parentElement?.querySelector('.pg-img-ph');
+  if (imgEl) { imgEl.src = src; imgEl.style.display = src ? '' : 'none'; }
+  if (ph)    { ph.style.display = src ? 'none' : 'flex'; }
+}
+
+// ── Image upload from local file ──────────────────────────────────────────────
+let pgUploadTarget = null;
+
+function pgTriggerUpload(secIdx, imgIdx) {
+  pgUploadTarget = { secIdx, imgIdx };
+  const inp = document.getElementById('pg-file-input');
+  inp.value = '';
+  inp.click();
+}
+
+async function pgHandleImageUpload(input) {
+  if (!input.files?.length || !pgUploadTarget) return;
+  const file = input.files[0];
+  const { secIdx, imgIdx } = pgUploadTarget;
+  pgUploadTarget = null;
+
+  const overlay = document.querySelector(
+    `#pg-imgs-${secIdx} .pg-img-card:nth-child(${imgIdx+1}) .pg-img-overlay`);
+  if (overlay) { overlay.textContent = '⏳ Yükleniyor…'; overlay.style.opacity = '1'; }
+
+  try {
+    // Read file as base64
+    const b64 = await new Promise((res, rej) => {
+      const r = new FileReader();
+      r.onload  = e => res(e.target.result.split(',')[1]);
+      r.onerror = rej;
+      r.readAsDataURL(file);
+    });
+
+    // Sanitize filename
+    const fname    = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+    const filePath = 'img/' + fname;
+
+    const apiRes = await fetch(GITHUB_API + '?file=' + encodeURIComponent(filePath), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${getToken()}` },
+      body: JSON.stringify({
+        content: b64,
+        binary:  true,
+        message: `Upload image ${fname} via admin panel`
+      })
+    });
+    const data = await apiRes.json();
+
+    if (apiRes.ok && data.success) {
+      const url = '/' + filePath;
+      pgUpdateImg(secIdx, imgIdx, 'src', url);
+      // Update URL input and preview
+      const urlInp = document.querySelector(`input[data-si="${secIdx}"][data-ii="${imgIdx}"][data-prop="src"]`);
+      if (urlInp) urlInp.value = url;
+      pgLivePreview(secIdx, imgIdx, url);
+      toast(`✓ Görsel yüklendi: ${url}`, 'ok');
+    } else if (apiRes.status === 503) {
+      toast('GITHUB_TOKEN eksik — Vercel\'de ekleyin.', 'err');
+    } else {
+      toast(data.error || 'Yükleme başarısız', 'err');
+    }
+  } catch { toast('Yükleme hatası oluştu', 'err'); }
+  finally {
+    if (overlay) { overlay.textContent = '📁 Değiştir'; overlay.style.opacity = ''; }
+  }
 }
 
 function pgUpdateText(secIdx, txtIdx, val) {
