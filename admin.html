@@ -141,33 +141,61 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
 .setup-box ol{padding-left:1.25rem;color:var(--muted);font-size:.85rem;line-height:2}
 .setup-box code{background:var(--surface2);padding:2px 6px;border-radius:4px;font-family:monospace;color:var(--text);font-size:.82rem}
 
-/* ── Block Editor (Sayfalar) ── */
-.block-editor-wrap{display:flex;flex-direction:column;gap:.5rem}
-.block-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;display:flex;align-items:flex-start;gap:.75rem;padding:.75rem;transition:.15s}
-.block-card.dragging{opacity:.35;border-style:dashed}
-.block-card.drag-over{border-color:var(--primary);background:rgba(201,168,76,.07)}
-.block-handle{color:var(--muted);cursor:grab;font-size:1.15rem;user-select:none;flex-shrink:0;line-height:1.8;padding:0 .1rem}
-.block-handle:active{cursor:grabbing}
-.block-inner{flex:1;min-width:0}
-.block-lbl{font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:.45rem;display:flex;align-items:center;gap:.35rem}
-.block-lbl code{font-size:.62rem;background:var(--surface2);padding:1px 5px;border-radius:3px;color:var(--muted);font-weight:400;text-transform:lowercase;letter-spacing:0}
-.blk-txt-row{display:flex;align-items:flex-start;gap:.4rem;margin-bottom:.3rem}
-.blk-tag{font-size:.62rem;padding:2px 5px;border-radius:3px;background:rgba(76,143,224,.12);color:var(--info);flex-shrink:0;font-family:monospace;margin-top:.35rem;min-width:26px;text-align:center}
-.blk-txt{flex:1;padding:.35rem .55rem;background:var(--surface2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:.82rem;outline:none;resize:none;font-family:inherit;overflow:hidden;line-height:1.5}
-.blk-txt:focus{border-color:var(--primary)}
-.blk-img-row{display:flex;align-items:center;gap:.5rem;background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:.35rem .55rem;margin-bottom:.3rem}
-.blk-img-thumb{width:44px;height:34px;object-fit:cover;border-radius:4px;background:var(--border);flex-shrink:0}
-.blk-img-url{flex:1;padding:.25rem .4rem;background:transparent;border:none;border-bottom:1px solid var(--border);color:var(--text);font-size:.77rem;outline:none;min-width:0}
-.blk-img-url:focus{border-bottom-color:var(--primary)}
-.blk-img-alt{width:80px;flex:none;padding:.25rem .4rem;background:transparent;border:none;border-bottom:1px solid var(--border);color:var(--muted);font-size:.75rem;outline:none}
-.blk-img-alt:focus{border-bottom-color:var(--primary)}
-.blk-del{padding:.2rem .4rem;border:1px solid var(--border);background:transparent;border-radius:5px;color:var(--muted);cursor:pointer;font-size:.78rem;flex-shrink:0;line-height:1}
-.blk-del:hover{border-color:var(--danger);color:var(--danger)}
-.blk-add-img{margin-top:.35rem;font-size:.72rem;padding:.22rem .55rem;background:var(--surface2);border:1px solid var(--border);border-radius:5px;color:var(--muted);cursor:pointer}
-.blk-add-img:hover{border-color:var(--primary);color:var(--primary)}
+/* ── Sayfalar — İki Panel ── */
 .mode-bar{display:flex;gap:2px;background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:3px}
 .mode-btn{padding:.28rem .72rem;border:none;background:transparent;border-radius:5px;color:var(--muted);cursor:pointer;font-size:.8rem;font-weight:600;transition:.12s}
 .mode-btn.active{background:var(--surface);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.25)}
+
+.pg-workspace{display:grid;grid-template-columns:260px 1fr;gap:1rem;align-items:start}
+.pg-sidebar{display:flex;flex-direction:column;gap:.6rem}
+.pg-sidebar-title{font-size:.65rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;padding:.1rem 0}
+.pg-section-list{display:flex;flex-direction:column;gap:.35rem}
+.pg-sk-card{background:var(--surface);border:2px solid var(--border);border-radius:8px;cursor:pointer;transition:.12s;overflow:hidden}
+.pg-sk-card.active{border-color:var(--primary);box-shadow:0 0 0 2px rgba(201,168,76,.15)}
+.pg-sk-card:hover:not(.active){border-color:rgba(201,168,76,.4)}
+.pg-sk-card.dragging{opacity:.3;border-style:dashed}
+.pg-sk-card.drag-over{border-color:var(--primary);background:rgba(201,168,76,.04)}
+.pg-sk-header{display:flex;align-items:center;gap:.4rem;padding:.45rem .6rem;background:var(--surface2);border-bottom:1px solid var(--border)}
+.pg-sk-handle{color:var(--muted);cursor:grab;font-size:.95rem;flex-shrink:0;user-select:none}
+.pg-sk-handle:active{cursor:grabbing}
+.pg-sk-name{font-size:.75rem;font-weight:600;color:var(--text);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pg-sk-del{padding:.1rem .3rem;border:none;background:transparent;color:transparent;cursor:pointer;border-radius:3px;font-size:.8rem;flex-shrink:0;transition:.1s}
+.pg-sk-card:hover .pg-sk-del{color:var(--muted)}
+.pg-sk-del:hover{color:var(--danger)!important;background:rgba(224,82,82,.1)}
+.pg-sk-body{padding:.5rem .6rem;display:flex;flex-direction:column;gap:.2rem}
+.pg-sk-line{height:5px;background:var(--border);border-radius:3px}
+.pg-sk-line.h{height:8px;background:rgba(201,168,76,.25);border-radius:3px}
+.pg-sk-imgbox{height:32px;background:repeating-linear-gradient(45deg,var(--border),var(--border) 4px,rgba(76,143,224,.07) 4px,rgba(76,143,224,.07) 8px);border-radius:4px;margin-bottom:.15rem}
+.pg-sk-add{display:flex;gap:.35rem;margin-top:.1rem}
+.pg-sk-add button{flex:1;padding:.38rem .3rem;border:1px dashed var(--border);background:transparent;border-radius:6px;color:var(--muted);cursor:pointer;font-size:.73rem;transition:.12s;line-height:1.2}
+.pg-sk-add button:hover{border-color:var(--primary);color:var(--primary)}
+
+.pg-edit{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.25rem;min-height:420px;display:flex;flex-direction:column;gap:.9rem}
+.pg-edit-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;color:var(--muted);font-size:.88rem;gap:.6rem;padding:2rem;text-align:center}
+.pg-edit-section-title{font-size:.78rem;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:.5rem}
+.pg-edit-section-title code{font-size:.65rem;color:var(--muted);background:var(--surface2);padding:1px 6px;border-radius:3px;font-weight:400}
+.pg-field{display:flex;flex-direction:column;gap:.3rem}
+.pg-field-label{font-size:.67rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center;gap:.4rem}
+.pg-field-label code{background:rgba(76,143,224,.12);color:var(--info);padding:1px 6px;border-radius:4px;font-size:.64rem;text-transform:lowercase;font-weight:400;letter-spacing:0}
+.pg-textarea{padding:.6rem .8rem;background:var(--surface2);border:1px solid var(--border);border-radius:7px;color:var(--text);font-size:.88rem;outline:none;resize:vertical;font-family:inherit;line-height:1.6;width:100%;box-sizing:border-box;min-height:40px}
+.pg-textarea:focus{border-color:var(--primary)}
+.pg-divider{border:none;border-top:1px solid var(--border);margin:.1rem 0}
+.pg-imgs-wrap{display:flex;flex-direction:column;gap:.75rem}
+.pg-img-card{background:var(--surface2);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.pg-img-preview-area{background:var(--border);position:relative;min-height:50px}
+.pg-img-preview{width:100%;height:180px;object-fit:cover;display:block}
+.pg-img-ph{height:70px;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--muted)}
+.pg-img-controls{padding:.75rem .85rem;display:flex;flex-direction:column;gap:.5rem}
+.pg-img-ctrl-row{display:flex;gap:.5rem;align-items:center}
+.pg-img-ctrl-label{font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;flex-shrink:0;width:56px}
+.pg-img-input{flex:1;padding:.42rem .7rem;background:var(--surface);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:.8rem;outline:none;font-family:monospace}
+.pg-img-input:focus{border-color:var(--primary)}
+.pg-img-del-btn{padding:.4rem .75rem;border:1px solid var(--border);background:transparent;border-radius:6px;color:var(--muted);cursor:pointer;font-size:.78rem;white-space:nowrap;flex-shrink:0}
+.pg-img-del-btn:hover{border-color:var(--danger);color:var(--danger)}
+.pg-add-img-btn{padding:.55rem;border:2px dashed var(--border);background:transparent;border-radius:8px;color:var(--muted);cursor:pointer;font-size:.82rem;width:100%;transition:.12s;text-align:center}
+.pg-add-img-btn:hover{border-color:var(--primary);color:var(--primary);background:rgba(201,168,76,.04)}
+
+@media(max-width:900px){.pg-workspace{grid-template-columns:1fr}}
 
 /* ── Toast ── */
 .toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:.75rem 1.25rem;font-size:.85rem;z-index:9999;transform:translateY(4rem);opacity:0;transition:.3s;pointer-events:none}
@@ -283,59 +311,85 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
 
 <!-- ═══ PANEL: Sayfalar ═══ -->
 <div class="main panel" id="panel-pages">
-  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:.6rem">
-    <h2 style="font-size:1rem;font-weight:700;color:var(--primary)">Sayfa Düzenleyici</h2>
-    <div style="display:flex;gap:.5rem;flex-wrap:wrap;align-items:center">
-      <div class="mode-bar">
-        <button class="mode-btn active" id="mode-visual" onclick="setPageMode('visual')">🎨 Görsel</button>
-        <button class="mode-btn" id="mode-code" onclick="setPageMode('code')">⌨ Kod</button>
-      </div>
-      <select class="file-sel" id="page-file-select" onchange="loadPageContent()" style="max-width:230px">
-        <option value="">— Sayfa seçin —</option>
-        <option value="index.html">Ana Sayfa</option>
-        <option value="hakkimizda.html">Hakkımızda</option>
-        <option value="hizmetlerimiz.html">Hizmetlerimiz</option>
-        <option value="sektorler.html">Sektörler</option>
-        <option value="ai-ceo.html">AI CEO</option>
-        <option value="blog.html">Blog</option>
-        <option value="iletisim.html">İletişim</option>
-        <option value="urunler-katalog.html">Ürün Kataloğu (HTML)</option>
-        <option value="products.json">Ürünler (JSON)</option>
-        <option value="llms.txt">AI Talimatları</option>
-        <option value="robots.txt">Robots.txt</option>
-      </select>
-      <button class="btn btn-sm" id="pg-add-txt" onclick="addPageSection('text')" style="display:none">+ Metin</button>
-      <button class="btn btn-sm" id="pg-add-img" onclick="addPageSection('image')" style="display:none">+ Görsel</button>
-      <button class="btn btn-primary btn-sm" id="save-page-btn" onclick="savePageContent()" style="display:none">💾 Kaydet &amp; Deploy</button>
+
+  <!-- Topbar -->
+  <div style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:1.1rem">
+    <h2 style="font-size:1rem;font-weight:700;color:var(--primary);flex-shrink:0">Sayfa Düzenleyici</h2>
+    <select class="file-sel" id="page-file-select" onchange="loadPageContent()" style="flex:1;max-width:240px">
+      <option value="">— Sayfa seçin —</option>
+      <option value="index.html">Ana Sayfa</option>
+      <option value="hakkimizda.html">Hakkımızda</option>
+      <option value="hizmetlerimiz.html">Hizmetlerimiz</option>
+      <option value="sektorler.html">Sektörler</option>
+      <option value="ai-ceo.html">AI CEO</option>
+      <option value="blog.html">Blog</option>
+      <option value="iletisim.html">İletişim</option>
+      <option value="urunler-katalog.html">Ürün Kataloğu (HTML)</option>
+      <option value="products.json">Ürünler (JSON)</option>
+      <option value="llms.txt">AI Talimatları</option>
+      <option value="robots.txt">Robots.txt</option>
+    </select>
+    <div class="mode-bar" id="pg-mode-bar" style="display:none">
+      <button class="mode-btn active" id="mode-visual" onclick="setPageMode('visual')">🎨 Görsel</button>
+      <button class="mode-btn" id="mode-code" onclick="setPageMode('code')">⌨ Kod</button>
+    </div>
+    <button class="btn btn-primary btn-sm" id="save-page-btn" onclick="savePageContent()" style="display:none">💾 Kaydet &amp; Deploy</button>
+  </div>
+
+  <!-- Empty state -->
+  <div id="pg-empty" style="text-align:center;padding:4rem 2rem;color:var(--muted)">
+    <div style="font-size:2.5rem;margin-bottom:.75rem">📄</div>
+    <div>Düzenlemek istediğiniz sayfayı yukarıdan seçin</div>
+  </div>
+
+  <!-- Token warning -->
+  <div id="pg-token-warn" style="display:none">
+    <div class="setup-box">
+      <h3>⚠ GITHUB_TOKEN gerekli</h3>
+      <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem">Sayfa editörü için GitHub Personal Access Token gereklidir.</p>
+      <ol>
+        <li>GitHub → Settings → Developer settings → <strong>Fine-grained tokens</strong></li>
+        <li>Repository: <code>ozgunustuay-sirius/bysirius.com</code> — Permission: <strong>Contents → Read &amp; Write</strong></li>
+        <li>Vercel dashboard → Environment Variables → <code>GITHUB_TOKEN</code> ekleyin, redeploy yapın</li>
+      </ol>
     </div>
   </div>
 
-  <div id="pg-empty" style="text-align:center;padding:3rem;color:var(--muted)">Düzenlemek istediğiniz sayfayı yukarıdan seçin</div>
-
-  <!-- Visual block editor -->
+  <!-- Visual two-panel workspace -->
   <div id="pg-visual" style="display:none">
-    <div id="pg-token-warn" style="display:none">
-      <div class="setup-box">
-        <h3>⚠ GITHUB_TOKEN gerekli</h3>
-        <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem">Sayfa editörü için GitHub Personal Access Token gereklidir.</p>
-        <ol>
-          <li>GitHub → Settings → Developer settings → <strong>Fine-grained tokens</strong></li>
-          <li>Repository: <code>ozgunustuay-sirius/bysirius.com</code> — Permission: <strong>Contents → Read &amp; Write</strong></li>
-          <li>Vercel dashboard → Environment Variables → <code>GITHUB_TOKEN</code> ekleyin, redeploy yapın</li>
-        </ol>
+    <div class="pg-workspace">
+
+      <!-- LEFT: Skeleton / bölüm listesi -->
+      <div class="pg-sidebar">
+        <div class="pg-sidebar-title">Sayfa Yapısı</div>
+        <div class="pg-section-list" id="pg-skeleton-list"></div>
+        <div class="pg-sk-add" id="pg-sk-add">
+          <button onclick="addPageSection('text')">＋ Metin</button>
+          <button onclick="addPageSection('image')">🖼 Görsel</button>
+        </div>
       </div>
+
+      <!-- RIGHT: Edit panel -->
+      <div class="pg-edit" id="pg-edit-panel">
+        <div class="pg-edit-empty">
+          <span style="font-size:2rem">👈</span>
+          <span>Sol taraftan bir bölüm seçin</span>
+          <span style="font-size:.78rem;color:var(--muted)">Tıkladığınız bölümün içeriği burada düzenlenir</span>
+        </div>
+      </div>
+
     </div>
-    <div class="block-editor-wrap" id="pg-blocks"></div>
-    <div class="deploy-note" id="pg-deploy-note" style="display:none;margin-top:.75rem">
+    <div class="deploy-note" id="pg-deploy-note" style="display:none;margin-top:.9rem">
       ✓ Kaydedildiğinde GitHub'a commit atılır → Vercel otomatik yeniden deploy eder (~30 saniye).
     </div>
   </div>
 
-  <!-- Code editor (fallback / non-HTML files) -->
+  <!-- Code editor (fallback / non-HTML) -->
   <div id="pg-code" style="display:none">
     <textarea class="code-area" id="code-editor" spellcheck="false" placeholder="Dosya içeriği..."></textarea>
     <div class="deploy-note" style="margin-top:.5rem">✓ Kaydedildiğinde GitHub'a commit atılır → Vercel otomatik yeniden deploy eder (~30 saniye).</div>
   </div>
+
 </div><!-- /#app -->
 
 <!-- ═══ Password Change Modal ═══ -->
@@ -670,38 +724,30 @@ async function saveProducts() {
   } catch { toast('Sunucuya bağlanılamadı', 'err'); }
 }
 
-// ─── Pages (Visual Block Editor) ──────────────────────────────────────────────
+// ─── Pages (İki Panel — Skeleton + Edit) ─────────────────────────────────────
 let pgOriginalHTML = '';
 let pgSections     = [];
 let pgCurrentFile  = null;
 let pgMode         = 'visual';
 let pgDragSrc      = null;
+let pgSelectedIdx  = null;
 
 function setPageMode(mode) {
   pgMode = mode;
   document.getElementById('mode-visual').classList.toggle('active', mode === 'visual');
   document.getElementById('mode-code').classList.toggle('active',   mode === 'code');
   if (!pgCurrentFile) return;
-
   if (mode === 'code') {
-    // Sync visual → code
-    if (pgCurrentFile.endsWith('.html') && pgSections.length) {
-      document.getElementById('code-editor').value = buildPageHTML();
-    } else {
-      document.getElementById('code-editor').value = pgOriginalHTML;
-    }
+    document.getElementById('code-editor').value =
+      (pgCurrentFile.endsWith('.html') && pgSections.length) ? buildPageHTML() : pgOriginalHTML;
     document.getElementById('pg-visual').style.display = 'none';
     document.getElementById('pg-code').style.display   = 'block';
-    document.getElementById('pg-add-txt').style.display = 'none';
-    document.getElementById('pg-add-img').style.display = 'none';
   } else {
-    // Sync code → visual
     if (pgCurrentFile.endsWith('.html')) {
       pgOriginalHTML = document.getElementById('code-editor').value;
       pgParseSections(pgOriginalHTML);
-      pgRenderBlocks();
-      document.getElementById('pg-add-txt').style.display = pgSections.length ? 'inline-flex' : 'none';
-      document.getElementById('pg-add-img').style.display = pgSections.length ? 'inline-flex' : 'none';
+      pgRenderSkeleton();
+      pgSelectSection(pgSelectedIdx);
     }
     document.getElementById('pg-visual').style.display = 'block';
     document.getElementById('pg-code').style.display   = 'none';
@@ -711,25 +757,25 @@ function setPageMode(mode) {
 async function loadPageContent() {
   const file = document.getElementById('page-file-select').value;
   if (!file) return;
-  pgCurrentFile = file;
-  const isHTML  = file.endsWith('.html');
+  pgCurrentFile  = file;
+  pgSelectedIdx  = null;
+  const isHTML   = file.endsWith('.html');
 
-  // Reset UI
   document.getElementById('pg-empty').style.display       = 'none';
   document.getElementById('pg-visual').style.display      = 'none';
   document.getElementById('pg-code').style.display        = 'none';
   document.getElementById('pg-token-warn').style.display  = 'none';
   document.getElementById('pg-deploy-note').style.display = 'none';
   document.getElementById('save-page-btn').style.display  = 'none';
-  document.getElementById('pg-add-txt').style.display     = 'none';
-  document.getElementById('pg-add-img').style.display     = 'none';
-  document.getElementById('pg-blocks').innerHTML = '<div class="empty"><div class="spin"></div></div>';
-  document.getElementById('pg-visual').style.display = 'block';
+  document.getElementById('pg-mode-bar').style.display    = 'none';
+  document.getElementById('pg-skeleton-list').innerHTML   = '<div class="empty"><div class="spin"></div></div>';
+  document.getElementById('pg-edit-panel').innerHTML      = '';
+  document.getElementById('pg-visual').style.display      = 'block';
 
   try {
     const res = await fetch(GITHUB_API + '?file=' + encodeURIComponent(file));
     if (res.status === 503) {
-      document.getElementById('pg-blocks').innerHTML = '';
+      document.getElementById('pg-visual').style.display  = 'none';
       document.getElementById('pg-token-warn').style.display = 'block';
       return;
     }
@@ -740,101 +786,188 @@ async function loadPageContent() {
     if (!isHTML || pgMode === 'code') {
       document.getElementById('pg-visual').style.display = 'none';
       document.getElementById('pg-code').style.display   = 'block';
-      document.getElementById('code-editor').value = pgOriginalHTML;
+      document.getElementById('code-editor').value       = pgOriginalHTML;
     } else {
       pgParseSections(pgOriginalHTML);
-      pgRenderBlocks();
+      pgRenderSkeleton();
+      pgSelectSection(null);
       document.getElementById('pg-deploy-note').style.display = 'block';
-      document.getElementById('pg-add-txt').style.display = pgSections.length ? 'inline-flex' : 'none';
-      document.getElementById('pg-add-img').style.display = pgSections.length ? 'inline-flex' : 'none';
     }
     document.getElementById('save-page-btn').style.display = 'inline-flex';
+    document.getElementById('pg-mode-bar').style.display   = isHTML ? 'flex' : 'none';
   } catch { toast('Dosya yüklenemedi', 'err'); }
 }
 
 function pgParseSections(html) {
   const doc  = new DOMParser().parseFromString(html, 'text/html');
   const SKIP = new Set(['SCRIPT','STYLE','LINK','META','HEADER','NAV','FOOTER','NOSCRIPT']);
-
-  // Find best content area
   const area = doc.querySelector('main') ||
                doc.querySelector('[id*="content"]') ||
                doc.querySelector('[class*="content"]') ||
                doc.body;
-
-  const children = [...area.children].filter(el =>
-    !SKIP.has(el.tagName) && el.textContent.trim()
-  );
-
-  pgSections = children.map((el, i) => {
-    const firstH = el.querySelector('h1,h2,h3,h4,h5,h6');
-    const label  = (firstH?.textContent || `Bölüm ${i + 1}`).trim().slice(0, 50);
-    return {
-      id:      `pg-${i}`,
-      label,
-      tagName: el.tagName.toLowerCase(),
-      outerHTML: el.outerHTML,
-      texts:   [...el.querySelectorAll('h1,h2,h3,h4,h5,h6,p')].map(t => ({ tag: t.tagName.toLowerCase(), html: t.innerHTML })),
-      images:  [...el.querySelectorAll('img')].map(img => ({ src: img.getAttribute('src') || '', alt: img.getAttribute('alt') || '' }))
-    };
-  });
+  pgSections = [...area.children]
+    .filter(el => !SKIP.has(el.tagName) && el.textContent.trim())
+    .map((el, i) => {
+      const firstH = el.querySelector('h1,h2,h3,h4,h5,h6');
+      return {
+        id:      `pg-${Date.now()}-${i}`,
+        label:   (firstH?.textContent || `Bölüm ${i + 1}`).trim().replace(/<[^>]+>/g,'').slice(0,55),
+        tagName: el.tagName.toLowerCase(),
+        outerHTML: el.outerHTML,
+        texts:   [...el.querySelectorAll('h1,h2,h3,h4,h5,h6,p')].map(t => ({ tag: t.tagName.toLowerCase(), html: t.innerHTML })),
+        images:  [...el.querySelectorAll('img')].map(img => ({ src: img.getAttribute('src')||'', alt: img.getAttribute('alt')||'' }))
+      };
+    });
 }
 
-function pgRenderBlocks() {
-  const wrap = document.getElementById('pg-blocks');
+function pgRenderSkeleton() {
+  const list = document.getElementById('pg-skeleton-list');
   if (!pgSections.length) {
-    wrap.innerHTML = '<p class="empty" style="padding:2rem">Düzenlenebilir bölüm bulunamadı. ⌨ Kod modunu deneyin.</p>';
+    list.innerHTML = '<p style="color:var(--muted);font-size:.8rem;padding:.25rem 0">Bölüm bulunamadı.<br>⌨ Kod modunu deneyin.</p>';
     return;
   }
-  wrap.innerHTML = pgSections.map((sec, i) => `
-    <div class="block-card" draggable="true" data-idx="${i}"
-         ondragstart="pgDragStart(event,${i})"
-         ondragover="pgDragOver(event,${i})"
-         ondrop="pgDrop(event,${i})"
-         ondragend="pgDragEnd()">
-      <div class="block-handle" title="Sürükle &amp; bırak">⠿</div>
-      <div class="block-inner">
-        <div class="block-lbl">${esc(sec.label)} <code>&lt;${esc(sec.tagName)}&gt;</code></div>
+  list.innerHTML = pgSections.map((sec, i) => {
+    const hasImg  = sec.images.length > 0;
+    const imgBox  = hasImg ? `<div class="pg-sk-imgbox"></div>` : '';
+    const lines   = sec.texts.slice(0,4).map((t,j) => {
+      const w = j===0 ? 88 : [70,55,42][j-1]||50;
+      const h = /^h[1-3]$/.test(t.tag) ? ' h' : '';
+      return `<div class="pg-sk-line${h}" style="width:${w}%"></div>`;
+    }).join('');
+    return `
+      <div class="pg-sk-card${pgSelectedIdx===i?' active':''}" id="pg-sk-${i}"
+           onclick="pgSelectSection(${i})"
+           draggable="true"
+           ondragstart="pgDragStart(event,${i})"
+           ondragover="pgDragOver(event,${i})"
+           ondrop="pgDrop(event,${i})"
+           ondragend="pgDragEnd()">
+        <div class="pg-sk-header">
+          <span class="pg-sk-handle">⠿</span>
+          <span class="pg-sk-name">${esc(sec.label)}</span>
+          <button class="pg-sk-del" onclick="event.stopPropagation();pgDeleteSec(${i})">✕</button>
+        </div>
+        <div class="pg-sk-body">${imgBox}${lines}</div>
+      </div>`;
+  }).join('');
+}
 
-        ${sec.texts.map((t, j) => `
-          <div class="blk-txt-row">
-            <span class="blk-tag">${esc(t.tag)}</span>
-            <textarea class="blk-txt" rows="1"
-              onchange="pgUpdateText(${i},${j},this.value)"
-              oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"
-              >${esc(t.html)}</textarea>
-          </div>
-        `).join('')}
+function pgSelectSection(idx) {
+  pgSelectedIdx = idx;
+  document.querySelectorAll('.pg-sk-card').forEach((c,i) => c.classList.toggle('active', i===idx));
+  pgRenderEditPanel(idx);
+}
 
-        ${sec.images.map((img, j) => `
-          <div class="blk-img-row" data-img-row="${i}-${j}">
-            <img class="blk-img-thumb" src="${esc(img.src)}" alt="" onerror="this.style.opacity=.2">
-            <input class="blk-img-url" type="text" value="${esc(img.src)}" placeholder="Görsel URL  (/img/foto.jpg)"
-                   oninput="pgUpdateImg(${i},${j},'src',this.value);this.closest('.blk-img-row').querySelector('.blk-img-thumb').src=this.value">
-            <input class="blk-img-alt" type="text" value="${esc(img.alt)}" placeholder="Alt metni"
-                   oninput="pgUpdateImg(${i},${j},'alt',this.value)">
-            <button class="blk-del" onclick="pgRemoveImg(${i},${j})" title="Görseli kaldır">🗑</button>
-          </div>
-        `).join('')}
+function pgRenderEditPanel(idx) {
+  const panel = document.getElementById('pg-edit-panel');
+  if (idx === null || idx === undefined || !pgSections[idx]) {
+    panel.innerHTML = `<div class="pg-edit-empty">
+      <span style="font-size:2rem">👈</span>
+      <span>Sol taraftan bir bölüm seçin</span>
+      <span style="font-size:.78rem">Tıkladığınız bölümün içeriği burada düzenlenir</span>
+    </div>`;
+    return;
+  }
+  const sec = pgSections[idx];
 
-        <button class="blk-add-img btn btn-sm" onclick="pgAddImgToSec(${i})">+ Görsel Ekle</button>
+  // Build texts HTML (values set via JS after render to avoid entity double-encoding)
+  const textsHTML = sec.texts.length ? `
+    <div style="font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem">Metinler</div>
+    ${sec.texts.map((t,j) => `
+      <div class="pg-field">
+        <div class="pg-field-label"><code>${esc(t.tag)}</code></div>
+        <textarea class="pg-textarea" rows="2" data-si="${idx}" data-ti="${j}"
+          onchange="pgUpdateText(${idx},${j},this.value)"
+          oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
       </div>
-      <button class="blk-del" onclick="pgDeleteSec(${i})" title="Bölümü sil" style="margin-top:.1rem">🗑</button>
-    </div>
-  `).join('');
+    `).join('')}` : '';
 
-  // Auto-resize textareas
-  wrap.querySelectorAll('.blk-txt').forEach(ta => {
+  // Build images HTML (src/alt values set via JS after render)
+  const imgsHTML = `
+    <hr class="pg-divider">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem">
+      <div style="font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Görseller</div>
+    </div>
+    <div class="pg-imgs-wrap" id="pg-imgs-${idx}">
+      ${sec.images.map((img,j) => `
+        <div class="pg-img-card">
+          <div class="pg-img-preview-area">
+            ${img.src
+              ? `<img class="pg-img-preview" data-si="${idx}" data-ii="${j}" src="" alt="" onerror="this.style.display='none'">`
+              : `<div class="pg-img-ph">🖼</div>`}
+          </div>
+          <div class="pg-img-controls">
+            <div class="pg-img-ctrl-row">
+              <span class="pg-img-ctrl-label">URL</span>
+              <input class="pg-img-input" type="text" placeholder="/img/gorsel.jpg veya https://..."
+                     data-si="${idx}" data-ii="${j}" data-prop="src"
+                     oninput="pgUpdateImg(${idx},${j},'src',this.value);pgLivePreview(${idx},${j},this.value)">
+            </div>
+            <div class="pg-img-ctrl-row">
+              <span class="pg-img-ctrl-label">Alt metin</span>
+              <input class="pg-img-input" type="text" placeholder="Görsel açıklaması (SEO için)"
+                     data-si="${idx}" data-ii="${j}" data-prop="alt"
+                     oninput="pgUpdateImg(${idx},${j},'alt',this.value)">
+              <button class="pg-img-del-btn" onclick="pgRemoveImg(${idx},${j})">🗑 Kaldır</button>
+            </div>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+    <button class="pg-add-img-btn" onclick="pgAddImgToSec(${idx})">＋ Görsel Ekle</button>`;
+
+  panel.innerHTML = `
+    <div class="pg-edit-section-title">
+      ${esc(sec.label)} <code>&lt;${esc(sec.tagName)}&gt;</code>
+    </div>
+    ${textsHTML}
+    ${imgsHTML}`;
+
+  // Set textarea values via JS (fixes Turkish char encoding issue)
+  panel.querySelectorAll('textarea[data-si]').forEach(ta => {
+    const si = +ta.dataset.si, ti = +ta.dataset.ti;
+    if (pgSections[si]?.texts[ti]) ta.value = pgSections[si].texts[ti].html;
     ta.style.height = 'auto';
     ta.style.height = ta.scrollHeight + 'px';
   });
+
+  // Set image input values via JS
+  panel.querySelectorAll('input[data-prop="src"]').forEach(inp => {
+    const si = +inp.dataset.si, ii = +inp.dataset.ii;
+    inp.value = pgSections[si]?.images[ii]?.src || '';
+  });
+  panel.querySelectorAll('input[data-prop="alt"]').forEach(inp => {
+    const si = +inp.dataset.si, ii = +inp.dataset.ii;
+    inp.value = pgSections[si]?.images[ii]?.alt || '';
+  });
+
+  // Set image preview src values via JS
+  panel.querySelectorAll('img.pg-img-preview[data-si]').forEach(img => {
+    const si = +img.dataset.si, ii = +img.dataset.ii;
+    img.src = pgSections[si]?.images[ii]?.src || '';
+  });
+}
+
+function pgLivePreview(secIdx, imgIdx, src) {
+  const imgEl = document.querySelector(`img.pg-img-preview[data-si="${secIdx}"][data-ii="${imgIdx}"]`);
+  if (imgEl) { imgEl.src = src; imgEl.style.display = ''; }
 }
 
 function pgUpdateText(secIdx, txtIdx, val) {
-  if (pgSections[secIdx]?.texts[txtIdx]) {
-    pgSections[secIdx].texts[txtIdx].html = val;
-    pgRebuildSec(secIdx);
+  if (!pgSections[secIdx]?.texts[txtIdx]) return;
+  pgSections[secIdx].texts[txtIdx].html = val;
+  // Update skeleton label if heading changed
+  const sec = pgSections[secIdx];
+  const isHeading = /^h[1-6]$/.test(sec.texts[txtIdx].tag);
+  if (isHeading) {
+    const plain = val.replace(/<[^>]+>/g,'').slice(0,55);
+    if (plain) {
+      sec.label = plain;
+      const nameEl = document.querySelector(`#pg-sk-${secIdx} .pg-sk-name`);
+      if (nameEl) nameEl.textContent = plain;
+    }
   }
+  pgRebuildSec(secIdx);
 }
 
 function pgUpdateImg(secIdx, imgIdx, prop, val) {
@@ -847,56 +980,62 @@ function pgUpdateImg(secIdx, imgIdx, prop, val) {
 function pgRemoveImg(secIdx, imgIdx) {
   pgSections[secIdx]?.images.splice(imgIdx, 1);
   pgRebuildSec(secIdx);
-  pgRenderBlocks();
+  pgRenderEditPanel(pgSelectedIdx);
+  // Update skeleton imgbox
+  pgRenderSkeleton();
+  pgSelectSection(secIdx);
   toast('Görsel kaldırıldı.', 'ok');
 }
 
 function pgAddImgToSec(secIdx) {
-  pgSections[secIdx]?.images.push({ src: '', alt: '' });
+  pgSections[secIdx]?.images.push({ src:'', alt:'' });
   pgRebuildSec(secIdx);
-  pgRenderBlocks();
+  pgRenderEditPanel(pgSelectedIdx);
+  pgRenderSkeleton();
+  pgSelectSection(secIdx);
 }
 
 function pgDeleteSec(secIdx) {
   pgSections.splice(secIdx, 1);
-  pgRenderBlocks();
-  toast('Bölüm silindi. Kaydet &amp; Deploy ile yayınlayın.', 'ok');
+  if (pgSelectedIdx === secIdx) pgSelectedIdx = null;
+  else if (pgSelectedIdx > secIdx) pgSelectedIdx--;
+  pgRenderSkeleton();
+  pgRenderEditPanel(pgSelectedIdx);
+  toast('Bölüm silindi.', 'ok');
 }
 
 function addPageSection(type) {
-  if (type === 'text') {
-    pgSections.push({ id: 'new-' + Date.now(), label: 'Yeni Metin', tagName: 'div',
-      outerHTML: '<div><p>Yeni metin buraya</p></div>',
-      texts: [{ tag: 'p', html: 'Yeni metin buraya' }], images: [] });
-  } else {
-    pgSections.push({ id: 'new-' + Date.now(), label: 'Yeni Görsel', tagName: 'div',
-      outerHTML: '<div><img src="" alt=""></div>',
-      texts: [], images: [{ src: '', alt: '' }] });
-  }
-  pgRenderBlocks();
+  const sec = type === 'text'
+    ? { id:'new-'+Date.now(), label:'Yeni Metin', tagName:'div',
+        outerHTML:'<div><p>Yeni metin buraya</p></div>',
+        texts:[{tag:'p',html:'Yeni metin buraya'}], images:[] }
+    : { id:'new-'+Date.now(), label:'Yeni Görsel', tagName:'div',
+        outerHTML:'<div><img src="" alt=""></div>',
+        texts:[], images:[{src:'',alt:''}] };
+  pgSections.push(sec);
+  const newIdx = pgSections.length - 1;
+  pgRenderSkeleton();
+  pgSelectSection(newIdx);
+  // Scroll skeleton to bottom
+  document.getElementById('pg-skeleton-list').lastElementChild?.scrollIntoView({behavior:'smooth'});
 }
 
 function pgRebuildSec(secIdx) {
   const sec = pgSections[secIdx];
   if (!sec) return;
-  const doc  = new DOMParser().parseFromString(sec.outerHTML, 'text/html');
-  const el   = doc.body.firstChild;
+  const doc = new DOMParser().parseFromString(sec.outerHTML, 'text/html');
+  const el  = doc.body.firstChild;
   if (!el) return;
-
-  // Update text elements
   const textEls = [...el.querySelectorAll('h1,h2,h3,h4,h5,h6,p')];
-  sec.texts.forEach((t, i) => { if (textEls[i]) textEls[i].innerHTML = t.html; });
-
-  // Replace images
+  sec.texts.forEach((t,i) => { if (textEls[i]) textEls[i].innerHTML = t.html; });
   el.querySelectorAll('img').forEach(img => img.remove());
   const imgTarget = el.querySelector('figure,[class*="img"],[class*="photo"]') || el;
-  sec.images.forEach(imgData => {
+  sec.images.forEach(d => {
     const img = doc.createElement('img');
-    img.setAttribute('src', imgData.src);
-    if (imgData.alt) img.setAttribute('alt', imgData.alt);
+    img.setAttribute('src', d.src);
+    if (d.alt) img.setAttribute('alt', d.alt);
     imgTarget.appendChild(img);
   });
-
   sec.outerHTML = el.outerHTML;
 }
 
@@ -907,40 +1046,26 @@ function buildPageHTML() {
                doc.querySelector('[id*="content"]') ||
                doc.querySelector('[class*="content"]') ||
                doc.body;
-
-  // Remove original content sections
-  [...area.children]
-    .filter(el => !SKIP.has(el.tagName) && el.textContent.trim())
-    .forEach(el => el.remove());
-
-  // Re-insert in new order with edits applied
+  [...area.children].filter(el => !SKIP.has(el.tagName) && el.textContent.trim()).forEach(el => el.remove());
   pgSections.forEach(sec => {
     const tmp   = new DOMParser().parseFromString(sec.outerHTML, 'text/html');
     const newEl = tmp.body.firstChild;
     if (newEl) area.appendChild(newEl);
   });
-
   return '<!DOCTYPE html>\n' + doc.documentElement.outerHTML;
 }
 
 async function savePageContent() {
   if (!pgCurrentFile) return;
-
   const codeVisible = document.getElementById('pg-code').style.display !== 'none';
-  let content;
-  if (codeVisible) {
-    content = document.getElementById('code-editor').value;
-  } else if (pgCurrentFile.endsWith('.html') && pgSections.length) {
-    content = buildPageHTML();
-  } else {
-    content = pgOriginalHTML;
-  }
-
+  const content = codeVisible
+    ? document.getElementById('code-editor').value
+    : (pgCurrentFile.endsWith('.html') && pgSections.length) ? buildPageHTML() : pgOriginalHTML;
   try {
     const res = await fetch(GITHUB_API + '?file=' + encodeURIComponent(pgCurrentFile), {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${getToken()}` },
-      body: JSON.stringify({ content, message: `Update ${pgCurrentFile} via admin panel` })
+      headers: { 'Content-Type':'application/json', 'Authorization':`Bearer ${getToken()}` },
+      body: JSON.stringify({ content, message:`Update ${pgCurrentFile} via admin panel` })
     });
     const data = await res.json();
     if (res.ok && data.success) toast(data.message, 'ok');
@@ -949,30 +1074,32 @@ async function savePageContent() {
   } catch { toast('Sunucuya bağlanılamadı', 'err'); }
 }
 
-// ── Drag & drop ───────────────────────────────────────────────────────────────
+// ── Drag & drop (skeleton kartları) ──────────────────────────────────────────
 function pgDragStart(e, idx) {
   pgDragSrc = idx;
   e.dataTransfer.effectAllowed = 'move';
-  setTimeout(() => e.currentTarget?.classList.add('dragging'), 0);
+  setTimeout(() => document.getElementById('pg-sk-'+idx)?.classList.add('dragging'), 0);
 }
 function pgDragOver(e, idx) {
   e.preventDefault();
   e.dataTransfer.dropEffect = 'move';
-  document.querySelectorAll('#pg-blocks .block-card').forEach(c => c.classList.remove('drag-over'));
-  if (idx !== pgDragSrc) {
-    document.querySelector(`#pg-blocks .block-card[data-idx="${idx}"]`)?.classList.add('drag-over');
-  }
+  document.querySelectorAll('.pg-sk-card').forEach((c,i) =>
+    c.classList.toggle('drag-over', i===idx && idx!==pgDragSrc));
 }
 function pgDrop(e, idx) {
   e.preventDefault();
-  if (pgDragSrc === null || pgDragSrc === idx) return;
+  if (pgDragSrc===null || pgDragSrc===idx) return;
   const [moved] = pgSections.splice(pgDragSrc, 1);
   pgSections.splice(idx, 0, moved);
-  pgRenderBlocks();
+  if      (pgSelectedIdx===pgDragSrc) pgSelectedIdx = idx;
+  else if (pgSelectedIdx>pgDragSrc && pgSelectedIdx<=idx) pgSelectedIdx--;
+  else if (pgSelectedIdx<pgDragSrc && pgSelectedIdx>=idx) pgSelectedIdx++;
+  pgRenderSkeleton();
+  pgRenderEditPanel(pgSelectedIdx);
 }
 function pgDragEnd() {
   pgDragSrc = null;
-  document.querySelectorAll('#pg-blocks .block-card').forEach(c => {
+  document.querySelectorAll('.pg-sk-card').forEach(c => {
     c.classList.remove('dragging');
     c.classList.remove('drag-over');
   });
