@@ -585,7 +585,7 @@ const translations = {
         companyNameLabel: "Unvan:",
         companyAddressLabel: "Genel Merkez:",
         companyAddress2Label: "Adres 2:",
-        companyPhoneLabel: "Telefon:",
+        companyPhoneLabel: "SMS (UK):",
         companyAddressText: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ",
         companyAddress2Text: "United Kingdom",
 
@@ -686,7 +686,7 @@ const translations = {
         companyNameLabel: "Unvan:",
         companyAddressLabel: "Genel Merkez:",
         companyAddress2Label: "Adres 2:",
-        companyPhoneLabel: "Telefon:",
+        companyPhoneLabel: "SMS (UK):",
         companyAddressText: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ",
         companyAddress2Text: "United Kingdom",
 
@@ -1354,7 +1354,7 @@ const translations = {
         companyNameLabel: "Title:",
         companyAddressLabel: "Head Office:",
         companyAddress2Label: "Address 2:",
-        companyPhoneLabel: "Phone:",
+        companyPhoneLabel: "SMS (UK):",
         companyAddressText: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ",
         companyAddress2Text: "United Kingdom",
 
@@ -1455,7 +1455,7 @@ const translations = {
         companyNameLabel: "Title:",
         companyAddressLabel: "Head Office:",
         companyAddress2Label: "Address 2:",
-        companyPhoneLabel: "Phone:",
+        companyPhoneLabel: "SMS (UK):",
         companyAddressText: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ",
         companyAddress2Text: "United Kingdom",
 
