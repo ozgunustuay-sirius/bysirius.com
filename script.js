@@ -1819,9 +1819,9 @@ document.addEventListener("DOMContentLoaded", () => {
             form.addEventListener("submit", async function (e) {
                 e.preventDefault();
 
-                // Honeypot spam check
+                // Honeypot: doluysa engelleme, sunucuya ilet — orada "şüpheli" işaretlenir
                 const honeypot = form.querySelector('input[name="website"]');
-                if (honeypot && honeypot.value) return;
+                const honeypotValue = honeypot ? honeypot.value : '';
 
                 const adSoyad = (form.querySelector('input[name="name"]') || form.querySelector('input[placeholder="Ad Soyad"]') || {}).value || '';
                 const telefon = (form.querySelector('input[name="phone"]') || form.querySelector('input[placeholder="Telefon"]') || {}).value || '';
@@ -1875,7 +1875,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             email: eposta,
                             phone: telefon,
                             services: selectedServices.join(', '),
-                            message: `Firma: ${firmaAdi}${notlar ? ' | Not: ' + notlar : ''}`
+                            message: `Firma: ${firmaAdi}${notlar ? ' | Not: ' + notlar : ''}`,
+                            website: honeypotValue
                         })
                     });
                 } catch (_) { /* sessizce devam et */ }
@@ -1900,9 +1901,9 @@ document.addEventListener("DOMContentLoaded", () => {
         contactPageForm.addEventListener("submit", async function (e) {
             e.preventDefault();
 
-            // Honeypot spam check
+            // Honeypot: doluysa engelleme, sunucuya ilet — orada "şüpheli" işaretlenir
             const hp = contactPageForm.querySelector('input[name="website"]');
-            if (hp && hp.value) return;
+            const hpValue = hp ? hp.value : '';
 
             // GA4 event: contact form submit
             if (typeof gtag !== 'undefined') {
@@ -1950,7 +1951,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         email,
                         phone,
                         services: selectedServices.join(', '),
-                        message
+                        message,
+                        website: hpValue
                     })
                 });
             } catch (_) { /* sessizce devam et */ }

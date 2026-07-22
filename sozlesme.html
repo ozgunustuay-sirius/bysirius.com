@@ -201,6 +201,7 @@ html,body{background:var(--bg);color:var(--text);font-family:'Segoe UI',Georgia,
           <div class="sig-label">Müşteri Onayı</div>
           <input id="sig-name" placeholder="Ad Soyad *" autocomplete="name">
           <input id="sig-email" placeholder="E-posta * (onay kopyası gönderilecek)" type="email" autocomplete="email">
+          <input id="sig-website" name="website" type="text" style="display:none!important" tabindex="-1" autocomplete="off" aria-hidden="true">
         </div>
       </div>
 
@@ -300,7 +301,8 @@ async function acceptContract() {
         services: hizmetler,
         message: `Firma: ${firma} | Yetkili: ${yetkili} | Tutar: ${fmtTutar(tutar)} | Süre: ${sure}`,
         formType: 'sozlesme',
-        contractRef: ref
+        contractRef: ref,
+        website: (document.getElementById('sig-website') || {}).value || ''
       })
     });
   } catch {

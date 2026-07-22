@@ -1,5 +1,25 @@
 export const config = { runtime: 'edge' };
 
+// ─── Soft Rate Limit (in-memory, isolate başına) ────────────────────────────
+// Amaç engellemek değil işaretlemek: aynı IP kısa sürede çok submit atarsa
+// talep yine işlenir, sadece "şüpheli" olarak etiketlenir.
+const RATE_WINDOW_MS = 10 * 60 * 1000; // 10 dakika
+const RATE_MAX = 3;                    // pencere içinde bu sayının üzeri şüpheli
+const ipHits = new Map();
+
+function isRateSuspicious(ip) {
+  const now = Date.now();
+  const hits = (ipHits.get(ip) || []).filter(t => now - t < RATE_WINDOW_MS);
+  hits.push(now);
+  ipHits.set(ip, hits);
+  if (ipHits.size > 1000) {
+    for (const [key, times] of ipHits) {
+      if (times.every(t => now - t >= RATE_WINDOW_MS)) ipHits.delete(key);
+    }
+  }
+  return hits.length > RATE_MAX;
+}
+
 export default async function handler(req) {
   if (req.method !== 'POST') {
     return new Response('Method Not Allowed', { status: 405 });
@@ -12,13 +32,42 @@ export default async function handler(req) {
     return new Response('Bad Request', { status: 400 });
   }
 
-  const { name, email, phone, services, message, formType, contractRef } = body;
+  const { name, email, phone, services, message, formType, contractRef, website } = body;
 
   const timestamp = new Date().toLocaleString('tr-TR', {
     timeZone: 'Europe/Istanbul',
     day: '2-digit', month: '2-digit', year: 'numeric',
     hour: '2-digit', minute: '2-digit'
   });
+
+  // ─── Spam Skorlama (engelleme yok, sadece işaretleme) ─────────────────────
+  const ip = (req.headers.get('x-forwarded-for') || '').split(',')[0].trim()
+          || req.headers.get('x-real-ip')
+          || 'bilinmiyor';
+
+  const flags = [];
+  if (website) flags.push('honeypot dolu');
+
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(email || ''));
+  if (!emailValid) flags.push('geçersiz e-posta');
+
+  if (!String(name || '').trim()) flags.push('isim boş');
+
+  if (isRateSuspicious(ip)) flags.push(`hız limiti (${RATE_MAX}+ submit / 10 dk, aynı IP)`);
+
+  const suspicious = flags.length > 0;
+
+  // Vercel loglarında kalıcı iz: gerçek trafiğin dağılımını görüp eşik ayarlamak için
+  console.log(JSON.stringify({
+    tag: 'form-submit',
+    suspicious,
+    flags,
+    ip,
+    formType: formType || 'contact',
+    email: String(email || '').slice(0, 100),
+    ua: (req.headers.get('user-agent') || '').slice(0, 150),
+    ts: new Date().toISOString()
+  }));
 
   const results = {};
 
@@ -31,8 +80,11 @@ export default async function handler(req) {
                 : formType === 'sozlesme'  ? '📝 Sözleşme KABUL EDİLDİ'
                 : '📩 İletişim Formu';
 
+    const statusTag = suspicious ? '🔴 ŞÜPHELİ' : '🟢 Doğrulanmış';
+
     const text = [
-      `<b>${label}</b>`,
+      `<b>${statusTag} · ${label}</b>`,
+      suspicious ? `⚠️ <b>Neden:</b> ${escHtml(flags.join(', '))}` : null,
       '',
       `👤 <b>Ad Soyad:</b> ${escHtml(name)}`,
       `📧 <b>E-posta:</b> ${escHtml(email)}`,
@@ -41,6 +93,7 @@ export default async function handler(req) {
       message     ? `💬 <b>Mesaj:</b> ${escHtml(message)}` : null,
       contractRef ? `📋 <b>Sözleşme Ref:</b> ${escHtml(contractRef)}` : null,
       '',
+      `🌐 IP: ${escHtml(ip)}`,
       `⏰ ${timestamp}`
     ].filter(Boolean).join('\n');
 
@@ -70,7 +123,8 @@ export default async function handler(req) {
                 : '📩 Yeni Form Talebi';
 
     const waText = [
-      `${label} — BY Sirius`,
+      `${suspicious ? '🔴 ŞÜPHELİ · ' : '🟢 '}${label} — BY Sirius`,
+      suspicious ? `⚠️ Neden: ${flags.join(', ')}` : null,
       '',
       `👤 ${name}`,
       `📧 ${email}`,
@@ -110,9 +164,10 @@ export default async function handler(req) {
 
   if (resendKey) {
     const labelMap = { analysis: 'Ücretsiz Analiz Talebi', sozlesme: '⚡ Sözleşme KABUL EDİLDİ' };
-    const subject = `[BY Sirius] ${labelMap[formType] || 'Yeni Talep'} — ${escHtml(name)}`;
+    const subject = `[BY Sirius] ${suspicious ? '🔴 ŞÜPHELİ · ' : ''}${labelMap[formType] || 'Yeni Talep'} — ${escHtml(name)}`;
     const html = `
-      <h2 style="font-family:sans-serif;color:#1a1a18">${labelMap[formType] || 'Yeni Form Talebi'}</h2>
+      <h2 style="font-family:sans-serif;color:#1a1a18">${suspicious ? '🔴 ŞÜPHELİ · ' : ''}${labelMap[formType] || 'Yeni Form Talebi'}</h2>
+      ${suspicious ? `<p style="font-family:sans-serif;font-size:13px;color:#c0392b;background:#fdf0ee;padding:8px 12px;border-radius:6px">⚠️ Spam işaretleri: ${escHtml(flags.join(', '))} · IP: ${escHtml(ip)}</p>` : ''}
       <table style="font-family:sans-serif;font-size:14px;border-collapse:collapse">
         <tr><td style="padding:4px 12px 4px 0;color:#666;white-space:nowrap">Ad Soyad</td><td>${escHtml(name)}</td></tr>
         <tr><td style="padding:4px 12px 4px 0;color:#666">E-posta</td><td>${escHtml(email)}</td></tr>
@@ -134,7 +189,7 @@ export default async function handler(req) {
         body: JSON.stringify({
           from: 'BY Sirius Formlar <noreply@bysirius.com>',
           to: ['ozgun.ustuay@bysirius.com'],
-          reply_to: email,
+          ...(emailValid ? { reply_to: email } : {}),
           subject,
           html
         })
@@ -162,8 +217,8 @@ export default async function handler(req) {
           whatsapp: phone,
           hizmetler: services || '',
           durum: 'Potansiyel',
-          kaynak: 'Web Form',
-          notlar: message || '',
+          kaynak: suspicious ? 'Web Form ⚠️ Şüpheli' : 'Web Form',
+          notlar: (suspicious ? `⚠️ Şüpheli: ${flags.join(', ')} | IP: ${ip} | ` : '') + (message || ''),
           randevu: '',
           tutar: ''
         })
