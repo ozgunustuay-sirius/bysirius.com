@@ -238,6 +238,7 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
 
   <div class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('customers',this)">Müşteriler</button>
+    <button class="tab-btn" onclick="switchTab('partners',this)">İş Ortakları</button>
     <button class="tab-btn" onclick="switchTab('products',this)">Ürünler</button>
     <button class="tab-btn" onclick="switchTab('pages',this)">Sayfalar</button>
   </div>
@@ -298,6 +299,33 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
     </div>
 
   </div>
+
+<!-- ═══ PANEL: İş Ortakları ═══ -->
+<div class="main panel" id="panel-partners">
+  <div class="toolbar">
+    <input class="search-box" id="partner-search" placeholder="Ad, kurum, meslek, e-posta…" oninput="renderPartners()">
+    <button class="btn btn-primary" onclick="openAddPartner()">+ Yeni Kişi / Kurum</button>
+    <button class="btn" style="background:var(--surface2);border:1px solid var(--border);color:var(--text)" onclick="loadPartners()">↻ Yenile</button>
+    <button class="btn" style="background:var(--surface2);border:1px solid var(--border);color:var(--text)" onclick="savePartners()">💾 Kaydet &amp; Deploy</button>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th onclick="sortPartnersBy('ad_soyad')" style="cursor:pointer">Ad Soyad ↕</th>
+          <th onclick="sortPartnersBy('kurum')" style="cursor:pointer">Kurum ↕</th>
+          <th>Meslek</th>
+          <th>İletişim</th>
+          <th>Not</th>
+          <th>İşlemler</th>
+        </tr>
+      </thead>
+      <tbody id="partner-table-body">
+        <tr><td colspan="6" class="empty"><div class="spin"></div></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <!-- ═══ PANEL: Ürünler ═══ -->
 <div class="main panel" id="panel-products">
@@ -488,6 +516,43 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
   </div>
 </div>
 
+<!-- ═══ Partner Add/Edit Modal ═══ -->
+<div class="overlay" id="modal-partner">
+  <div class="modal">
+    <h2 id="pt-title">Yeni Kişi / Kurum</h2>
+    <div class="form-grid">
+      <div class="field">
+        <label>Ad Soyad *</label>
+        <input id="pt-ad" placeholder="Ad Soyad">
+      </div>
+      <div class="field">
+        <label>Kurum / Firma</label>
+        <input id="pt-kurum" placeholder="Şirket veya kurum adı">
+      </div>
+      <div class="field">
+        <label>Meslek / Unvan</label>
+        <input id="pt-meslek" placeholder="Ör. Genel Müdür, Avukat…">
+      </div>
+      <div class="field">
+        <label>E-posta</label>
+        <input id="pt-email" type="email" placeholder="ornek@kurum.com">
+      </div>
+      <div class="field full">
+        <label>Telefon</label>
+        <input id="pt-telefon" placeholder="+90 5xx xxx xx xx">
+      </div>
+      <div class="field full">
+        <label>Not</label>
+        <textarea id="pt-not" placeholder="Nasıl tanıştınız, işbirliği alanı, özel notlar…"></textarea>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-cancel" onclick="closeModal('modal-partner')">İptal</button>
+      <button class="btn btn-primary" onclick="savePartnerModal()">Kaydet</button>
+    </div>
+  </div>
+</div>
+
 <!-- ═══ Product Add/Edit Modal ═══ -->
 <div class="overlay" id="modal-prod">
   <div class="modal">
@@ -600,6 +665,130 @@ function switchTab(name, btn) {
   document.getElementById('panel-' + name).classList.add('active');
   btn.classList.add('active');
   if (name === 'products' && prodCategories.length === 0) loadProducts();
+  if (name === 'partners' && partners.length === 0) loadPartners();
+}
+
+// ─── İş Ortakları (Partners) ────────────────────────────────────────────────
+let partners         = [];
+let editPartnerId    = null;
+let partnerSortField = 'ad_soyad';
+let partnerSortDir   = 1;
+
+async function loadPartners() {
+  document.getElementById('partner-table-body').innerHTML = '<tr><td colspan="6" class="empty"><div class="spin"></div></td></tr>';
+  try {
+    const res  = await fetch('/partners.json?_=' + Date.now());
+    const data = await res.json();
+    partners = data.partners || [];
+  } catch { partners = []; }
+  renderPartners();
+}
+
+function renderPartners() {
+  const q = document.getElementById('partner-search').value.toLowerCase();
+  let rows = partners.filter(p =>
+    [p.ad_soyad, p.kurum, p.meslek, p.email, p.telefon, p.notlar].join(' ').toLowerCase().includes(q)
+  );
+
+  rows.sort((a, b) => {
+    const av = (a[partnerSortField] || '').toString().toLowerCase();
+    const bv = (b[partnerSortField] || '').toString().toLowerCase();
+    return av < bv ? -partnerSortDir : av > bv ? partnerSortDir : 0;
+  });
+
+  const el = document.getElementById('partner-table-body');
+  if (!rows.length) { el.innerHTML = '<tr><td colspan="6" class="empty">Kayıt bulunamadı.</td></tr>'; return; }
+
+  el.innerHTML = rows.map(p => `
+    <tr>
+      <td><strong>${esc(p.ad_soyad)}</strong></td>
+      <td>${esc(p.kurum || '—')}</td>
+      <td style="font-size:.82rem;color:var(--muted)">${esc(p.meslek || '—')}</td>
+      <td style="font-size:.82rem">
+        ${p.email ? `<a href="mailto:${esc(p.email)}">${esc(p.email)}</a><br>` : ''}
+        ${p.telefon ? `<span style="color:var(--muted)">${esc(p.telefon)}</span>` : ''}
+      </td>
+      <td style="max-width:220px;font-size:.82rem;color:var(--muted)">${esc(p.notlar || '—')}</td>
+      <td class="actions">
+        <button class="btn btn-sm btn-edit" onclick="openEditPartner('${p.id}')">✏ Düzenle</button>
+        <button class="btn btn-sm btn-del"  onclick="deletePartner('${p.id}','${esc(p.ad_soyad)}')">🗑</button>
+      </td>
+    </tr>
+  `).join('');
+}
+
+function sortPartnersBy(field) {
+  partnerSortDir   = (partnerSortField === field) ? -partnerSortDir : 1;
+  partnerSortField = field;
+  renderPartners();
+}
+
+function openAddPartner() {
+  editPartnerId = null;
+  document.getElementById('pt-title').textContent = 'Yeni Kişi / Kurum';
+  ['pt-ad','pt-kurum','pt-meslek','pt-email','pt-telefon','pt-not'].forEach(id => document.getElementById(id).value = '');
+  openModal('modal-partner');
+}
+
+function openEditPartner(id) {
+  const p = partners.find(x => x.id === id);
+  if (!p) return;
+  editPartnerId = id;
+  document.getElementById('pt-title').textContent = 'Kişi / Kurum Düzenle';
+  document.getElementById('pt-ad').value      = p.ad_soyad || '';
+  document.getElementById('pt-kurum').value   = p.kurum    || '';
+  document.getElementById('pt-meslek').value  = p.meslek   || '';
+  document.getElementById('pt-email').value   = p.email    || '';
+  document.getElementById('pt-telefon').value = p.telefon  || '';
+  document.getElementById('pt-not').value     = p.notlar   || '';
+  openModal('modal-partner');
+}
+
+function savePartnerModal() {
+  const ad = document.getElementById('pt-ad').value.trim();
+  if (!ad) { toast('Ad Soyad zorunlu', 'err'); return; }
+
+  const data = {
+    id:       editPartnerId || ('pt-' + Date.now()),
+    ad_soyad: ad,
+    kurum:    document.getElementById('pt-kurum').value.trim(),
+    meslek:   document.getElementById('pt-meslek').value.trim(),
+    email:    document.getElementById('pt-email').value.trim(),
+    telefon:  document.getElementById('pt-telefon').value.trim(),
+    notlar:   document.getElementById('pt-not').value.trim()
+  };
+
+  if (editPartnerId) {
+    const idx = partners.findIndex(p => p.id === editPartnerId);
+    if (idx >= 0) partners[idx] = data;
+  } else {
+    partners.push(data);
+  }
+  closeModal('modal-partner');
+  renderPartners();
+  toast('Kaydedildi (taslak). Kaydet & Deploy ile yayınlayın.', 'ok');
+}
+
+function deletePartner(id, name) {
+  if (!confirm(`${name} silinsin mi?`)) return;
+  partners = partners.filter(p => p.id !== id);
+  renderPartners();
+  toast('Silindi (taslak). Kaydet & Deploy ile yayınlayın.', 'ok');
+}
+
+async function savePartners() {
+  const content = JSON.stringify({ updated: new Date().toISOString().slice(0,10), partners }, null, 2);
+  try {
+    const res = await fetch(GITHUB_API + '?file=partners.json', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${getToken()}` },
+      body: JSON.stringify({ content, message: 'Update partners.json via admin panel' })
+    });
+    const data = await res.json();
+    if (res.ok && data.success) toast(data.message, 'ok');
+    else if (res.status === 503) toast('GITHUB_TOKEN eksik — Vercel\'de ekleyin.', 'err');
+    else toast(data.error || 'Hata oluştu', 'err');
+  } catch { toast('Bağlantı hatası', 'err'); }
 }
 
 // ─── Products ─────────────────────────────────────────────────────────────────
