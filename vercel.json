@@ -6,11 +6,37 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/index.html", "destination": "/", "permanent": true }
+    { "source": "https://www.bysirius.com/:path*",         "destination": "https://bysirius.com/:path*",          "permanent": true },
+    { "source": "/index.html",                             "destination": "/",                                    "permanent": true },
+    { "source": "/hizmetlerimiz.html",                     "destination": "/hizmetlerimiz",                       "permanent": true },
+    { "source": "/hakkimizda.html",                        "destination": "/hakkimizda",                          "permanent": true },
+    { "source": "/sektorler.html",                         "destination": "/sektorler",                           "permanent": true },
+    { "source": "/iletisim.html",                          "destination": "/iletisim",                            "permanent": true },
+    { "source": "/blog.html",                              "destination": "/blog",                                "permanent": true },
+    { "source": "/ai-ceo.html",                            "destination": "/ai-ceo",                              "permanent": true },
+    { "source": "/odeme.html",                             "destination": "/odeme",                               "permanent": true },
+    { "source": "/gizlilik-politikasi.html",               "destination": "/gizlilik-politikasi",                 "permanent": true },
+    { "source": "/hizmet-sartlari.html",                   "destination": "/hizmet-sartlari",                     "permanent": true },
+    { "source": "/iade-iptal-politikasi.html",             "destination": "/iade-iptal-politikasi",               "permanent": true },
+    { "source": "/teslimat-hizmet-sureci.html",            "destination": "/teslimat-hizmet-sureci",              "permanent": true },
+    { "source": "/urunler-katalog.html",                   "destination": "/urunler-katalog",                     "permanent": true },
+    { "source": "/sozlesme.html",                          "destination": "/sozlesme",                            "permanent": true }
   ],
   "rewrites": [
-    { "source": "/admin",      "destination": "/admin.html" },
-    { "source": "/sozlesme",   "destination": "/sozlesme.html" }
+    { "source": "/admin",                "destination": "/admin.html" },
+    { "source": "/sozlesme",             "destination": "/sozlesme.html" },
+    { "source": "/hizmetlerimiz",        "destination": "/hizmetlerimiz.html" },
+    { "source": "/hakkimizda",           "destination": "/hakkimizda.html" },
+    { "source": "/sektorler",            "destination": "/sektorler.html" },
+    { "source": "/iletisim",             "destination": "/iletisim.html" },
+    { "source": "/blog",                 "destination": "/blog.html" },
+    { "source": "/ai-ceo",               "destination": "/ai-ceo.html" },
+    { "source": "/odeme",                "destination": "/odeme.html" },
+    { "source": "/gizlilik-politikasi",  "destination": "/gizlilik-politikasi.html" },
+    { "source": "/hizmet-sartlari",      "destination": "/hizmet-sartlari.html" },
+    { "source": "/iade-iptal-politikasi","destination": "/iade-iptal-politikasi.html" },
+    { "source": "/teslimat-hizmet-sureci","destination": "/teslimat-hizmet-sureci.html" },
+    { "source": "/urunler-katalog",      "destination": "/urunler-katalog.html" }
   ],
   "headers": [
     {
