@@ -665,7 +665,15 @@ const translations = {
         industry7List: "<li>Otomatik ürün açıklaması üretimi</li><li>AI görsel ve reklam içerikleri üretimi</li><li>Stok ve sipariş yönetimi</li><li>WhatsApp satış chatbotu</li><li>Otomatik müşteri destek sistemi</li><li>Kampanya ve satış otomasyonları</li>",
 
         // FAQ Section
-        faqTitle: "Sıkça Sorulan Sorular",
+        // Hero definition (Görev 7)
+        heroDefinition: "BY Sirius Group, işletmelerin müşteri iletişimini, randevu ve satış süreçlerini yapay zekâ ile otomatikleştirmesini sağlayan, İngiltere merkezli bir teknoloji şirketidir.",
+
+        // Section intros (Görev 6)
+        servicesIntro2: "Stratejik danışmanlıktan yapay zeka otomasyonuna, özel yazılım geliştirmeden mobil uygulamalara kadar işletmenizin ihtiyaç duyduğu tüm dijital çözümleri tek çatı altında sunuyoruz.",
+        industriesIntro2: "Oteller, sağlık merkezleri, hukuk büroları, güzellik salonları, spor salonları, gayrimenkul ofisleri ve e-ticaret işletmeleri için sektöre özel AI sistemleri ve uygulamalar geliştiriyoruz.",
+        aboutText2: "Londra merkezli BY Sirius Group, 2024 yılından bu yana 8 farklı sektörde faaliyet göstererek yapay zeka otomasyonu, özel yazılım ve mobil uygulama geliştirme alanlarında işletmelerin dijital dönüşümüne öncülük etmektedir.",
+        faqIntro: "BY Sirius Group hizmetleri, süreçleri ve uygulamaları hakkında en çok sorulan soruları ve yanıtlarını aşağıda bulabilirsiniz.",
+                faqTitle: "Sıkça Sorulan Sorular",
         faqQ1: "Yapay zekâ iletişim sistemleri hangi işletmeler için uygundur?",
         faqA1: "Sistemlerimiz butik oteller, restoran ve kafeler, diş klinikleri, kuaförler, e-ticaret firmaları ve sosyal medya üzerinden satış yapan işletmelerin süreçlerini hızlandırmak için özel olarak geliştirilmiştir.",
         faqQ2: "Kurulum süreci ne kadar zaman alıyor?",
@@ -1440,7 +1448,15 @@ const translations = {
         industry7List: "<li>Automatic product description production</li><li>AI visual and advertising content production</li><li>Stock and order management</li><li>WhatsApp sales chatbot</li><li>Automatic customer support system</li><li>Campaign and sales automations</li>",
 
         // FAQ Section
-        faqTitle: "Frequently Asked Questions",
+        // Hero definition (Görev 7)
+        heroDefinition: "BY Sirius Group is a UK-based technology company that enables businesses to automate customer communication, appointment scheduling, and sales processes using artificial intelligence.",
+
+        // Section intros (Görev 6)
+        servicesIntro2: "From strategic consulting and AI automation to custom software and mobile applications, we provide all the digital solutions your business needs under one roof.",
+        industriesIntro2: "We develop sector-specific AI systems and applications for hotels, healthcare centers, law firms, beauty salons, gyms, real estate offices, and e-commerce businesses.",
+        aboutText2: "London-based BY Sirius Group has been pioneering the digital transformation of businesses since 2024, offering AI automation, custom software, and mobile app development across 8 different industries.",
+        faqIntro: "Find the most frequently asked questions and answers about BY Sirius Group's services, processes, and applications below.",
+                faqTitle: "Frequently Asked Questions",
         faqQ1: "Which businesses are AI communication systems suitable for?",
         faqA1: "Our systems are specifically developed to accelerate the processes of boutique hotels, restaurants and cafes, dental clinics, hairdressers, e-commerce companies and businesses selling over social media.",
         faqQ2: "How long does the installation process take?",
