@@ -559,10 +559,11 @@
             <h2 data-i18n="modalTitle">Ücretsiz Analiz Talebi</h2>
 
             <form id="analysisForm">
-                <input type="text" placeholder="Ad Soyad" data-i18n-placeholder="placeholderName" required>
-                <input type="text" placeholder="Telefon" data-i18n-placeholder="placeholderPhone" required>
-                <input type="email" placeholder="E-posta" data-i18n-placeholder="placeholderEmail" required>
-                <input type="text" placeholder="Firma Adı" data-i18n-placeholder="placeholderCompany" required>
+                <input type="text" name="website" style="position:absolute!important;left:-9999px!important;top:auto;width:1px;height:1px;overflow:hidden;opacity:0" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <input type="text" name="name" placeholder="Ad Soyad" data-i18n-placeholder="placeholderName" required>
+                <input type="text" name="phone" placeholder="Telefon" data-i18n-placeholder="placeholderPhone" required>
+                <input type="email" name="email" placeholder="E-posta" data-i18n-placeholder="placeholderEmail" required>
+                <input type="text" name="company" placeholder="Firma Adı" data-i18n-placeholder="placeholderCompany" required>
 
                 <select id="sectorSelect" required>
                     <option value="" data-i18n="placeholderSectorSelect">Sektör Seçin</option>

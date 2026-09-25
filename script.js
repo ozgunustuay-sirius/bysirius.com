@@ -1777,6 +1777,63 @@ document.addEventListener("DOMContentLoaded", () => {
         yearElement.textContent = new Date().getFullYear();
     }
 
+    /* ─── Bot Savunması: Zaman Damgası + Turnstile ────────────────────────
+       Zaman damgası: formun görüldüğü an kaydedilir, gönderimde geçen süre
+       sunucuya iletilir. 3 saniyeden kısa doldurma bot sayılır.
+       Turnstile: BYS_TURNSTILE_SITE_KEY doluysa widget otomatik eklenir,
+       boşken tamamen pasiftir (site anahtarsız da sorunsuz çalışır).      */
+
+    const BYS_PAGE_LOADED_AT = Date.now();
+
+    // Cloudflare Turnstile site anahtarı — panelden alıp buraya yapıştırın.
+    // Sunucu tarafında da TURNSTILE_SECRET_KEY ortam değişkeni tanımlanmalıdır.
+    const BYS_TURNSTILE_SITE_KEY = "";
+
+    function bysMarkFormShown(form) {
+        if (form) form.dataset.bysShownAt = String(Date.now());
+    }
+
+    function bysTiming(form) {
+        const shownAt = form && form.dataset.bysShownAt
+            ? Number(form.dataset.bysShownAt)
+            : BYS_PAGE_LOADED_AT;
+        return { renderedAt: shownAt, elapsedMs: Date.now() - shownAt };
+    }
+
+    function bysTurnstileToken(form) {
+        const field = form && form.querySelector('[name="cf-turnstile-response"]');
+        return field ? field.value : '';
+    }
+
+    function bysInitTurnstile() {
+        if (!BYS_TURNSTILE_SITE_KEY) return;
+        const forms = document.querySelectorAll('#analysisForm, #contactPageForm');
+        if (!forms.length) return;
+
+        forms.forEach(function (f) {
+            if (f.querySelector('.cf-turnstile')) return;
+            const holder = document.createElement('div');
+            holder.className = 'cf-turnstile';
+            holder.setAttribute('data-sitekey', BYS_TURNSTILE_SITE_KEY);
+            holder.setAttribute('data-theme', 'auto');
+            holder.style.margin = '0.75rem 0';
+            const submitBtn = f.querySelector('button[type="submit"]');
+            if (submitBtn) f.insertBefore(holder, submitBtn);
+            else f.appendChild(holder);
+        });
+
+        if (!document.getElementById('cf-turnstile-api')) {
+            const s = document.createElement('script');
+            s.id = 'cf-turnstile-api';
+            s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+            s.async = true;
+            s.defer = true;
+            document.head.appendChild(s);
+        }
+    }
+
+    bysInitTurnstile();
+
     // Modal Logic
     const modal = document.getElementById("analysisModal");
     const modalTriggers = document.querySelectorAll(".btn-modal-trigger, .btn-gold-gradient[href='#iletisim'], .btn-outline[href='/#iletisim'], .open-analysis-modal");
@@ -1788,7 +1845,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener('click', function(e) {
         if (e.target.closest('.btn-modal-trigger, .open-analysis-modal')) {
             e.preventDefault();
-            if (modal) modal.classList.add('show');
+            if (modal) {
+                modal.classList.add('show');
+                // Doldurma süresi sayacı formun görüldüğü anda başlar
+                bysMarkFormShown(modal.querySelector('form'));
+            }
         }
     });
 
@@ -1865,6 +1926,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     });
                 }
 
+                const timing = bysTiming(form);
+
                 try {
                     await fetch('/api/contact', {
                         method: 'POST',
@@ -1876,7 +1939,10 @@ document.addEventListener("DOMContentLoaded", () => {
                             phone: telefon,
                             services: selectedServices.join(', '),
                             message: `Firma: ${firmaAdi}${notlar ? ' | Not: ' + notlar : ''}`,
-                            website: honeypotValue
+                            website: honeypotValue,
+                            renderedAt: timing.renderedAt,
+                            elapsedMs: timing.elapsedMs,
+                            turnstileToken: bysTurnstileToken(form)
                         })
                     });
                 } catch (_) { /* sessizce devam et */ }
@@ -1941,6 +2007,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 submitBtn.style.opacity = "0.7";
             }
 
+            const timing = bysTiming(contactPageForm);
+
             try {
                 await fetch('/api/contact', {
                     method: 'POST',
@@ -1952,7 +2020,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         phone,
                         services: selectedServices.join(', '),
                         message,
-                        website: hpValue
+                        website: hpValue,
+                        renderedAt: timing.renderedAt,
+                        elapsedMs: timing.elapsedMs,
+                        turnstileToken: bysTurnstileToken(contactPageForm)
                     })
                 });
             } catch (_) { /* sessizce devam et */ }

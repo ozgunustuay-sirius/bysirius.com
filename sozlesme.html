@@ -201,7 +201,7 @@ html,body{background:var(--bg);color:var(--text);font-family:'Segoe UI',Georgia,
           <div class="sig-label">Müşteri Onayı</div>
           <input id="sig-name" placeholder="Ad Soyad *" autocomplete="name">
           <input id="sig-email" placeholder="E-posta * (onay kopyası gönderilecek)" type="email" autocomplete="email">
-          <input id="sig-website" name="website" type="text" style="display:none!important" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input id="sig-website" name="website" type="text" style="position:absolute!important;left:-9999px!important;top:auto;width:1px;height:1px;overflow:hidden;opacity:0" tabindex="-1" autocomplete="off" aria-hidden="true">
         </div>
       </div>
 
@@ -240,6 +240,10 @@ html,body{background:var(--bg);color:var(--text);font-family:'Segoe UI',Georgia,
 </div>
 
 <script>
+// Bot savunmasi: sayfanin yuklendigi an. Sunucu, formun 3 sn icinde
+// doldurulmasini bot davranisi olarak degerlendirir.
+const BYS_PAGE_LOADED_AT = Date.now();
+
 const params = new URLSearchParams(location.search);
 const firma    = params.get('firma')    || '';
 const yetkili  = params.get('yetkili') || '';
@@ -302,7 +306,9 @@ async function acceptContract() {
         message: `Firma: ${firma} | Yetkili: ${yetkili} | Tutar: ${fmtTutar(tutar)} | Süre: ${sure}`,
         formType: 'sozlesme',
         contractRef: ref,
-        website: (document.getElementById('sig-website') || {}).value || ''
+        website: (document.getElementById('sig-website') || {}).value || '',
+        renderedAt: BYS_PAGE_LOADED_AT,
+        elapsedMs: Date.now() - BYS_PAGE_LOADED_AT
       })
     });
   } catch {
