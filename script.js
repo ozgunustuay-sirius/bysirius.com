@@ -62,7 +62,7 @@ const translations = {
                         <h3>Stripe Payment Link ve Ödeme Verileri</h3>
                         <p>Ödemeler Stripe Payment Link üzerinden gerçekleşir. BY Sirius Group, kart verilerine erişmez; yalnızca işlem onayı ve proje referans bilgilerini saklar.</p>
                         <h3>Şirket Bilgisi</h3>
-                        <p>BY Sirius Group AI and Technology Co. Ltd., Companies House No: 17142392, 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.</p>
+                        <p>BY Sirius Group AI and Technology Co Ltd., Companies House No: 17142392, 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.</p>
                         <p>Gizlilik taleplerinizi <a href='mailto:info@bysirius.com'>info@bysirius.com</a> adresine yazılı olarak iletebilirsiniz.</p>
                         <h3>Haklarınız</h3>
                         <p>Verilerinize erişim, düzeltme veya silme talepleri İngiltere mevzuatı doğrultusunda değerlendirilir.</p>
@@ -843,7 +843,7 @@ const translations = {
                         <h3>Stripe Payment Link and Payment Data</h3>
                         <p>Payments are processed via Stripe Payment Link. BY Sirius Group does not access card data; we retain only transaction confirmation and project reference details.</p>
                         <h3>Company Information</h3>
-                        <p>BY Sirius Group AI and Technology Co. Ltd., Companies House No: 17142392, 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.</p>
+                        <p>BY Sirius Group AI and Technology Co Ltd., Companies House No: 17142392, 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom.</p>
                         <p>Privacy requests should be submitted in writing to <a href='mailto:info@bysirius.com'>info@bysirius.com</a>.</p>
                         <h3>Your Rights</h3>
                         <p>You have the right to access, correct or delete your data. All requests are handled under UK legal requirements.</p>
