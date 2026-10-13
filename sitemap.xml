@@ -32,9 +32,15 @@
   </url>
   <url>
     <loc>https://bysirius.com/blog</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bysirius.com/blog/isletmeler-dijital-donusumde-nelere-ihtiyac-duyar</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bysirius.com/blog/siriplan-salon-yonetim-uygulamasi</loc>

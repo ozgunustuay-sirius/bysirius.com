@@ -60,6 +60,7 @@
       gtag('config', 'G-H18YPZVNYJ');
     </script>
     <link rel="stylesheet" href="cosmos.css">
+    <link rel="stylesheet" href="blog.css">
 </head>
 
 <body>
@@ -129,78 +130,128 @@
     </header>
 
     <main class="main-content">
-        <!-- Premium Hero Block -->
-        <section class="internal-hero">
+        <!-- Blog Hero -->
+        <section class="internal-hero blog-hero">
             <div class="container">
-                <h1 class="hero-title" data-i18n="blogHeroTitle">BLOG</h1>
-                <p class="hero-subtitle" data-i18n="blogHeroSubtitle">Sektör analizleri, yapay zeka trendleri ve dijital dönüşüm stratejileri üzerine içerikler.</p>
+                <span class="hero-eyebrow">BY Sirius Blog</span>
+                <h1 class="hero-title" data-i18n="blogHeroTitle">Yapay Zekâ ve Dijital Dönüşümde Uzman Tavsiyeleri</h1>
+                <p class="hero-subtitle" data-i18n="blogHeroSubtitle">Otomasyon, müşteri iletişimi, verimlilik taktikleri ve sektörden haberler.</p>
             </div>
         </section>
 
-        <!-- Blog Articles -->
+        <!-- Blog Articles (en yeni en üstte; her hafta yeni yazı eklenir) -->
         <section class="section">
             <div class="container">
-                <div class="internal-services-grid">
+                <div class="blog-filters" role="tablist" aria-label="Blog kategorileri">
+                    <button type="button" class="blog-filter is-active" data-filter="all">Tümü</button>
+                    <button type="button" class="blog-filter" data-filter="Dijital Dönüşüm">Dijital Dönüşüm</button>
+                    <button type="button" class="blog-filter" data-filter="Ürün & Teknoloji">Ürün &amp; Teknoloji</button>
+                    <button type="button" class="blog-filter" data-filter="Sektör Analizi">Sektör Analizi</button>
+                    <button type="button" class="blog-filter" data-filter="Teknoloji Rehberi">Teknoloji Rehberi</button>
+                    <button type="button" class="blog-filter" data-filter="Sektör Çözümleri">Sektör Çözümleri</button>
+                </div>
 
-                    <!-- Article 4 — SiriPlan (newest) -->
-                    <article class="service-item-card blog-card">
-                        <div class="service-visual-placeholder"><span>✂️</span></div>
-                        <div class="blog-card-meta">
-                            <span class="blog-tag">Ürün &amp; Teknoloji</span>
-                            <span class="blog-date">Eylül 2026</span>
-                        </div>
-                        <h2 class="service-item-title">SiriPlan: Kuaför, Salon ve Klinik Yönetiminde Yapay Zekanın Gücü</h2>
-                        <p class="blog-card-excerpt">
-                            BY Sirius Group tarafından geliştirilen <strong>SiriPlan</strong>; kuaför, güzellik salonu, spa ve kliniklerin randevu, personel, müşteri ve ciro yönetimini tek platformda birleştiriyor. AI destekli 7/24 asistan ile randevu trafiğinizi ve operasyonlarınızı kolayca yönetin.
-                        </p>
-                        <a href="blog/siriplan-salon-yonetim-uygulamasi" class="blog-read-more">Devamını Oku <span class="arrow">→</span></a>
+                <div class="blog-grid" id="blogGrid">
+
+                    <!-- isletmeler-dijital-donusumde-nelere-ihtiyac-duyar -->
+                    <article class="post-card" data-category="Dijital Dönüşüm">
+                        <a class="post-link" href="blog/isletmeler-dijital-donusumde-nelere-ihtiyac-duyar">
+                            <div class="post-cover" style="--hue:270"><span class="post-category">Dijital Dönüşüm</span><span class="cover-icon" aria-hidden="true">🧭</span></div>
+                            <div class="post-body">
+                                <div class="post-meta"><span>Ekim 2026</span><span class="dot"></span><span>6 dk okuma</span></div>
+                                <h2 class="post-title">İşletmeler Dijital Dönüşümde Gerçekte Nelere İhtiyaç Duyar? 5 Temel Alan</h2>
+                                <p class="post-excerpt">Dijital dönüşüm yazılım satın almak değildir. Müşteri iletişimi, gelir-gider takibi, pazarlama sistemi ve operasyonel işlerde işletmelerin gerçekten neye ihtiyaç duyduğunu ve 30 günlük başlangıç planını anlatıyoruz.</p>
+                                <span class="post-more">Oku <span class="arrow">→</span></span>
+                            </div>
+                        </a>
                     </article>
 
-                    <!-- Article 1 -->
-                    <article class="service-item-card blog-card">
-                        <div class="service-visual-placeholder"><span>🤖</span></div>
-                        <div class="blog-card-meta">
-                            <span class="blog-tag">Sektör Analizi</span>
-                            <span class="blog-date">Mayıs 2025</span>
-                        </div>
-                        <h2 class="service-item-title">KOBİ'ler İçin AI Otomasyon: Büyük Şirketlerle Aynı Silaha Sahip Olmak</h2>
-                        <p class="blog-card-excerpt">
-                            Yapay zeka araçlarının erişilebilir hale gelmesiyle KOBİ'ler artık kurumsal düzeyde otomasyon sistemlerine uygun maliyetlerle sahip olabiliyor. İş süreçlerindeki manuel yükleri azaltarak operasyonel tasarruf ve net kârlılık sağlama rehberi.
-                        </p>
-                        <a href="blog/kobi-icin-ai-otomasyon" class="blog-read-more">Devamını Oku <span class="arrow">→</span></a>
+                    <!-- SiriPlan -->
+                    <article class="post-card" data-category="Ürün & Teknoloji">
+                        <a class="post-link" href="blog/siriplan-salon-yonetim-uygulamasi">
+                            <div class="post-cover" style="--hue:45"><span class="post-category">Ürün &amp; Teknoloji</span><span class="cover-icon" aria-hidden="true">✂️</span></div>
+                            <div class="post-body">
+                                <div class="post-meta"><span>Eylül 2026</span><span class="dot"></span><span>6 dk okuma</span></div>
+                                <h2 class="post-title">SiriPlan: Kuaför, Salon ve Klinik Yönetiminde Yapay Zekanın Gücü</h2>
+                                <p class="post-excerpt">BY Sirius Group tarafından geliştirilen SiriPlan; kuaför, güzellik salonu, spa ve kliniklerin randevu, personel, müşteri ve ciro yönetimini tek platformda birleştiriyor. AI destekli 7/24 asistan ile operasyonlarınızı kolayca yönetin.</p>
+                                <span class="post-more">Oku <span class="arrow">→</span></span>
+                            </div>
+                        </a>
                     </article>
 
-                    <!-- Article 2 -->
-                    <article class="service-item-card blog-card">
-                        <div class="service-visual-placeholder"><span>💬</span></div>
-                        <div class="blog-card-meta">
-                            <span class="blog-tag">Teknoloji Rehberi</span>
-                            <span class="blog-date">Nisan 2025</span>
-                        </div>
-                        <h2 class="service-item-title">WhatsApp Chatbot Entegrasyonu: Müşteri Hizmetleri Maliyetini Nasıl Düşürürsünüz?</h2>
-                        <p class="blog-card-excerpt">
-                            Müşteri iletişiminin odağında yer alan WhatsApp'ı yapay zeka ile otomatize ederek müşteri hizmetleri yükünü ve maliyetlerini önemli ölçüde düşürebilirsiniz. 7/24 aktif AI asistanları ile satış ve randevu süreçlerinizi hızlandırın.
-                        </p>
-                        <a href="blog/whatsapp-chatbot-entegrasyonu" class="blog-read-more">Devamını Oku <span class="arrow">→</span></a>
+                    <!-- KOBİ -->
+                    <article class="post-card" data-category="Sektör Analizi">
+                        <a class="post-link" href="blog/kobi-icin-ai-otomasyon">
+                            <div class="post-cover" style="--hue:220"><span class="post-category">Sektör Analizi</span><span class="cover-icon" aria-hidden="true">🤖</span></div>
+                            <div class="post-body">
+                                <div class="post-meta"><span>Mayıs 2025</span><span class="dot"></span><span>5 dk okuma</span></div>
+                                <h2 class="post-title">KOBİ'ler İçin AI Otomasyon: Büyük Şirketlerle Aynı Silaha Sahip Olmak</h2>
+                                <p class="post-excerpt">Yapay zeka araçlarının erişilebilir hale gelmesiyle KOBİ'ler artık kurumsal düzeyde otomasyon sistemlerine uygun maliyetlerle sahip olabiliyor. Manuel yükü azaltarak operasyonel tasarruf ve net kârlılık rehberi.</p>
+                                <span class="post-more">Oku <span class="arrow">→</span></span>
+                            </div>
+                        </a>
                     </article>
 
-                    <!-- Article 3 -->
-                    <article class="service-item-card blog-card">
-                        <div class="service-visual-placeholder"><span>📅</span></div>
-                        <div class="blog-card-meta">
-                            <span class="blog-tag">Sektör Çözümleri</span>
-                            <span class="blog-date">Mart 2025</span>
-                        </div>
-                        <h2 class="service-item-title">Randevu Otomasyonu: Sağlık ve Güzellik Sektöründe Dijital Dönüşümün İlk Adımı</h2>
-                        <p class="blog-card-excerpt">
-                            Sağlık ve güzellik sektöründe zaman kaybının ve iptal edilen randevuların (no-show) önüne geçen akıllı takvim ve otomatik hatırlatma sistemleri, işletmelerin seans ve gelir kaybını doğrudan engelliyor.
-                        </p>
-                        <a href="blog/randevu-otomasyonu-saglik" class="blog-read-more">Devamını Oku <span class="arrow">→</span></a>
+                    <!-- WhatsApp -->
+                    <article class="post-card" data-category="Teknoloji Rehberi">
+                        <a class="post-link" href="blog/whatsapp-chatbot-entegrasyonu">
+                            <div class="post-cover" style="--hue:150"><span class="post-category">Teknoloji Rehberi</span><span class="cover-icon" aria-hidden="true">💬</span></div>
+                            <div class="post-body">
+                                <div class="post-meta"><span>Nisan 2025</span><span class="dot"></span><span>6 dk okuma</span></div>
+                                <h2 class="post-title">WhatsApp Chatbot Entegrasyonu: Müşteri Hizmetleri Maliyetini Nasıl Düşürürsünüz?</h2>
+                                <p class="post-excerpt">Müşteri iletişiminin odağındaki WhatsApp'ı yapay zeka ile otomatize ederek müşteri hizmetleri yükünü ve maliyetlerini düşürün. 7/24 aktif AI asistanlarıyla satış ve randevu süreçlerinizi hızlandırın.</p>
+                                <span class="post-more">Oku <span class="arrow">→</span></span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Randevu -->
+                    <article class="post-card" data-category="Sektör Çözümleri">
+                        <a class="post-link" href="blog/randevu-otomasyonu-saglik">
+                            <div class="post-cover" style="--hue:330"><span class="post-category">Sektör Çözümleri</span><span class="cover-icon" aria-hidden="true">📅</span></div>
+                            <div class="post-body">
+                                <div class="post-meta"><span>Mart 2025</span><span class="dot"></span><span>5 dk okuma</span></div>
+                                <h2 class="post-title">Randevu Otomasyonu: Sağlık ve Güzellik Sektöründe Dijital Dönüşümün İlk Adımı</h2>
+                                <p class="post-excerpt">Zaman kaybının ve iptal edilen randevuların (no-show) önüne geçen akıllı takvim ve otomatik hatırlatma sistemleri, işletmelerin seans ve gelir kaybını doğrudan engelliyor.</p>
+                                <span class="post-more">Oku <span class="arrow">→</span></span>
+                            </div>
+                        </a>
                     </article>
 
                 </div>
+                <p class="blog-empty" id="blogEmpty">Bu kategoride henüz yazı yok.</p>
+
+                <div class="blog-cta">
+                    <h2>İşletmeniz için doğru otomasyonu birlikte bulalım</h2>
+                    <p>Her hafta yeni içerik yayınlıyoruz. Süreçlerinizi bizimle paylaşın, size özel ücretsiz bir ön analiz hazırlayalım.</p>
+                    <div class="blog-cta-actions">
+                        <a href="iletisim" class="btn btn-gold">Ücretsiz Analiz Talep Et</a>
+                        <a href="hizmetlerimiz" class="btn btn-outline">Hizmetlerimizi İncele</a>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <script>
+            (function () {
+                var chips = document.querySelectorAll('.blog-filter');
+                var cards = document.querySelectorAll('#blogGrid .post-card');
+                var empty = document.getElementById('blogEmpty');
+                chips.forEach(function (chip) {
+                    chip.addEventListener('click', function () {
+                        var f = chip.getAttribute('data-filter');
+                        var shown = 0;
+                        chips.forEach(function (c) { c.classList.toggle('is-active', c === chip); });
+                        cards.forEach(function (card) {
+                            var ok = f === 'all' || card.getAttribute('data-category') === f;
+                            card.hidden = !ok;
+                            if (ok) shown++;
+                        });
+                        empty.style.display = shown ? 'none' : 'block';
+                    });
+                });
+            })();
+        </script>
     </main>
 
     <!-- Structured Footer -->

@@ -755,8 +755,8 @@ const translations = {
         // Blog Page
         blogPageTitle: "Blog | Teknoloji Trendleri ve Dijital Dönüşüm Analizleri",
         blogPageDesc: "Yapay zekâ, sektör analizleri ve teknoloji trendleri hakkında güncel içerikleri takip edin. İş dünyasının dijital geleceğine dair stratejik bilgiler burada.",
-        blogHeroTitle: "BLOG",
-        blogHeroSubtitle: "Yakında sektör analizleri, teknoloji trendleri ve dijital dönüşüm içerikleri burada yer alacak.",
+        blogHeroTitle: "Yapay Zekâ ve Dijital Dönüşümde Uzman Tavsiyeleri",
+        blogHeroSubtitle: "Otomasyon, müşteri iletişimi, verimlilik taktikleri ve sektörden haberler.",
         blogCard1Title: "Sektör Analizleri",
         blogCard1Desc: "Yapay zekanın farklı sektörlerdeki dönüştürücü etkisini inceleyen kapsamlı rehberler.",
         blogCard2Title: "Teknoloji Trendleri",
@@ -1538,8 +1538,8 @@ const translations = {
         // Blog Page
         blogPageTitle: "Blog | Technology Trends and Digital Transformation Analysis",
         blogPageDesc: "Follow up-to-date content about artificial intelligence, industry analysis and technology trends. Strategic information about the digital future of the business world is here.",
-        blogHeroTitle: "BLOG",
-        blogHeroSubtitle: "Sector analysis, technology trends, and digital transformation content will be available here soon.",
+        blogHeroTitle: "Expert Advice on AI and Digital Transformation",
+        blogHeroSubtitle: "Automation, customer communication, productivity tactics and industry news.",
         blogCard1Title: "Industry Analysis",
         blogCard1Desc: "Comprehensive guides examining the transformative impact of AI in different sectors.",
         blogCard2Title: "Technology Trends",

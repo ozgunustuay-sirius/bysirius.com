@@ -706,3 +706,16 @@ body { font-size: 1rem; line-height: 1.7; color: #f4f6fb; }
 .footer-links a, .footer-links li { font-size: 1rem; color: #cdd5e6; }
 .footer-title { font-size: 1.2rem; }
 .footer-bottom p { font-size: 0.95rem; color: #cdd5e6; }
+
+/* ---------- Blog yazi sayfalari: buyuk, okunur metin ---------- */
+.article-body { max-width: 780px !important; font-size: 1.15rem !important; line-height: 1.85 !important; color: #d8e0f0 !important; }
+.article-body p { margin-bottom: 1.35rem; }
+.article-body strong { color: #fff !important; }
+.article-body h2 { font-size: 1.65rem !important; color: #fff !important; margin: 2.4rem 0 0.9rem !important; line-height: 1.3; }
+.article-body h3 { font-size: 1.3rem !important; color: #fff !important; }
+.article-body ul li { margin-bottom: 0.7rem; }
+.article-body a { text-decoration: underline; text-underline-offset: 3px; }
+.article-tag { font-size: 0.85rem !important; padding: 5px 14px !important; }
+.article-date { font-size: 0.95rem !important; color: #b9c3da !important; }
+.article-cta { border-radius: 22px !important; background: radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.16), transparent 65%), rgba(14,20,38,0.6) !important; }
+.article-nav a { font-size: 1.02rem !important; }
