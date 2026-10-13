@@ -6,7 +6,6 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "https://www.bysirius.com/:path*",         "destination": "https://bysirius.com/:path*",          "permanent": true },
     { "source": "/index.html",                             "destination": "/",                                    "permanent": true },
     { "source": "/hizmetlerimiz.html",                     "destination": "/hizmetlerimiz",                       "permanent": true },
     { "source": "/hakkimizda.html",                        "destination": "/hakkimizda",                          "permanent": true },
