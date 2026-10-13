@@ -2227,14 +2227,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // WhatsApp floating button
 (function () {
+    // chatbot.js ile aynı id: sayfada tek WhatsApp butonu olur (AI asistan balonu 24px'te, WhatsApp onun üstünde)
+    if (document.getElementById('bys-wa-btn')) return;
     var btn = document.createElement('a');
+    btn.id = 'bys-wa-btn';
     btn.href = 'https://wa.me/905355032634';
     btn.target = '_blank';
     btn.rel = 'noopener noreferrer';
     btn.setAttribute('aria-label', 'WhatsApp ile iletişime geç');
     btn.style.cssText = [
         'position:fixed',
-        'bottom:24px',
+        'bottom:90px',
         'right:24px',
         'z-index:9999',
         'width:56px',
@@ -2257,12 +2260,13 @@ document.addEventListener("DOMContentLoaded", () => {
         this.style.transform = 'scale(1)';
         this.style.boxShadow = '0 4px 16px rgba(0,0,0,0.35)';
     });
+    function mount() {
+        if (!document.getElementById('bys-wa-btn')) document.body.appendChild(btn);
+    }
     if (document.body) {
-        document.body.appendChild(btn);
+        mount();
     } else {
-        document.addEventListener('DOMContentLoaded', function () {
-            document.body.appendChild(btn);
-        });
+        document.addEventListener('DOMContentLoaded', mount);
     }
 }());
 

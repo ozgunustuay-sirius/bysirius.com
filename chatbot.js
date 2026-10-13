@@ -1,5 +1,5 @@
 /*!
- * BY Sirius Group — AI Stratejist Asistanı + Çerez Onayı
+ * BY Sirius Group — AI Stratejist Asistanı
  * chatbot.js v1.0
  */
 (function () {
@@ -8,32 +8,6 @@
     function getLang() {
         var btn = document.getElementById('lang-en');
         return (btn && btn.classList.contains('active')) ? 'en' : 'tr';
-    }
-
-    /* ───────────── COOKIE CONSENT ───────────── */
-    function initConsent() {
-        if (localStorage.getItem('bysCookieOK')) return;
-        var lang = getLang();
-        var txt = {
-            tr: { msg: 'Bu site deneyiminizi iyileştirmek ve ziyaretçi analizleri için çerezler kullanmaktadır.', link: 'Gizlilik Politikası', btn: 'Kabul Et' },
-            en: { msg: 'This site uses cookies to improve your experience and for visitor analytics.', link: 'Privacy Policy', btn: 'Accept' }
-        }[lang] || { msg: '', link: '', btn: '' };
-
-        var banner = document.createElement('div');
-        banner.id = 'bys-cookie';
-        banner.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:10002;background:rgba(9,14,26,0.97);border-top:1px solid rgba(255,255,255,0.1);padding:14px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;backdrop-filter:blur(10px);font-family:inherit';
-        banner.innerHTML =
-            '<p style="margin:0;font-size:0.83rem;color:rgba(255,255,255,0.8);flex:1;min-width:180px">' + txt.msg +
-            ' <a href="gizlilik-politikasi.html" style="color:#90cdf4;text-decoration:underline">' + txt.link + '</a></p>' +
-            '<button id="bys-cookie-btn" style="background:#2563eb;color:#fff;border:none;border-radius:8px;padding:9px 22px;font-size:0.83rem;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0">' + txt.btn + '</button>';
-        document.body.appendChild(banner);
-
-        document.getElementById('bys-cookie-btn').addEventListener('click', function () {
-            localStorage.setItem('bysCookieOK', '1');
-            banner.style.transition = 'opacity .3s';
-            banner.style.opacity = '0';
-            setTimeout(function () { if (banner.parentNode) banner.parentNode.removeChild(banner); }, 320);
-        });
     }
 
     /* ───────────── KNOWLEDGE BASE ───────────── */
@@ -45,7 +19,7 @@
             quick: ['Hizmetler neler?', 'Fiyatlar nasıl?', 'Nasıl iletişim kurarım?', 'Randevu almak istiyorum'],
             rules: [
                 { re: /merhaba|selam|iyi günler|hey|nasılsın/i, r: 'Merhaba! 😊 Size nasıl yardımcı olabilirim?\n\nSorabileceğiniz konular: hizmetler, fiyatlar, randevu, ödeme, iletişim.' },
-                { re: /hizmet|ne yapıyor|neler sunuyor|katalog/i, r: '📋 Sunduğumuz hizmetler:\n\n🌐 Web Tasarım (Starter→Kurumsal)\n🔍 SEO & Anahtar Kelime\n📊 Google Analytics 4 & Search Console\n📍 Google Business Profile\n🔧 Web Sitesi Bakım\n🤖 Chatbot & AI Otomasyon\n📅 AI Randevu & Rezervasyon\n🎯 Akıllı CRM & Lead Yönetimi\n✍️ AI İçerik Üretimi\n⚖️ Hukuk & Finans Otomasyonu\n⚡ Özel AI Yazılım\n🚀 Dijital Dönüşüm Stratejisi\n\n→ <a href="hizmetlerimiz.html" class="bys-lnk">Hizmetlerimiz</a> | <a href="odeme.html" class="bys-lnk">Ürün Kataloğu</a>' },
+                { re: /hizmet|ne yapıyor|neler sunuyor|katalog/i, r: '📋 Sunduğumuz hizmetler:\n\n🌐 Web Tasarım (Starter→Kurumsal)\n🔍 SEO & Anahtar Kelime\n📊 Google Analytics 4 & Search Console\n📍 Google Business Profile\n🔧 Web Sitesi Bakım\n🤖 Chatbot & AI Otomasyon\n📅 AI Randevu & Rezervasyon\n🎯 Akıllı CRM & Lead Yönetimi\n✍️ AI İçerik Üretimi\n⚖️ Hukuk & Finans Otomasyonu\n⚡ Özel AI Yazılım\n🚀 Dijital Dönüşüm Stratejisi\n📱 Uygulamalar (SiriPlan, QR Menü, Görsel İyileştirme)\n\n→ <a href="hizmetlerimiz.html" class="bys-lnk">Hizmetlerimiz</a> | <a href="odeme.html" class="bys-lnk">Ürün Kataloğu</a>' },
                 { re: /fiyat|ücret|maliyet|ne kadar|paket|plan|teklif/i, r: 'Tüm hizmetlerimiz müşteriye özel teklif bazlıdır.\n💳 Ödeme güvenli Stripe Payment Link ile yapılır.\n\n→ <a href="iletisim.html" class="bys-lnk">Teklif İste</a> | <a href="odeme.html" class="bys-lnk">Ürün Kataloğu</a>' },
                 { re: /randevu|toplantı|görüşme|demo|görüşelim/i, r: 'Randevu ve demo için:\n\n📋 <a href="iletisim.html" class="bys-lnk">İletişim Formu →</a>\n💬 WhatsApp: <a href="https://wa.me/905355032634" target="_blank" class="bys-lnk">+90 535 503 26 34</a>\n📧 info@bysirius.com' },
                 { re: /ödeme|stripe|nasıl öde|ödeme yöntem/i, r: 'Ödeme süreci:\n1️⃣ Teklif talep edin\n2️⃣ Kapsam onaylanır\n3️⃣ Stripe Payment Link gönderilir\n4️⃣ Güvenli ödeme yapılır\n\n→ <a href="odeme.html" class="bys-lnk">Ödeme Sayfası</a>' },
@@ -60,6 +34,8 @@
                 { re: /gbp|google business|harita|google maps|yerel profil/i, r: 'Google Business Profile:\n📍 GBP Kurulum & Optimizasyon\n📅 GBP Aylık Yönetimi\n⭐ GBP Premium (Haftada 2 post)\n\n→ <a href="odeme.html" class="bys-lnk">Katalog</a>' },
                 { re: /bakım|destek|güncelleme|maintenance/i, r: 'Web Sitesi Bakım:\n🔧 Aylık Bakım — güncelleme, yedek, 2 değişiklik\n🔧 Aylık Bakım PRO — 5 değişiklik + SEO raporu\n\n→ <a href="odeme.html" class="bys-lnk">Katalog</a>' },
                 { re: /logo|marka|brand|kurumsal kimlik/i, r: 'Marka & Pazarlama:\n🎨 Logo & Marka Kimliği\n📱 Sosyal Medya Görsel Seti\n📧 E-Posta Pazarlama Kurulumu\n📋 QR Menü / Dijital Katalog\n\n→ <a href="odeme.html" class="bys-lnk">Katalog</a>' },
+                { re: /siriplan|salon yönetim|salon uygulama|qr men|görsel iyileştir|mobil uygulama|uygulama/i, r: 'Uygulamalarımız:\n💇 SiriPlan — salon ve işletme yönetim uygulaması (randevu, müşteri, takvim)\n📋 QR Menü / Dijital Katalog\n🖼️ Görsel İyileştirme Uygulaması (AI ile fotoğraf kalitesi)\n\n→ <a href="blog/siriplan-salon-yonetim-uygulamasi.html" class="bys-lnk">SiriPlan Hakkında</a> | <a href="iletisim.html" class="bys-lnk">Bilgi Al</a>' },
+                { re: /yönetim|ai ceo|ceo|kurucu/i, r: 'Yönetim ve vizyonumuz:\n\n→ <a href="ai-ceo.html" class="bys-lnk">Yönetim Sayfası</a> | <a href="hakkimizda.html" class="bys-lnk">Hakkımızda</a>' },
                 { re: /blog|makale|içerik yazı/i, r: 'AI ve dijital dönüşüm hakkında güncel içerikler:\n\n→ <a href="blog.html" class="bys-lnk">Blog</a>' },
                 { re: /iade|iptal|garanti|geri ödeme/i, r: '→ <a href="iade-iptal-politikasi.html" class="bys-lnk">İade & İptal Politikası</a>' },
                 { re: /kvkk|gdpr|gizlilik|veri koruma/i, r: 'Verileriniz GDPR ve KVKK uyumlu işlenmektedir.\n\n→ <a href="gizlilik-politikasi.html" class="bys-lnk">Gizlilik Politikası</a>' },
@@ -74,7 +50,7 @@
             quick: ['What are your services?', 'How is pricing set?', 'How do I contact you?', 'Book a demo'],
             rules: [
                 { re: /hello|hi|hey|good|greet/i, r: 'Hello! 😊 How can I help you today?\n\nI can assist with: services, pricing, appointments, payment, contact.' },
-                { re: /service|what do you do|what do you offer|catalogue/i, r: '📋 Our services:\n\n🌐 Website Design (Starter→Corporate)\n🔍 SEO & Keyword Research\n📊 Google Analytics 4 & Search Console\n📍 Google Business Profile\n🔧 Monthly Website Maintenance\n🤖 Chatbot & AI Automation\n📅 AI Booking & Reservation\n🎯 Smart CRM & Lead Management\n✍️ AI Content Generation\n⚖️ Legal & Finance Automation\n⚡ Custom AI Software\n🚀 Digital Transformation Strategy\n\n→ <a href="hizmetlerimiz.html" class="bys-lnk">Services</a> | <a href="odeme.html" class="bys-lnk">Catalogue</a>' },
+                { re: /service|what do you do|what do you offer|catalogue/i, r: '📋 Our services:\n\n🌐 Website Design (Starter→Corporate)\n🔍 SEO & Keyword Research\n📊 Google Analytics 4 & Search Console\n📍 Google Business Profile\n🔧 Monthly Website Maintenance\n🤖 Chatbot & AI Automation\n📅 AI Booking & Reservation\n🎯 Smart CRM & Lead Management\n✍️ AI Content Generation\n⚖️ Legal & Finance Automation\n⚡ Custom AI Software\n🚀 Digital Transformation Strategy\n📱 Apps (SiriPlan, QR Menu, Image Enhancement)\n\n→ <a href="hizmetlerimiz.html" class="bys-lnk">Services</a> | <a href="odeme.html" class="bys-lnk">Catalogue</a>' },
                 { re: /price|cost|how much|pricing|package|plan|quote/i, r: 'All services are quote-based and tailored to your needs.\n💳 Payment via secure Stripe Payment Link.\n\n→ <a href="iletisim.html" class="bys-lnk">Request a Quote</a> | <a href="odeme.html" class="bys-lnk">Catalogue</a>' },
                 { re: /appointment|meeting|demo|book|schedule/i, r: 'To book an appointment or demo:\n\n📋 <a href="iletisim.html" class="bys-lnk">Contact Form →</a>\n💬 WhatsApp: <a href="https://wa.me/905355032634" target="_blank" class="bys-lnk">+90 535 503 26 34</a>\n📧 info@bysirius.com' },
                 { re: /payment|stripe|how to pay|pay/i, r: 'Payment process:\n1️⃣ Request a quote\n2️⃣ Scope is confirmed\n3️⃣ Custom Stripe link is sent\n4️⃣ Secure payment made\n\n→ <a href="odeme.html" class="bys-lnk">Payment Page</a>' },
@@ -89,6 +65,8 @@
                 { re: /gbp|google business|google maps|local profile/i, r: 'Google Business Profile:\n📍 GBP Setup & Optimisation\n📅 Monthly GBP Management\n⭐ Premium GBP Management (2 posts/week)\n\n→ <a href="odeme.html" class="bys-lnk">Catalogue</a>' },
                 { re: /maintenance|support|update|backup/i, r: 'Website Maintenance:\n🔧 Monthly Maintenance — updates, backup, 2 changes\n🔧 Monthly PRO — 5 changes + SEO report + priority support\n\n→ <a href="odeme.html" class="bys-lnk">Catalogue</a>' },
                 { re: /logo|brand|identity/i, r: 'Branding & Marketing:\n🎨 Logo & Brand Identity\n📱 Social Media Visual Set\n📧 Email Marketing Setup\n📋 QR Menu / Digital Catalogue\n\n→ <a href="odeme.html" class="bys-lnk">Catalogue</a>' },
+                { re: /siriplan|salon management|salon app|qr men|image enhanc|mobile app|app\b|apps\b/i, r: 'Our applications:\n💇 SiriPlan — salon & business management app (appointments, clients, calendar)\n📋 QR Menu / Digital Catalogue\n🖼️ Image Enhancement App (AI photo quality)\n\n→ <a href="blog/siriplan-salon-yonetim-uygulamasi.html" class="bys-lnk">About SiriPlan</a> | <a href="iletisim.html" class="bys-lnk">Get Info</a>' },
+                { re: /management|ai ceo|ceo|founder/i, r: 'Management and vision:\n\n→ <a href="ai-ceo.html" class="bys-lnk">Management Page</a> | <a href="hakkimizda.html" class="bys-lnk">About Us</a>' },
                 { re: /blog|article|content/i, r: 'Up-to-date content on AI & digital transformation:\n\n→ <a href="blog.html" class="bys-lnk">Blog</a>' },
                 { re: /refund|cancel|guarantee/i, r: '→ <a href="iade-iptal-politikasi.html" class="bys-lnk">Refund & Cancellation Policy</a>' },
                 { re: /gdpr|privacy|data protection/i, r: 'Your data is processed in compliance with UK GDPR.\n\n→ <a href="gizlilik-politikasi.html" class="bys-lnk">Privacy Policy</a>' },
@@ -163,7 +141,12 @@
         function addMsg(text, isUser) {
             var el = document.createElement('div');
             el.className = isUser ? 'bys-msg-user' : 'bys-msg-bot';
-            el.innerHTML = text.replace(/\n/g, '<br>');
+            var html = text.replace(/\n/g, '<br>');
+            // /blog/ altındaki sayfalarda göreli linkler bir üst klasöre çıkmalı
+            if (/\/blog\//.test(location.pathname)) {
+                html = html.replace(/href="(?!https?:|mailto:|tel:|sms:|\.\.\/|\/)/g, 'href="../');
+            }
+            el.innerHTML = html;
             msgs.appendChild(el);
             msgs.scrollTop = msgs.scrollHeight;
         }
@@ -239,7 +222,6 @@
 
     /* ───────────── INIT ───────────── */
     function init() {
-        initConsent();
         initChatbot();
         initWhatsApp();
     }
