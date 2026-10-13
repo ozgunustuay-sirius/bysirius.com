@@ -3,17 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BY Sirius — CRM Admin</title>
+<title>BY Sirius — Komuta Merkezi</title>
 <meta name="robots" content="noindex,nofollow">
+<script>
+try {
+  document.documentElement.setAttribute('data-theme', localStorage.getItem('bs_theme') === 'dark' ? 'dark' : 'light');
+  var f = parseFloat(localStorage.getItem('bs_font'));
+  if (f >= 15 && f <= 24) document.documentElement.style.fontSize = f + 'px';
+} catch (e) { document.documentElement.setAttribute('data-theme', 'light'); }
+</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#0d0d0b;--surface:#18181a;--surface2:#222224;--border:#2e2e32;
-  --primary:#c9a84c;--primary-dim:#8a6f2e;
-  --text:#e8e8e0;--muted:#888;--danger:#e05252;--success:#4caf82;--warn:#e09b4c;
-  --info:#4c8fe0;--purple:#9b4ce0;
+/* Açık tema (varsayılan) — göz yormayan sıcak beyaz */
+:root,:root[data-theme="light"]{
+  --bg:#f5f3ec;--surface:#ffffff;--surface2:#efece2;--border:#d9d4c5;
+  --primary:#8f6b0f;--primary-dim:#b99a4a;--on-primary:#ffffff;
+  --text:#2a2720;--muted:#6a655a;--danger:#c0392b;--success:#2a8a5c;--warn:#b5650d;
+  --info:#2b6cb5;--purple:#7a3fbf;--purple-text:#6b2fb0;--warn-bg:rgba(181,101,13,.12);
+  --overlay:rgba(40,36,24,.45);color-scheme:light;
 }
-html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:14px}
+:root[data-theme="dark"]{
+  --bg:#0d0d0b;--surface:#18181a;--surface2:#222224;--border:#34343a;
+  --primary:#d4b255;--primary-dim:#8a6f2e;--on-primary:#000000;
+  --text:#ecece4;--muted:#a0a09a;--danger:#e86a6a;--success:#52b88a;--warn:#e8a458;
+  --info:#5b9be8;--purple:#a15ce8;--purple-text:#c9a0f5;--warn-bg:rgba(224,155,76,.15);
+  --overlay:rgba(0,0,0,.65);color-scheme:dark;
+}
+html{font-size:18px}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif}
+body{font-size:1rem;line-height:1.45}
 a{color:var(--primary);text-decoration:none}
 
 /* ── Login ── */
@@ -23,16 +41,17 @@ a{color:var(--primary);text-decoration:none}
 .login-card .sub{color:var(--muted);font-size:.85rem;margin-bottom:2rem}
 .login-card input{width:100%;padding:.75rem 1rem;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1rem;margin-bottom:1rem;outline:none}
 .login-card input:focus{border-color:var(--primary)}
-.login-card button{width:100%;padding:.8rem;background:var(--primary);border:none;border-radius:8px;color:#000;font-weight:700;font-size:1rem;cursor:pointer}
-.login-card button:hover{background:#e0ba60}
+.login-card button{width:100%;padding:.8rem;background:var(--primary);border:none;border-radius:8px;color:var(--on-primary);font-weight:700;font-size:1rem;cursor:pointer}
+.login-card button:hover{filter:brightness(1.1)}
 .login-err{color:var(--danger);font-size:.85rem;margin-top:.75rem;display:none}
 
 /* ── App Shell ── */
 #app{display:none;min-height:100vh;flex-direction:column}
 .topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:.75rem 1.5rem;display:flex;align-items:center;gap:1rem}
 .topbar .brand{font-weight:700;color:var(--primary);font-size:1.05rem;flex:1}
-.topbar .user-info{color:var(--muted);font-size:.8rem}
-.btn-logout{padding:.4rem .9rem;background:transparent;border:1px solid var(--border);border-radius:6px;color:var(--muted);cursor:pointer;font-size:.8rem}
+.topbar .user-info{color:var(--muted);font-size:.84rem}
+.btn-logout{padding:.4rem .8rem;background:transparent;border:1px solid var(--border);border-radius:6px;color:var(--muted);cursor:pointer;font-size:.86rem}
+.btn-logout:hover{border-color:var(--primary);color:var(--primary)}
 .btn-logout:hover{border-color:var(--danger);color:var(--danger)}
 
 .main{padding:1.5rem;flex:1}
@@ -53,9 +72,9 @@ a{color:var(--primary);text-decoration:none}
 .search-box:focus{border-color:var(--primary)}
 .filter-sel{padding:.55rem .9rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);outline:none;font-size:.9rem;cursor:pointer}
 .btn{padding:.55rem 1.1rem;border:none;border-radius:8px;cursor:pointer;font-size:.85rem;font-weight:600;transition:.15s}
-.btn-primary{background:var(--primary);color:#000}
-.btn-primary:hover{background:#e0ba60}
-.btn-sm{padding:.3rem .7rem;font-size:.78rem;border-radius:6px}
+.btn-primary{background:var(--primary);color:var(--on-primary)}
+.btn-primary:hover{filter:brightness(1.1)}
+.btn-sm{padding:.32rem .75rem;font-size:.84rem;border-radius:6px}
 .btn-edit{background:var(--surface2);color:var(--text);border:1px solid var(--border)}
 .btn-edit:hover{border-color:var(--primary);color:var(--primary)}
 .btn-del{background:transparent;color:var(--muted);border:1px solid var(--border)}
@@ -85,14 +104,14 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
 .badge-iptal {background:rgba(224,82,82,.15);color:var(--danger)}
 
 /* ── Modal ── */
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:1000;padding:1rem}
+.overlay{position:fixed;inset:0;background:var(--overlay);display:none;align-items:center;justify-content:center;z-index:1000;padding:1rem}
 .overlay.open{display:flex}
 .modal{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.75rem;width:100%;max-width:600px;max-height:90vh;overflow-y:auto}
 .modal h2{font-size:1.1rem;margin-bottom:1.25rem;color:var(--primary)}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
 .form-grid .full{grid-column:1/-1}
 .field{display:flex;flex-direction:column;gap:.35rem}
-.field label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.field label{font-size:.82rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
 .field input,.field select,.field textarea{padding:.6rem .85rem;background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.9rem;outline:none;font-family:inherit}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--primary)}
 .field textarea{resize:vertical;min-height:80px}
@@ -112,7 +131,7 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
 
 /* ── Tabs ── */
 .tab-nav{display:flex;gap:.25rem;padding:.6rem 1.5rem;border-bottom:1px solid var(--border);background:var(--surface);flex-shrink:0}
-.tab-btn{padding:.4rem 1rem;border:none;border-radius:6px;cursor:pointer;font-size:.83rem;font-weight:600;background:transparent;color:var(--muted);transition:.15s}
+.tab-btn{padding:.45rem 1rem;border:none;border-radius:6px;cursor:pointer;font-size:.92rem;font-weight:600;background:transparent;color:var(--muted);transition:.15s}
 .tab-btn.active{background:var(--surface2);color:var(--text)}
 .tab-btn:hover:not(.active){color:var(--text)}
 .panel{display:none}.panel.active{display:block}
@@ -211,6 +230,133 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
   .form-grid .full{grid-column:1}
   .stats{grid-template-columns:1fr 1fr}
 }
+
+/* ── Komuta Merkezi (dashboard + listeler) ── */
+.drag-handle{cursor:move;user-select:none;touch-action:none}
+.drag-handle::after{content:"⠿";float:right;color:var(--muted);font-weight:400}
+.modal{box-shadow:0 18px 60px rgba(0,0,0,.28)}
+.check-line{display:flex;gap:.55rem;align-items:flex-start;margin-top:.85rem;font-size:.9rem;color:var(--text);cursor:pointer}
+.check-line input{margin-top:.25rem}
+.rm-title{font-weight:600;overflow-wrap:anywhere}
+.rm-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+.k-red{--kc:var(--danger)}
+.p-info{background:rgba(76,143,224,.15);color:var(--info)}
+.btn-remind{background:var(--warn-bg);color:var(--warn);border:1px solid transparent}
+.btn-remind:hover{border-color:var(--warn)}
+.muted-s{color:var(--muted);font-size:.84rem}
+.w.w-12{grid-column:span 12}
+.tbl-wrap{overflow-x:auto}
+.ptable{min-width:760px;width:100%;border-collapse:collapse}
+.ptable thead th{background:transparent;border-bottom:2px solid var(--border);padding:.5rem .6rem;font-size:.78rem}
+.ptable tbody td{padding:.6rem;border-bottom:1px solid var(--border);vertical-align:top}
+.ptable tbody tr:hover{background:var(--surface2)}
+.ptable tr.due-over td:first-child,.ptable tr.due-today td:first-child,.ptable tr.due-soon td:first-child,.ptable tr.due-week td:first-child,.ptable tr.due-far td:first-child{border-left:5px solid var(--dc)}
+.pt-n{width:2.2rem;color:var(--muted);font-weight:700}
+.pt-act{white-space:nowrap;display:flex;gap:.4rem;align-items:center;justify-content:flex-end}
+
+/* Takvime göre renk: gecikmiş / bugün / 1-3 gün / bu hafta / daha sonra */
+.due-over{--dc:#d63a3a}.due-today{--dc:#e57a1f}.due-soon{--dc:#c9a100}.due-week{--dc:#2b6cb5}.due-far{--dc:#2a8a5c}
+.card-row.due-over,.card-row.due-today,.card-row.due-soon,.card-row.due-week,.card-row.due-far,
+.row-item.due-over,.row-item.due-today,.row-item.due-soon,.row-item.due-week,.row-item.due-far{border-left:5px solid var(--dc)}
+.row-item.due-over,.row-item.due-today,.row-item.due-soon,.row-item.due-week,.row-item.due-far{padding-left:.6rem}
+.card-row.due-over,.card-row.due-today{background:color-mix(in srgb,var(--dc) 9%,var(--surface))}
+.due-pill{display:inline-block;padding:.12rem .6rem;border-radius:20px;font-size:.78rem;font-weight:700;white-space:nowrap;vertical-align:middle;margin-left:.3rem;color:#fff;background:var(--dc,var(--muted))}
+.ptable .due-pill{margin-left:0}
+.legend{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.7rem}
+.legend .lg{font-size:.8rem;font-weight:600;padding:.15rem .65rem;border-radius:20px;border:1px solid var(--dc,var(--border));color:var(--dc,var(--muted))}
+.topbar{flex-wrap:wrap}
+.tab-nav{overflow-x:auto;white-space:nowrap;scrollbar-width:thin}
+.tab-btn .cnt{display:inline-block;min-width:1.25rem;padding:0 .35rem;margin-left:.2rem;border-radius:10px;background:var(--surface);border:1px solid var(--border);color:var(--primary);font-size:.68rem;font-weight:700;text-align:center;line-height:1.3}
+.tab-btn .cnt:empty{display:none}
+.btn-ghost{background:var(--surface2);color:var(--text);border:1px solid var(--border)}
+.btn-ghost:hover{border-color:var(--primary);color:var(--primary)}
+.panel-title{font-size:1.05rem;font-weight:700;color:var(--primary);margin-right:.5rem}
+a.btn{text-decoration:none;display:inline-flex;align-items:center}
+
+.dash-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.dash-head h1{font-size:1.4rem;font-weight:700}
+.dash-head p{color:var(--muted);font-size:.85rem;margin-top:.2rem;text-transform:capitalize}
+.quick{display:flex;gap:.5rem;flex-wrap:wrap}
+
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin-bottom:1.25rem}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.25rem;position:relative;overflow:hidden}
+.kpi::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--kc,var(--primary))}
+.kpi .label{color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.35rem}
+.kpi .value{font-size:2.1rem;font-weight:700;line-height:1;color:var(--kc,var(--text))}
+.kpi .value small{font-size:1rem;color:var(--muted);font-weight:600}
+.kpi .sub{color:var(--muted);font-size:.84rem;margin-top:.4rem}
+.k-warn{--kc:var(--warn)}.k-info{--kc:var(--info)}.k-gold{--kc:var(--primary)}.k-pur{--kc:var(--purple)}.k-ring{--kc:var(--success);display:flex;align-items:center;gap:.9rem}
+
+.widgets{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem}
+.w{grid-column:span 4;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.25rem;min-width:0}
+.w.w-8{grid-column:span 8}
+.w-head{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:.6rem}
+.w-head h3{font-size:1rem;font-weight:700}
+.w-head h3 em{font-style:normal;font-weight:400;color:var(--muted);font-size:.8rem}
+.w-sub{color:var(--muted);font-size:.8rem;margin-top:.35rem}
+.w-empty{color:var(--muted);font-size:.84rem;padding:1rem 0;text-align:center}
+.link-btn{background:none;border:none;color:var(--primary);cursor:pointer;font-size:.78rem;font-weight:600;white-space:nowrap}
+.link-btn:hover{text-decoration:underline}
+@media(max-width:1100px){.w,.w.w-8{grid-column:span 12}}
+@media(min-width:700px) and (max-width:1100px){.w:not(.w-8){grid-column:span 6}}
+
+.row-item{display:flex;align-items:flex-start;gap:.65rem;padding:.55rem 0;border-bottom:1px solid var(--border)}
+.row-item:last-child{border-bottom:none}
+.ri-main{flex:1;min-width:0}
+.ri-title{font-size:.95rem;font-weight:600;overflow-wrap:anywhere}
+.ri-note{font-size:.84rem;color:var(--muted);margin-top:.1rem;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.age{font-size:.8rem;color:var(--warn);white-space:nowrap;padding-top:.15rem}
+.act-ic{font-size:1rem;line-height:1.4}
+
+.chk{flex:0 0 auto;width:24px;height:24px;border-radius:50%;border:2px solid var(--muted);background:var(--surface);color:#fff;font-size:.8rem;font-weight:800;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:.15s;padding:0;margin-top:.05rem}
+.chk:hover{border-color:var(--success)}
+.chk.on{background:var(--success);border-color:var(--success)}
+
+.pill{display:inline-block;padding:.12rem .55rem;border-radius:20px;font-size:.76rem;font-weight:600;white-space:nowrap;vertical-align:middle;margin-left:.3rem}
+.p-warn{background:rgba(224,155,76,.15);color:var(--warn)}
+.p-ok{background:rgba(76,175,130,.18);color:var(--success)}
+.p-no{background:rgba(224,82,82,.15);color:var(--danger)}
+.p-pur{background:rgba(155,76,224,.16);color:var(--purple-text)}
+
+.stack{display:flex;height:9px;border-radius:6px;overflow:hidden;background:var(--surface2)}
+.stack i{display:block;height:100%}
+.s-ok{background:var(--success)}.s-go{background:var(--warn)}.s-no{background:var(--danger)}
+.stack-leg{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.45rem;font-size:.8rem;color:var(--muted)}
+.stack-leg b{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:.3rem}
+.d-ok{background:var(--success)}.d-go{background:var(--warn)}.d-no{background:var(--danger)}
+
+.bars{display:flex;align-items:flex-end;gap:4px;height:96px}
+.bar-col{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:3px;min-width:0}
+.bar{width:100%;background:linear-gradient(180deg,var(--primary),var(--primary-dim));border-radius:3px 3px 0 0;min-height:3px}
+.bar-col span{font-size:.7rem;color:var(--muted)}
+
+.chips{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:1rem}
+.chip{padding:.35rem .8rem;border-radius:20px;background:var(--surface);border:1px solid var(--border);color:var(--muted);font-size:.88rem;font-weight:600;cursor:pointer;transition:.12s}
+.chip b{color:var(--text);margin-left:.2rem}
+.chip:hover{border-color:var(--primary)}
+.chip.active{background:rgba(201,168,76,.14);border-color:var(--primary);color:var(--primary)}
+.chip.active b{color:var(--primary)}
+
+.list{display:flex;flex-direction:column;gap:.55rem}
+.card-row{display:flex;align-items:flex-start;gap:.8rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.8rem 1rem;transition:.12s}
+.card-row:hover{border-color:var(--primary-dim)}
+.card-row.is-done .cr-title{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--border)}
+.cr-main{flex:1;min-width:0}
+.cr-title{font-weight:600;font-size:1rem;overflow-wrap:anywhere}
+.cr-note{color:var(--muted);font-size:.9rem;margin-top:.25rem;overflow-wrap:anywhere;white-space:pre-line}
+.cr-meta{color:var(--muted);font-size:.78rem;margin-top:.35rem;opacity:.8}
+.cr-actions{display:flex;gap:.35rem;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.item-hint{font-size:.84rem;color:var(--muted);margin-top:.75rem;line-height:1.5}
+
+@media(max-width:640px){
+  .main{padding:1rem}
+  .card-row{flex-wrap:wrap}
+  .cr-actions{width:100%;justify-content:flex-start;padding-left:2.1rem}
+  .search-box{max-width:none;flex-basis:100%}
+  .topbar{padding:.6rem 1rem}
+  .topbar .brand{flex:1 1 100%}
+  .k-ring{grid-column:1/-1}
+}
 </style>
 </head>
 <body>
@@ -219,7 +365,7 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
 <div id="login">
   <div class="login-card">
     <div class="logo">BY SİRİUS</div>
-    <div class="sub">CRM Admin Paneli</div>
+    <div class="sub">Komuta Merkezi</div>
     <input type="password" id="pw-input" placeholder="Şifre" autocomplete="current-password">
     <button onclick="doLogin()">Giriş Yap</button>
     <div class="login-err" id="login-err">Hatalı şifre. Lütfen tekrar deneyin.</div>
@@ -230,102 +376,31 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
 <div id="app" style="display:none;flex-direction:column">
 
   <div class="topbar">
-    <div class="brand">BY Sirius — Admin</div>
-    <span class="user-info" id="record-count"></span>
-    <button class="btn-logout" onclick="openPwChange()" style="margin-right:.4rem">🔑 Şifre</button>
+    <div class="brand">BY Sirius — Komuta Merkezi</div>
+    <span class="user-info" id="sync-info"></span>
+    <button class="btn-logout" onclick="changeFont(-1)" title="Yazıyı küçült" aria-label="Yazıyı küçült">A−</button>
+    <button class="btn-logout" onclick="changeFont(1)" title="Yazıyı büyüt" aria-label="Yazıyı büyüt">A+</button>
+    <button class="btn-logout" id="theme-btn" onclick="toggleTheme()" title="Açık / koyu tema">🌙 Koyu</button>
+    <button class="btn-logout" onclick="loadData()" title="Sheet'ten yeniden yükle">↻ Yenile</button>
     <button class="btn-logout" onclick="logout()">Çıkış</button>
   </div>
 
   <div class="tab-nav">
-    <button class="tab-btn active" onclick="switchTab('customers',this)">Müşteriler</button>
-    <button class="tab-btn" onclick="switchTab('partners',this)">İş Ortakları</button>
-    <button class="tab-btn" onclick="switchTab('products',this)">Ürünler</button>
-    <button class="tab-btn" onclick="switchTab('pages',this)">Sayfalar</button>
+    <button class="tab-btn active" onclick="switchTab('dashboard',this)">📊 Genel Bakış</button>
+    <button class="tab-btn" onclick="switchTab('customers',this)">👥 Müşteriler <span class="cnt" id="cnt-Musteriler"></span></button>
+    <button class="tab-btn" onclick="switchTab('tasks',this)">✅ Yapılacaklar <span class="cnt" id="cnt-Yapilacaklar"></span></button>
+    <button class="tab-btn" onclick="switchTab('goals',this)">🎯 Hedefler <span class="cnt" id="cnt-Hedefler"></span></button>
+    <button class="tab-btn" onclick="switchTab('calendar',this)">📅 Takvim <span class="cnt" id="cnt-Takvim"></span></button>
+    <button class="tab-btn" onclick="switchTab('products',this)">📦 Ürünler</button>
+    <button class="tab-btn" onclick="switchTab('pages',this)">🌐 Sayfalar</button>
   </div>
 
-  <!-- ═══ PANEL: Müşteriler ═══ -->
-  <div class="main panel active" id="panel-customers">
-
-    <!-- Stats -->
-    <div class="stats" id="stats-row">
-      <div class="stat-card c-total"><div class="label">Toplam</div><div class="value" id="s-total">—</div></div>
-      <div class="stat-card c-aktif"><div class="label">Aktif</div><div class="value" id="s-aktif">—</div></div>
-      <div class="stat-card c-pot"><div class="label">Potansiyel</div><div class="value" id="s-pot">—</div></div>
-      <div class="stat-card c-randev"><div class="label">Bugün Randevu</div><div class="value" id="s-randevu">—</div></div>
-    </div>
-
-    <!-- Toolbar -->
-    <div class="toolbar">
-      <input class="search-box" id="search" placeholder="Firma, yetkili, e-posta…" oninput="renderTable()">
-      <select class="filter-sel" id="filter-status" onchange="renderTable()">
-        <option value="">Tüm Durumlar</option>
-        <option value="Potansiyel">Potansiyel</option>
-        <option value="Aktif">Aktif</option>
-        <option value="Teklif Verildi">Teklif Verildi</option>
-        <option value="Sözleşme İmzalandı">Sözleşme İmzalandı</option>
-        <option value="Tamamlandı">Tamamlandı</option>
-        <option value="İptal">İptal</option>
-      </select>
-      <select class="filter-sel" id="filter-source" onchange="renderTable()">
-        <option value="">Tüm Kaynaklar</option>
-        <option value="Web Form">Web Form</option>
-        <option value="Manuel">Manuel</option>
-        <option value="Referans">Referans</option>
-        <option value="Soğuk Arama">Soğuk Arama</option>
-      </select>
-      <button class="btn btn-primary" onclick="openAdd()">+ Yeni Müşteri</button>
-      <button class="btn" style="background:var(--surface2);border:1px solid var(--border);color:var(--text)" onclick="loadData()">↻ Yenile</button>
-    </div>
-
-    <!-- Table -->
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th onclick="sortBy('firma_adi')" style="cursor:pointer">Firma ↕</th>
-            <th>Yetkili</th>
-            <th>İletişim</th>
-            <th onclick="sortBy('hizmetler')" style="cursor:pointer">Hizmetler</th>
-            <th onclick="sortBy('durum')" style="cursor:pointer">Durum ↕</th>
-            <th>Randevu</th>
-            <th>Tutar</th>
-            <th>İşlemler</th>
-          </tr>
-        </thead>
-        <tbody id="table-body">
-          <tr><td colspan="8" class="empty"><div class="spin"></div></td></tr>
-        </tbody>
-      </table>
-    </div>
-
-  </div>
-
-<!-- ═══ PANEL: İş Ortakları ═══ -->
-<div class="main panel" id="panel-partners">
-  <div class="toolbar">
-    <input class="search-box" id="partner-search" placeholder="Ad, kurum, meslek, e-posta…" oninput="renderPartners()">
-    <button class="btn btn-primary" onclick="openAddPartner()">+ Yeni Kişi / Kurum</button>
-    <button class="btn" style="background:var(--surface2);border:1px solid var(--border);color:var(--text)" onclick="loadPartners()">↻ Yenile</button>
-    <button class="btn" style="background:var(--surface2);border:1px solid var(--border);color:var(--text)" onclick="savePartners()">💾 Kaydet &amp; Deploy</button>
-  </div>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th onclick="sortPartnersBy('ad_soyad')" style="cursor:pointer">Ad Soyad ↕</th>
-          <th onclick="sortPartnersBy('kurum')" style="cursor:pointer">Kurum ↕</th>
-          <th>Meslek</th>
-          <th>İletişim</th>
-          <th>Not</th>
-          <th>İşlemler</th>
-        </tr>
-      </thead>
-      <tbody id="partner-table-body">
-        <tr><td colspan="6" class="empty"><div class="spin"></div></td></tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+  <!-- Sheet'e bağlı paneller (içerik JS ile üretilir) -->
+  <div class="main panel active" id="panel-dashboard"></div>
+  <div class="main panel" id="panel-customers"></div>
+  <div class="main panel" id="panel-tasks"></div>
+  <div class="main panel" id="panel-goals"></div>
+  <div class="main panel" id="panel-calendar"></div>
 
 <!-- ═══ PANEL: Ürünler ═══ -->
 <div class="main panel" id="panel-products">
@@ -423,132 +498,63 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
 
 </div><!-- /#app -->
 
-<!-- ═══ Password Change Modal ═══ -->
-<div class="overlay" id="modal-pw">
-  <div class="modal" style="max-width:420px">
-    <h2 style="color:var(--primary)">🔑 Şifre Değiştir</h2>
-    <p style="color:var(--muted);font-size:.82rem;margin-bottom:1rem">Yeni şifre GitHub'a güvenli (hash) olarak kaydedilir ve ~5 dakika içinde aktif olur.</p>
+<!-- ═══ Item Add / Edit Modal (Sheet kayıtları) ═══ -->
+<div class="overlay" id="modal-item">
+  <div class="modal" style="max-width:520px">
+    <h2 id="item-title">Yeni Kayıt</h2>
     <div class="form-grid" style="grid-template-columns:1fr">
       <div class="field">
-        <label>Yeni Şifre</label>
-        <input type="password" id="new-pw1" placeholder="Yeni şifre">
+        <label id="item-label">Başlık *</label>
+        <input id="item-icerik" maxlength="500" autocomplete="off">
       </div>
       <div class="field">
-        <label>Yeni Şifre (Tekrar)</label>
-        <input type="password" id="new-pw2" placeholder="Tekrar girin">
-      </div>
-    </div>
-    <div id="pw-err" style="color:var(--danger);font-size:.82rem;margin-top:.5rem;display:none"></div>
-    <div class="modal-actions">
-      <button class="btn btn-cancel" onclick="closeModal('modal-pw')">İptal</button>
-      <button class="btn btn-primary" onclick="changePassword()">Kaydet</button>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ Add / Edit Modal ═══ -->
-<div class="overlay" id="modal-form">
-  <div class="modal">
-    <h2 id="modal-title">Yeni Müşteri</h2>
-    <div class="form-grid">
-      <div class="field full">
-        <label>Firma Adı *</label>
-        <input id="f-firma" placeholder="Şirket adı">
-      </div>
-      <div class="field">
-        <label>Yetkili Kişi *</label>
-        <input id="f-yetkili" placeholder="Ad Soyad">
-      </div>
-      <div class="field">
-        <label>E-posta</label>
-        <input id="f-email" type="email" placeholder="ornek@firma.com">
-      </div>
-      <div class="field">
-        <label>Telefon</label>
-        <input id="f-telefon" placeholder="+90 5xx xxx xx xx">
-      </div>
-      <div class="field">
-        <label>WhatsApp</label>
-        <input id="f-whatsapp" placeholder="+90 5xx xxx xx xx">
-      </div>
-      <div class="field">
-        <label>Tutar (₺)</label>
-        <input id="f-tutar" placeholder="0.00">
-      </div>
-      <div class="field full">
-        <label>Hizmetler</label>
-        <input id="f-hizmetler" placeholder="AI Entegrasyonu, Web, Dijital Pazarlama…">
+        <label>Not</label>
+        <textarea id="item-not" maxlength="2000" placeholder="Detay, telefon, tarih…"></textarea>
       </div>
       <div class="field">
         <label>Durum</label>
-        <select id="f-durum">
-          <option>Potansiyel</option>
-          <option>Aktif</option>
-          <option>Teklif Verildi</option>
-          <option>Sözleşme İmzalandı</option>
-          <option>Tamamlandı</option>
-          <option>İptal</option>
+        <select id="item-durum">
+          <option value="devam">Devam ediyor</option>
+          <option value="tamamlandi">Tamamlandı</option>
+          <option value="iptal">İptal</option>
         </select>
-      </div>
-      <div class="field">
-        <label>Kaynak</label>
-        <select id="f-kaynak">
-          <option>Web Form</option>
-          <option>Manuel</option>
-          <option>Referans</option>
-          <option>Soğuk Arama</option>
-          <option>Diğer</option>
-        </select>
-      </div>
-      <div class="field">
-        <label>Randevu Tarihi / Saati</label>
-        <input id="f-randevu" type="datetime-local">
-      </div>
-      <div class="field full">
-        <label>Notlar</label>
-        <textarea id="f-notlar" placeholder="Görüşme notu, özel talepler…"></textarea>
       </div>
     </div>
+    <div class="form-grid" id="item-timed" style="grid-template-columns:1fr 1fr;margin-top:.75rem">
+      <div class="field">
+        <label>Öncelik</label>
+        <select id="item-oncelik"><option>Yüksek</option><option selected>Normal</option><option>Düşük</option></select>
+      </div>
+      <div class="field">
+        <label>Termin (tarih / saat)</label>
+        <input id="item-termin" type="datetime-local">
+      </div>
+    </div>
+    <div class="item-hint" id="item-hint"></div>
     <div class="modal-actions">
-      <button class="btn btn-cancel" onclick="closeModal('modal-form')">İptal</button>
-      <button class="btn btn-primary" onclick="saveRecord()">Kaydet</button>
+      <button class="btn btn-cancel" onclick="closeModal('modal-item')">İptal</button>
+      <button class="btn btn-primary" onclick="saveItem()">Kaydet</button>
     </div>
   </div>
 </div>
 
-<!-- ═══ Partner Add/Edit Modal ═══ -->
-<div class="overlay" id="modal-partner">
-  <div class="modal">
-    <h2 id="pt-title">Yeni Kişi / Kurum</h2>
-    <div class="form-grid">
-      <div class="field">
-        <label>Ad Soyad *</label>
-        <input id="pt-ad" placeholder="Ad Soyad">
-      </div>
-      <div class="field">
-        <label>Kurum / Firma</label>
-        <input id="pt-kurum" placeholder="Şirket veya kurum adı">
-      </div>
-      <div class="field">
-        <label>Meslek / Unvan</label>
-        <input id="pt-meslek" placeholder="Ör. Genel Müdür, Avukat…">
-      </div>
-      <div class="field">
-        <label>E-posta</label>
-        <input id="pt-email" type="email" placeholder="ornek@kurum.com">
-      </div>
-      <div class="field full">
-        <label>Telefon</label>
-        <input id="pt-telefon" placeholder="+90 5xx xxx xx xx">
-      </div>
-      <div class="field full">
-        <label>Not</label>
-        <textarea id="pt-not" placeholder="Nasıl tanıştınız, işbirliği alanı, özel notlar…"></textarea>
-      </div>
+<!-- ═══ Hatırlatma Modal ═══ -->
+<div class="overlay" id="modal-remind">
+  <div class="modal" style="max-width:480px">
+    <h2>⏰ Hatırlatma Ekle</h2>
+    <p class="rm-title" id="rm-title"></p>
+    <div class="field" style="margin-top:.9rem">
+      <label>Ne zaman hatırlatılsın?</label>
+      <input id="rm-when" type="datetime-local">
     </div>
+    <label class="check-line"><input type="checkbox" id="rm-save"> Bu zamanı işin termini olarak da kaydet (satır takvime göre renklensin)</label>
+    <div class="rm-actions">
+      <button class="btn btn-primary" onclick="remindGoogle()">📅 Google Takvim'e ekle</button>
+      <button class="btn btn-ghost" onclick="remindIcs()">⬇ .ics indir (iPhone / Outlook)</button>
+    </div>
+    <div class="item-hint">Google Takvim hesabın telefonunda açıksa bildirim oradan gelir. .ics dosyası 15 dk önceden alarm kurar.</div>
     <div class="modal-actions">
-      <button class="btn btn-cancel" onclick="closeModal('modal-partner')">İptal</button>
-      <button class="btn btn-primary" onclick="savePartnerModal()">Kaydet</button>
+      <button class="btn btn-cancel" onclick="closeModal('modal-remind')">Kapat</button>
     </div>
   </div>
 </div>
@@ -595,7 +601,7 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
 </div>
 
 <!-- ═══ Delete Confirm Modal ═══ -->
-<div class="overlay" id="modal-del">
+<div class="overlay dismiss" id="modal-del">
   <div class="modal" style="max-width:380px;text-align:center">
     <h2 style="color:var(--danger)">Kaydı Sil</h2>
     <p style="margin:1rem 0;color:var(--muted)">
@@ -609,7 +615,7 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
 </div>
 
 <!-- ═══ Contract Link Modal ═══ -->
-<div class="overlay" id="modal-sozlesme">
+<div class="overlay dismiss" id="modal-sozlesme">
   <div class="modal" style="max-width:520px">
     <h2>Sözleşme Linki Oluştur</h2>
     <p style="color:var(--muted);font-size:.85rem;margin-bottom:1rem">
@@ -649,14 +655,27 @@ tbody td.actions{white-space:nowrap;display:flex;gap:.4rem;align-items:center}
 <input type="file" id="pg-file-input" accept="image/*" style="display:none" onchange="pgHandleImageUpload(this)">
 
 <script>
-const BASE       = 'https://www.bysirius.com/api/crm';
-const GITHUB_API = 'https://www.bysirius.com/api/github';
-let records = [];
-let editId  = null;
-let deleteId = null;
+const API_AUTH   = '/api/auth';
+const API_SHEETS = '/api/sheets';
+const GITHUB_API = '/api/github';
+
+// Sıra Nova botunun Sheet sekmeleri
+const TABS = {
+  Musteriler:   { panel: 'customers', title: 'Müşteriler',  single: 'Müşteri',   icon: '👥', label: 'Ad / Firma *', done: 'Müşteri oldu' },
+  Yapilacaklar: { panel: 'tasks',     title: 'Yapılacaklar', single: 'Yapılacak', icon: '📝', label: 'Yapılacak iş *', done: 'Tamamlandı' },
+  Hedefler:     { panel: 'goals',     title: 'Hedefler',     single: 'Hedef',     icon: '🎯', label: 'Hedef *', done: 'Ulaşıldı' },
+  Takvim:       { panel: 'calendar',  title: 'Takvim',       single: 'Takvim kaydı', icon: '📅', label: 'Etkinlik *', done: 'Yapıldı' }
+};
+const TAB_KEYS = Object.keys(TABS);
+const DURUM_LABEL = { devam: 'Devam ediyor', tamamlandi: 'Tamamlandı', iptal: 'İptal' };
+
+let DATA   = { Musteriler: [], Yapilacaklar: [], Hedefler: [], Takvim: [] };
+let FILTER = { Musteriler: 'all', Yapilacaklar: 'devam', Hedefler: 'all', Takvim: 'devam' };
+let SEARCH = { Musteriler: '', Yapilacaklar: '', Hedefler: '', Takvim: '' };
+let loaded = false;
+let itemCtx = null;      // { tab, row, expect }
+let deleteCtx = null;    // { tab, row, expect }
 let sozlesmeRecord = null;
-let sortField = 'firma_adi';
-let sortDir   = 1;
 
 // ─── Tab switching ────────────────────────────────────────────────────────────
 function switchTab(name, btn) {
@@ -665,130 +684,12 @@ function switchTab(name, btn) {
   document.getElementById('panel-' + name).classList.add('active');
   btn.classList.add('active');
   if (name === 'products' && prodCategories.length === 0) loadProducts();
-  if (name === 'partners' && partners.length === 0) loadPartners();
 }
 
-// ─── İş Ortakları (Partners) ────────────────────────────────────────────────
-let partners         = [];
-let editPartnerId    = null;
-let partnerSortField = 'ad_soyad';
-let partnerSortDir   = 1;
-
-async function loadPartners() {
-  document.getElementById('partner-table-body').innerHTML = '<tr><td colspan="6" class="empty"><div class="spin"></div></td></tr>';
-  try {
-    const res  = await fetch('/partners.json?_=' + Date.now());
-    const data = await res.json();
-    partners = data.partners || [];
-  } catch { partners = []; }
-  renderPartners();
-}
-
-function renderPartners() {
-  const q = document.getElementById('partner-search').value.toLowerCase();
-  let rows = partners.filter(p =>
-    [p.ad_soyad, p.kurum, p.meslek, p.email, p.telefon, p.notlar].join(' ').toLowerCase().includes(q)
-  );
-
-  rows.sort((a, b) => {
-    const av = (a[partnerSortField] || '').toString().toLowerCase();
-    const bv = (b[partnerSortField] || '').toString().toLowerCase();
-    return av < bv ? -partnerSortDir : av > bv ? partnerSortDir : 0;
-  });
-
-  const el = document.getElementById('partner-table-body');
-  if (!rows.length) { el.innerHTML = '<tr><td colspan="6" class="empty">Kayıt bulunamadı.</td></tr>'; return; }
-
-  el.innerHTML = rows.map(p => `
-    <tr>
-      <td><strong>${esc(p.ad_soyad)}</strong></td>
-      <td>${esc(p.kurum || '—')}</td>
-      <td style="font-size:.82rem;color:var(--muted)">${esc(p.meslek || '—')}</td>
-      <td style="font-size:.82rem">
-        ${p.email ? `<a href="mailto:${esc(p.email)}">${esc(p.email)}</a><br>` : ''}
-        ${p.telefon ? `<span style="color:var(--muted)">${esc(p.telefon)}</span>` : ''}
-      </td>
-      <td style="max-width:220px;font-size:.82rem;color:var(--muted)">${esc(p.notlar || '—')}</td>
-      <td class="actions">
-        <button class="btn btn-sm btn-edit" onclick="openEditPartner('${p.id}')">✏ Düzenle</button>
-        <button class="btn btn-sm btn-del"  onclick="deletePartner('${p.id}','${esc(p.ad_soyad)}')">🗑</button>
-      </td>
-    </tr>
-  `).join('');
-}
-
-function sortPartnersBy(field) {
-  partnerSortDir   = (partnerSortField === field) ? -partnerSortDir : 1;
-  partnerSortField = field;
-  renderPartners();
-}
-
-function openAddPartner() {
-  editPartnerId = null;
-  document.getElementById('pt-title').textContent = 'Yeni Kişi / Kurum';
-  ['pt-ad','pt-kurum','pt-meslek','pt-email','pt-telefon','pt-not'].forEach(id => document.getElementById(id).value = '');
-  openModal('modal-partner');
-}
-
-function openEditPartner(id) {
-  const p = partners.find(x => x.id === id);
-  if (!p) return;
-  editPartnerId = id;
-  document.getElementById('pt-title').textContent = 'Kişi / Kurum Düzenle';
-  document.getElementById('pt-ad').value      = p.ad_soyad || '';
-  document.getElementById('pt-kurum').value   = p.kurum    || '';
-  document.getElementById('pt-meslek').value  = p.meslek   || '';
-  document.getElementById('pt-email').value   = p.email    || '';
-  document.getElementById('pt-telefon').value = p.telefon  || '';
-  document.getElementById('pt-not').value     = p.notlar   || '';
-  openModal('modal-partner');
-}
-
-function savePartnerModal() {
-  const ad = document.getElementById('pt-ad').value.trim();
-  if (!ad) { toast('Ad Soyad zorunlu', 'err'); return; }
-
-  const data = {
-    id:       editPartnerId || ('pt-' + Date.now()),
-    ad_soyad: ad,
-    kurum:    document.getElementById('pt-kurum').value.trim(),
-    meslek:   document.getElementById('pt-meslek').value.trim(),
-    email:    document.getElementById('pt-email').value.trim(),
-    telefon:  document.getElementById('pt-telefon').value.trim(),
-    notlar:   document.getElementById('pt-not').value.trim()
-  };
-
-  if (editPartnerId) {
-    const idx = partners.findIndex(p => p.id === editPartnerId);
-    if (idx >= 0) partners[idx] = data;
-  } else {
-    partners.push(data);
-  }
-  closeModal('modal-partner');
-  renderPartners();
-  toast('Kaydedildi (taslak). Kaydet & Deploy ile yayınlayın.', 'ok');
-}
-
-function deletePartner(id, name) {
-  if (!confirm(`${name} silinsin mi?`)) return;
-  partners = partners.filter(p => p.id !== id);
-  renderPartners();
-  toast('Silindi (taslak). Kaydet & Deploy ile yayınlayın.', 'ok');
-}
-
-async function savePartners() {
-  const content = JSON.stringify({ updated: new Date().toISOString().slice(0,10), partners }, null, 2);
-  try {
-    const res = await fetch(GITHUB_API + '?file=partners.json', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${getToken()}` },
-      body: JSON.stringify({ content, message: 'Update partners.json via admin panel' })
-    });
-    const data = await res.json();
-    if (res.ok && data.success) toast(data.message, 'ok');
-    else if (res.status === 503) toast('GITHUB_TOKEN eksik — Vercel\'de ekleyin.', 'err');
-    else toast(data.error || 'Hata oluştu', 'err');
-  } catch { toast('Bağlantı hatası', 'err'); }
+function gotoTab(name) {
+  const idx = ['dashboard','customers','tasks','goals','calendar','products','pages'].indexOf(name);
+  const btn = document.querySelectorAll('.tab-btn')[idx];
+  if (btn) switchTab(name, btn);
 }
 
 // ─── Products ─────────────────────────────────────────────────────────────────
@@ -909,7 +810,7 @@ async function saveProducts() {
   try {
     const res = await fetch(GITHUB_API + '?file=products.json', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${getToken()}` },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ content, message: 'Update products.json via admin panel' })
     });
     const data = await res.json();
@@ -1191,7 +1092,7 @@ async function pgHandleImageUpload(input) {
 
     const apiRes = await fetch(GITHUB_API + '?file=' + encodeURIComponent(filePath), {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${getToken()}` },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         content: b64,
         binary:  true,
@@ -1330,7 +1231,7 @@ async function savePageContent() {
   try {
     const res = await fetch(GITHUB_API + '?file=' + encodeURIComponent(pgCurrentFile), {
       method: 'POST',
-      headers: { 'Content-Type':'application/json', 'Authorization':`Bearer ${getToken()}` },
+      headers: { 'Content-Type':'application/json' },
       body: JSON.stringify({ content, message:`Update ${pgCurrentFile} via admin panel` })
     });
     const data = await res.json();
@@ -1371,255 +1272,602 @@ function pgDragEnd() {
   });
 }
 
-// ─── Auth ────────────────────────────────────────────────────────────────────
-function getToken() { return localStorage.getItem('bs_crm_token') || ''; }
+// ─── Tema ve yazı boyutu (bu tarayıcıda hatırlanır) ───────────────────────────
+function setTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  try { localStorage.setItem('bs_theme', t); } catch { /* yoksay */ }
+  const b = document.getElementById('theme-btn');
+  if (b) b.textContent = t === 'dark' ? '☀ Açık' : '🌙 Koyu';
+}
+function toggleTheme() { setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'); }
+function changeFont(delta) {
+  const cur = parseFloat(getComputedStyle(document.documentElement).fontSize) || 18;
+  const next = Math.min(24, Math.max(15, cur + delta));
+  document.documentElement.style.fontSize = next + 'px';
+  try { localStorage.setItem('bs_font', String(next)); } catch { /* yoksay */ }
+}
+setTheme(document.documentElement.getAttribute('data-theme') || 'light');
 
+// ─── Auth (oturum cookie'si — şifre tarayıcıda saklanmaz) ─────────────────────
 async function doLogin() {
-  const pw = document.getElementById('pw-input').value.trim();
+  const pw = document.getElementById('pw-input').value;
   if (!pw) return;
   const errEl = document.getElementById('login-err');
   errEl.style.display = 'none';
   try {
-    const res = await fetch(BASE + '?action=list', {
-      headers: { 'Authorization': `Bearer ${pw}` }
+    const res  = await fetch(API_AUTH, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: pw })
     });
-    // 401 = wrong password; 503 = CRM not configured but password OK; 200 = all good
-    if (res.status === 401) {
-      errEl.style.display = 'block';
+    const data = await res.json().catch(() => ({}));
+    if (res.ok) {
+      document.getElementById('pw-input').value = '';
+      showApp();
+      loadData();
       return;
     }
-    localStorage.setItem('bs_crm_token', pw);
-    showApp();
-    loadData();
+    errEl.textContent = data.error || 'Hatalı şifre. Lütfen tekrar deneyin.';
   } catch {
     errEl.textContent = 'Sunucuya bağlanılamadı. Lütfen tekrar deneyin.';
-    errEl.style.display = 'block';
   }
+  errEl.style.display = 'block';
 }
 
-function logout() {
-  localStorage.removeItem('bs_crm_token');
+async function logout() {
+  try { await fetch(API_AUTH, { method: 'DELETE' }); } catch { /* yoksay */ }
   location.reload();
+}
+
+function showApp() {
+  document.getElementById('login').style.display = 'none';
+  document.getElementById('app').style.display = 'flex';
+}
+
+function showLogin() {
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('login').style.display = 'flex';
 }
 
 document.getElementById('pw-input').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
 
-// ─── Init ─────────────────────────────────────────────────────────────────────
-window.onload = () => {
-  if (getToken()) { showApp(); loadData(); }
+window.onload = async () => {
+  buildListPanels();
+  renderDashboard();
+  try {
+    const d = await (await fetch(API_AUTH)).json();
+    if (d.authed) { showApp(); loadData(); }
+  } catch { /* giriş ekranı kalır */ }
 };
-
-function showApp() {
-  document.getElementById('login').style.display = 'none';
-  const app = document.getElementById('app');
-  app.style.display = 'flex';
-}
 
 // ─── API ─────────────────────────────────────────────────────────────────────
-async function apiFetch(path, method = 'GET', body = null, token = null) {
-  const res = await fetch(BASE + path, {
+async function api(url, method = 'GET', body = null) {
+  const res = await fetch(url, {
     method,
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token || getToken()}`
-    },
+    headers: body ? { 'Content-Type': 'application/json' } : {},
     body: body ? JSON.stringify(body) : undefined
   });
-  if (res.status === 401) { logout(); return {}; }
-  return res.json();
-}
-
-// ─── Load ─────────────────────────────────────────────────────────────────────
-async function loadData() {
-  setLoading(true);
-  try {
-    const [listRes, statsRes] = await Promise.all([
-      apiFetch('?action=list'),
-      apiFetch('?action=stats')
-    ]);
-    records = listRes.records || [];
-    if (statsRes.success !== false) {
-      document.getElementById('s-total').textContent   = statsRes.total   ?? records.length;
-      document.getElementById('s-aktif').textContent   = statsRes.aktif   ?? '—';
-      document.getElementById('s-pot').textContent     = statsRes.potansiyel ?? '—';
-      document.getElementById('s-randevu').textContent = statsRes.randevu ?? '—';
-    }
-    document.getElementById('record-count').textContent = `${records.length} kayıt`;
-    renderTable();
-  } catch {
-    toast('Veri yüklenemedi', 'err');
+  if (res.status === 401) { showLogin(); throw new Error('Oturum süresi doldu, tekrar giriş yapın.'); }
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    const e = new Error(data.error || ('Hata ' + res.status));
+    e.status = res.status; e.data = data;
+    throw e;
   }
-  setLoading(false);
+  return data;
 }
 
-function setLoading(on) {
-  if (on) document.getElementById('table-body').innerHTML =
-    '<tr><td colspan="8" class="empty"><div class="spin"></div></td></tr>';
+async function loadData(silent = false) {
+  const info = document.getElementById('sync-info');
+  if (!silent) info.textContent = 'Yükleniyor…';
+  try {
+    const d = await api(API_SHEETS);
+    DATA = d.tabs;
+    TAB_KEYS.forEach(t => DATA[t].forEach(x => { x.tab = t; }));
+    loaded = true;
+    info.textContent = 'Güncellendi ' + new Date().toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
+    renderAll();
+  } catch (e) {
+    info.textContent = '';
+    if (e.status === 503) { renderSetup(e.data); }
+    else toast(e.message, 'err');
+  }
 }
 
-// ─── Render ───────────────────────────────────────────────────────────────────
-const BADGE_MAP = {
-  'Potansiyel':         'badge-pot',
-  'Aktif':              'badge-aktif',
-  'Teklif Verildi':     'badge-teklif',
-  'Sözleşme İmzalandı':'badge-sozlesme',
-  'Tamamlandı':         'badge-tamam',
-  'İptal':              'badge-iptal'
+// ─── Yardımcılar (tarih / telefon) ────────────────────────────────────────────
+function parseTarih(s) {
+  const m = /^(\d{2})\.(\d{2})\.(\d{4})(?: (\d{2}):(\d{2}))?/.exec(s || '');
+  return m ? new Date(+m[3], +m[2] - 1, +m[1], +(m[4] || 0), +(m[5] || 0)) : null;
+}
+
+function ageText(s) {
+  const d = parseTarih(s);
+  if (!d) return '';
+  const days = Math.floor((Date.now() - d.getTime()) / 86400000);
+  return days <= 0 ? 'bugün' : days === 1 ? 'dün' : days + ' gün önce';
+}
+
+const PHONE_RE = /(?:\+?90[\s-]?|0)?\(?5\d{2}\)?[\s-]?\d{3}[\s-]?\d{2}[\s-]?\d{2}/;
+function extractPhone(text) {
+  const m = PHONE_RE.exec(text || '');
+  if (!m) return null;
+  let d = m[0].replace(/\D/g, '');
+  if (d.startsWith('90') && d.length === 12) return d;
+  if (d.startsWith('0')) d = d.slice(1);
+  return d.length === 10 ? '90' + d : null;
+}
+
+const lower = s => String(s).toLocaleLowerCase('tr');
+const isPartner = it => lower(it.icerik + ' ' + it.not).includes('iş ortak');
+const byNewest  = (a, b) => (parseTarih(b.tarih) || 0) - (parseTarih(a.tarih) || 0);
+const byOldest  = (a, b) => (parseTarih(a.tarih) || 0) - (parseTarih(b.tarih) || 0);
+const count = (arr, durum) => arr.filter(x => x.durum === durum).length;
+
+// ─── Termin / öncelik mantığı (güncel takvime göre) ───────────────────────────
+const PRIO_W  = { 'Yüksek': 3, 'Normal': 1, 'Düşük': 0 };
+const MONTHS  = { ocak: 0, şubat: 1, mart: 2, nisan: 3, mayıs: 4, haziran: 5, temmuz: 6, ağustos: 7, eylül: 8, ekim: 9, kasım: 10, aralık: 11 };
+const startOfDay = d => new Date(d.getFullYear(), d.getMonth(), d.getDate());
+const pad2 = n => String(n).padStart(2, '0');
+const hhmm = d => pad2(d.getHours()) + ':' + pad2(d.getMinutes());
+
+// Önce "Termin" sütunu; yoksa nottaki/metindeki tarihi ("30 Eylül", "17.12.2026", "bu akşam saat 20:00") yakalar.
+function dueOf(it) {
+  if (it.tab !== 'Yapilacaklar' && it.tab !== 'Takvim') return null;
+  if (it.termin) {
+    const m = /^(\d{4})-(\d{2})-(\d{2})(?: (\d{2}):(\d{2}))?$/.exec(it.termin);
+    if (m) return { date: new Date(+m[1], +m[2] - 1, +m[3], +(m[4] ?? 23), +(m[5] ?? 59)), hasTime: m[4] !== undefined, auto: false };
+  }
+  const txt = lower(it.icerik + ' ' + it.not);
+  const created = parseTarih(it.tarih) || new Date();
+  let y, mo, d, hasYear = false, m;
+  if ((m = /(\d{1,2})\.(\d{1,2})\.(\d{4})/.exec(txt))) { d = +m[1]; mo = +m[2] - 1; y = +m[3]; hasYear = true; }
+  else if ((m = /(\d{1,2})\s+(ocak|şubat|mart|nisan|mayıs|haziran|temmuz|ağustos|eylül|ekim|kasım|aralık)(?:\s+(\d{4}))?/.exec(txt))) {
+    d = +m[1]; mo = MONTHS[m[2]]; if (m[3]) { y = +m[3]; hasYear = true; }
+  }
+  else if (/bu akşam|bugün/.test(txt)) { y = created.getFullYear(); mo = created.getMonth(); d = created.getDate(); hasYear = true; }
+  else if (/yarın/.test(txt)) {
+    const t = new Date(created.getFullYear(), created.getMonth(), created.getDate() + 1);
+    y = t.getFullYear(); mo = t.getMonth(); d = t.getDate(); hasYear = true;
+  }
+  else return null;
+  if (!hasYear) {
+    y = created.getFullYear();
+    if (new Date(y, mo, d) < new Date(created.getTime() - 7 * 86400000)) y++;   // yıl yazılmamışsa kayıttan sonraki ilk tarih
+  }
+  let h, mi;
+  const tm = /(\d{1,2}):(\d{2})/.exec(txt) || /saat\s+(\d{1,2})(?![\d.:])/.exec(txt);
+  if (tm) { h = +tm[1]; mi = +(tm[2] ?? 0); }
+  const date = new Date(y, mo, d, h ?? 23, mi ?? 59);
+  if (isNaN(date) || date.getMonth() !== mo) return null;
+  return { date, hasTime: h !== undefined, auto: true };
+}
+
+function dueInfo(it) {
+  if (it.durum !== 'devam') return null;
+  const due = dueOf(it);
+  if (!due) return null;
+  const days = Math.round((startOfDay(due.date) - startOfDay(new Date())) / 86400000);
+  let cls, label;
+  if (days < 0)        { cls = 'due-over';  label = `${-days} gün gecikti`; }
+  else if (days === 0) { cls = 'due-today'; label = 'Bugün' + (due.hasTime ? ' ' + hhmm(due.date) : ''); }
+  else if (days <= 3)  { cls = 'due-soon';  label = days === 1 ? 'Yarın' : `${days} gün kaldı`; }
+  else if (days <= 7)  { cls = 'due-week';  label = `${days} gün kaldı`; }
+  else                 { cls = 'due-far';   label = due.date.toLocaleDateString('tr-TR', { day: 'numeric', month: 'short' }); }
+  return { cls, label, days, date: due.date, auto: due.auto };
+}
+
+function score(it) {
+  const due = dueInfo(it);
+  const u = !due ? 0 : due.days < 0 ? 5 : due.days === 0 ? 4 : due.days <= 3 ? 3 : due.days <= 7 ? 2 : 0;
+  const created = parseTarih(it.tarih);
+  const stale = created && (Date.now() - created.getTime()) > 14 * 86400000 ? 1 : 0;
+  return (PRIO_W[it.oncelik] ?? 1) * 2 + u + stale;
+}
+const byScore = (a, b) => score(b) - score(a) || byOldest(a, b);
+const byDue = (a, b) => {
+  const da = dueInfo(a), db = dueInfo(b);
+  if (da && db) return da.date - db.date;
+  return da ? -1 : db ? 1 : byOldest(a, b);
 };
 
-function renderTable() {
-  const q      = document.getElementById('search').value.toLowerCase();
-  const status = document.getElementById('filter-status').value;
-  const source = document.getElementById('filter-source').value;
+const prioBadge = it => it.oncelik === 'Normal' ? '' :
+  `<span class="pill ${it.oncelik === 'Yüksek' ? 'p-no' : 'p-info'}">${it.oncelik === 'Yüksek' ? '▲ Yüksek' : '▼ Düşük'}</span>`;
+const duePill = it => { const d = dueInfo(it); return d ? `<span class="due-pill" title="${d.auto ? 'Metindeki tarihten otomatik' : 'Kayıtlı termin'}: ${esc(d.date.toLocaleDateString('tr-TR'))}">${esc(d.label)}</span>` : ''; };
+const dueCls = it => { const d = dueInfo(it); return d ? ' ' + d.cls : ''; };
+const canRemind = it => it.tab === 'Yapilacaklar' || it.tab === 'Takvim';
 
-  let rows = records.filter(r => {
-    const match = [r.firma_adi, r.yetkili, r.email, r.telefon, r.hizmetler, r.notlar]
-      .join(' ').toLowerCase().includes(q);
-    return match
-      && (!status || r.durum === status)
-      && (!source || r.kaynak === source);
+// ─── Render: hepsi ────────────────────────────────────────────────────────────
+function renderAll() {
+  renderDashboard();
+  TAB_KEYS.forEach(t => { renderList(t); });
+  document.getElementById('cnt-Musteriler').textContent   = DATA.Musteriler.length || '';
+  document.getElementById('cnt-Yapilacaklar').textContent = count(DATA.Yapilacaklar, 'devam') || '';
+  document.getElementById('cnt-Hedefler').textContent     = count(DATA.Hedefler, 'devam') || '';
+  document.getElementById('cnt-Takvim').textContent       = count(DATA.Takvim, 'devam') || '';
+}
+
+function renderSetup(info) {
+  const miss = (info && info.missing) || ['GOOGLE_SERVICE_ACCOUNT_JSON', 'GOOGLE_SHEETS_ID'];
+  document.getElementById('panel-dashboard').innerHTML = `
+    <div class="setup-box">
+      <h3>⚠ Sheet bağlantısı kurulmamış</h3>
+      <p style="font-size:.85rem;color:var(--muted);margin-bottom:.75rem">Panelin Sıra Nova'nın Google Sheet'ini okuyabilmesi için Vercel'de şu ortam değişkenleri gerekli:</p>
+      <ol>
+        <li><code>${miss.map(esc).join('</code> ve <code>')}</code> eksik</li>
+        <li><code>GOOGLE_SERVICE_ACCOUNT_JSON</code> = botun <code>google-credentials.json</code> dosyasının tüm içeriği</li>
+        <li><code>GOOGLE_SHEETS_ID</code> = botun <code>.env.local</code> dosyasındaki Sheet ID</li>
+        <li>Ekledikten sonra Vercel'de redeploy yapın</li>
+      </ol>
+    </div>`;
+}
+
+// ─── Dashboard ────────────────────────────────────────────────────────────────
+function ring(pct, color) {
+  const r = 34, c = 2 * Math.PI * r;
+  return `<svg viewBox="0 0 80 80" width="76" height="76" role="img" aria-label="%${pct}">
+    <circle cx="40" cy="40" r="${r}" fill="none" stroke="var(--border)" stroke-width="8"/>
+    <circle cx="40" cy="40" r="${r}" fill="none" stroke="${color}" stroke-width="8" stroke-linecap="round"
+      stroke-dasharray="${(c * pct / 100).toFixed(1)} ${c.toFixed(1)}" transform="rotate(-90 40 40)"/>
+    <text x="40" y="46" text-anchor="middle" font-size="17" font-weight="700" fill="var(--text)">${pct}%</text></svg>`;
+}
+
+function stackBar(arr) {
+  const t = arr.length || 1;
+  const p = d => (count(arr, d) / t * 100).toFixed(1);
+  return `<div class="stack"><i class="s-ok" style="width:${p('tamamlandi')}%"></i><i class="s-go" style="width:${p('devam')}%"></i><i class="s-no" style="width:${p('iptal')}%"></i></div>
+    <div class="stack-leg"><span><b class="d-ok"></b>${count(arr,'tamamlandi')} tamam</span><span><b class="d-go"></b>${count(arr,'devam')} devam</span><span><b class="d-no"></b>${count(arr,'iptal')} iptal</span></div>`;
+}
+
+function chkBtn(tab, it) {
+  const on = it.durum === 'tamamlandi';
+  return `<button class="chk${on ? ' on' : ''}" onclick="toggleItem('${tab}',${it.row})" title="${on ? 'Tekrar aç' : 'Tamamlandı işaretle'}" aria-label="Durumu değiştir">${on ? '✓' : ''}</button>`;
+}
+
+function remindBtn(it) {
+  return canRemind(it) ? `<button class="btn btn-sm btn-remind" onclick="openRemind('${it.tab}',${it.row})" title="Telefona / takvime hatırlatma ekle">⏰ Hatırlat</button>` : '';
+}
+
+function renderDashboard() {
+  const el = document.getElementById('panel-dashboard');
+  if (!el || (!loaded && el.querySelector('.setup-box'))) return;
+  const T = DATA.Yapilacaklar, M = DATA.Musteriler, H = DATA.Hedefler, C = DATA.Takvim;
+  const active = T.length - count(T, 'iptal');
+  const pct = active ? Math.round(count(T, 'tamamlandi') / active * 100) : 0;
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('tr-TR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+
+  const pendingAll = [...T, ...C].filter(x => x.durum === 'devam');
+  const ranked = [...pendingAll].sort(byScore);
+  const dueCount = k => pendingAll.filter(x => { const d = dueInfo(x); return d && d.cls === k; }).length;
+  const overdue = dueCount('due-over'), today = dueCount('due-today');
+  const lastCustomers = [...M].sort(byNewest).slice(0, 5);
+  const activity = TAB_KEYS.flatMap(t => DATA[t].map(x => ({ ...x, tab: t }))).sort(byNewest).slice(0, 8);
+
+  // son 14 gün: eklenen kayıt sayısı
+  const days = [];
+  for (let i = 13; i >= 0; i--) { const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() - i); days.push({ d, n: 0 }); }
+  TAB_KEYS.forEach(t => DATA[t].forEach(x => {
+    const d = parseTarih(x.tarih);
+    if (!d) return;
+    const hit = days.find(k => k.d.toDateString() === d.toDateString());
+    if (hit) hit.n++;
+  }));
+  const maxN = Math.max(1, ...days.map(k => k.n));
+  const bars = days.map(k => `<div class="bar-col" title="${k.d.toLocaleDateString('tr-TR')}: ${k.n} kayıt">
+      <div class="bar" style="height:${Math.max(k.n ? 8 : 3, k.n / maxN * 100)}%${k.n ? '' : ';opacity:.35'}"></div><span>${k.d.getDate()}</span></div>`).join('');
+
+  const empty = msg => `<div class="w-empty">${msg}</div>`;
+
+  const prioRows = ranked.slice(0, 10).map((it, i) => `
+    <tr class="${dueCls(it).trim()}">
+      <td class="pt-n">${i + 1}</td>
+      <td><div class="ri-title">${esc(it.icerik)}</div>${it.not ? `<div class="ri-note">${esc(it.not)}</div>` : ''}</td>
+      <td>${prioBadge(it) || '<span class="muted-s">Normal</span>'}</td>
+      <td>${duePill(it) || '<span class="muted-s">—</span>'}</td>
+      <td><span class="muted-s">${it.tab === 'Takvim' ? 'Takvim' : 'Yapılacak'}</span></td>
+      <td class="pt-act">${chkBtn(it.tab, it)}${remindBtn(it)}
+        <button class="btn btn-sm btn-edit" onclick="duplicateItem('${it.tab}',${it.row})" title="Benzer kayıt oluştur">Kopyala</button></td>
+    </tr>`).join('');
+
+  el.innerHTML = `
+    <div class="dash-head">
+      <div><h1>Merhaba Özgün 👋</h1><p>${esc(dateStr)} · ${loaded ? 'Sıra Nova bot verisi canlı' : 'Yükleniyor…'}</p></div>
+      <div class="quick">
+        <button class="btn btn-primary btn-sm" onclick="openItem('Yapilacaklar')">+ Yapılacak</button>
+        <button class="btn btn-sm btn-ghost" onclick="openItem('Musteriler')">+ Müşteri</button>
+        <button class="btn btn-sm btn-ghost" onclick="openItem('Takvim')">+ Takvim</button>
+        <button class="btn btn-sm btn-ghost" onclick="openItem('Hedefler')">+ Hedef</button>
+      </div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi k-warn"><div class="label">Bekleyen iş</div><div class="value">${count(T,'devam')}</div><div class="sub">${count(T,'tamamlandi')} tamamlandı</div></div>
+      <div class="kpi k-red"><div class="label">Gecikmiş / bugün</div><div class="value">${overdue}<small> / ${today}</small></div><div class="sub">termini geçen · bugün olan</div></div>
+      <div class="kpi k-ring"><div class="ring">${ring(pct, 'var(--success)')}</div><div><div class="label">Tamamlanma</div><div class="sub">${count(T,'tamamlandi')} / ${active} iş</div></div></div>
+      <div class="kpi k-info"><div class="label">Müşteri</div><div class="value">${M.length}</div><div class="sub">${M.filter(isPartner).length} iş ortağı</div></div>
+      <div class="kpi k-gold"><div class="label">Hedefler</div><div class="value">${count(H,'tamamlandi')}<small>/${H.length}</small></div><div class="sub">${count(H,'devam')} devam ediyor</div></div>
+    </div>
+
+    <div class="widgets">
+      <section class="w w-12">
+        <div class="w-head"><h3>🔥 Öncelikli işler <em>(öncelik + termin + bekleme süresine göre sıralı)</em></h3>
+          <button class="link-btn" onclick="gotoTab('tasks')">Tüm yapılacaklar →</button></div>
+        <div class="legend">
+          <span class="lg due-over">Gecikmiş ${overdue}</span><span class="lg due-today">Bugün ${today}</span>
+          <span class="lg due-soon">1-3 gün ${dueCount('due-soon')}</span><span class="lg due-week">Bu hafta ${dueCount('due-week')}</span>
+          <span class="lg due-far">Daha sonra ${dueCount('due-far')}</span><span class="lg">Terminsiz ${pendingAll.filter(x => !dueInfo(x)).length}</span>
+        </div>
+        ${ranked.length ? `<div class="tbl-wrap"><table class="ptable"><thead><tr><th>#</th><th>İş</th><th>Öncelik</th><th>Termin</th><th>Tür</th><th></th></tr></thead><tbody>${prioRows}</tbody></table></div>`
+          : empty('Bekleyen iş yok 🎉')}
+        <div class="w-sub">Termin yoksa metindeki tarihten ("30 Eylül", "bu akşam saat 20:00") otomatik okunur. Kayda "Termin" ve "Öncelik" girerek kesinleştirebilirsin.</div>
+      </section>
+
+      <section class="w w-4">
+        <div class="w-head"><h3>📈 Son 14 gün</h3></div>
+        <div class="bars">${bars}</div>
+        <div class="w-sub">Bota/panele eklenen kayıt sayısı</div>
+        <div class="w-head" style="margin-top:1.1rem"><h3>🎯 Hedefler</h3><button class="link-btn" onclick="gotoTab('goals')">→</button></div>
+        ${H.length ? stackBar(H) : empty('Hedef yok')}
+        <div class="w-head" style="margin-top:1.1rem"><h3>📝 İşler</h3></div>
+        ${T.length ? stackBar(T) : empty('İş yok')}
+      </section>
+
+      <section class="w w-4">
+        <div class="w-head"><h3>📅 Açık takvim</h3><button class="link-btn" onclick="gotoTab('calendar')">Tümü →</button></div>
+        ${C.filter(x => x.durum === 'devam').length ? C.filter(x => x.durum === 'devam').sort(byDue).slice(0, 6).map(it => `
+          <div class="row-item${dueCls(it)}">${chkBtn('Takvim', it)}
+            <div class="ri-main"><div class="ri-title">${esc(it.icerik)}</div>${it.not ? `<div class="ri-note">${esc(it.not)}</div>` : ''}</div>${duePill(it)}</div>`).join('') : empty('Açık takvim kaydı yok')}
+      </section>
+
+      <section class="w w-4">
+        <div class="w-head"><h3>👥 Son müşteriler</h3><button class="link-btn" onclick="gotoTab('customers')">Tümü (${M.length}) →</button></div>
+        ${lastCustomers.length ? lastCustomers.map(it => {
+          const ph = extractPhone(it.not);
+          return `<div class="row-item"><div class="ri-main"><div class="ri-title">${esc(it.icerik)}${isPartner(it) ? ' <span class="pill p-pur">İş ortağı</span>' : ''}</div>
+            <div class="ri-note">${esc(it.not)}</div></div>
+            ${ph ? `<button class="btn btn-sm btn-wa" onclick="openWA(${it.row})">WA</button>` : ''}</div>`;
+        }).join('') : empty('Müşteri yok')}
+      </section>
+
+      <section class="w w-4">
+        <div class="w-head"><h3>🤖 Botun son kayıtları</h3></div>
+        ${activity.length ? activity.map(it => `
+          <div class="row-item"><span class="act-ic">${TABS[it.tab].icon}</span>
+            <div class="ri-main"><div class="ri-title">${esc(it.icerik)}</div><div class="ri-note">${esc(it.tarih)} · ${esc(DURUM_LABEL[it.durum])}</div></div></div>`).join('') : empty('Kayıt yok')}
+      </section>
+    </div>`;
+}
+
+// ─── Liste panelleri (Müşteriler / Yapılacaklar / Hedefler / Takvim) ───────────
+function buildListPanels() {
+  TAB_KEYS.forEach(tab => {
+    const m = TABS[tab];
+    document.getElementById('panel-' + m.panel).innerHTML = `
+      <div class="toolbar">
+        <h2 class="panel-title">${m.icon} ${m.title}</h2>
+        <input class="search-box" id="q-${tab}" placeholder="Ara…" oninput="SEARCH['${tab}']=this.value;renderList('${tab}')">
+        <button class="btn btn-primary" onclick="openItem('${tab}')">+ Yeni ${m.single}</button>
+      </div>
+      <div class="chips" id="chips-${tab}"></div>
+      <div class="list" id="list-${tab}"><div class="empty"><div class="spin"></div></div></div>`;
   });
+}
 
-  rows.sort((a, b) => {
-    const av = (a[sortField] || '').toString().toLowerCase();
-    const bv = (b[sortField] || '').toString().toLowerCase();
-    return av < bv ? -sortDir : av > bv ? sortDir : 0;
+function chipDefs(tab) {
+  const a = DATA[tab];
+  const base = [
+    ['all', 'Tümü', a.length],
+    ['devam', 'Devam eden', count(a, 'devam')],
+    ['tamamlandi', TABS[tab].done, count(a, 'tamamlandi')],
+    ['iptal', 'İptal', count(a, 'iptal')]
+  ];
+  if (tab === 'Musteriler') base.push(['ortak', 'İş ortakları', a.filter(isPartner).length]);
+  if (tab === 'Yapilacaklar' || tab === 'Takvim') base.splice(2, 0, ['gecikmis', '🔴 Gecikmiş', a.filter(x => { const d = dueInfo(x); return d && d.days < 0; }).length]);
+  return base;
+}
+
+function setFilter(tab, f) { FILTER[tab] = f; renderList(tab); }
+
+function renderList(tab) {
+  const chipsEl = document.getElementById('chips-' + tab);
+  const listEl  = document.getElementById('list-' + tab);
+  if (!chipsEl || !listEl) return;
+  const f = FILTER[tab], q = lower(SEARCH[tab]);
+
+  chipsEl.innerHTML = chipDefs(tab).map(([k, label, n]) =>
+    `<button class="chip${f === k ? ' active' : ''}" onclick="setFilter('${tab}','${k}')">${esc(label)} <b>${n}</b></button>`).join('');
+
+  let rows = DATA[tab].filter(it => {
+    const ok = f === 'all' ? true : f === 'ortak' ? isPartner(it)
+      : f === 'gecikmis' ? (dueInfo(it) || { days: 0 }).days < 0 : it.durum === f;
+    return ok && lower(it.icerik + ' ' + it.not).includes(q);
   });
+  const timed = tab === 'Yapilacaklar' || tab === 'Takvim';
+  rows = rows.sort(timed && (f === 'devam' || f === 'gecikmis') ? (tab === 'Takvim' ? byDue : byScore) : byNewest);
 
-  if (!rows.length) {
-    document.getElementById('table-body').innerHTML =
-      '<tr><td colspan="8" class="empty">Kayıt bulunamadı.</td></tr>';
-    return;
-  }
+  if (!rows.length) { listEl.innerHTML = '<div class="empty">Kayıt bulunamadı.</div>'; return; }
 
-  document.getElementById('table-body').innerHTML = rows.map(r => {
-    const badge  = BADGE_MAP[r.durum] || 'badge-pot';
-    const randevu = r.randevu ? fmtDate(r.randevu) : '<span style="color:var(--muted)">—</span>';
-    const tutar   = r.tutar   ? `<span style="color:var(--success)">₺${Number(r.tutar).toLocaleString('tr-TR')}</span>` : '<span style="color:var(--muted)">—</span>';
-    const wa  = r.whatsapp || r.telefon;
-    const waNum = wa ? wa.replace(/\D/g,'') : '';
-    return `<tr>
-      <td><strong>${esc(r.firma_adi)}</strong></td>
-      <td>${esc(r.yetkili)}</td>
-      <td style="font-size:.82rem">
-        ${r.email ? `<a href="mailto:${esc(r.email)}">${esc(r.email)}</a><br>` : ''}
-        ${r.telefon ? `<span style="color:var(--muted)">${esc(r.telefon)}</span>` : ''}
-      </td>
-      <td style="max-width:160px;font-size:.82rem;color:var(--muted)">${esc(r.hizmetler||'—')}</td>
-      <td><span class="badge ${badge}">${esc(r.durum)}</span></td>
-      <td style="font-size:.82rem">${randevu}</td>
-      <td>${tutar}</td>
-      <td class="actions">
-        <button class="btn btn-sm btn-edit"     onclick="openEdit('${r.id}')">✏ Düzenle</button>
-        ${waNum ? `<button class="btn btn-sm btn-wa" onclick="openWA('${waNum}','${esc(r.firma_adi)}')" title="WhatsApp">WA</button>` : ''}
-        <button class="btn btn-sm btn-sozlesme" onclick="openSozlesme('${r.id}')" title="Sözleşme linki">📋</button>
-        <button class="btn btn-sm btn-del"      onclick="openDelete('${r.id}','${esc(r.firma_adi)}')">🗑</button>
-      </td>
-    </tr>`;
+  listEl.innerHTML = rows.map(it => {
+    const ph = tab === 'Musteriler' ? extractPhone(it.not) : null;
+    const pill = { devam: 'p-warn', tamamlandi: 'p-ok', iptal: 'p-no' }[it.durum];
+    return `<div class="card-row${it.durum !== 'devam' ? ' is-done' : ''}${dueCls(it)}">
+      ${chkBtn(tab, it)}
+      <div class="cr-main">
+        <div class="cr-title">${esc(it.icerik)}
+          ${tab === 'Musteriler' && isPartner(it) ? '<span class="pill p-pur">İş ortağı</span>' : ''}
+          <span class="pill ${pill}">${esc(it.durum === 'tamamlandi' ? TABS[tab].done : DURUM_LABEL[it.durum])}</span>
+          ${timed ? prioBadge(it) + duePill(it) : ''}</div>
+        ${it.not ? `<div class="cr-note">${esc(it.not)}</div>` : ''}
+        <div class="cr-meta">${esc(it.tarih)}${ageText(it.tarih) ? ' · ' + esc(ageText(it.tarih)) : ''}</div>
+      </div>
+      <div class="cr-actions">
+        ${ph ? `<button class="btn btn-sm btn-wa" onclick="openWA(${it.row})" title="WhatsApp">WA</button>
+                <a class="btn btn-sm btn-edit" href="tel:+${ph}" title="Ara">Ara</a>
+                <button class="btn btn-sm btn-sozlesme" onclick="openSozlesme(${it.row})" title="Sözleşme linki">Sözleşme</button>` : ''}
+        ${it.durum === 'devam' ? remindBtn(it) : ''}
+        <button class="btn btn-sm btn-edit" onclick="duplicateItem('${tab}',${it.row})" title="Bu kaydın kopyasıyla yeni kayıt oluştur">Kopyala</button>
+        <button class="btn btn-sm btn-edit" onclick="openItem('${tab}',${it.row})">Düzenle</button>
+        <button class="btn btn-sm btn-del" onclick="openDelete('${tab}',${it.row})">Sil</button>
+      </div>
+    </div>`;
   }).join('');
 }
 
-function sortBy(field) {
-  sortDir = (sortField === field) ? -sortDir : 1;
-  sortField = field;
-  renderTable();
+// ─── Ekle / Düzenle / Kopyala / Sil / Durum ───────────────────────────────────
+function openItem(tab, row = null, preset = null) {
+  const it = row ? DATA[tab].find(x => x.row === row) : preset;
+  if (row && !it) return;
+  const timed = tab === 'Yapilacaklar' || tab === 'Takvim';
+  itemCtx = { tab, row, expect: row ? it.icerik : '' };
+  document.getElementById('item-title').textContent = (row ? 'Düzenle — ' : preset ? 'Kopya — ' : 'Yeni ') + TABS[tab].single;
+  document.getElementById('item-label').textContent = TABS[tab].label;
+  document.getElementById('item-icerik').value = it ? it.icerik : '';
+  document.getElementById('item-not').value    = it ? it.not : '';
+  document.getElementById('item-durum').value  = it ? it.durum : 'devam';
+  document.getElementById('item-oncelik').value = it ? it.oncelik : 'Normal';
+  document.getElementById('item-termin').value  = it && it.termin ? it.termin.replace(' ', 'T') : '';
+  document.getElementById('item-timed').style.display = timed ? 'grid' : 'none';
+  document.getElementById('item-hint').textContent = tab === 'Musteriler'
+    ? 'İpucu: telefonu nota "Tel: 5xx xxx xx xx" şeklinde yazarsan WhatsApp / Ara / Sözleşme butonları otomatik çıkar. İş ortağıysa nota "iş ortağı" yaz.'
+    : timed ? 'Termin girmezsen, nottaki tarih (ör. "30 Eylül") otomatik okunur ve kayıt takvime göre renklenir.' : '';
+  openModal('modal-item');
+  setTimeout(() => { const i = document.getElementById('item-icerik'); i.focus(); if (preset) i.select(); }, 50);
 }
 
-// ─── Add / Edit ───────────────────────────────────────────────────────────────
-function openAdd() {
-  editId = null;
-  document.getElementById('modal-title').textContent = 'Yeni Müşteri';
-  clearForm();
-  openModal('modal-form');
+function duplicateItem(tab, row) {
+  const it = DATA[tab].find(x => x.row === row);
+  if (!it) return;
+  openItem(tab, null, { icerik: it.icerik, not: it.not, durum: 'devam', oncelik: it.oncelik, termin: it.termin });
 }
 
-function openEdit(id) {
-  const r = records.find(x => x.id === id);
-  if (!r) return;
-  editId = id;
-  document.getElementById('modal-title').textContent = 'Müşteri Düzenle';
-  document.getElementById('f-firma').value    = r.firma_adi || '';
-  document.getElementById('f-yetkili').value  = r.yetkili   || '';
-  document.getElementById('f-email').value    = r.email     || '';
-  document.getElementById('f-telefon').value  = r.telefon   || '';
-  document.getElementById('f-whatsapp').value = r.whatsapp  || '';
-  document.getElementById('f-tutar').value    = r.tutar     || '';
-  document.getElementById('f-hizmetler').value= r.hizmetler || '';
-  document.getElementById('f-durum').value    = r.durum     || 'Potansiyel';
-  document.getElementById('f-kaynak').value   = r.kaynak    || 'Manuel';
-  document.getElementById('f-randevu').value  = r.randevu   ? r.randevu.substring(0,16) : '';
-  document.getElementById('f-notlar').value   = r.notlar    || '';
-  openModal('modal-form');
-}
-
-function clearForm() {
-  ['f-firma','f-yetkili','f-email','f-telefon','f-whatsapp','f-tutar','f-hizmetler','f-notlar','f-randevu']
-    .forEach(id => document.getElementById(id).value = '');
-  document.getElementById('f-durum').value  = 'Potansiyel';
-  document.getElementById('f-kaynak').value = 'Manuel';
-}
-
-async function saveRecord() {
-  const firma = document.getElementById('f-firma').value.trim();
-  if (!firma) { toast('Firma adı zorunlu', 'err'); return; }
-
-  const data = {
-    firma_adi: firma,
-    yetkili:   document.getElementById('f-yetkili').value.trim(),
-    email:     document.getElementById('f-email').value.trim(),
-    telefon:   document.getElementById('f-telefon').value.trim(),
-    whatsapp:  document.getElementById('f-whatsapp').value.trim(),
-    tutar:     document.getElementById('f-tutar').value.trim(),
-    hizmetler: document.getElementById('f-hizmetler').value.trim(),
-    durum:     document.getElementById('f-durum').value,
-    kaynak:    document.getElementById('f-kaynak').value,
-    randevu:   document.getElementById('f-randevu').value,
-    notlar:    document.getElementById('f-notlar').value.trim()
+async function saveItem() {
+  const { tab, row, expect } = itemCtx;
+  const icerik = document.getElementById('item-icerik').value.trim();
+  if (!icerik) { toast('Başlık zorunlu', 'err'); return; }
+  const timed = tab === 'Yapilacaklar' || tab === 'Takvim';
+  const body = {
+    action: row ? 'update' : 'add', tab, row, expect, icerik,
+    not: document.getElementById('item-not').value.trim(),
+    durum: document.getElementById('item-durum').value,
+    oncelik: timed ? document.getElementById('item-oncelik').value : 'Normal',
+    termin: timed ? document.getElementById('item-termin').value : ''
   };
-
-  const action = editId ? 'update' : 'add';
-  if (editId) data.id = editId;
-
-  const res = await apiFetch(`?action=${action}`, 'POST', data);
-  if (res.success) {
-    toast(editId ? 'Kayıt güncellendi' : 'Müşteri eklendi', 'ok');
-    closeModal('modal-form');
-    loadData();
-  } else {
-    toast(res.error || 'Hata oluştu', 'err');
-  }
+  try {
+    await api(API_SHEETS, 'POST', body);
+    toast(row ? 'Güncellendi' : 'Eklendi', 'ok');
+    closeModal('modal-item');
+  } catch (e) { toast(e.message, 'err'); return; }   // hata olursa pencere açık kalır, yazdıkların kaybolmaz
+  loadData(true);
 }
 
-// ─── Delete ───────────────────────────────────────────────────────────────────
-function openDelete(id, name) {
-  deleteId = id;
-  document.getElementById('del-name').textContent = name;
+async function toggleItem(tab, row) {
+  const it = DATA[tab].find(x => x.row === row);
+  if (!it) return;
+  const next = it.durum === 'tamamlandi' ? 'devam' : 'tamamlandi';
+  const prev = it.durum;
+  it.durum = next;           // anında geri bildirim
+  renderAll();
+  try {
+    await api(API_SHEETS, 'POST', { action: 'update', tab, row, expect: it.icerik, icerik: it.icerik, not: it.not,
+      durum: next, oncelik: it.oncelik, termin: it.termin });
+  } catch (e) { it.durum = prev; toast(e.message, 'err'); }
+  loadData(true);
+}
+
+function openDelete(tab, row) {
+  const it = DATA[tab].find(x => x.row === row);
+  if (!it) return;
+  deleteCtx = { tab, row, expect: it.icerik };
+  document.getElementById('del-name').textContent = it.icerik;
   openModal('modal-del');
 }
 
 async function confirmDelete() {
-  const res = await apiFetch('?action=delete', 'POST', { id: deleteId });
-  if (res.success) {
+  try {
+    await api(API_SHEETS, 'POST', { action: 'delete', ...deleteCtx });
     toast('Kayıt silindi', 'ok');
     closeModal('modal-del');
-    loadData();
-  } else {
-    toast(res.error || 'Hata oluştu', 'err');
-  }
+  } catch (e) { toast(e.message, 'err'); }
+  loadData(true);
+}
+
+// ─── Hatırlatma (Google Takvim / .ics → telefonda bildirim) ──────────────────
+let remindCtx = null;
+const toLocalInput = d => `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}T${pad2(d.getHours())}:${pad2(d.getMinutes())}`;
+const icsStamp = d => `${d.getFullYear()}${pad2(d.getMonth() + 1)}${pad2(d.getDate())}T${pad2(d.getHours())}${pad2(d.getMinutes())}00`;
+const icsEsc = s => String(s).replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n');
+
+function openRemind(tab, row) {
+  const it = DATA[tab].find(x => x.row === row);
+  if (!it) return;
+  remindCtx = { tab, row };
+  const due = dueOf(it);
+  let d = new Date();
+  if (due && due.date > d) { d = new Date(due.date); if (!due.hasTime) d.setHours(9, 0, 0, 0); }
+  else { d.setDate(d.getDate() + 1); d.setHours(9, 0, 0, 0); }
+  document.getElementById('rm-title').textContent = it.icerik;
+  document.getElementById('rm-when').value = toLocalInput(d);
+  document.getElementById('rm-save').checked = !it.termin;
+  openModal('modal-remind');
+}
+
+function remindTimes() {
+  const v = document.getElementById('rm-when').value;
+  if (!v) { toast('Tarih ve saat seç', 'err'); return null; }
+  const s = new Date(v);
+  return { s, e: new Date(s.getTime() + 30 * 60000), v };
+}
+
+async function remindSaveTermin(v) {
+  if (!document.getElementById('rm-save').checked) return;
+  const it = DATA[remindCtx.tab].find(x => x.row === remindCtx.row);
+  if (!it) return;
+  try {
+    await api(API_SHEETS, 'POST', { action: 'update', tab: it.tab, row: it.row, expect: it.icerik, icerik: it.icerik, not: it.not,
+      durum: it.durum, oncelik: it.oncelik, termin: v.replace('T', ' ') });
+    toast('Termin kaydedildi', 'ok');
+  } catch (e) { toast(e.message, 'err'); }
+  loadData(true);
+}
+
+function remindGoogle() {
+  const t = remindTimes(); if (!t) return;
+  const it = DATA[remindCtx.tab].find(x => x.row === remindCtx.row);
+  const url = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+    + '&text=' + encodeURIComponent('⏰ ' + it.icerik)
+    + '&details=' + encodeURIComponent(it.not || '')
+    + '&dates=' + icsStamp(t.s) + '/' + icsStamp(t.e) + '&ctz=Europe/Istanbul';
+  window.open(url, '_blank', 'noopener');
+  remindSaveTermin(t.v);
+}
+
+function remindIcs() {
+  const t = remindTimes(); if (!t) return;
+  const it = DATA[remindCtx.tab].find(x => x.row === remindCtx.row);
+  const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//BY Sirius//Komuta Merkezi//TR', 'BEGIN:VEVENT',
+    `UID:${Date.now()}@bysirius.com`, `DTSTAMP:${icsStamp(new Date())}`, `DTSTART:${icsStamp(t.s)}`, `DTEND:${icsStamp(t.e)}`,
+    `SUMMARY:${icsEsc('⏰ ' + it.icerik)}`, `DESCRIPTION:${icsEsc(it.not || '')}`,
+    'BEGIN:VALARM', 'TRIGGER:-PT15M', 'ACTION:DISPLAY', 'DESCRIPTION:Hatırlatma', 'END:VALARM', 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar;charset=utf-8' }));
+  a.download = 'hatirlatma.ics';
+  document.body.appendChild(a); a.click(); a.remove();
+  remindSaveTermin(t.v);
 }
 
 // ─── WhatsApp ─────────────────────────────────────────────────────────────────
-function openWA(num, firma) {
-  const msg = encodeURIComponent(`Merhaba, BY Sirius olarak ${firma} firmasıyla ilgili görüşmek isteriz.`);
-  window.open(`https://wa.me/${num}?text=${msg}`, '_blank');
+function openWA(row) {
+  const it = DATA.Musteriler.find(x => x.row === row);
+  const num = it && extractPhone(it.not);
+  if (!num) { toast('Telefon numarası bulunamadı', 'err'); return; }
+  const msg = encodeURIComponent(`Merhaba, BY Sirius olarak ${it.icerik} ile ilgili görüşmek isteriz.`);
+  window.open(`https://wa.me/${num}?text=${msg}`, '_blank', 'noopener');
 }
 
 // ─── Sözleşme ─────────────────────────────────────────────────────────────────
-function openSozlesme(id) {
-  sozlesmeRecord = records.find(r => r.id === id);
+function openSozlesme(row) {
+  sozlesmeRecord = DATA.Musteriler.find(r => r.row === row);
   if (!sozlesmeRecord) return;
-  document.getElementById('sl-tutar').value  = sozlesmeRecord.tutar   || '';
-  document.getElementById('sl-hizmet').value = sozlesmeRecord.hizmetler || '';
+  document.getElementById('sl-tutar').value  = '';
+  document.getElementById('sl-hizmet').value = '';
   document.getElementById('sl-sure').value   = '';
   document.getElementById('sl-link-wrap').style.display = 'none';
   document.getElementById('sl-wa-btn').style.display    = 'none';
@@ -1627,28 +1875,22 @@ function openSozlesme(id) {
 }
 
 function generateLink() {
-  const r   = sozlesmeRecord;
+  const r = sozlesmeRecord;
   if (!r) return;
-  const ref   = 'BS-' + Date.now().toString(36).toUpperCase();
-  const tutar = document.getElementById('sl-tutar').value.trim();
-  const sure  = document.getElementById('sl-sure').value.trim();
-  const hizmet= document.getElementById('sl-hizmet').value.trim() || r.hizmetler || '';
+  const ref = 'BS-' + Date.now().toString(36).toUpperCase();
   const params = new URLSearchParams({
-    firma:    r.firma_adi || '',
-    yetkili:  r.yetkili   || '',
-    ref,
-    hizmetler: hizmet,
-    tutar,
-    sure
+    firma: r.icerik, yetkili: '', ref,
+    hizmetler: document.getElementById('sl-hizmet').value.trim(),
+    tutar:     document.getElementById('sl-tutar').value.trim(),
+    sure:      document.getElementById('sl-sure').value.trim()
   });
   const link = `${location.origin}/sozlesme?${params}`;
   document.getElementById('sl-link').textContent = link;
   document.getElementById('sl-link-wrap').style.display = 'block';
   document.getElementById('sl-wa-btn').style.display    = 'inline-block';
   document.getElementById('copy-tip').style.display = 'none';
-  // store for WA send
   document.getElementById('sl-wa-btn').dataset.link = link;
-  document.getElementById('sl-wa-btn').dataset.num  = (r.whatsapp || r.telefon || '').replace(/\D/g,'');
+  document.getElementById('sl-wa-btn').dataset.num  = extractPhone(r.not) || '';
 }
 
 function copyLink() {
@@ -1665,15 +1907,40 @@ function sendViaWA() {
   const link = btn.dataset.link;
   const msg  = encodeURIComponent(`Merhaba,\n\nBY Sirius hizmet sözleşmenizi aşağıdaki linkten inceleyip onaylayabilirsiniz:\n${link}\n\nSaygılarımızla,\nBY Sirius`);
   if (!num) { toast('WhatsApp numarası bulunamadı', 'err'); return; }
-  window.open(`https://wa.me/${num}?text=${msg}`, '_blank');
+  window.open(`https://wa.me/${num}?text=${msg}`, '_blank', 'noopener');
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
-function openModal(id)  { document.getElementById(id).classList.add('open'); }
+function openModal(id) {
+  const o = document.getElementById(id);
+  const m = o.querySelector('.modal');
+  if (m && m._resetPos) m._resetPos();     // pencere her açılışta ortada başlar
+  o.classList.add('open');
+}
 function closeModal(id) { document.getElementById(id).classList.remove('open'); }
 
-document.querySelectorAll('.overlay').forEach(o => {
+// Form pencereleri dışarı tıklamayla KAPANMAZ (yazdıkların kaybolmasın); sadece .dismiss olanlar kapanır.
+document.querySelectorAll('.overlay.dismiss').forEach(o => {
   o.addEventListener('click', e => { if (e.target === o) o.classList.remove('open'); });
+});
+
+// Pencereleri başlığından tutup sürükleyebilirsin.
+document.querySelectorAll('.overlay .modal').forEach(m => {
+  const h = m.querySelector('h2');
+  if (!h) return;
+  let ox = 0, oy = 0, sx = 0, sy = 0, drag = false;
+  h.classList.add('drag-handle');
+  h.title = 'Taşımak için sürükle';
+  m._resetPos = () => { ox = oy = 0; m.style.transform = ''; };
+  h.addEventListener('pointerdown', e => { drag = true; sx = e.clientX - ox; sy = e.clientY - oy; h.setPointerCapture(e.pointerId); });
+  h.addEventListener('pointermove', e => {
+    if (!drag) return;
+    const lim = { x: window.innerWidth / 2 + m.offsetWidth / 2 - 80, y: window.innerHeight / 2 + m.offsetHeight / 2 - 60 };
+    ox = Math.max(-lim.x, Math.min(lim.x, e.clientX - sx));
+    oy = Math.max(-lim.y, Math.min(lim.y, e.clientY - sy));
+    m.style.transform = `translate(${ox}px,${oy}px)`;
+  });
+  h.addEventListener('pointerup', () => { drag = false; });
 });
 
 function esc(str) {
@@ -1696,48 +1963,6 @@ function toast(msg, type = 'ok') {
   el.className   = `toast show ${type}`;
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => el.classList.remove('show'), 3000);
-}
-
-// ─── Password change ──────────────────────────────────────────────────────────
-function openPwChange() {
-  document.getElementById('new-pw1').value = '';
-  document.getElementById('new-pw2').value = '';
-  document.getElementById('pw-err').style.display = 'none';
-  openModal('modal-pw');
-}
-
-async function sha256(str) {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
-  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
-}
-
-async function changePassword() {
-  const p1  = document.getElementById('new-pw1').value;
-  const p2  = document.getElementById('new-pw2').value;
-  const err = document.getElementById('pw-err');
-  err.style.display = 'none';
-  if (!p1 || p1.length < 8) { err.textContent = 'Şifre en az 8 karakter olmalı.'; err.style.display = 'block'; return; }
-  if (p1 !== p2)             { err.textContent = 'Şifreler eşleşmiyor.';           err.style.display = 'block'; return; }
-
-  const hash    = await sha256(p1);
-  const content = JSON.stringify({ passwordHash: hash }, null, 2);
-
-  try {
-    const res = await fetch(GITHUB_API + '?file=admin-config.json', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${getToken()}` },
-      body: JSON.stringify({ content, message: 'Update admin password via admin panel' })
-    });
-    const data = await res.json();
-    if (res.ok && data.success) {
-      localStorage.setItem('bs_crm_token', p1);
-      closeModal('modal-pw');
-      toast('Şifre değiştirildi. Yeni şifrenizle devam edebilirsiniz.', 'ok');
-    } else {
-      err.textContent = data.error || 'Hata oluştu.';
-      err.style.display = 'block';
-    }
-  } catch { err.textContent = 'Sunucuya bağlanılamadı.'; err.style.display = 'block'; }
 }
 </script>
 </body>

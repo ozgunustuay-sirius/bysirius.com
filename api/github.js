@@ -1,12 +1,13 @@
 /**
  * BY Sirius — GitHub file proxy
- * GET  /api/github?file=products.json        → reads file from GitHub repo
- * POST /api/github?file=products.json        → commits updated file (requires admin auth)
+ * GET  /api/github?file=products.json        → reads file from GitHub repo (admin session required)
+ * POST /api/github?file=products.json        → commits updated file (admin session required)
  *
- * Required Vercel env vars (for write):
+ * Required Vercel env vars:
  *   GITHUB_TOKEN   — GitHub Personal Access Token (repo: contents write)
- *   ADMIN_PASSWORD — same as CRM admin password
+ *   ADMIN_PASSWORD / SESSION_SECRET — see api/_auth.js
  */
+import { guard } from './_auth.js';
 
 export const config = { runtime: 'edge' };
 
@@ -16,21 +17,10 @@ const BRANCH = 'main';
 
 const ALLOWED = /^([\w\-]+\/)*([\w\-]+\.(html|json|txt|js|css|jpg|jpeg|png|gif|webp|svg|ico))$/;
 
-function corsHeaders(req) {
-  const origin = req.headers.get('origin') || '';
-  const allowed = new Set(['https://bysirius.com', 'https://www.bysirius.com']);
-  return {
-    'Access-Control-Allow-Origin':  allowed.has(origin) ? origin : 'https://www.bysirius.com',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Authorization, Content-Type',
-    'Vary': 'Origin'
-  };
-}
-
 export default async function handler(req) {
-  const CORS = corsHeaders(req);
-
-  if (req.method === 'OPTIONS') return new Response(null, { status: 200, headers: CORS });
+  const CORS = {}; // yalnızca aynı origin (admin paneli); CORS açılmaz
+  const denied = await guard(req);
+  if (denied) return denied;
 
   const url  = new URL(req.url);
   const file = url.searchParams.get('file');
@@ -59,10 +49,6 @@ export default async function handler(req) {
   }
 
   if (req.method === 'POST') {
-    const adminPw = process.env.ADMIN_PASSWORD;
-    const auth    = (req.headers.get('Authorization') || '').replace('Bearer ', '');
-    const ok      = await checkAuth(auth, adminPw);
-    if (!ok) return json({ error: 'Yetkisiz erişim' }, 401, CORS);
     if (!ghToken) return json({ error: 'GITHUB_TOKEN env var eksik. Vercel\'de ekleyin.' }, 503, CORS);
 
     const body    = await req.json();
@@ -122,28 +108,4 @@ function guessType(file) {
   if (file.endsWith('.webp'))             return 'image/webp';
   if (file.endsWith('.svg'))              return 'image/svg+xml';
   return 'text/plain; charset=utf-8';
-}
-
-async function checkAuth(auth, adminPw) {
-  if (!auth) return false;
-  if (adminPw && auth === adminPw) return true;
-  try {
-    const res = await fetch(
-      'https://raw.githubusercontent.com/ozgunustuay-sirius/bysirius.com/main/admin-config.json',
-      { signal: AbortSignal.timeout(2000) }
-    );
-    if (res.ok) {
-      const cfg = await res.json();
-      if (cfg.passwordHash) {
-        const hash = await sha256(auth);
-        if (hash === cfg.passwordHash) return true;
-      }
-    }
-  } catch { /* ignore */ }
-  return false;
-}
-
-async function sha256(str) {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
-  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
 }
