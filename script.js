@@ -2223,7 +2223,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     });
-})();
+});
 
 // WhatsApp floating button
 (function () {
